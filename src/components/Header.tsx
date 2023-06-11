@@ -5,6 +5,7 @@ import LanguageDropButtonElement from "@/components/header/LanguageDropButtonEle
 import {locales} from "@/i18n/Language";
 import {selectTranslations, LocaleState, setLocale} from "@/features/i18n/TranslatorSlice";
 import {useDispatch, useSelector} from "react-redux";
+import {useRouter} from "next/router";
 
 export default function Header() {
     // React state
@@ -25,6 +26,9 @@ export default function Header() {
 
         handleLanguageChange(locales.available.find(locale => locale.initials === getBrowserLanguage()) || locales.current, false);
     }, [])
+
+    const router = useRouter();
+    const pageName = router.pathname.split('/')[1];
 
     const handleLanguageChange = (locale: LocaleState, saveToStorage: boolean = true) => {
         locales.current = locale;
@@ -86,13 +90,13 @@ export default function Header() {
                     <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
                         <li>
                             <a href="/"
-                               className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                               className={`block py-2 pl-3 pr-4 dark:text-white text-gray-900 rounded md:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent md:p-0 ${!pageName.length ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}
                                aria-current="page">{strings['button.home']}</a>
                         </li>
                         <li>
                             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
                                     data-dropdown-trigger="hover"
-                                    className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-dark-200 md:dark:hover:bg-transparent">
+                                    className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 md:dark:bg-transparent md:dark:hover:bg-transparent md:bg-transparent ${pageName === 'software' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}>
                                 {strings['button.software']}
                                 <svg
                                     className="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -119,13 +123,13 @@ export default function Header() {
                         </li>
                         <li>
                             <a href="/downloads"
-                               className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-dark-200 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                               className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'downloads' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
                                 {strings['button.downloads']}
                             </a>
                         </li>
                         <li>
                             <a href="/sponsor"
-                               className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-dark-200 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                               className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
                                 {strings['button.sponsor']}
                             </a>
                         </li>

@@ -42,7 +42,7 @@ function Home() {
             <section
                 className="pt-20 pb-20 bg-gray-100 dark:bg-dark-50 py-10 flex flex-col flex-wrap justify-center items-center">
                 <h2 className="text-center mb-10 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['index.cards.title'])[0]}<span
-                        className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['index.cards.title'])[1]}</span>
+                    className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['index.cards.title'])[1]}</span>
                     {getLocaleStringAsArgs(strings['index.cards.title'])[2]}
                 </h2>
                 <div className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}>
