@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Downloads() {
     return (
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
@@ -10,17 +12,17 @@ export default function Downloads() {
                 onClick={() => {
                     window.location.href = "/software/mohist"
                 }}>
-                    <a href="https://minecraftforge.net"
+                    <Link href="https://minecraftforge.net"
                        className="bg-blue-100 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
                         Forge
-                    </a>
+                    </Link>
                     <h1 className="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2 mt-1">Mohist</h1>
                     <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">A Minecraft Forge
                         server
                         software implementing Bukkit, Spigot and Paper APIs. With this software, you can create a
                         Minecraft server with mods and plugins together!</p>
                     <div className={`flex flex-row flex-wrap gap-2`}>
-                        <a href={`/downloadSoftware?software=mohist`}
+                        <Link href={`/downloadSoftware?software=mohist`}
                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium inline-flex items-center rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                             Download
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor"
@@ -31,11 +33,11 @@ export default function Downloads() {
                                       clipRule="evenodd">
                                 </path>
                             </svg>
-                        </a>
-                        <a href={`https://wiki.mohistmc.com`}
+                        </Link>
+                        <Link href={`https://wiki.mohistmc.com`}
                            className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-dark-200 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                             Documentation
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
@@ -44,17 +46,17 @@ export default function Downloads() {
                         onClick={() => {
                             window.location.href = "/software/banner"
                         }}>
-                        <a href="https://fabricmc.net/"
+                        <Link href="https://fabricmc.net/"
                            className="bg-green-100 text-green-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                             Fabric
-                        </a>
+                        </Link>
                         <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2 mt-1">Banner</h2>
                         <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">A Minecraft Fabric
                             server software implementing Bukkit and Spigot APIs. This software allows you to create
                             a
                             Minecraft server with Fabric mods and plugins, just like Mohist.</p>
                         <div className={`flex flex-row flex-wrap gap-2`}>
-                            <a href={`/software/banner`}
+                            <Link href={`/software/banner`}
                                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium inline-flex items-center rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                 Download
                                 <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor"
@@ -65,15 +67,15 @@ export default function Downloads() {
                                           clipRule="evenodd">
                                     </path>
                                 </svg>
-                            </a>
-                            <a href={`#`}
+                            </Link>
+                            <Link href={`#`}
                                className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-dark-200 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                                 Documentation
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className={`flex justify-center items-center`}>
-                        <h2 className="text-5xl font-extrabold dark:text-white">That's all<small
+                        <h2 className="text-5xl font-extrabold dark:text-white">{`That's all`}<small
                             className="ml-2 font-semibold text-gray-500 dark:text-gray-400">for now</small></h2>
                     </div>
                 </div>
