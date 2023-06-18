@@ -45,7 +45,7 @@ export default function Header() {
         <nav className="bg-white border-gray-200 dark:bg-dark-50 fixed top-0 w-full z-20 drop-shadow-md">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center">
-                    <Image src="/mohistLogo.png" className="h-8 mr-3" alt="MohistMC Logo"/>
+                    <img src="/mohistLogo.png" className="h-8 mr-3" alt="MohistMC Logo"/>
                     <span
                         className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MohistMC</span>
                 </Link>

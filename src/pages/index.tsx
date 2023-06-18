@@ -112,19 +112,19 @@ function Home() {
                 <div id="default-carousel" className="relative w-full" data-carousel="slide">
                     <div className="relative h-36 overflow-hidden rounded-lg md:h-56">
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <Link href={`https://ci.codemc.io/`}><Image src="/codemc.png"
+                            <Link href={`https://ci.codemc.io/`}><img src="/codemc.png"
                                                                    className="absolute block w-3/4 md:w-1/6 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                                                   alt="..."></Image></Link>
+                                                                   alt="..."></img></Link>
                         </div>
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <Link href={`https://www.bisecthosting.com/mohistmc`}><Image src="/bisecthosting.png"
+                            <Link href={`https://www.bisecthosting.com/mohistmc`}><img src="/bisecthosting.png"
                                                                                     className="absolute block w-3/4 md:w-1/4 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                                                                    alt="..."></Image></Link>
+                                                                                    alt="..."></img></Link>
                         </div>
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <Link href={`http://www.yourkit.com/`}><Image src="yourkit.png"
+                            <Link href={`http://www.yourkit.com/`}><img src="yourkit.png"
                                                                      className="absolute block w-3/4 md:w-1/6 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                                                     alt="..."></Image></Link>
+                                                                     alt="..."></img></Link>
                         </div>
                     </div>
                     <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
