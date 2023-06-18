@@ -27,7 +27,7 @@ export default function Header() {
         };
 
         handleLanguageChange(locales.available.find(locale => locale.initials === getBrowserLanguage()) || locales.current, false);
-    })
+    }, [])
 
     const router = useRouter();
     const pageName = router.pathname.split('/')[1];
