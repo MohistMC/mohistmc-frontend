@@ -8,10 +8,7 @@ export default function Downloads() {
 
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
                 <div
-                    className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12 mb-8 hover:bg-gray-100 dark:hover:bg-dark-200 cursor-pointer"
-                onClick={() => {
-                    window.location.href = "/software/mohist"
-                }}>
+                    className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12 mb-8">
                     <Link href="https://minecraftforge.net"
                        className="bg-blue-100 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
                         Forge
@@ -42,10 +39,7 @@ export default function Downloads() {
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                     <div
-                        className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12 hover:bg-gray-100 dark:hover:bg-dark-200"
-                        onClick={() => {
-                            window.location.href = "/software/banner"
-                        }}>
+                        className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
                         <Link href="https://fabricmc.net/"
                            className="bg-green-100 text-green-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                             Fabric
@@ -75,7 +69,7 @@ export default function Downloads() {
                         </div>
                     </div>
                     <div className={`flex justify-center items-center`}>
-                        <h2 className="text-5xl font-extrabold dark:text-white">{`That's all`}<small
+                        <h2 className="text-5xl text-center font-extrabold dark:text-white">{`That's all`}<small
                             className="ml-2 font-semibold text-gray-500 dark:text-gray-400">for now</small></h2>
                     </div>
                 </div>

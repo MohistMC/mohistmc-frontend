@@ -42,14 +42,14 @@ function Home() {
                 </svg>
             </div>
             <section
-                className="pt-20 pb-20 bg-gray-100 dark:bg-dark-50 py-10 flex flex-col flex-wrap justify-center items-center">
+                className="pt-20 pb-10 md:pb-20 bg-gray-100 dark:bg-dark-50 py-10 flex flex-col flex-wrap justify-center items-center">
                 <h2 className="text-center mb-10 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['index.cards.title'])[0]}<span
                     className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['index.cards.title'])[1]}</span>
                     {getLocaleStringAsArgs(strings['index.cards.title'])[2]}
                 </h2>
                 <div className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}>
                     <div
-                        className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200">
+                        className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mohist</h5>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.mohist.description']}</p>
                         <Link href="/software/mohist"
@@ -65,7 +65,7 @@ function Home() {
                         </Link>
                     </div>
                     <div
-                        className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200">
+                        className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Banner</h5>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.banner.description']}</p>
                         <Link href="/software/banner"
@@ -82,30 +82,30 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className="pb-20 bg-white dark:bg-dark-50 pt-10">
+            <section className="pb-20 bg-white dark:bg-dark-50 pt-10 flex flex-col justify-center items-center">
                 <h2 className="text-center mb-10 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{strings['index.stats.title']}</h2>
                 <div
-                    className="bg-gray-100 grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-2 xl:grid-cols-4 dark:bg-dark-25 rounded-xl dark:text-white sm:p-8">
+                    className="bg-gray-100 mr-5 ml-5 py-10 md:mr-0 md:ml-0 grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-2 xl:grid-cols-4 dark:bg-dark-25 rounded-xl dark:text-white sm:p-8">
                     <div className="flex flex-col items-center justify-center">
                         <dt className="mb-2 text-3xl font-extrabold">0</dt>
-                        <dd className="text-gray-500 dark:text-gray-400">{strings['index.stats.resolvedbugs']}</dd>
+                        <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.resolvedbugs']}</dd>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <dt className="mb-2 text-3xl font-extrabold">0</dt>
-                        <dd className="text-gray-500 dark:text-gray-400">{strings['index.stats.openedissues']}</dd>
+                        <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.openedissues']}</dd>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <dt className="mb-2 text-3xl font-extrabold">0+</dt>
-                        <dd className="text-gray-500 dark:text-gray-400">{strings['index.stats.players']}</dd>
+                        <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.players']}</dd>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <dt className="mb-2 text-3xl font-extrabold">0+</dt>
-                        <dd className="text-gray-500 dark:text-gray-400">{strings['index.stats.servers']}</dd>
+                        <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.servers']}</dd>
                     </div>
                 </div>
             </section>
             <section className={`bg-gray-50 dark:bg-dark-25 flex justify-center flex-col items-center pt-12`}>
-                <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['index.partner.title'])[0]}<span
+                <h2 className="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['index.partner.title'])[0]}<span
                     className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['index.partner.title'])[1]}</span>
                     {getLocaleStringAsArgs(strings['index.partner.title'])[2]}
                 </h2>

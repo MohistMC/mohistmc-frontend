@@ -11,8 +11,10 @@ import Image from "next/image";
 
 export default function Header() {
     // React state
-    const [languageButtonState, setLanguageButtonState] = useState<ReactElement>(<LanguageDropButtonElement locale={locales.current}/>);
+    const [languageButtonState, setLanguageButtonState] = useState<ReactElement>(<LanguageDropButtonElement
+        locale={locales.current}/>);
     const [localesElementState, setLocalesElementState] = useState<ReactElement[]>([]);
+    const [menuVisibilityState, setMenuVisibilityState] = useState<boolean>(false);
 
     // React redux
     const dispatch = useDispatch();
@@ -20,7 +22,9 @@ export default function Header() {
 
     // React effect
     useEffect(() => {
-        setLocalesElementState(locales.available.filter(locale => locale !== locales.current).map(locale => <LanguageDropElement locale={locale} key={locale.initials} handleLocaleChangeCallback={handleLanguageChange}/>));
+        setLocalesElementState(locales.available.filter(locale => locale !== locales.current).map(locale =>
+            <LanguageDropElement locale={locale} key={locale.initials}
+                                 handleLocaleChangeCallback={handleLanguageChange}/>));
 
         const getBrowserLanguage = () => {
             return localStorage.getItem('locale') || (navigator.language.includes('-') ? navigator.language.split('-')[0] : navigator.language);
@@ -32,11 +36,19 @@ export default function Header() {
     const router = useRouter();
     const pageName = router.pathname.split('/')[1];
 
+    // On route change
+    useEffect(() => {
+        console.log("route change")
+        setMenuVisibilityState(false);
+    }, [router.pathname])
+
     const handleLanguageChange = (locale: LocaleState, saveToStorage: boolean = true) => {
         locales.current = locale;
 
         setLanguageButtonState(<LanguageDropButtonElement locale={locale}/>);
-        setLocalesElementState(locales.available.filter(locale => locale !== locales.current).map(locale => <LanguageDropElement locale={locale} key={locale.initials} handleLocaleChangeCallback={handleLanguageChange}/>));
+        setLocalesElementState(locales.available.filter(locale => locale !== locales.current).map(locale =>
+            <LanguageDropElement locale={locale} key={locale.initials}
+                                 handleLocaleChangeCallback={handleLanguageChange}/>));
         dispatch(setLocale(locale));
         saveToStorage && localStorage.setItem('locale', locales.current.initials);
     }
@@ -50,16 +62,8 @@ export default function Header() {
                         className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MohistMC</span>
                 </Link>
                 <div className="flex items-center md:order-2">
-                    {languageButtonState}
-                    <div
-                        className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-dark-100"
-                        id="language-dropdown-menu">
-                        <ul className="py-2 font-medium" role="none">
-                            {localesElementState}
-                        </ul>
-                    </div>
                     <Link href="https://github.com/MohistMC"
-                       className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
                         <svg className="w-5 h-5 " aria-hidden="true" focusable="false" data-prefix="fab"
                              data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                             <path fill="currentColor"
@@ -67,7 +71,7 @@ export default function Header() {
                         </svg>
                     </Link>
                     <Link href="https://discord.gg/mohistmc"
-                       className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                         <svg className="w-6 h-6" aria-hidden="true" focusable="false" data-prefix="fab"
                              data-icon="discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                             <path fill="currentColor"
@@ -76,7 +80,11 @@ export default function Header() {
                     </Link>
                     <button data-collapse-toggle="mobile-menu-language-select" type="button"
                             className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
-                            aria-controls="mobile-menu-language-select" aria-expanded="false">
+                            aria-controls="mobile-menu-language-select" aria-expanded="false"
+                            onClick={() => {
+                                // Override the default behavior of the button
+                                setMenuVisibilityState(!menuVisibilityState)
+                            }}>
                         <span className="sr-only">Open main menu</span>
                         <svg className="w-6 h-6" fill="currentColor" aria-hidden="true" viewBox="0 0 20 20"
                              xmlns="http://www.w3.org/2000/svg">
@@ -87,13 +95,14 @@ export default function Header() {
                     </button>
                     <ThemeButton className={`ml-2`}/>
                 </div>
-                <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-                     id="mobile-menu-language-select">
-                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
+                <div
+                    className={`items-center justify-between ${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}
+                    id="mobile-menu-language-select">
+                    <ul className="flex flex-col md:items-center font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
                         <li>
                             <Link href="/"
-                               className={`block py-2 pl-3 pr-4 dark:text-white text-gray-900 rounded md:bg-transparent md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent md:p-0 ${!pageName.length ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}
-                               aria-current="page">{strings['button.home']}</Link>
+                                  className={`block py-2 pl-3 pr-4 dark:text-white text-gray-900 rounded md:bg-transparent md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent md:p-0 ${!pageName.length ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}
+                                  aria-current="page">{strings['button.home']}</Link>
                         </li>
                         <li>
                             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
@@ -114,33 +123,41 @@ export default function Header() {
                                     aria-labelledby="dropdownLargeButton">
                                     <li>
                                         <Link href="/software/mohist"
-                                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">Mohist</Link>
+                                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">Mohist</Link>
                                     </li>
                                     <li>
                                         <Link href="/software/banner"
-                                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">Banner</Link>
+                                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">Banner</Link>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <Link href="/downloads"
-                               className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'downloads' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
+                                  className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'downloads' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
                                 {strings['button.downloads']}
                             </Link>
                         </li>
                         <li>
                             <Link href="/sponsor"
-                               className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
+                                  className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
                                 {strings['button.sponsor']}
                             </Link>
                         </li>
                         <li>
                             <Link href="#"
-                               className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-dark-200 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-dark-200 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                                 {strings['button.api']}
                             </Link>
                         </li>
+                        {languageButtonState}
+                        <div
+                            className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-dark-100"
+                            id="language-dropdown-menu">
+                            <ul className="py-2 font-medium" role="none">
+                                {localesElementState}
+                            </ul>
+                        </div>
                     </ul>
                 </div>
             </div>

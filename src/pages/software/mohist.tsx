@@ -43,14 +43,14 @@ export default function MohistSoftware() {
                 </svg>
             </div>
             <section className={`bg-gray-100 dark:bg-dark-50`}>
-                <h2 className="pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">What
+                <h2 className="pt-10 md:pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">What
                     makes <span
                         className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">Mohist</span> special?
                 </h2>
 
-                <div className="flex flex-wrap justify-center gap-12 w-full dark:bg-dark-50 pt-20 pb-20">
+                <div className="flex flex-wrap justify-center gap-12 w-full dark:bg-dark-50 pt-10 md:pt-20 md:pb-20 pb-10">
                     <div
-                        className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300">
+                        className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300 mr-5 ml-5">
                         <div className={`orangeGradient rounded-t-lg`}>&nbsp;
                         </div>
                         <div className="p-5">
@@ -63,7 +63,7 @@ export default function MohistSoftware() {
                     </div>
 
                     <div
-                        className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300">
+                        className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300 mr-5 ml-5">
                         <div className={`blueGradient rounded-t-lg`}>&nbsp;
                         </div>
                         <div className="p-5">
@@ -75,7 +75,7 @@ export default function MohistSoftware() {
                     </div>
 
                     <div
-                        className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300">
+                        className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300 mr-5 ml-5">
                         <div className={`greenGradient rounded-t-lg`}>&nbsp;
                         </div>
                         <div className="p-5">
@@ -98,7 +98,7 @@ export default function MohistSoftware() {
                         className="shadow fill-gray-100 dark:fill-dark-50"></path>
                 </svg>
             </div>
-            <section className={`pt-10 pb-10`}>
+            <section className={`pt-5 md:pt-10 pb-10`}>
                 <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
                     <h2 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-6xl dark:text-white">Ready
                         to level up your Minecraft server experience?</h2>
