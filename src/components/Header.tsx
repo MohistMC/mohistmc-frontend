@@ -96,7 +96,7 @@ export default function Header() {
                     <ThemeButton className={`ml-2`}/>
                 </div>
                 <div
-                    className={`items-center justify-between ${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}
+                    className={`${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}
                     id="mobile-menu-language-select">
                     <ul className="flex flex-col md:items-center font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
                         <li>

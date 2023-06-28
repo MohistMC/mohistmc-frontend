@@ -11,7 +11,7 @@ function Home() {
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
             <section className="bg-white dark:bg-dark-25 pt-10">
-                <div className="pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
+                <div className="pt-5 md:pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{strings['index.head.title']}</h1>
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['index.head.subtitle']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
