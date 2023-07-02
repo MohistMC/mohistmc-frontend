@@ -1,14 +1,15 @@
 export interface Build {
-    id: string;
-    hasBeenBuilt: boolean;
-    disabled?: boolean;
-    buildSourceName: string;
-    buildMessage: string;
+    number: number;
     gitSha: string;
-    gitFullSha: string;
     forgeVersion: string;
     fileMd5: string;
     originUrl: string;
-    url?: string;
+    url: string;
     createdAt: number;
+}
+
+export interface ProjectBuilds {
+    projectName: string;
+    projectVersion: string;
+    builds: Build[];
 }

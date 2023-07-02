@@ -1,4 +1,4 @@
-export enum SoftwareType {
+export enum Project {
     Mohist = "mohist",
     Banner = "banner",
 }

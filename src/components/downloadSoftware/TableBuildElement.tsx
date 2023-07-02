@@ -1,26 +1,27 @@
 import Link from "next/link";
 import {Build} from "@/interfaces/Build";
-import {SoftwareType} from "@/interfaces/SoftwareType";
+import {Project} from "@/interfaces/Project";
 
 interface TableBuildElementProps {
     build: Build;
     isLatest: boolean;
-    softwareType: SoftwareType;
+    project: Project;
+    version: string | undefined;
 }
 
-export default function TableBuildElement({build, isLatest, softwareType}: TableBuildElementProps) {
+export default function TableBuildElement({build, version, isLatest, project}: TableBuildElementProps) {
     if (!build || !build.url) return (<></>);
-    
-    const buildGithubCommitUrl = `https://github.com/MohistMC/${softwareType}/commit/${build.gitSha}`;
-    const buildName = `${build.buildSourceName}-${build.id}-server.jar`
+
+    const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`;
+    const buildName = `${project}-${version}-${build.number}-server.jar`
 
     return (
-        <tr className="bg-white border-b dark:bg-dark-100 dark:border-gray-700">
+        <tr key={buildName} className="bg-white border-b dark:bg-dark-100 dark:border-gray-700">
             <th scope="row"
                 className="md:px-6 px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <Link href="#"
                       className={`bg-green-100 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 mr-2 ${isLatest ? 'text-green-800 dark:text-green-400' : 'text-blue-800 dark:text-blue-400'}`}>
-                    #{build.id}
+                    #{build.number}
                 </Link>
                 {buildName}
             </th>

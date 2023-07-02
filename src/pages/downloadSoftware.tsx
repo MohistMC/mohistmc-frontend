@@ -1,61 +1,70 @@
 import Link from "next/link";
 import VersionSelectorElement from "@/components/downloadSoftware/VersionSelectorElement";
-import {AvailableVersions} from "@/interfaces/AvailableVersion";
 import {useRouter} from "next/router";
-import {SoftwareType} from "@/interfaces/SoftwareType";
+import {Project} from "@/interfaces/Project";
 import {ChangeEvent, useEffect, useState} from "react";
-import {Build} from "@/interfaces/Build";
+import {Build, ProjectBuilds} from "@/interfaces/Build";
 import NavigationTableElement from "@/components/downloadSoftware/NavigationTableElement";
 import TableBuildElement from "@/components/downloadSoftware/TableBuildElement";
+import LoadingParagraph from "@/components/downloadSoftware/LoadingParagraph";
 
 export default function downloadSoftware() {
     const router = useRouter()
     const perPage = 10
 
     // React states
-    const [software, setSoftware] = useState<SoftwareType | undefined>()
+    const [software, setSoftware] = useState<Project | undefined>()
     const [originalBuildPages, setOriginalBuildPages] = useState<Build[][]>([])
     const [viewedBuildPages, setViewedBuildPages] = useState<Build[][]>([])
     const [currentPage, setCurrentPage] = useState<number>(0)
+    const [selectedVersion, setSelectedVersion] = useState<string | undefined>()
+    const [isSelectingDisabled, setIsSelectingDisabled] = useState<boolean>(true)
 
     useEffect(() => {
         if (router.isReady) {
-            const {software} = router.query as { software: SoftwareType }
+            const {software} = router.query as { software: Project }
 
-            if (software === SoftwareType.Mohist || software === SoftwareType.Banner)
+            if (software === Project.Mohist || software === Project.Banner)
                 setSoftware(software)
             else
                 router.push('/404').catch()
         }
-    }, [router.isReady, router.query]);
+    }, [router.isReady, router.query])
 
-    const handleVersionChanged = async (version: AvailableVersions | undefined) => {
-        if (!version) return
+    useEffect(() => {
+        const handleVersionChanged = async () => {
+            setIsSelectingDisabled(true)
 
-        const builds = await fetch(`https://new-api.mohistmc.com/api/v1/builds/${version.name}`)
-        let buildsJson: Build[] = await builds.json()
+            const projectBuildsReq = await fetch(`https://new-api.mohistmc.com/api/v2/projects/${software}/${selectedVersion}/builds`)
+            const buildsJson: ProjectBuilds = await projectBuildsReq.json()
 
-        if (buildsJson.length === 0) {
-            // TODO: Toast error
-            return
+            if (!buildsJson?.builds || buildsJson?.builds?.length === 0) {
+                // TODO: Toast error
+                return
+            }
+
+            const builds = buildsJson.builds.reverse()
+
+            const pages: Build[][] = []
+            for (let i = 0; i < builds.length; i += perPage)
+                pages.push(builds.slice(i, i + perPage))
+
+            setOriginalBuildPages(pages)
+            setViewedBuildPages(pages)
+            setCurrentPage(0)
+            setIsSelectingDisabled(false)
         }
 
-        buildsJson = buildsJson.filter((build) => build.hasBeenBuilt && !build.disabled).reverse()
-
-        const pages: Build[][] = []
-        for (let i = 0; i < buildsJson.length; i += perPage)
-            pages.push(buildsJson.slice(i, i + perPage))
-
-        setOriginalBuildPages(pages)
-        setViewedBuildPages(pages)
-        setCurrentPage(0)
-    }
+        selectedVersion && handleVersionChanged().catch()
+    }, [selectedVersion])
 
     const handleSearch = async (event: ChangeEvent<HTMLInputElement>) => {
+        setCurrentPage(0) // Reset the page because the builds will change
+
         const search = event.target.value
 
         // If no search query, reset the pages
-        if(search.length === 0) {
+        if (search.length === 0) {
             setViewedBuildPages(originalBuildPages)
             return
         }
@@ -63,8 +72,8 @@ export default function downloadSoftware() {
         // Filter the builds
         const modifiedBuildPages: Build[] = []
 
-        for(const page of originalBuildPages) {
-            const filteredPage = page.filter((build) => build.id.toLowerCase().includes(search.toLowerCase()))
+        for (const page of originalBuildPages) {
+            const filteredPage = page.filter((build) => String(build.number).toLowerCase().includes(search.toLowerCase()))
             modifiedBuildPages.push(...filteredPage)
         }
 
@@ -103,7 +112,8 @@ export default function downloadSoftware() {
                                    placeholder="Search for builds"></input>
                         </div>
                     </div>
-                    <VersionSelectorElement versionChangedCallback={handleVersionChanged}/>
+                    <VersionSelectorElement selectedVersion={selectedVersion} setSelectedVersion={setSelectedVersion}
+                                            software={software} isDisabled={isSelectingDisabled}/>
                 </div>
                 <table
                     className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-separate border-spacing-0 rounded-lg overflow-hidden">
@@ -122,7 +132,8 @@ export default function downloadSoftware() {
                             <div className="flex items-center">
                                 Built on
                                 <Link href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1" aria-hidden="true"
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1"
+                                         aria-hidden="true"
                                          fill="currentColor" viewBox="0 0 320 512">
                                         <path
                                             d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/>
@@ -134,7 +145,8 @@ export default function downloadSoftware() {
                             <div className="flex items-center">
                                 Custom Data
                                 <Link href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1" aria-hidden="true"
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1"
+                                         aria-hidden="true"
                                          fill="currentColor" viewBox="0 0 320 512">
                                         <path
                                             d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/>
@@ -153,11 +165,18 @@ export default function downloadSoftware() {
                     <tbody>
                     {viewedBuildPages.length > 0 && viewedBuildPages[currentPage].map(build => TableBuildElement({
                         build,
-                        isLatest: build === viewedBuildPages[0][0],
-                        softwareType: software as SoftwareType
-                    }))}
+                        isLatest: build === originalBuildPages[0][0],
+                        project: software as Project,
+                        version: selectedVersion
+                    }))
+                    }
                     </tbody>
                 </table>
+                {isSelectingDisabled &&
+                    <div className="flex justify-center mt-4">
+                        <LoadingParagraph/>
+                    </div>
+                }
                 <NavigationTableElement buildPages={viewedBuildPages} currentPage={currentPage}
                                         setCurrentPage={setCurrentPage}/>
             </div>
