@@ -38,7 +38,6 @@ export default function Header() {
 
     // On route change
     useEffect(() => {
-        console.log("route change")
         setMenuVisibilityState(false);
     }, [router.pathname])
 
