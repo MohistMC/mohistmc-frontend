@@ -6,7 +6,6 @@ interface VersionSelectorElementProps {
     selectedVersion: string | undefined
     setSelectedVersion: (version: string | undefined) => void
     software: Project | undefined
-    isDisabled: boolean
 }
 
 interface ProjectVersions {
@@ -16,8 +15,7 @@ interface ProjectVersions {
 export default function VersionSelectorElement({
                                                    selectedVersion,
                                                    setSelectedVersion,
-                                                   software,
-                                                   isDisabled
+                                                   software
                                                }: VersionSelectorElementProps) {
     // React state
     const [availableVersions, setAvailableVersions] = useState<string[]>([]);
@@ -39,7 +37,7 @@ export default function VersionSelectorElement({
 
     return (
         <>
-            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" disabled={isDisabled}
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                     className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     type="button">{selectedVersion ?? 'Loading'}
                 {

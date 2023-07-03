@@ -18,7 +18,6 @@ export default function downloadSoftware() {
     const [viewedBuildPages, setViewedBuildPages] = useState<Build[][]>([])
     const [currentPage, setCurrentPage] = useState<number>(0)
     const [selectedVersion, setSelectedVersion] = useState<string | undefined>()
-    const [isSelectingDisabled, setIsSelectingDisabled] = useState<boolean>(true)
 
     useEffect(() => {
         if (router.isReady) {
@@ -33,7 +32,8 @@ export default function downloadSoftware() {
 
     useEffect(() => {
         const handleVersionChanged = async () => {
-            setIsSelectingDisabled(true)
+            setViewedBuildPages([])
+            setOriginalBuildPages([])
 
             const projectBuildsReq = await fetch(`https://new-api.mohistmc.com/api/v2/projects/${software}/${selectedVersion}/builds`)
             const buildsJson: ProjectBuilds = await projectBuildsReq.json()
@@ -43,16 +43,24 @@ export default function downloadSoftware() {
                 return
             }
 
-            const builds = buildsJson.builds.reverse()
+            const builds = buildsJson.builds.reverse().map((build) => {
+                return {
+                    ...build,
+                    fileName: `${software}-${selectedVersion}-${build.number}-server.jar`
+                }
+            })
 
             const pages: Build[][] = []
             for (let i = 0; i < builds.length; i += perPage)
                 pages.push(builds.slice(i, i + perPage))
 
+            // Check if the user have changed the version while the builds were loading
+            if (selectedVersion !== buildsJson.projectVersion)
+                return
+
             setOriginalBuildPages(pages)
             setViewedBuildPages(pages)
             setCurrentPage(0)
-            setIsSelectingDisabled(false)
         }
 
         selectedVersion && handleVersionChanged().catch()
@@ -73,7 +81,7 @@ export default function downloadSoftware() {
         const modifiedBuildPages: Build[] = []
 
         for (const page of originalBuildPages) {
-            const filteredPage = page.filter((build) => String(build.number).toLowerCase().includes(search.toLowerCase()))
+            const filteredPage = page.filter((build) => String(build.number).toLowerCase().includes(search.toLowerCase()) || build.fileMd5.toLowerCase().includes(search.toLowerCase()) || build.fileName?.toLowerCase().includes(search.toLowerCase()))
             modifiedBuildPages.push(...filteredPage)
         }
 
@@ -94,7 +102,7 @@ export default function downloadSoftware() {
                 desc.</p>
 
             <div
-                className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-20 p-5">
+                className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-10 p-5">
                 <div className={`flex md:justify-between md:gap-0 gap-2 justify-center items-center pb-4 flex-wrap`}>
                     <div className="bg-white dark:bg-dark-50">
                         <label htmlFor="table-search" className="sr-only">Search for builds</label>
@@ -113,7 +121,7 @@ export default function downloadSoftware() {
                         </div>
                     </div>
                     <VersionSelectorElement selectedVersion={selectedVersion} setSelectedVersion={setSelectedVersion}
-                                            software={software} isDisabled={isSelectingDisabled}/>
+                                            software={software}/>
                 </div>
                 <table
                     className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-separate border-spacing-0 rounded-lg overflow-hidden">
@@ -125,7 +133,7 @@ export default function downloadSoftware() {
                         </th>
                         <th scope="col" className="px-6 py-3 hidden md:table-cell">
                             <div className="flex items-center">
-                                Checksum
+                                MD5 Checksum
                             </div>
                         </th>
                         <th scope="col" className="px-6 py-3 hidden md:table-cell">
@@ -141,19 +149,21 @@ export default function downloadSoftware() {
                                 </Link>
                             </div>
                         </th>
-                        <th scope="col" className="px-6 py-3 hidden md:table-cell">
-                            <div className="flex items-center">
-                                Custom Data
-                                <Link href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1"
-                                         aria-hidden="true"
-                                         fill="currentColor" viewBox="0 0 320 512">
-                                        <path
-                                            d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/>
-                                    </svg>
-                                </Link>
-                            </div>
-                        </th>
+                        {software === Project.Mohist &&
+                            <th scope="col" className="px-6 py-3 hidden md:table-cell">
+                                <div className="flex items-center">
+                                    {software === Project.Mohist ? "Forge Version" : "N/A"}
+                                    <Link href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1"
+                                             aria-hidden="true"
+                                             fill="currentColor" viewBox="0 0 320 512">
+                                            <path
+                                                d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/>
+                                        </svg>
+                                    </Link>
+                                </div>
+                            </th>
+                        }
                         <th scope="col" className="px-6 py-3 hidden md:table-cell">
                             <span className="sr-only">Download</span>
                         </th>
@@ -163,16 +173,18 @@ export default function downloadSoftware() {
                     </tr>
                     </thead>
                     <tbody>
-                    {viewedBuildPages.length > 0 && viewedBuildPages[currentPage].map(build => TableBuildElement({
-                        build,
-                        isLatest: build === originalBuildPages[0][0],
-                        project: software as Project,
-                        version: selectedVersion
-                    }))
+                    {viewedBuildPages.length > 0 &&
+                        viewedBuildPages[currentPage].map((build, index) => TableBuildElement({
+                                build,
+                                isLatest: build === originalBuildPages[0][0],
+                                project: software as Project,
+                                indexOnPage: index,
+                            }
+                        ))
                     }
                     </tbody>
                 </table>
-                {isSelectingDisabled &&
+                {viewedBuildPages.length === 0 &&
                     <div className="flex justify-center mt-4">
                         <LoadingParagraph/>
                     </div>

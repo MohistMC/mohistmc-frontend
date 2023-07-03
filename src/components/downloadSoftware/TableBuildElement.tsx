@@ -1,42 +1,44 @@
 import Link from "next/link";
 import {Build} from "@/interfaces/Build";
 import {Project} from "@/interfaces/Project";
+import DownloadButton from "@/components/downloadSoftware/DownloadButton";
 
 interface TableBuildElementProps {
     build: Build;
     isLatest: boolean;
     project: Project;
-    version: string | undefined;
+    indexOnPage: number;
 }
 
-export default function TableBuildElement({build, version, isLatest, project}: TableBuildElementProps) {
+export default function TableBuildElement({build, isLatest, project, indexOnPage}: TableBuildElementProps) {
     if (!build || !build.url) return (<></>);
 
     const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`;
-    const buildName = `${project}-${version}-${build.number}-server.jar`
 
     return (
-        <tr key={buildName} className="bg-white border-b dark:bg-dark-100 dark:border-gray-700">
+        <tr key={build.fileName} className={`bg-white border-b ${indexOnPage % 2 === 0 ? 'dark:bg-dark-100' : 'dark:bg-dark-150'} dark:border-gray-700`}>
             <th scope="row"
                 className="md:px-6 px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <Link href="#"
                       className={`bg-green-100 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 mr-2 ${isLatest ? 'text-green-800 dark:text-green-400' : 'text-blue-800 dark:text-blue-400'}`}>
                     #{build.number}
                 </Link>
-                {buildName}
+                {build.fileName}
             </th>
             <td className="px-6 py-4 hidden md:table-cell">
                 {build.fileMd5}
             </td>
             <td className="px-6 py-4 hidden md:table-cell">
-                {new Date(build.createdAt).toLocaleDateString()}
+                {new Date(build.createdAt).toLocaleString()}
             </td>
-            <td className="px-6 py-4 hidden md:table-cell">
-                Custom data
-            </td>
+            {
+                project === Project.Mohist &&
+                <td className="px-6 py-4 hidden md:table-cell">
+                    {project === Project.Mohist ? build.forgeVersion : ''}
+                </td>
+            }
             <td className="md:px-6 px-3 py-4 text-right">
-                <Link href={build.url}
-                      className="font-medium hidden md:block text-blue-600 dark:text-blue-500 hover:underline">Download</Link>
+                <DownloadButton build={build}/>
 
                 <Link href="/downloadSoftware?software=mohist"
                       className="md:hidden inline-flex justify-center items-center py-2 px-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
@@ -45,7 +47,7 @@ export default function TableBuildElement({build, version, isLatest, project}: T
             </td>
             <td className="hidden px-6 py-4 text-right md:table-cell">
                 <Link href={buildGithubCommitUrl}
-                      className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-sm">
+                      className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-sm dark:hover:opacity-75">
                     <svg className="w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fab"
                          data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 496 512">

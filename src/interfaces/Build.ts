@@ -1,5 +1,6 @@
 export interface Build {
     number: number;
+    fileName?: string;
     gitSha: string;
     forgeVersion: string;
     fileMd5: string;
