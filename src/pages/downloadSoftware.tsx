@@ -107,9 +107,6 @@ export default function downloadSoftware() {
         if (modifiedBuildPages.length === 0)
             setNoResult(true)
 
-        // TODO: Si il n'y a pas de résultat, mettre un texte plutot que le loader
-        // TODO: Quand on séléctionne une version faut fermer le menu
-
         // Split the builds into pages
         const modifiedPages: Build[][] = []
         for (let i = 0; i < modifiedBuildPages.length; i += perPage)
@@ -139,7 +136,7 @@ export default function downloadSoftware() {
 
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">
-            <div className={`flex items-center justify-center`}>
+            <div className={`flex items-center justify-center pt-10 md:pt-0`}>
                 <h1 className="text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white md:mt-10 text-center">Download {software}</h1>
             </div>
             <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Download software, short
@@ -148,7 +145,7 @@ export default function downloadSoftware() {
             <div
                 className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-10 p-5">
                 <div className={`flex md:justify-between gap-2 justify-center items-center pb-4 flex-wrap`}>
-                    <div className={`flex gap-2 items-center justify-center`}>
+                    <div className={`flex gap-2 md:flex-row flex-col items-center justify-center`}>
                         <div className="bg-white dark:bg-dark-50">
                             <label htmlFor="table-search" className="sr-only">Search for builds</label>
                             <div className="relative mt-1">

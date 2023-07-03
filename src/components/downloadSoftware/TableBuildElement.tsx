@@ -16,7 +16,7 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
     const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`;
 
     return (
-        <tr key={build.fileName} className={`bg-white border-b ${indexOnPage % 2 === 0 ? 'dark:bg-dark-100' : 'dark:bg-dark-150'} dark:border-gray-700`}>
+        <tr key={build.fileName} className={`border-b ${indexOnPage % 2 === 0 ? 'dark:bg-dark-100 bg-white' : 'dark:bg-dark-150 bg-gray-50'} dark:border-gray-700`}>
             <th scope="row"
                 className="md:px-6 px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <Link href="#"
