@@ -39,10 +39,10 @@ export default function Footer() {
                                        className="md:hover:text-blue-500 ">Discover us</Link>
                                 </li>
                                 <li>
-                                    <Link href="#" className="md:hover:text-blue-500">Sponsor</Link>
+                                    <Link href="/sponsor" className="md:hover:text-blue-500">Sponsor</Link>
                                 </li>
                                 <li>
-                                    <Link href="#" className="md:hover:text-blue-500">Our team</Link>
+                                    <Link href="/team" className="md:hover:text-blue-500">Our team</Link>
                                 </li>
                             </ul>
                         </div>
@@ -53,10 +53,10 @@ export default function Footer() {
                                     <Link href="#" className="md:hover:text-blue-500">Our community</Link>
                                 </li>
                                 <li>
-                                    <Link href="#" className="md:hover:text-blue-500">Discord</Link>
+                                    <Link href="https://discord.gg/mohistmc" className="md:hover:text-blue-500">Discord</Link>
                                 </li>
                                 <li>
-                                    <Link href="#" className="md:hover:text-blue-500">GitHub</Link>
+                                    <Link href="https://github.com/MohistMC" className="md:hover:text-blue-500">GitHub</Link>
                                 </li>
                                 <li>
                                     <Link href="#" className="md:hover:text-blue-500">Forum</Link>

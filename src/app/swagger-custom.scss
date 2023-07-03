@@ -1,0 +1,110 @@
+.dark-theme {
+  .swagger-ui {
+    margin-bottom: 5em;
+
+    p {
+      color: white;
+    }
+
+    .title {
+      color: white;
+
+      small {
+        display: none;
+      }
+    }
+
+    .base-url {
+      color: darkgrey !important;
+    }
+
+    .scheme-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #171616;
+      width: 75%;
+      transform: translate(17%, 0);
+      border-radius: 20px;
+
+      .schemes-title {
+        color: white;
+      }
+
+      select {
+        margin-top: .5rem;
+        background: #2c2a2a;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 5px;
+      }
+    }
+
+    .tablinks {
+      color: white;
+    }
+
+    .arrow {
+      color: white;
+    }
+
+    .opblock-tag-section {
+      background-color: #171616;
+      border: 1px solid #1e1e1e;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 1rem;
+
+      span {
+        color: white;
+      }
+    }
+
+    .opblock.opblock-get {
+      background-color: #232121;
+      border: 1px solid #1e1e1e;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 1rem;
+    }
+
+    .opblock .opblock-section-header {
+      background-color: #1c1a1a;
+      border: 1px solid #1e1e1e;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 1rem;
+
+      h4 {
+        color: white;
+      }
+
+      .try-out__btn {
+        background: #0075fa;
+        border: 1px solid #0075fa;
+        border-radius: 5px;
+        color: white;
+        padding: 0.5rem;
+      }
+    }
+
+    td {
+      color: white;
+    }
+
+    .opblock-summary-control {
+      color: white;
+      outline: none;
+    }
+
+    .opblock.opblock-get .opblock-summary-method {
+      background: #0075fa;
+    }
+  }
+}
+
+.swagger-ui {
+  .info {
+    display: none;
+  }
+}

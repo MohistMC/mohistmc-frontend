@@ -1,17 +1,25 @@
 import {useEffect, useRef} from "react";
+import {useDispatch} from "react-redux";
+import {setDark} from "@/features/theme/ThemeSlice";
 
 export default function ThemeButton({className}: { className?: string}) {
     const themeToggleDarkIconRef = useRef<SVGSVGElement>(null);
     const themeToggleLightIconRef = useRef<SVGSVGElement>(null);
 
+    // React redux
+    const dispatch = useDispatch();
+
     useEffect(() => {
         if(themeToggleLightIconRef.current === null || themeToggleDarkIconRef.current === null) return;
 
         // Change the icons inside the button based on previous settings
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             themeToggleLightIconRef.current.classList.remove('hidden');
-        else
+            dispatch(setDark(true))
+        } else {
             themeToggleDarkIconRef.current.classList.remove('hidden');
+            dispatch(setDark(false))
+        }
     })
 
     const themeButtonClickListener = function() {
@@ -26,17 +34,21 @@ export default function ThemeButton({className}: { className?: string}) {
             if (localStorage.getItem('color-theme') === 'light') {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
+                dispatch(setDark(true))
             } else {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
+                dispatch(setDark(false))
             }
         } else {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
+                dispatch(setDark(false))
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
+                dispatch(setDark(true))
             }
         }
     }
