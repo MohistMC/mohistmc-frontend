@@ -8,7 +8,7 @@ import NavigationTableElement from "@/components/downloadSoftware/NavigationTabl
 import TableBuildElement from "@/components/downloadSoftware/TableBuildElement";
 import LoadingParagraph from "@/components/downloadSoftware/LoadingParagraph";
 
-export default function downloadSoftware() {
+export default function DownloadSoftware() {
     const router = useRouter()
     const perPage = 10
 
