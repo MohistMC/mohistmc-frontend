@@ -1,8 +1,11 @@
 import Link from "next/link";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 
 export default function Footer() {
-    return (
+    const strings = useAppSelector(selectTranslations);
 
+    return (
         <footer className="bg-white dark:bg-dark-50">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
@@ -19,47 +22,45 @@ export default function Footer() {
                     </div>
                     <div className="flex gap-12 flex-wrap">
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Getting
-                                started</h2>
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{strings['footer.heading.gettingstarted']}</h2>
                             <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
-                                    <Link href="/downloads" className="md:hover:text-blue-500">Downloads</Link>
+                                    <Link href="/downloads" className="md:hover:text-blue-500">{strings['button.downloads']}</Link>
                                 </li>
                                 <li>
-                                    <Link href="/docs" className="md:hover:text-blue-500">Documentation</Link>
+                                    <Link href="/docs" className="md:hover:text-blue-500">{strings['button.documentation']}</Link>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About
-                                Us</h2>
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{strings['button.about']}</h2>
                             <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
                                     <Link href="#"
-                                       className="md:hover:text-blue-500 ">Discover us</Link>
+                                       className="md:hover:text-blue-500 ">{strings['footer.heading.discover']}</Link>
                                 </li>
                                 <li>
-                                    <Link href="/sponsor" className="md:hover:text-blue-500">Sponsor</Link>
+                                    <Link href="/sponsor" className="md:hover:text-blue-500">{strings['button.sponsor']}</Link>
                                 </li>
                                 <li>
-                                    <Link href="/team" className="md:hover:text-blue-500">Our team</Link>
+                                    <Link href="/team" className="md:hover:text-blue-500">{strings['button.team']}</Link>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Community</h2>
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{strings['footer.heading.community']}</h2>
                             <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
-                                    <Link href="#" className="md:hover:text-blue-500">Our community</Link>
+                                    <Link href="#" className="md:hover:text-blue-500">{strings['button.community']}</Link>
                                 </li>
                                 <li>
-                                    <Link href="https://discord.gg/mohistmc" className="md:hover:text-blue-500">Discord</Link>
+                                    <Link href="https://discord.gg/mohistmc" className="md:hover:text-blue-500">{strings['social.discord']}</Link>
                                 </li>
                                 <li>
-                                    <Link href="https://github.com/MohistMC" className="md:hover:text-blue-500">GitHub</Link>
+                                    <Link href="https://github.com/MohistMC" className="md:hover:text-blue-500">{strings['social.github']}</Link>
                                 </li>
                                 <li>
-                                    <Link href="#" className="md:hover:text-blue-500">Forum</Link>
+                                    <Link href="#" className="md:hover:text-blue-500">{strings['social.forum']}</Link>
                                 </li>
                             </ul>
                         </div>

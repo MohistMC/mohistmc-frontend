@@ -1,5 +1,4 @@
 import {LocaleState} from "@/features/i18n/TranslatorSlice";
-import EnglishLogoSVG from "@/components/svgs/EnglishLogoSVG";
 
 const enTranslation: LocaleState = {
     name: "English (US)",
@@ -17,6 +16,7 @@ const enTranslation: LocaleState = {
         "index.stats.servers": "Servers",
         "index.partner.title": "A %special thanks% to",
         "button.downloads": "Downloads",
+        "button.download": "Download",
         "button.discord": "Discord",
         "button.github": "GitHub",
         "button.sponsor": "Sponsor",
@@ -25,6 +25,39 @@ const enTranslation: LocaleState = {
         "button.learnmore": "Learn more",
         "button.readmore": "Read more",
         "button.home": "Home",
+        "button.documentation": "Documentation",
+        "button.about": "About us",
+        "button.team": "Our team",
+        "button.community": "Our community",
+        "button.download.mirror": "Mirror download",
+        "footer.heading.gettingstarted": "Getting started",
+        "footer.heading.discover": "Discover us",
+        "footer.heading.community": "Community",
+        "social.github": "GitHub",
+        "social.discord": "Discord",
+        "social.forum": "Forum",
+        "social.opencollective": "OpenCollective",
+        "social.ghsponsors": "GitHub Sponsors",
+        "downloads.title": "Download any of our software %for free!%",
+        "downloads.mohist.desc": "A Minecraft Forge server software implementing Bukkit, Spigot and Paper APIs. With this software, you can create a Minecraft server with mods and plugins together!",
+        "downloads.banner.desc": "A Minecraft Fabric server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with Fabric mods and plugins, just like Mohist, but for Fabric.",
+        "downloads.endtext": "That's all %for now%",
+        "downloadSoftware.title": "Download% %",
+        "downloadSoftware.mohist.desc": "Download Mohist, our Minecraft hybrid Forge + Bukkit/Spigot/Paper server software.",
+        "downloadSoftware.banner.desc": "Download Banner, our Minecraft hybrid Fabric + Bukkit/Spigot server software.",
+        "downloadSoftware.search.placeholder": "Search for builds...",
+        "downloadSoftware.search.noresults": "No results found.",
+        "downloadSoftware.search.filter.btn": "Filter by",
+        "downloadSoftware.build.number": "Build number",
+        "downloadSoftware.build.name": "Build name",
+        "downloadSoftware.build.md5": "MD5 Checksum",
+        "downloadSoftware.build.date": "Build date",
+        "downloadSoftware.build.forgever": "Forge version",
+        "downloadSoftware.seemore": "See more",
+        "sponsor.title": "Support the %future% of Minecraft innovation with MohistMC",
+        "sponsor.subtitle": "Help fuel the growth of MohistMC's community. Your support covers essential expenses, including services, servers, and infrastructure. Contribute today and make a difference in the future of MohistMC.",
+        "sponsor.section.title": "Our %sponsors%% %",
+        "sponsor.section.subtitle": "They trust in our projects!",
     }
 }
 

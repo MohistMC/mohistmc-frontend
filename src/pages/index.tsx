@@ -4,6 +4,7 @@ import {useAppSelector} from "@/util/redux/Hooks";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import Link from "next/link";
 import StatisticsElement from "@/components/index/StatisticsElement";
+import DefaultCarousel from "@/components/index/Carousel";
 
 function Home() {
     const strings = useAppSelector(selectTranslations);
@@ -88,55 +89,7 @@ function Home() {
                     className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['index.partner.title'])[1]}</span>
                     {getLocaleStringAsArgs(strings['index.partner.title'])[2]}
                 </h2>
-                <div id="default-carousel" className="relative w-full" data-carousel="slide">
-                    <div className="relative h-36 overflow-hidden rounded-lg md:h-56">
-                        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <Link href={`https://ci.codemc.io/`}><img src="/codemc.png"
-                                                                      className="absolute block w-3/4 md:w-1/6 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                                                      alt="..."></img></Link>
-                        </div>
-                        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <Link href={`https://www.bisecthosting.com/mohistmc`}><img src="/bisecthosting.png"
-                                                                                       className="absolute block w-3/4 md:w-1/4 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                                                                       alt="..."></img></Link>
-                        </div>
-                        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <Link href={`http://www.yourkit.com/`}><img src="yourkit.png"
-                                                                        className="absolute block w-3/4 md:w-1/6 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                                                        alt="..."></img></Link>
-                        </div>
-                    </div>
-                    <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                        <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                                data-carousel-slide-to="0"></button>
-                        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                                data-carousel-slide-to="1"></button>
-                        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                                data-carousel-slide-to="2"></button>
-                    </div>
-                    <button type="button"
-                            className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                            data-carousel-prev="">
-        <span
-            className="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-300 dark:bg-dark-200 group-hover:bg-gray-400 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" className="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none"
-                 stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path
-                strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-            <span className="sr-only">Previous</span>
-        </span>
-                    </button>
-                    <button type="button"
-                            className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                            data-carousel-next>
-        <span
-            className="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-300 dark:bg-dark-200 group-hover:bg-gray-400 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" className="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none"
-                 stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path
-                strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-            <span className="sr-only">Next</span>
-        </span>
-                    </button>
-                </div>
+                <DefaultCarousel/>
             </section>
         </div>
     )

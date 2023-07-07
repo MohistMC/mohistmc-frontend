@@ -8,9 +8,10 @@ interface TableBuildElementProps {
     isLatest: boolean;
     project: Project;
     indexOnPage: number;
+    strings: Record<any, any>
 }
 
-export default function TableBuildElement({build, isLatest, project, indexOnPage}: TableBuildElementProps) {
+export default function TableBuildElement({build, isLatest, project, indexOnPage, strings}: TableBuildElementProps) {
     if (!build || !build.url) return (<></>);
 
     const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`;
@@ -38,11 +39,11 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
                 </td>
             }
             <td className="md:px-6 px-3 py-4 text-right">
-                <DownloadButton build={build}/>
+                <DownloadButton build={build} strings={strings}/>
 
                 <Link href="/downloadSoftware?software=mohist"
                       className="md:hidden inline-flex justify-center items-center py-2 px-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                    See more
+                    {strings['downloadSoftware.seemore']}
                 </Link>
             </td>
             <td className="hidden px-6 py-4 text-right md:table-cell">

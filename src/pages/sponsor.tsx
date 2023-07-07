@@ -1,20 +1,55 @@
 import Link from "next/link";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
+import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
+import {useEffect, useState} from "react";
+import Avatar from "@/components/sponsor/Avatar";
+
+interface Donor {
+    name: string,
+    avatar: string,
+}
 
 export default function Sponsor() {
+    const strings = useAppSelector(selectTranslations);
+
+    // React states
+    const [donors, setDonors] = useState<Donor[]>([]);
+
+    // React effect
+    useEffect(() => {
+        fetch('https://opencollective.com/mohist/members/all.json')
+            .then(res => res.json())
+            .then(json => {
+                const donors = json.map((donor: any) => {
+                    return {
+                        name: donor.name,
+                        avatar: donor.image,
+                    }
+                });
+
+                const uniqueDonors = donors.filter((donor: Donor, index: number, self: any) =>
+                    index === self.findIndex((t: Donor) => (
+                        t.name === donor.name
+                    ))
+                );
+
+                setDonors(uniqueDonors);
+            });
+    }, []);
+
     return (
         <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                 <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">
-                    <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Support
-                        the <span className="text-blue-600 dark:text-blue-500">future</span> of Minecraft innovation with
-                        MohistMC</h1>
-                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{`Help
-                        fuel the growth of MohistMC's community. Your support covers essential expenses, including services,
-                        servers, and infrastructure. Contribute today and make a difference in the future of MohistMC.`}</p>
+                    <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">{getLocaleStringAsArgs(strings['sponsor.title'])[0]}
+                         <span className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['sponsor.title'])[1]}</span>
+                        {getLocaleStringAsArgs(strings['sponsor.title'])[2]}</h1>
+                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{strings['sponsor.subtitle']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link href="https://opencollective.com/mohist"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                            OpenCollective
+                            {strings['social.opencollective']}
                             <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -25,7 +60,7 @@ export default function Sponsor() {
                         </Link>
                         <Link href="https://github.com/sponsors/MohistMC"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                            GitHub Sponsors
+                            {strings['social.ghsponsor']}
                         </Link>
                     </div>
                 </div>
@@ -39,11 +74,15 @@ export default function Sponsor() {
                         className="shadow fill-gray-100 dark:fill-dark-50"></path>
                 </svg>
             </div>
-            <section className={`dark:bg-dark-50 bg-gray-100`}>
+            <section className={`dark:bg-dark-50 bg-gray-100 pb-20`}>
                 <div className="pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
-                    <h2 className="text-center mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white">Our <span className="text-blue-600 dark:text-blue-500">sponsors</span></h2>
-                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-100">They trust in our projects!</p>
-
+                    <h2 className="text-center mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white">{getLocaleStringAsArgs(strings['sponsor.section.title'])[0]} <span className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['sponsor.section.title'])[1]}</span>{getLocaleStringAsArgs(strings['sponsor.section.title'])[2]}</h2>
+                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-100">{strings['sponsor.section.subtitle']}</p>
+                </div>
+                <div className={`flex flex-row gap-3 flex-wrap justify-center items-center`}>
+                    {
+                        donors.map(donor => <Avatar name={donor.name} avatar={donor.avatar}/>)
+                    }
                 </div>
             </section>
         </div>

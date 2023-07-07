@@ -1,5 +1,4 @@
 import {LocaleState} from "@/features/i18n/TranslatorSlice";
-import FrenchLogoSVG from "@/components/svgs/FranchLogoSVG";
 
 const frTranslation: LocaleState = {
     name: "Français",
@@ -17,6 +16,7 @@ const frTranslation: LocaleState = {
         "index.stats.servers": "Serveurs",
         "index.partner.title": "Des %remerciements spéciaux% pour",
         "button.downloads": "Téléchargements",
+        "button.download": "Télécharger",
         "button.discord": "Discord",
         "button.github": "GitHub",
         "button.sponsor": "Faire un don",
@@ -25,6 +25,39 @@ const frTranslation: LocaleState = {
         "button.learnmore": "En savoir plus",
         "button.readmore": "Lire plus",
         "button.home": "Accueil",
+        "button.documentation": "Documentation",
+        "button.about": "À propos de nous",
+        "button.team": "Notre équipe",
+        "button.community": "Notre communauté",
+        "button.download.mirror": "Téléchargement alternatif",
+        "footer.heading.gettingstarted": "Pour commencer",
+        "footer.heading.discover": "Découvrez-nous",
+        "footer.heading.community": "Communauté",
+        "social.github": "GitHub",
+        "social.discord": "Discord",
+        "social.forum": "Forum",
+        "social.opencollective": "OpenCollective",
+        "social.ghsponsor": "GitHub Sponsors",
+        "downloads.title": "Téléchargez n'importe lequel de nos logiciels %gratuitement !%",
+        "downloads.mohist.desc": "Un logiciel de serveur Minecraft Forge implémentant les API Bukkit, Spigot et Paper. Avec ce logiciel, vous pouvez créer un serveur Minecraft avec des mods et des plugins ensemble !",
+        "downloads.banner.desc": "Un logiciel de serveur Minecraft Fabric implémentant les API Bukkit et Spigot. Ce logiciel vous permet de créer un serveur Minecraft avec des mods et des plugins Fabric, tout comme Mohist, mais pour Fabric.",
+        "downloads.endtext": "C'est tout %pour le moment%",
+        "downloadSoftware.title": "Télécharger% %",
+        "downloadSoftware.mohist.desc": "Téléchargez Mohist, notre logiciel de serveur Minecraft Forge implémentant les API Bukkit, Spigot et Paper.",
+        "downloadSoftware.banner.desc": "Téléchargez Banner, notre logiciel de serveur Minecraft Fabric implémentant les API Bukkit et Spigot.",
+        "downloadSoftware.search.placeholder": "Rechercher un build...",
+        "downloadSoftware.search.noresults": "Aucun résultat trouvé.",
+        "downloadSoftware.search.filter.btn": "Filtrer par",
+        "downloadSoftware.build.number": "Numéro de build",
+        "downloadSoftware.build.name": "Nom du build",
+        "downloadSoftware.build.md5": "Hash MD5",
+        "downloadSoftware.build.date": "Date du build",
+        "downloadSoftware.build.forgever": "Version de Forge",
+        "downloadSoftware.seemore": "Voir plus",
+        "sponsor.title": "Soutenez le %futur% de l'innovation Minecraft avec MohistMC",
+        "sponsor.subtitle": "Aidez à alimenter la croissance de la communauté de MohistMC. Votre soutien couvre les dépenses essentielles, y compris les services, les serveurs et l'infrastructure. Contribuez dès aujourd'hui et faites la différence dans l'avenir de MohistMC.",
+        "sponsor.section.title": "Nos %donateurs%",
+        "sponsor.section.subtitle": "Ils nous font confiance dans nos projets !"
     }
 }
 
