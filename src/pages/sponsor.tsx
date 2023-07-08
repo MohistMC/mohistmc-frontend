@@ -81,7 +81,7 @@ export default function Sponsor() {
                 </div>
                 <div className={`flex flex-row gap-3 flex-wrap justify-center items-center`}>
                     {
-                        donors.map(donor => <Avatar name={donor.name} avatar={donor.avatar}/>)
+                        donors.map(donor => <Avatar name={donor.name} avatar={donor.avatar} key={donor.name}/>)
                     }
                 </div>
             </section>
