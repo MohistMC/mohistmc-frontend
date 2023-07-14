@@ -17,7 +17,7 @@ export default function StatisticsElement() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://new-api.mohistmc.com/api/v2/stats');
+            const response = await fetch('https://mohistmc.com/api/v2/stats');
             const data: {
                 bstats: {
                     servers: {

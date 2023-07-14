@@ -42,7 +42,7 @@ export default function DownloadSoftware() {
             setViewedBuildPages([])
             setOriginalBuildPages([])
 
-            const projectBuildsReq = await fetch(`https://new-api.mohistmc.com/api/v2/projects/${project}/${selectedVersion}/builds`)
+            const projectBuildsReq = await fetch(`https://mohistmc.com/api/v2/projects/${project}/${selectedVersion}/builds`)
             const buildsJson: ProjectBuilds = await projectBuildsReq.json()
 
             if (!buildsJson?.builds || buildsJson?.builds?.length === 0) {

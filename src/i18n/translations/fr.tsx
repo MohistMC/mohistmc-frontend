@@ -37,7 +37,7 @@ const frTranslation: LocaleState = {
         "social.discord": "Discord",
         "social.forum": "Forum",
         "social.opencollective": "OpenCollective",
-        "social.ghsponsor": "GitHub Sponsors",
+        "social.ghsponsors": "GitHub Sponsors",
         "downloads.title": "Téléchargez n'importe lequel de nos logiciels %gratuitement !%",
         "downloads.mohist.desc": "Un logiciel de serveur Minecraft Forge implémentant les API Bukkit, Spigot et Paper. Avec ce logiciel, vous pouvez créer un serveur Minecraft avec des mods et des plugins ensemble !",
         "downloads.banner.desc": "Un logiciel de serveur Minecraft Fabric implémentant les API Bukkit et Spigot. Ce logiciel vous permet de créer un serveur Minecraft avec des mods et des plugins Fabric, tout comme Mohist, mais pour Fabric.",

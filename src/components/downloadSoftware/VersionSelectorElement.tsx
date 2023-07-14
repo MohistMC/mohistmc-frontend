@@ -23,7 +23,7 @@ export default function VersionSelectorElement({
     // React effect
     useEffect(() => {
         const fetchSources = async () => {
-            const buildSources = await fetch(`https://new-api.mohistmc.com/api/v2/projects/${software}`)
+            const buildSources = await fetch(`https://mohistmc.com/api/v2/projects/${software}`)
             const buildSourcesJson: ProjectVersions = await buildSources.json()
 
             setAvailableVersions(buildSourcesJson?.versions || [])
