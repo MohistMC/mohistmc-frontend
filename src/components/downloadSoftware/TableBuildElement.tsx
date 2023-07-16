@@ -17,7 +17,8 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
     const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`;
 
     return (
-        <tr key={build.fileName} className={`border-b ${indexOnPage % 2 === 0 ? 'dark:bg-dark-100 bg-white' : 'dark:bg-dark-150 bg-gray-50'} dark:border-gray-700`}>
+        <tr key={build.fileName}
+            className={`border-b ${indexOnPage % 2 === 0 ? 'dark:bg-dark-100 bg-white' : 'dark:bg-dark-150 bg-gray-50'} dark:border-gray-700`}>
             <th scope="row"
                 className="md:px-6 px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <Link href="#"
@@ -32,12 +33,9 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
             <td className="px-6 py-4 hidden md:table-cell">
                 {new Date(build.createdAt).toLocaleString()}
             </td>
-            {
-                project === Project.Mohist &&
-                <td className="px-6 py-4 hidden md:table-cell">
-                    {project === Project.Mohist ? build.forgeVersion : ''}
-                </td>
-            }
+            <td className="px-6 py-4 hidden md:table-cell">
+                {project === Project.Mohist ? build.forgeVersion : project === Project.Banner ? build.fabricLoaderVersion : 'Unknown'}
+            </td>
             <td className="md:px-6 px-3 py-4 text-right">
                 <DownloadButton build={build} strings={strings}/>
 

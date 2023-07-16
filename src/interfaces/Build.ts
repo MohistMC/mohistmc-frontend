@@ -2,7 +2,8 @@ export interface Build {
     number: number;
     fileName?: string;
     gitSha: string;
-    forgeVersion: string;
+    forgeVersion?: string;
+    fabricLoaderVersion?: string;
     fileMd5: string;
     originUrl: string;
     url: string;
