@@ -1,17 +1,11 @@
 .dark-theme {
   .swagger-ui {
-    margin-bottom: 5em;
-
-    p {
+    p, h4, h5 {
       color: white;
     }
 
     .title {
       color: white;
-
-      small {
-        display: none;
-      }
     }
 
     .base-url {
@@ -19,24 +13,15 @@
     }
 
     .scheme-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       background: #171616;
-      width: 75%;
-      transform: translate(17%, 0);
-      border-radius: 20px;
 
       .schemes-title {
         color: white;
       }
 
       select {
-        margin-top: .5rem;
         background: #2c2a2a;
         color: white;
-        padding: 0.5rem;
-        border-radius: 5px;
       }
     }
 
@@ -45,35 +30,26 @@
     }
 
     .arrow {
-      color: white;
+      filter: invert(1) grayscale(100) brightness(1000);
     }
 
     .opblock-tag-section {
       background-color: #171616;
       border: 1px solid #1e1e1e;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      padding: 1rem;
 
       span {
-        color: white;
+        color: #efefef;
       }
     }
 
     .opblock.opblock-get {
       background-color: #232121;
       border: 1px solid #1e1e1e;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      padding: 1rem;
     }
 
     .opblock .opblock-section-header {
       background-color: #1c1a1a;
       border: 1px solid #1e1e1e;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      padding: 1rem;
 
       h4 {
         color: white;
@@ -82,9 +58,7 @@
       .try-out__btn {
         background: #0075fa;
         border: 1px solid #0075fa;
-        border-radius: 5px;
         color: white;
-        padding: 0.5rem;
       }
     }
 
@@ -94,17 +68,124 @@
 
     .opblock-summary-control {
       color: white;
-      outline: none;
     }
 
     .opblock.opblock-get .opblock-summary-method {
       background: #0075fa;
+    }
+
+    table thead tr th {
+      color: white;
+      border-bottom: 1px solid #5f5f5f;
+    }
+
+    .parameter__name {
+      color: #f3f3f3;
+    }
+
+    .parameter__name.required::after {
+      color: #ff5959;
+    }
+
+    .parameter__type {
+      color: #e1e1e1;
+    }
+
+    .parameter__in {
+      color: orange;
+    }
+
+    input[disabled], .swagger-ui select[disabled], .swagger-ui textarea[disabled] {
+      background: #373535;
+      color: white;
+      border: 1px solid #3f3d3d;
+    }
+
+    select {
+      color: white;
+      background-color: #3f3d3d;
+    }
+
+    .tab li button.tablinks {
+      background: #0075fa;
+      border: 1px solid #0075fa;
+      color: white;
+    }
+
+    .model-toggle::after {
+      filter: invert(1) grayscale(100) brightness(1000);
     }
   }
 }
 
 .swagger-ui {
   .info {
+    display: none;
+  }
+
+  margin-bottom: 5em;
+
+
+  .title {
+    small {
+      display: none;
+    }
+  }
+
+  .scheme-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    transform: translate(17%, 0);
+    border-radius: 20px;
+    background: #fafafa;
+
+    select {
+      margin-top: .5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+  }
+
+  .opblock-tag-section {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 1rem;
+  }
+
+  .opblock.opblock-get {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: .6rem;
+  }
+
+  .opblock .opblock-section-header {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 1rem;
+
+    .try-out__btn {
+      border-radius: 5px;
+      padding: 0.5rem;
+    }
+  }
+
+  .opblock-summary-control {
+    outline: none;
+  }
+
+  .tab li:first-of-type::after {
+    display: none;
+  }
+
+  .tab li button.tablinks {
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .auth-wrapper, #operations-tag-default {
     display: none;
   }
 }
