@@ -30,6 +30,7 @@ const enTranslation: LocaleState = {
         "button.team": "Our team",
         "button.community": "Our community",
         "button.download.mirror": "Mirror download",
+        "button.sourcecode": "Source code",
         "footer.heading.gettingstarted": "Getting started",
         "footer.heading.discover": "Discover us",
         "footer.heading.community": "Community",
@@ -60,6 +61,20 @@ const enTranslation: LocaleState = {
         "sponsor.subtitle": "Help fuel the growth of MohistMC's community. Your support covers essential expenses, including services, servers, and infrastructure. Contribute today and make a difference in the future of MohistMC.",
         "sponsor.section.title": "Our %sponsors%% %",
         "sponsor.section.subtitle": "They trust in our projects!",
+        "mohistapi.title": "MohistMC %JSON API%% %",
+        "mohistapi.subtitle": "MohistMC provides a JSON API for developers to get information about MohistMC's projects and builds.",
+        "team.title": "Meet our %team!%",
+        "software.mohist.subtitle": "Mohist is an exceptional server software for Minecraft Forge that implements Bukkit, Spigot, and Paper APIs. By leveraging this powerful combination, you can create a high-performing Minecraft server with the ability to integrate mods and plugins, ensuring stability and optimal performance.",
+        "software.mohist.cards.title": "What makes %Mohist% so special?",
+        "software.mohist.cards.1.title": "Enhanced Performance",
+        "software.mohist.cards.1.desc": "With the integration of Bukkit & Spigot for plugin support and Paper for performance, enjoy a smooth and seamless gaming experience, even with a multitude of mods and plugins.",
+        "software.mohist.cards.2.title": "Compatibility",
+        "software.mohist.cards.2.desc": "Unlock endless possibilities with Mohist's extensive mod and plugin compatibility. Customize your server effortlessly using Mohist's integration with Bukkit, Spigot, and Paper APIs.",
+        "software.mohist.cards.3.title": "Community Support and Regular Updates",
+        "software.mohist.cards.3.desc": "Join the Mohist community for support and regular updates! Stay up-to-date with the latest Minecraft versions and access new features and improvements.",
+        "software.mohist.footer.title": "Ready to level up your Minecraft server experience?",
+        "software.mohist.footer.desc": "Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the Mohist community and unlock limitless possibilities for your server. Upgrade to Mohist today and revolutionize your Minecraft experience.",
+        "software.mohist.footer.discord": "Join our Discord",
     }
 }
 

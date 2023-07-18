@@ -30,6 +30,7 @@ const frTranslation: LocaleState = {
         "button.team": "Notre équipe",
         "button.community": "Notre communauté",
         "button.download.mirror": "Téléchargement alternatif",
+        "button.sourcecode": "Code source",
         "footer.heading.gettingstarted": "Pour commencer",
         "footer.heading.discover": "Découvrez-nous",
         "footer.heading.community": "Communauté",
@@ -59,7 +60,21 @@ const frTranslation: LocaleState = {
         "sponsor.title": "Soutenez le %futur% de l'innovation Minecraft avec MohistMC",
         "sponsor.subtitle": "Aidez à alimenter la croissance de la communauté de MohistMC. Votre soutien couvre les dépenses essentielles, y compris les services, les serveurs et l'infrastructure. Contribuez dès aujourd'hui et faites la différence dans l'avenir de MohistMC.",
         "sponsor.section.title": "Nos %donateurs%",
-        "sponsor.section.subtitle": "Ils nous font confiance dans nos projets !"
+        "sponsor.section.subtitle": "Ils nous font confiance dans nos projets !",
+        "mohistapi.title": "% %%JSON API% de MohistMC",
+        "mohistapi.subtitle": "L'API JSON de MohistMC permet aux développeurs d'obtenir des informations sur nos projets et les builds.",
+        "team.title": "Rencontrez notre %équipe !%",
+        "software.mohist.subtitle": "Mohist est un logiciel serveur exceptionnel pour Minecraft Forge qui implémente les API Bukkit, Spigot et Paper. En exploitant cette puissante combinaison, vous pouvez créer un serveur Minecraft performant avec la capacité d'intégrer des mods et des plugins, garantissant ainsi stabilité et performances optimales.",
+        "software.mohist.cards.title": "Qu'est ce qui rend %Mohist% si spécial ?",
+        "software.mohist.cards.1.title": "Performance Améliorée",
+        "software.mohist.cards.1.desc": "Avec l'intégration de Bukkit & Spigot pour la prise en charge des plugins et de Paper pour les performances, profitez d'une expérience de jeu fluide et sans problème, même avec une multitude de mods et de plugins.",
+        "software.mohist.cards.2.title": "Compatibilité",
+        "software.mohist.cards.2.desc": "Déverrouillez des possibilités infinies grâce à la compatibilité étendue des mods et des plugins avec Mohist. Personnalisez votre serveur facilement en utilisant l'intégration de Mohist avec les API Bukkit, Spigot et Paper.",
+        "software.mohist.cards.3.title": "Support de la communauté et mises à jour régulières",
+        "software.mohist.cards.3.desc": "Rejoignez la communauté Mohist pour obtenir du support et des mises à jour régulières ! Restez à jour avec les dernières versions de Minecraft et accédez aux nouvelles fonctionnalités et améliorations.",
+        "software.mohist.footer.title": "Prêt à améliorer votre expérience de serveur Minecraft ?",
+        "software.mohist.footer.desc": "Expérimentez une stabilité inégalée grâce à l'intégration des mods et des plugins, ainsi qu'à des performances optimisées. Rejoignez la communauté Mohist et déverrouillez des possibilités illimitées pour votre serveur. Passez à Mohist dès aujourd'hui et révolutionnez votre expérience Minecraft.",
+        "software.mohist.footer.discord": "Rejoignez notre serveur Discord",
     }
 }
 

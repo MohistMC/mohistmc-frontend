@@ -1,19 +1,21 @@
 import Link from "next/link";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
+import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 
 export default function MohistSoftware() {
+    const strings = useAppSelector(selectTranslations)
+
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
                     <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Mohist</h1>
-                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200 md:w-1/2">Mohist is
-                        an exceptional server software for Minecraft Forge that implements Bukkit, Spigot, and Paper
-                        APIs. By leveraging this powerful combination, you can create a high-performing Minecraft server
-                        with the ability to integrate mods and plugins, ensuring stability and optimal performance</p>
+                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200 md:w-1/2">{strings['software.mohist.subtitle']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                         <Link href="/downloadSoftware?software=mohist"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                            Downloads
+                            {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -24,11 +26,11 @@ export default function MohistSoftware() {
                         </Link>
                         <Link href="https://wiki.mohistmc.com/"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                            Documentation
+                            {strings['button.documentation']}
                         </Link>
                         <Link href="https://github.com/MohistMC/Mohist"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                            Source code
+                            {strings['button.sourcecode']}
                         </Link>
                     </div>
                 </div>
@@ -43,9 +45,8 @@ export default function MohistSoftware() {
                 </svg>
             </div>
             <section className={`bg-gray-100 dark:bg-dark-50`}>
-                <h2 className="pt-10 md:pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">What
-                    makes <span
-                        className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">Mohist</span> special?
+                <h2 className="pt-10 md:pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['software.mohist.cards.title'])[0]} <span
+                        className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['software.mohist.cards.title'])[1]}</span> {getLocaleStringAsArgs(strings['software.mohist.cards.title'])[2]}
                 </h2>
 
                 <div className="flex flex-wrap justify-center gap-12 w-full dark:bg-dark-50 pt-10 md:pt-20 md:pb-20 pb-10">
@@ -54,11 +55,8 @@ export default function MohistSoftware() {
                         <div className={`orangeGradient rounded-t-lg`}>&nbsp;
                         </div>
                         <div className="p-5">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Enhanced
-                                Performance</h5>
-                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">With the integration of
-                                Bukkit & Spigot for plugin support and Paper for performance, enjoy a smooth and
-                                seamless gaming experience, even with a multitude of mods and plugins</p>
+                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{strings['software.mohist.cards.1.title']}</h5>
+                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['software.mohist.cards.1.desc']}</p>
                         </div>
                     </div>
 
@@ -67,10 +65,8 @@ export default function MohistSoftware() {
                         <div className={`blueGradient rounded-t-lg`}>&nbsp;
                         </div>
                         <div className="p-5">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Compatibility</h5>
-                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{`Unlock endless
-                                possibilities with Mohist's extensive mod and plugin compatibility. Customize your
-                                server effortlessly using Mohist's integration with Bukkit, Spigot, and Paper APIs.`}</p>
+                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{strings['software.mohist.cards.2.title']}</h5>
+                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['software.mohist.cards.2.desc']}</p>
                         </div>
                     </div>
 
@@ -79,11 +75,8 @@ export default function MohistSoftware() {
                         <div className={`greenGradient rounded-t-lg`}>&nbsp;
                         </div>
                         <div className="p-5">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Community
-                                Support and Regular Updates</h5>
-                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Join the Mohist community
-                                for support and regular updates! Stay up-to-date with the latest Minecraft versions and
-                                access new features and improvements.</p>
+                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{strings['software.mohist.cards.3.title']}</h5>
+                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['software.mohist.cards.3.desc']}</p>
                         </div>
                     </div>
 
@@ -100,13 +93,12 @@ export default function MohistSoftware() {
             </div>
             <section className={`pt-5 md:pt-10 pb-10`}>
                 <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-                    <h2 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-6xl dark:text-white">Ready
-                        to level up your Minecraft server experience?</h2>
-                    <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the Mohist community and unlock limitless possibilities for your server. Upgrade to Mohist today and revolutionize your Minecraft experience.</p>
+                    <h2 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-6xl dark:text-white">{strings['software.mohist.footer.title']}</h2>
+                    <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['software.mohist.footer.desc']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link href="https://discord.gg/MohistMC" target="_blank"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                            Join our Discord
+                            {strings['software.mohist.footer.discord']}
                             <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -117,7 +109,7 @@ export default function MohistSoftware() {
                         </Link>
                         <Link href="/downloadSoftware?software=mohist"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                            Downloads
+                            {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
