@@ -1,5 +1,6 @@
 import {ChangeEvent, useState} from "react";
 import {Build} from "@/interfaces/Build";
+import {Dropdown} from "flowbite-react";
 
 interface FilterDropdownProps {
     originalBuildPages: Build[][]
@@ -10,7 +11,14 @@ interface FilterDropdownProps {
     strings: Record<string, string>
 }
 
-export default function SearchElement({originalBuildPages, setViewedBuildPages, setCurrentPage, setNoResult, perPage, strings}: FilterDropdownProps) {
+export default function SearchElement({
+                                          originalBuildPages,
+                                          setViewedBuildPages,
+                                          setCurrentPage,
+                                          setNoResult,
+                                          perPage,
+                                          strings
+                                      }: FilterDropdownProps) {
     // React states
     const [filters, setFilters] = useState<{
         buildNumber: boolean,
@@ -83,7 +91,8 @@ export default function SearchElement({originalBuildPages, setViewedBuildPages, 
     return (
         <div className={`flex gap-2 mb-1 md:flex-row flex-col items-center justify-center`}>
             <div className="bg-white dark:bg-dark-50">
-                <label htmlFor="table-search" className="sr-only">{strings['downloadSoftware.search.placeholder']}</label>
+                <label htmlFor="table-search"
+                       className="sr-only">{strings['downloadSoftware.search.placeholder']}</label>
                 <div className="relative mt-1">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -98,58 +107,41 @@ export default function SearchElement({originalBuildPages, setViewedBuildPages, 
                            placeholder={strings['downloadSoftware.search.placeholder']}></input>
                 </div>
             </div>
-            <button id="dropdownBgHoverButton" data-dropdown-toggle="dropdownBgHover"
-                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 mt-1 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    type="button">{strings['downloadSoftware.search.filter.btn']} <svg className="w-4 h-4 ml-2" aria-hidden="true"
-                                                                                       fill="none" stroke="currentColor"
-                                                                                       viewBox="0 0 24 24"
-                                                                                       xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                      d="M19 9l-7 7-7-7"></path>
-            </svg></button>
 
-            <div id="dropdownBgHover"
-                 className="z-10 hidden w-48 bg-white rounded-lg shadow dark:bg-gray-700">
-                <ul className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
-                    aria-labelledby="dropdownBgHoverButton">
-                    <li>
-                        <div
-                            className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input defaultChecked={true} id="checkbox-item-4" type="checkbox" value="" name={`buildNumber`} onChange={handleFilter}
-                                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
-                            <label htmlFor="checkbox-item-4"
-                                   className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.number']}</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input defaultChecked={true} id="checkbox-item-5" type="checkbox" value="" name={`buildName`} onChange={handleFilter}
-                                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
-                            <label htmlFor="checkbox-item-5"
-                                   className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.name']}</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input defaultChecked={true} id="checkbox-item-6" type="checkbox" value="" name={`buildMd5`} onChange={handleFilter}
-                                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
-                            <label htmlFor="checkbox-item-6"
-                                   className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.md5']}</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input defaultChecked={true} id="checkbox-item-7" type="checkbox" value="" name={`buildDate`} onChange={handleFilter}
-                                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
-                            <label htmlFor="checkbox-item-7"
-                                   className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.date']}</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <Dropdown label={strings['downloadSoftware.search.filter.btn']} className={`bg-blue-600`}>
+                <div
+                    className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input defaultChecked={true} id="checkbox-item-4" type="checkbox" value="" name={`buildNumber`}
+                           onChange={handleFilter}
+                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+                    <label htmlFor="checkbox-item-4"
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.number']}</label>
+                </div>
+                <div
+                    className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input defaultChecked={true} id="checkbox-item-5" type="checkbox" value="" name={`buildName`}
+                           onChange={handleFilter}
+                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+                    <label htmlFor="checkbox-item-5"
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.name']}</label>
+                </div>
+                <div
+                    className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input defaultChecked={true} id="checkbox-item-6" type="checkbox" value="" name={`buildMd5`}
+                           onChange={handleFilter}
+                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+                    <label htmlFor="checkbox-item-6"
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.md5']}</label>
+                </div>
+                <div
+                    className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input defaultChecked={true} id="checkbox-item-7" type="checkbox" value="" name={`buildDate`}
+                           onChange={handleFilter}
+                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+                    <label htmlFor="checkbox-item-7"
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.date']}</label>
+                </div>
+            </Dropdown>
         </div>
     )
 }

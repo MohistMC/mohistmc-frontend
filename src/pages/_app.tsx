@@ -27,7 +27,7 @@ export default function App({Component, pageProps}: AppProps) {
             document.documentElement.classList.remove('dark')
 
         // Hack the Nextra docs appearance
-        if (window.location.pathname.startsWith('/docs'))
+        if (window.location.pathname.startsWith('/docs') || window.location.pathname.startsWith('/blog'))
             hackNextra()
     })
 

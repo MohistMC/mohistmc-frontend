@@ -2,7 +2,7 @@ import {useEffect, useRef} from "react";
 import {useDispatch} from "react-redux";
 import {setDark} from "@/features/theme/ThemeSlice";
 
-export default function ThemeButton({className}: { className?: string}) {
+export default function ThemeSwitcher({className}: { className?: string}) {
     const themeToggleDarkIconRef = useRef<SVGSVGElement>(null);
     const themeToggleLightIconRef = useRef<SVGSVGElement>(null);
 

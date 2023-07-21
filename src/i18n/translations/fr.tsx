@@ -31,6 +31,7 @@ const frTranslation: LocaleState = {
         "button.community": "Notre communauté",
         "button.download.mirror": "Téléchargement alternatif",
         "button.sourcecode": "Code source",
+        "button.blog": "Blog",
         "footer.heading.gettingstarted": "Pour commencer",
         "footer.heading.discover": "Découvrez-nous",
         "footer.heading.community": "Communauté",

@@ -1,12 +1,7 @@
 import Link from "next/link";
+import {AuthorDetails} from "@/util/content/Team";
 
-type TeamCardProps = {
-    name: string,
-    role: string,
-    pageUrl: string
-}
-
-export default function TeamCard({ name, role, pageUrl }: TeamCardProps) {
+export default function TeamCard({ name, role, pageUrl }: AuthorDetails) {
     const githubUsername = pageUrl.split('/').pop()
 
     return (

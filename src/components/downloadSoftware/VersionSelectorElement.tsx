@@ -44,7 +44,7 @@ export default function VersionSelectorElement({
     }, [software])
 
     return (
-        <Dropdown label={selectedVersion ?? 'Loading'} dismissOnClick={true}>
+        <Dropdown label={selectedVersion ?? 'Loading'} dismissOnClick={true} className={`bg-blue-600`}>
             {availableVersions.filter(value => value !== selectedVersion).map((version) => (
                 <Dropdown.Item key={version} onClick={() => setSelectedVersion(version)}>
                     {version}

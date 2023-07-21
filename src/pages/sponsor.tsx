@@ -3,7 +3,7 @@ import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import {useEffect, useState} from "react";
-import Avatar from "@/components/sponsor/Avatar";
+import SponsorAvatar from "@/components/sponsor/SponsorAvatar";
 
 interface Donor {
     name: string,
@@ -81,7 +81,7 @@ export default function Sponsor() {
                 </div>
                 <div className={`flex flex-row gap-3 flex-wrap justify-center items-center`}>
                     {
-                        donors.map(donor => <Avatar name={donor.name} avatar={donor.avatar} key={donor.name}/>)
+                        donors.map(donor => <SponsorAvatar name={donor.name} avatar={donor.avatar} key={donor.name}/>)
                     }
                 </div>
             </section>

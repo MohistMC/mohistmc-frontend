@@ -31,6 +31,7 @@ const enTranslation: LocaleState = {
         "button.community": "Our community",
         "button.download.mirror": "Mirror download",
         "button.sourcecode": "Source code",
+        "button.blog": "Blog",
         "footer.heading.gettingstarted": "Getting started",
         "footer.heading.discover": "Discover us",
         "footer.heading.community": "Community",

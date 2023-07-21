@@ -14,7 +14,7 @@ export default function Footer() {
                             <img src="/mohistLogo.png" className="h-8 mr-3"
                                  alt="MohistMC Logo"/>
                             <span
-                                className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MohistMC</span>
+                                className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">MohistMC</span>
                         </Link>
                         <Link href={`mailto:mohistmc@gmail.com`} className="block text-gray-600 mt-4 text-sm dark:text-gray-300 hover:underline">
                             mohistmc@gmail.com
@@ -29,6 +29,9 @@ export default function Footer() {
                                 </li>
                                 <li>
                                     <Link href="/docs" className="md:hover:text-blue-500">{strings['button.documentation']}</Link>
+                                </li>
+                                <li>
+                                    <Link href="/blog" className="md:hover:text-blue-500">{strings['button.blog']}</Link>
                                 </li>
                             </ul>
                         </div>

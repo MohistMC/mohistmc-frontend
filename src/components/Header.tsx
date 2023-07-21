@@ -1,4 +1,4 @@
-import ThemeButton from "@/components/ThemeButton";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LanguageDropElement from "@/components/header/LanguageDropElement";
 import {ReactElement, useEffect, useState} from "react";
 import LanguageDropButtonElement from "@/components/header/LanguageDropButtonElement";
@@ -57,7 +57,7 @@ export default function Header() {
                 <Link href="/" className="flex items-center">
                     <img src="/mohistLogo.png" className="h-8 mr-3" alt="MohistMC Logo"/>
                     <span
-                        className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MohistMC</span>
+                        className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">MohistMC</span>
                 </Link>
                 <div className="flex items-center md:order-2">
                     <Link href="https://github.com/MohistMC"
@@ -91,7 +91,7 @@ export default function Header() {
                                   clipRule="evenodd"></path>
                         </svg>
                     </button>
-                    <ThemeButton className={`ml-2`}/>
+                    <ThemeSwitcher className={`ml-2`}/>
                 </div>
                 <div
                     className={`${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}
@@ -140,6 +140,12 @@ export default function Header() {
                             <Link href="/sponsor"
                                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
                                 {strings['button.sponsor']}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/blog"
+                                  className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'blog' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
+                                {strings['button.blog']}
                             </Link>
                         </li>
                         <li>

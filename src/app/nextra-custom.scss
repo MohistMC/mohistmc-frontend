@@ -1,4 +1,6 @@
 div[dir="ltr"] {
+  margin-top: 1em;
+
   .nextra-nav-container {
     background-color: transparent;
     color: #fff;
@@ -8,22 +10,16 @@ div[dir="ltr"] {
     }
   }
 
-  article {
-    transform: translate(0, -8%);
-    position: relative;
-  }
-
-  .nextra-toc {
-    transform: translate(0, -8%);
-    position: relative;
+  .nextra-nav-container-blur {
+    display: none;
   }
 
   .nextra-search {
-    margin-left: 1rem;
+    margin-top: 10em;
   }
 
-  :is([dir="ltr"] .ltr\:md\:nx-left-auto) {
-    left: 0;
+  .nextra-toc {
+    margin-top: 4em;
   }
 
   @media (max-width: 767px) {
@@ -31,12 +27,24 @@ div[dir="ltr"] {
       margin-top: 4.5rem;
     }
 
+    .nextra-search {
+      margin-top: 0em;
+    }
+
+    .nextra-hamburger {
+      margin-top: 7em;
+    }
+
+    article {
+      margin-top: 1em;
+    }
+
     .nextra-nav-container {
       nav {
         justify-content: flex-end;
 
         button {
-          z-index: 999;
+          z-index: 16;
           background-color: #3b82f6;
           color: #fff;
           border-radius: .5rem;
