@@ -3,11 +3,10 @@ import LanguageDropElement from "@/components/header/LanguageDropElement";
 import {ReactElement, useEffect, useState} from "react";
 import LanguageDropButtonElement from "@/components/header/LanguageDropButtonElement";
 import {locales} from "@/i18n/Language";
-import {selectTranslations, LocaleState, setLocale} from "@/features/i18n/TranslatorSlice";
+import {LocaleState, selectTranslations, setLocale} from "@/features/i18n/TranslatorSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Header() {
     // React state

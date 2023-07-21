@@ -86,7 +86,7 @@ export default function DownloadSoftware() {
                     {getLocaleStringAsArgs(strings['downloadSoftware.title'])[1]}
                 </h1>
             </div>
-            <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">{strings[`downloadSoftware.${project}.desc`]}</p>
+            <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400">{strings[`downloadSoftware.${project}.desc`]}</p>
 
             <div
                 className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-10 p-5">
