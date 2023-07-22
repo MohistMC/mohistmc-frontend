@@ -1,6 +1,7 @@
 import {LocaleState} from "@/features/i18n/TranslatorSlice";
 import EnglishLogoSVG from "@/components/svgs/EnglishLogoSVG";
 import FrenchLogoSVG from "@/components/svgs/FranchLogoSVG";
+import ChineseLogoSVG from "@/components/svgs/ChineseLogoSVG";
 
 /**
  * Returns the SVG function component for the locale.
@@ -13,6 +14,8 @@ export default function getLocaleIconSVG(locale: LocaleState) {
             return EnglishLogoSVG
         case "fr":
             return FrenchLogoSVG
+        case "zh":
+            return ChineseLogoSVG
         default:
             return EnglishLogoSVG
     }
