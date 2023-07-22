@@ -108,7 +108,7 @@ export default function SearchElement({
                 </div>
             </div>
 
-            <Dropdown label={strings['downloadSoftware.search.filter.btn']} className={`bg-blue-600`}>
+            <Dropdown label={strings['downloadSoftware.search.filter.btn']}>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                     <input defaultChecked={true} id="checkbox-item-4" type="checkbox" value="" name={`buildNumber`}

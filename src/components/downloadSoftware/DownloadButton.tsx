@@ -9,7 +9,7 @@ interface DownloadButtonProps {
 export default function DownloadButton({build, strings}: DownloadButtonProps) {
     return (
         <div className={`hidden md:block`}>
-            <Dropdown label={strings['button.downloads']} className={`bg-blue-600 hidden md:block`}>
+            <Dropdown label={strings['button.downloads']} className={`hidden md:block`}>
                 <a href={`https://adfoc.us/serve/sitelinks/?id=765928&url=${build.url.replace('/download', '/' + (build.fileName || 'download'))}`}
                    className="rounded-lg block px-4 py-2 mx-2 bg-orange-500 hover:bg-orange-600 text-white text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:hover:text-white font-semibold">{strings['button.download']}</a>
                 <a href={build.url}
