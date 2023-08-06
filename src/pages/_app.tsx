@@ -1,6 +1,6 @@
 import {Poppins} from "next/font/google";
 import {AppProps} from "next/app";
-import "../app/globals.css";
+import "../app/globals.scss";
 import '../app/nextra-custom.scss'
 import 'flowbite-react'
 import 'flowbite'

@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-body > div:first-child,
-div#__next {
+#__next {
     height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    & section {
+        flex-grow: 1;
+    }
 }
 
 .orangeGradient {

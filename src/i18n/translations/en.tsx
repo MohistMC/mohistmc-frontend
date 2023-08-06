@@ -24,8 +24,8 @@ const enTranslation: LocaleState = {
         "button.software": "Software",
         "button.learnmore": "Learn more",
         "button.readmore": "Read more",
-        "button.home": "Home",
         "button.documentation": "Documentation",
+        "button.documentations": "Documentations",
         "button.about": "About us",
         "button.team": "Our team",
         "button.community": "Our community",
@@ -76,6 +76,12 @@ const enTranslation: LocaleState = {
         "software.mohist.footer.title": "Ready to level up your Minecraft server experience?",
         "software.mohist.footer.desc": "Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the Mohist community and unlock limitless possibilities for your server. Upgrade to Mohist today and revolutionize your Minecraft experience.",
         "software.mohist.footer.discord": "Join our Discord",
+        "404.title": "not found",
+        "404.subtitle": "We're sorry, the resource you're looking for cannot be found on this website.",
+        "docs.title": "MohistMC's documentations",
+        "docs.subtitle": "MohistMC provides various documentations for our softwares. Just click on the software you're looking for!",
+        "docs.cards.websiteapi.title": "Website API",
+        "docs.cards.websiteapi.desc": "MohistMC provides a JSON API for developers to get information about MohistMC's projects and builds.",
     }
 }
 

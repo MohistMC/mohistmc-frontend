@@ -98,11 +98,6 @@ export default function Header() {
                     id="mobile-menu-language-select">
                     <ul className="flex flex-col md:items-center font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
                         <li>
-                            <Link href="/"
-                                  className={`block py-2 pl-3 pr-4 dark:text-white text-gray-900 rounded md:bg-transparent md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent md:p-0 ${!pageName.length ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}
-                                  aria-current="page">{strings['button.home']}</Link>
-                        </li>
-                        <li>
                             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
                                     data-dropdown-trigger="hover"
                                     className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 md:dark:bg-transparent md:dark:hover:bg-transparent md:bg-transparent ${pageName === 'software' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}>
