@@ -87,7 +87,7 @@ export default function BuildDetailsModal({build, project, openModal, setOpenMod
                 })
                 .catch(console.error)
         }
-    }, [build])
+    }, [build, project])
 
     return (
         <Flowbite theme={{theme: customTheme, dark: isDark}}>

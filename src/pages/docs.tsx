@@ -1,5 +1,6 @@
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
+import Link from "next/link";
 
 export default function Downloads() {
     const strings = useAppSelector(selectTranslations);
@@ -10,20 +11,20 @@ export default function Downloads() {
             <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">{strings['docs.subtitle']}</p>
 
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 flex flex-row gap-4 flex-wrap">
-                <a href="/mohist/docs" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150">
+                <Link href="/mohist/docs" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mohist</h5>
                     <p className="font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.mohist.description']}</p>
-                </a>
+                </Link>
 
-                <a href="/banner/docs" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150">
+                <Link href="/banner/docs" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Banner</h5>
                     <p className="font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.banner.description']}</p>
-                </a>
+                </Link>
 
-                <a href="/mohist-api" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150">
+                <Link href="/mohist-api" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{strings['docs.cards.websiteapi.title']}</h5>
                     <p className="font-normal text-gray-700 dark:text-gray-400">{strings['docs.cards.websiteapi.desc']}</p>
-                </a>
+                </Link>
             </div>
         </section>
 
