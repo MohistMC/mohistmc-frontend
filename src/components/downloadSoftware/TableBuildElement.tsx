@@ -8,20 +8,27 @@ interface TableBuildElementProps {
     isLatest: boolean;
     project: Project;
     indexOnPage: number;
-    strings: Record<any, any>
+    strings: Record<any, any>;
+    setOpenModal: (value: string | undefined) => void;
+    setModalBuild: (value: Build | undefined) => void;
 }
 
-export default function TableBuildElement({build, isLatest, project, indexOnPage, strings}: TableBuildElementProps) {
+export default function TableBuildElement({build, isLatest, project, indexOnPage, strings, setOpenModal, setModalBuild}: TableBuildElementProps) {
     if (!build || !build.url) return (<></>);
 
     const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`;
+
+    const handleModalOpen = () => {
+        setModalBuild(build)
+        setOpenModal('dismissible')
+    }
 
     return (
         <tr key={build.fileName}
             className={`border-b ${indexOnPage % 2 === 0 ? 'dark:bg-dark-100 bg-white' : 'dark:bg-dark-150 bg-gray-50'} dark:border-gray-700`}>
             <th scope="row"
                 className="md:px-6 px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <Link href="#"
+                <Link href="#" onClick={handleModalOpen}
                       className={`bg-green-100 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 mr-2 ${isLatest ? 'text-green-800 dark:text-green-400' : 'text-blue-800 dark:text-blue-400'}`}>
                     #{build.number}
                 </Link>
@@ -39,7 +46,7 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
             <td className="md:px-6 px-3 py-4 text-right">
                 <DownloadButton build={build} strings={strings}/>
 
-                <Link href="/downloadSoftware?software=mohist"
+                <Link href="#" onClick={handleModalOpen}
                       className="md:hidden inline-flex justify-center items-center py-2 px-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                     {strings['downloadSoftware.seemore']}
                 </Link>

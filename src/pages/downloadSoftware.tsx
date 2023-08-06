@@ -12,6 +12,7 @@ import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import SearchElement from "@/components/downloadSoftware/SearchElement";
+import BuildDetailsModal from "@/components/downloadSoftware/BuildDetailsModal";
 
 export default function DownloadSoftware() {
     const router = useRouter()
@@ -26,6 +27,8 @@ export default function DownloadSoftware() {
     const [selectedVersion, setSelectedVersion] = useState<string | undefined>()
     const [noResult, setNoResult] = useState<boolean>(false)
     const [noBuild, setNoBuild] = useState<boolean>(false)
+    const [openModal, setOpenModal] = useState<string | undefined>();
+    const [modalBuild, setModalBuild] = useState<Build | undefined>();
 
     useEffect(() => {
         if (router.isReady) {
@@ -76,7 +79,6 @@ export default function DownloadSoftware() {
         selectedVersion && handleVersionChanged().catch()
     }, [selectedVersion])
 
-
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">
             <div className={`flex items-center justify-center pt-10 md:pt-0`}>
@@ -87,7 +89,7 @@ export default function DownloadSoftware() {
                 </h1>
             </div>
             <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400">{strings[`downloadSoftware.${project}.desc`]}</p>
-
+            <BuildDetailsModal build={modalBuild} project={project} openModal={openModal} setOpenModal={setOpenModal}/>
             <div
                 className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-10 p-5">
                 <div className={`flex md:justify-between gap-2 justify-center items-center pb-4 flex-wrap`}>
@@ -113,27 +115,11 @@ export default function DownloadSoftware() {
                         <th scope="col" className="px-6 py-3 hidden md:table-cell">
                             <div className="flex items-center">
                                 {strings['downloadSoftware.build.date']}
-                                <Link href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1"
-                                         aria-hidden="true"
-                                         fill="currentColor" viewBox="0 0 320 512">
-                                        <path
-                                            d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/>
-                                    </svg>
-                                </Link>
                             </div>
                         </th>
                         <th scope="col" className="px-6 py-3 hidden md:table-cell">
                             <div className="flex items-center">
                                 {project === Project.Mohist ? strings['downloadSoftware.build.forgever'] : project === Project.Banner ? strings['downloadSoftware.build.fabricver'] : "N/A"}
-                                <Link href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-1"
-                                         aria-hidden="true"
-                                         fill="currentColor" viewBox="0 0 320 512">
-                                        <path
-                                            d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/>
-                                    </svg>
-                                </Link>
                             </div>
                         </th>
                         <th scope="col" className="px-6 py-3 hidden md:table-cell">
@@ -152,6 +138,8 @@ export default function DownloadSoftware() {
                                 project: project as Project,
                                 indexOnPage: index,
                                 strings,
+                                setOpenModal,
+                                setModalBuild
                             }
                         ))
                     }
