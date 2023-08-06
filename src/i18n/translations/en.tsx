@@ -82,6 +82,15 @@ const enTranslation: LocaleState = {
         "docs.subtitle": "MohistMC provides various documentations for our softwares. Just click on the software you're looking for!",
         "docs.cards.websiteapi.title": "Website API",
         "docs.cards.websiteapi.desc": "MohistMC provides a JSON API for developers to get information about MohistMC's projects and builds.",
+        "software.banner.subtitle": "Banner is a unique project that seamlessly combines Fabric and Bukkit for Minecraft. Acting as a Fabric mod, it allows you to create a feature-rich Minecraft server with the ability to integrate mods and plugins, ensuring stability and an enhanced gaming experience. By leveraging the strengths of both Fabric and Bukkit, Banner opens up a world of possibilities for server customization and gameplay enhancements.",
+        "software.banner.cards.title": "What makes %Banner% so special?",
+        "software.banner.cards.1.title": "Easy to Use",
+        "software.banner.cards.1.desc": "Banner is easy to use and install. Simply download the Banner jar file and place it in your server's mods folder. Banner will automatically create a plugins folder for you to place your plugins in.",
+        "software.banner.cards.2.title": "Compatibility",
+        "software.banner.cards.2.desc": "Unlock endless possibilities with Banner's extensive mod and plugin compatibility. Customize your server effortlessly using Banner's integration with Bukkit and Spigot APIs.",
+        "software.banner.cards.3.title": "Community Support and Regular Updates",
+        "software.banner.cards.3.desc": "Join the Banner community for support and regular updates! Stay up-to-date with the latest Minecraft versions and access new features and improvements.",
+        "software.banner.footer.desc": "Experience unparalleled stability with mod & plugin integration. Join the Banner community and unlock limitless possibilities for your server. Upgrade to Banner today and revolutionize your Minecraft experience.",
     }
 }
 
