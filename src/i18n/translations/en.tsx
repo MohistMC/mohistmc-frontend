@@ -97,6 +97,7 @@ const enTranslation: LocaleState = {
         "software.banner.cards.3.title": "Community Support and Regular Updates",
         "software.banner.cards.3.desc": "Join the Banner community for support and regular updates! Stay up-to-date with the latest Minecraft versions and access new features and improvements.",
         "software.banner.footer.desc": "Experience unparalleled stability with mod & plugin integration. Join the Banner community and unlock limitless possibilities for your server. Upgrade to Banner today and revolutionize your Minecraft experience.",
+        'toast.filtersOn': "You still have filters on, if you see nothing, you may have to remove them.",
     }
 }
 

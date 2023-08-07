@@ -97,6 +97,7 @@ const frTranslation: LocaleState = {
         "software.banner.cards.3.title": "Support de la communauté et mises à jour régulières",
         "software.banner.cards.3.desc": "Rejoignez la communauté Banner pour obtenir du support et des mises à jour régulières ! Restez à jour avec les dernières versions de Minecraft et accédez aux nouvelles fonctionnalités et améliorations.",
         "software.banner.footer.desc": "Découvrez une stabilité inégalée avec l'intégration de mods Fabric et de plugins Bukkit/Spigot. Rejoignez la communauté de Banner et débloquez des possibilités illimitées pour votre serveur. Passez à Banner dès aujourd'hui et révolutionnez votre expérience Minecraft.",
+        "toast.filtersOn": "Vous avez toujours des filtres activés, si vous ne voyez rien, vous devrez peut-être les supprimer.",
     }
 }
 

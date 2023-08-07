@@ -97,61 +97,36 @@ export default function SearchElement({
     const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
         const filter = event.target.name
 
+        const updateUrl = (filter: string, value: boolean) => {
+            router.push({
+                pathname: router.pathname,
+                query: {
+                    ...router.query,
+                    [filter]: value
+                }
+            }, undefined, {shallow: true}).catch()
+        }
+
         switch (filter) {
             case 'buildNumber':
                 setFilters({...filters, buildNumber: !filters.buildNumber})
-                // Update the URL
-                router.push({
-                    pathname: router.pathname,
-                    query: {
-                        ...router.query,
-                        bNumF: !filters.buildNumber
-                    }
-                }, undefined, {shallow: true})
+                updateUrl('bNumF', !filters.buildNumber)
                 break
             case 'buildName':
                 setFilters({...filters, buildName: !filters.buildName})
-                // Update the URL
-                router.push({
-                    pathname: router.pathname,
-                    query: {
-                        ...router.query,
-                        bNameF: !filters.buildName
-                    }
-                }, undefined, {shallow: true})
+                updateUrl('bNameF', !filters.buildName)
                 break
             case 'buildMd5':
                 setFilters({...filters, buildMd5: !filters.buildMd5})
-                // Update the URL
-                router.push({
-                    pathname: router.pathname,
-                    query: {
-                        ...router.query,
-                        md5F: !filters.buildMd5
-                    }
-                }, undefined, {shallow: true})
+                updateUrl('md5F', !filters.buildMd5)
                 break
             case 'buildDate':
                 setFilters({...filters, buildDate: !filters.buildDate})
-                // Update the URL
-                router.push({
-                    pathname: router.pathname,
-                    query: {
-                        ...router.query,
-                        bDateF: !filters.buildDate
-                    }
-                }, undefined, {shallow: true})
+                updateUrl('bDateF', !filters.buildDate)
                 break
             case 'loaderVersion':
                 setFilters({...filters, loaderVersion: !filters.loaderVersion})
-                // Update the URL
-                router.push({
-                    pathname: router.pathname,
-                    query: {
-                        ...router.query,
-                        loaderVerF: !filters.loaderVersion
-                    }
-                }, undefined, {shallow: true})
+                updateUrl('loaderVerF', !filters.loaderVersion)
                 break
         }
     }
@@ -190,7 +165,7 @@ export default function SearchElement({
      */
     useEffect(() => {
         if (searchInputRef.current && searchInputRef.current.value.length)
-            ToastLogger.info('You still have filters on, if you see nothing, you may have to remove them.')
+            ToastLogger.info(strings['toast.filtersOn'])
     }, [selectedVersion]);
 
     return (
