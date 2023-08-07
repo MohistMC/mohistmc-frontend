@@ -1,8 +1,7 @@
-import Link from "next/link";
 import VersionSelectorElement from "@/components/downloadSoftware/VersionSelectorElement";
 import {useRouter} from "next/router";
 import {Project} from "@/interfaces/Project";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Build, ProjectBuilds} from "@/interfaces/Build";
 import NavigationTableElement from "@/components/downloadSoftware/NavigationTableElement";
 import TableBuildElement from "@/components/downloadSoftware/TableBuildElement";
@@ -13,11 +12,29 @@ import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import SearchElement from "@/components/downloadSoftware/SearchElement";
 import BuildDetailsModal from "@/components/downloadSoftware/BuildDetailsModal";
+import {CustomFlowbiteTheme, Flowbite, Toast} from "flowbite-react";
+import {HiExclamation, HiFire} from "react-icons/hi";
+import {useSelector} from "react-redux";
+import {selectTheme} from "@/features/theme/ThemeSlice";
+
+const customTheme: CustomFlowbiteTheme = {
+    toast: {
+        "root": {
+            "base": "flex w-full max-w-2xl items-center rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-dark-100 dark:text-gray-300",
+            "closed": "opacity-0 ease-out"
+        },
+        "toggle": {
+            "base": "-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg bg-white p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-gray-300 dark:bg-dark-200 dark:text-gray-500 dark:hover:bg-dark-300 dark:hover:text-white",
+            "icon": "h-5 w-5 shrink-0"
+        }
+    }
+}
 
 export default function DownloadSoftware() {
     const router = useRouter()
     const strings = useAppSelector(selectTranslations);
     const perPage = 10
+    const isDark = useSelector(selectTheme)
 
     // React states
     const [project, setProject] = useState<Project | undefined>()
@@ -29,6 +46,8 @@ export default function DownloadSoftware() {
     const [noBuild, setNoBuild] = useState<boolean>(false)
     const [openModal, setOpenModal] = useState<string | undefined>();
     const [modalBuild, setModalBuild] = useState<Build | undefined>();
+    const [toastMessage, setToastMessage] = useState<string | undefined>();
+    const [hiColor, setHiColor] = useState<string>('orange');
 
     useEffect(() => {
         if (router.isReady) {
@@ -46,6 +65,35 @@ export default function DownloadSoftware() {
             setViewedBuildPages([])
             setOriginalBuildPages([])
             setNoBuild(false)
+
+            if (project === Project.Mohist) {
+                switch (selectedVersion) {
+                    case "1.7.10":
+                        setHiColor('orange')
+                        setToastMessage(strings['downloadSoftware.mohist.1.7.10.toast'])
+                        break
+                    case "1.18.2":
+                        setHiColor('blue')
+                        setToastMessage(strings['downloadSoftware.mohist.1.18.2.toast'])
+                        break
+                    case "1.19.2":
+                        setHiColor('orange')
+                        setToastMessage(strings['downloadSoftware.mohist.1.19.2.toast'])
+                        break
+                    case "1.19.4":
+                        setHiColor('blue')
+                        setToastMessage(strings['downloadSoftware.mohist.1.19.4.toast'])
+                        break
+                    case "1.20":
+                        setHiColor('orange')
+                        setToastMessage(strings['downloadSoftware.mohist.1.20.toast'])
+                        break
+                    case "1.20.1":
+                        setHiColor('blue')
+                        setToastMessage(strings['downloadSoftware.mohist.1.20.1.toast'])
+                        break
+                }
+            }
 
             const projectBuildsReq = await fetch(`https://mohistmc.com/api/v2/projects/${project}/${selectedVersion}/builds`)
             const buildsJson: ProjectBuilds = await projectBuildsReq.json()
@@ -88,10 +136,22 @@ export default function DownloadSoftware() {
                     {getLocaleStringAsArgs(strings['downloadSoftware.title'])[1]}
                 </h1>
             </div>
-            <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400">{strings[`downloadSoftware.${project}.desc`]}</p>
+            <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-3">{strings[`downloadSoftware.${project}.desc`]}</p>
             <BuildDetailsModal build={modalBuild} project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+            {toastMessage?.length && <Flowbite theme={{theme: customTheme, dark: isDark}}>
+                <Toast>
+                    <div
+                        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-${hiColor}-100 text-${hiColor}-500 dark:bg-${hiColor}-600 dark:text-white`}>
+                        <HiExclamation className="h-5 w-5"/>
+                    </div>
+                    <div className="ml-3 text-sm font-normal">
+                        {toastMessage}
+                    </div>
+                    <Toast.Toggle/>
+                </Toast>
+            </Flowbite>}
             <div
-                className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-10 p-5">
+                className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-3 p-5">
                 <div className={`flex md:justify-between gap-2 justify-center items-center pb-4 flex-wrap`}>
                     <SearchElement originalBuildPages={originalBuildPages} setViewedBuildPages={setViewedBuildPages}
                                    setCurrentPage={setCurrentPage} setNoResult={setNoResult} perPage={perPage}
