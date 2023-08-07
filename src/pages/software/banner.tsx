@@ -2,12 +2,30 @@ import Link from "next/link";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
+import Head from "next/head";
 
 export default function MohistSoftware() {
     const strings = useAppSelector(selectTranslations)
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
+            <Head>
+                <title>MohistMC - Banner</title>
+                <meta name="title" content="MohistMC - Banner" />
+                <meta name="description" content="Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. © 2023 MohistMC." />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://new.mohistmc.com/software/mohist" />
+                <meta property="og:title" content="MohistMC - Banner" />
+                <meta property="og:description" content="Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. © 2023 MohistMC." />
+                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />
+                <meta property="twitter:title" content="MohistMC - Banner" />
+                <meta property="twitter:description" content="Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. © 2023 MohistMC." />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+            </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
                     <span className="bg-green-100 text-green-800 text-sm font-medium ml-0.5 h-6 w-16 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Beta</span>

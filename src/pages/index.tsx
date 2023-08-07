@@ -5,12 +5,30 @@ import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import Link from "next/link";
 import StatisticsElement from "@/components/index/StatisticsElement";
 import DefaultCarousel from "@/components/index/Carousel";
+import Head from "next/head";
 
 function Home() {
     const strings = useAppSelector(selectTranslations);
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
+            <Head>
+                <title>MohistMC - Home</title>
+                <meta name="title" content="MohistMC - Home" />
+                <meta name="description" content="Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. © 2023 MohistMC." />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://new.mohistmc.com/" />
+                <meta property="og:title" content="MohistMC - Home" />
+                <meta property="og:description" content="Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. © 2023 MohistMC." />
+                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://new.mohistmc.com/" />
+                <meta property="twitter:title" content="MohistMC - Home" />
+                <meta property="twitter:description" content="Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. © 2023 MohistMC." />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+            </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="pt-5 md:pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{strings['index.head.title']}</h1>

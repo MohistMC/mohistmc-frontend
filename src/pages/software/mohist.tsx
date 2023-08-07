@@ -2,12 +2,30 @@ import Link from "next/link";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
+import Head from "next/head";
 
 export default function MohistSoftware() {
     const strings = useAppSelector(selectTranslations)
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
+            <Head>
+                <title>MohistMC - Mohist</title>
+                <meta name="title" content="MohistMC - Mohist" />
+                <meta name="description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2023 MohistMC" />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://new.mohistmc.com/software/mohist" />
+                <meta property="og:title" content="MohistMC - Mohist" />
+                <meta property="og:description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2023 MohistMC" />
+                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />
+                <meta property="twitter:title" content="MohistMC - Mohist" />
+                <meta property="twitter:description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2023 MohistMC" />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+            </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
                     <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Mohist</h1>

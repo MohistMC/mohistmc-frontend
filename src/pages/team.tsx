@@ -3,12 +3,30 @@ import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import MOHISTMC_TEAM from "@/util/content/Team";
+import Head from "next/head";
 
 export default function Team() {
     const strings = useAppSelector(selectTranslations);
 
     return (
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
+            <Head>
+                <title>MohistMC - Team</title>
+                <meta name="title" content="MohistMC - Team" />
+                <meta name="description" content="Meet Our Team! Discover the faces behind MohistMC's innovation. © 2023 MohistMC." />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://new.mohistmc.com/team" />
+                <meta property="og:title" content="MohistMC - Team" />
+                <meta property="og:description" content="Meet Our Team! Discover the faces behind MohistMC's innovation. © 2023 MohistMC." />
+                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://new.mohistmc.com/team" />
+                <meta property="twitter:title" content="MohistMC - Team" />
+                <meta property="twitter:description" content="Meet Our Team! Discover the faces behind MohistMC's innovation. © 2023 MohistMC." />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+            </Head>
             <h1 className="md:mt-20 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{getLocaleStringAsArgs(strings['team.title'])[0]} <span className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['team.title'])[1]}</span>{getLocaleStringAsArgs(strings['team.title'])[2]}</h1>
 
             <div className={`flex flex-wrap md:w-full justify-center pt-12 pb-12 gap-7`}>

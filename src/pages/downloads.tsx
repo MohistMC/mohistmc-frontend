@@ -2,13 +2,31 @@ import Link from "next/link";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
+import Head from "next/head";
 
 export default function Downloads() {
     const strings = useAppSelector(selectTranslations);
 
     return (
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
-            <h1 className="md:mt-20 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{getLocaleStringAsArgs(strings['downloads.title'])[0]}
+            <Head>
+                <title>MohistMC - Downloads</title>
+                <meta name="title" content="MohistMC - Downloads" />
+                <meta name="description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2023 MohistMC." />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://new.mohistmc.com/downloads" />
+                <meta property="og:title" content="MohistMC - Downloads" />
+                <meta property="og:description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2023 MohistMC." />
+                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://new.mohistmc.com/downloads" />
+                <meta property="twitter:title" content="MohistMC - Downloads" />
+                <meta property="twitter:description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2023 MohistMC." />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+            </Head>
+            <h1 className="md:mt-20 mt-10 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{getLocaleStringAsArgs(strings['downloads.title'])[0]}
                 <span
                     className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['downloads.title'])[1]}</span>
                 {getLocaleStringAsArgs(strings['downloads.title'])[2]}
@@ -71,7 +89,7 @@ export default function Downloads() {
                         </div>
                     </div>
                     <div className={`flex justify-center items-center`}>
-                        <h2 className="text-5xl text-center font-extrabold dark:text-white">{getLocaleStringAsArgs(strings['downloads.endtext'])[0]}<small
+                        <h2 className="text-5xl text-center font-extrabold text-dark-25 dark:text-white">{getLocaleStringAsArgs(strings['downloads.endtext'])[0]}<small
                             className="ml-2 font-semibold text-gray-500 dark:text-gray-400">{getLocaleStringAsArgs(strings['downloads.endtext'])[1]}</small>
                             {getLocaleStringAsArgs(strings['downloads.endtext'])[2]}
                         </h2>

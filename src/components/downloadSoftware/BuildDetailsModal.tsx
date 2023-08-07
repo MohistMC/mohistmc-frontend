@@ -5,6 +5,7 @@ import {Project} from "@/interfaces/Project";
 import Link from "next/link";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
+import ProfileImage from "@/components/ProfileImage";
 
 interface BuildDetailsModalProps {
     build: Build | undefined
@@ -126,8 +127,9 @@ export default function BuildDetailsModal({build, project, openModal, setOpenMod
                             <h2 className="text-xl font-extrabold leading-none text-dark-25 dark:text-white mb-2">GitHub
                                 information</h2>
                             <div className="flex items-center space-x-4">
-                                <img className="w-14 h-14 rounded-full" src={`https://github.com/${commitAuthor}.png`}
-                                     alt=""></img>
+                                {commitAuthor &&
+                                    <ProfileImage name={commitAuthor} githubUrl={`https://github.com/${commitAuthor}`}
+                                                  size={14}/>}
                                 <div className="font-medium dark:text-white">
                                     <div>{commitAuthor}</div>
                                     <div

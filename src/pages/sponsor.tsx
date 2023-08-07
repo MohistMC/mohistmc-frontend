@@ -2,8 +2,9 @@ import Link from "next/link";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import SponsorAvatar from "@/components/sponsor/SponsorAvatar";
+import Head from "next/head";
 
 interface Donor {
     name: string,
@@ -40,6 +41,23 @@ export default function Sponsor() {
 
     return (
         <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
+            <Head>
+                <title>MohistMC - Sponsor</title>
+                <meta name="title" content="MohistMC - Sponsor" />
+                <meta name="description" content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!" />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://new.mohistmc.com/sponsor" />
+                <meta property="og:title" content="MohistMC - Sponsor" />
+                <meta property="og:description" content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!" />
+                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://new.mohistmc.com/sponsor" />
+                <meta property="twitter:title" content="MohistMC - Sponsor" />
+                <meta property="twitter:description" content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!" />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+            </Head>
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                 <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">{getLocaleStringAsArgs(strings['sponsor.title'])[0]}
