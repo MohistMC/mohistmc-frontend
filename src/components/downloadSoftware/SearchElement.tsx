@@ -3,6 +3,7 @@ import {Build} from "@/interfaces/Build";
 import {Dropdown} from "flowbite-react";
 import {Project} from "@/interfaces/Project";
 import {NextRouter} from "next/router";
+import {ToastLogger} from "@/util/Logger";
 
 interface FilterDropdownProps {
     originalBuildPages: Build[][]
@@ -13,6 +14,7 @@ interface FilterDropdownProps {
     strings: Record<string, string>
     project: Project | undefined
     router: NextRouter
+    selectedVersion: string | undefined
 }
 
 export default function SearchElement({
@@ -23,7 +25,8 @@ export default function SearchElement({
                                           perPage,
                                           strings,
                                           project,
-                                          router
+                                          router,
+                                          selectedVersion
                                       }: FilterDropdownProps) {
     // React states
     const [filters, setFilters] = useState<{
@@ -39,6 +42,9 @@ export default function SearchElement({
         buildDate: true,
         loaderVersion: true
     })
+
+    // React refs
+    const searchInputRef = useRef<HTMLInputElement>(null)
 
     const handleSearch = async (event: ChangeEvent<HTMLInputElement>) => {
         setCurrentPage(0) // Reset the page because the builds will change
@@ -70,9 +76,9 @@ export default function SearchElement({
                 (filters.buildMd5 && build.fileMd5.toLowerCase().includes(search.toLowerCase())) ||
                 (filters.buildName && build.fileName?.toLowerCase().includes(search.toLowerCase())) ||
                 (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase().includes(search.toLowerCase()) ||
-                (filters.loaderVersion && build.forgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
-                (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase().includes(search.toLowerCase())
-            ))))
+                    (filters.loaderVersion && build.forgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
+                        (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase().includes(search.toLowerCase())
+                        ))))
             modifiedBuildPages.push(...filteredPage)
         }
 
@@ -150,9 +156,19 @@ export default function SearchElement({
         }
     }
 
+    /**
+     * On builds loaded, apply filters that are in the URL, and fill the search input.
+     */
     useEffect(() => {
         if (router.isReady) {
-            const {bNumF, bNameF, md5F, bDateF, loaderVerF, search} = router.query as unknown as { bNumF: string, bNameF: string, md5F: string, bDateF: string, loaderVerF: string, search: string }
+            const {bNumF, bNameF, md5F, bDateF, loaderVerF, search} = router.query as unknown as {
+                bNumF: string,
+                bNameF: string,
+                md5F: string,
+                bDateF: string,
+                loaderVerF: string,
+                search: string
+            }
 
             setFilters({
                 buildNumber: bNumF !== 'false',
@@ -162,13 +178,20 @@ export default function SearchElement({
                 loaderVersion: loaderVerF !== 'false'
             })
 
-            if (search) {
-                const searchInput = document.getElementById('table-search') as HTMLInputElement
-                searchInput.value = search
-                handleSearch({target: searchInput} as ChangeEvent<HTMLInputElement>).catch()
+            if (search && searchInputRef.current) {
+                searchInputRef.current.value = search
+                handleSearch({target: searchInputRef.current} as ChangeEvent<HTMLInputElement>).catch()
             }
         }
     }, [originalBuildPages])
+
+    /**
+     * Tell to the user that he still have filters on if he changes the version.
+     */
+    useEffect(() => {
+        if (searchInputRef.current && searchInputRef.current.value.length)
+            ToastLogger.info('You still have filters on, if you see nothing, you may have to remove them.')
+    }, [selectedVersion]);
 
     return (
         <div className={`flex gap-2 mb-1 md:flex-row flex-col items-center justify-center`}>
@@ -184,7 +207,7 @@ export default function SearchElement({
                                   clipRule="evenodd"></path>
                         </svg>
                     </div>
-                    <input type="text" id="table-search" onChange={handleSearch}
+                    <input type="text" id="table-search" onChange={handleSearch} ref={searchInputRef}
                            className="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-dark-200 dark:border-dark-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                            placeholder={strings['downloadSoftware.search.placeholder']}></input>
                 </div>
@@ -193,7 +216,8 @@ export default function SearchElement({
             <Dropdown label={strings['downloadSoftware.search.filter.btn']}>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input checked={filters.buildNumber} id="checkbox-item-4" type="checkbox" value="" name={`buildNumber`}
+                    <input checked={filters.buildNumber} id="checkbox-item-4" type="checkbox" value=""
+                           name={`buildNumber`}
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-4"
@@ -225,7 +249,8 @@ export default function SearchElement({
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input checked={filters.loaderVersion} id="checkbox-item-8" type="checkbox" value="" name={`loaderVersion`}
+                    <input checked={filters.loaderVersion} id="checkbox-item-8" type="checkbox" value=""
+                           name={`loaderVersion`}
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-8"

@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import {Provider} from "react-redux";
 import {wrapper} from "@/util/redux/Store";
 import {hackNextra} from "@/util/Nextra";
+import {ToastContainer} from "react-toastify";
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -42,6 +43,7 @@ export default function App({Component, pageProps}: AppProps) {
               }
             `}</style>
             <Provider store={store}>
+                <ToastContainer/>
                 <Header/>
                 <Component {...pageProps} />
                 <Footer/>

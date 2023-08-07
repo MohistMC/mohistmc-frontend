@@ -13,14 +13,15 @@ import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import SearchElement from "@/components/downloadSoftware/SearchElement";
 import BuildDetailsModal from "@/components/downloadSoftware/BuildDetailsModal";
 import {CustomFlowbiteTheme, Flowbite, Toast} from "flowbite-react";
-import {HiExclamation, HiFire} from "react-icons/hi";
+import {HiExclamation} from "react-icons/hi";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
+import 'react-toastify/dist/ReactToastify.css';
 
 const customTheme: CustomFlowbiteTheme = {
     toast: {
         "root": {
-            "base": "flex w-full max-w-2xl items-center rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-dark-100 dark:text-gray-300",
+            "base": "flex w-full max-w-sm md:max-w-2xl items-center rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-dark-100 dark:text-gray-300",
             "closed": "opacity-0 ease-out"
         },
         "toggle": {
@@ -46,7 +47,7 @@ export default function DownloadSoftware() {
     const [noBuild, setNoBuild] = useState<boolean>(false)
     const [openModal, setOpenModal] = useState<string | undefined>();
     const [modalBuild, setModalBuild] = useState<Build | undefined>();
-    const [toastMessage, setToastMessage] = useState<string | undefined>();
+    const [toastMessageKey, setToastMessageKey] = useState<string | undefined>();
     const [hiColor, setHiColor] = useState<string>('orange');
 
     useEffect(() => {
@@ -79,27 +80,27 @@ export default function DownloadSoftware() {
                 switch (selectedVersion) {
                     case "1.7.10":
                         setHiColor('orange')
-                        setToastMessage(strings['downloadSoftware.mohist.1.7.10.toast'])
+                        setToastMessageKey('downloadSoftware.mohist.1.7.10.toast')
                         break
                     case "1.18.2":
                         setHiColor('blue')
-                        setToastMessage(strings['downloadSoftware.mohist.1.18.2.toast'])
+                        setToastMessageKey('downloadSoftware.mohist.1.18.2.toast')
                         break
                     case "1.19.2":
                         setHiColor('orange')
-                        setToastMessage(strings['downloadSoftware.mohist.1.19.2.toast'])
+                        setToastMessageKey('downloadSoftware.mohist.1.19.2.toast')
                         break
                     case "1.19.4":
                         setHiColor('blue')
-                        setToastMessage(strings['downloadSoftware.mohist.1.19.4.toast'])
+                        setToastMessageKey('downloadSoftware.mohist.1.19.4.toast')
                         break
                     case "1.20":
                         setHiColor('orange')
-                        setToastMessage(strings['downloadSoftware.mohist.1.20.toast'])
+                        setToastMessageKey('downloadSoftware.mohist.1.20.toast')
                         break
                     case "1.20.1":
                         setHiColor('blue')
-                        setToastMessage(strings['downloadSoftware.mohist.1.20.1.toast'])
+                        setToastMessageKey('downloadSoftware.mohist.1.20.1.toast')
                         break
                 }
             }
@@ -147,14 +148,14 @@ export default function DownloadSoftware() {
             </div>
             <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-3">{strings[`downloadSoftware.${project}.desc`]}</p>
             <BuildDetailsModal build={modalBuild} project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-            {toastMessage?.length && <Flowbite theme={{theme: customTheme, dark: isDark}}>
+            {toastMessageKey?.length && <Flowbite theme={{theme: customTheme, dark: isDark}}>
                 <Toast>
                     <div
                         className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-${hiColor}-100 text-${hiColor}-500 dark:bg-${hiColor}-600 dark:text-white`}>
                         <HiExclamation className="h-5 w-5"/>
                     </div>
                     <div className="ml-3 text-sm font-normal">
-                        {toastMessage}
+                        {strings[toastMessageKey]}
                     </div>
                     <Toast.Toggle/>
                 </Toast>
@@ -164,7 +165,7 @@ export default function DownloadSoftware() {
                 <div className={`flex md:justify-between gap-2 justify-center items-center pb-4 flex-wrap`}>
                     <SearchElement originalBuildPages={originalBuildPages} setViewedBuildPages={setViewedBuildPages}
                                    setCurrentPage={setCurrentPage} setNoResult={setNoResult} perPage={perPage}
-                                   strings={strings} project={project} router={router}/>
+                                   strings={strings} project={project} router={router} selectedVersion={selectedVersion}/>
                     <VersionSelectorElement selectedVersion={selectedVersion} setSelectedVersion={setSelectedVersion}
                                             software={project} router={router}/>
                 </div>
