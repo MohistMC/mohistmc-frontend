@@ -34,7 +34,7 @@ export default function MohistSoftware() {
                     </h1>
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200 md:w-1/2">{strings['software.banner.subtitle']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                        <Link href="/downloadSoftware?software=banner"
+                        <Link href="/downloadSoftware?project=banner"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                             {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"
@@ -128,7 +128,7 @@ export default function MohistSoftware() {
                                     d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
                             </svg>
                         </Link>
-                        <Link href="/downloadSoftware?software=banner"
+                        <Link href="/downloadSoftware?project=banner"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"

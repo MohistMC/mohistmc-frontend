@@ -42,7 +42,7 @@ export default function Downloads() {
                     <h1 className="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2 mt-1">Mohist</h1>
                     <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">{strings['downloads.mohist.desc']}</p>
                     <div className={`flex flex-row flex-wrap gap-2`}>
-                        <Link href={`/downloadSoftware?software=mohist`}
+                        <Link href={`/downloadSoftware?project=mohist`}
                               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium inline-flex items-center rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                             {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor"
@@ -70,7 +70,7 @@ export default function Downloads() {
                         <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2 mt-1">Banner</h2>
                         <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">{strings['downloads.banner.desc']}</p>
                         <div className={`flex flex-row flex-wrap gap-2`}>
-                            <Link href={`/downloadSoftware?software=banner`}
+                            <Link href={`/downloadSoftware?project=banner`}
                                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium inline-flex items-center rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                 {strings['button.downloads']}
                                 <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor"

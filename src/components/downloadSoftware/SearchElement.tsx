@@ -1,6 +1,8 @@
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, useEffect, useRef, useState} from "react";
 import {Build} from "@/interfaces/Build";
 import {Dropdown} from "flowbite-react";
+import {Project} from "@/interfaces/Project";
+import {NextRouter} from "next/router";
 
 interface FilterDropdownProps {
     originalBuildPages: Build[][]
@@ -9,6 +11,8 @@ interface FilterDropdownProps {
     setNoResult: (noResult: boolean) => void
     perPage: number
     strings: Record<string, string>
+    project: Project | undefined
+    router: NextRouter
 }
 
 export default function SearchElement({
@@ -17,25 +21,38 @@ export default function SearchElement({
                                           setCurrentPage,
                                           setNoResult,
                                           perPage,
-                                          strings
+                                          strings,
+                                          project,
+                                          router
                                       }: FilterDropdownProps) {
     // React states
     const [filters, setFilters] = useState<{
-        buildNumber: boolean,
-        buildName: boolean,
+        buildNumber: boolean
+        buildName: boolean
         buildMd5: boolean
         buildDate: boolean
+        loaderVersion: boolean
     }>({
         buildNumber: true,
         buildName: true,
         buildMd5: true,
-        buildDate: true
+        buildDate: true,
+        loaderVersion: true
     })
 
     const handleSearch = async (event: ChangeEvent<HTMLInputElement>) => {
         setCurrentPage(0) // Reset the page because the builds will change
 
         const search = event.target.value
+
+        // Update the URL
+        await router.push({
+            pathname: router.pathname,
+            query: {
+                ...router.query,
+                search
+            }
+        }, undefined, {shallow: true})
 
         // If no search query, reset the pages
         if (search.length === 0) {
@@ -52,8 +69,10 @@ export default function SearchElement({
                 (filters.buildNumber && String(build.number).toLowerCase().includes(search.toLowerCase())) ||
                 (filters.buildMd5 && build.fileMd5.toLowerCase().includes(search.toLowerCase())) ||
                 (filters.buildName && build.fileName?.toLowerCase().includes(search.toLowerCase())) ||
-                (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase().includes(search.toLowerCase())
-                ))
+                (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase().includes(search.toLowerCase()) ||
+                (filters.loaderVersion && build.forgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
+                (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase().includes(search.toLowerCase())
+            ))))
             modifiedBuildPages.push(...filteredPage)
         }
 
@@ -75,18 +94,81 @@ export default function SearchElement({
         switch (filter) {
             case 'buildNumber':
                 setFilters({...filters, buildNumber: !filters.buildNumber})
+                // Update the URL
+                router.push({
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        bNumF: !filters.buildNumber
+                    }
+                }, undefined, {shallow: true})
                 break
             case 'buildName':
                 setFilters({...filters, buildName: !filters.buildName})
+                // Update the URL
+                router.push({
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        bNameF: !filters.buildName
+                    }
+                }, undefined, {shallow: true})
                 break
             case 'buildMd5':
                 setFilters({...filters, buildMd5: !filters.buildMd5})
+                // Update the URL
+                router.push({
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        md5F: !filters.buildMd5
+                    }
+                }, undefined, {shallow: true})
                 break
             case 'buildDate':
                 setFilters({...filters, buildDate: !filters.buildDate})
+                // Update the URL
+                router.push({
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        bDateF: !filters.buildDate
+                    }
+                }, undefined, {shallow: true})
+                break
+            case 'loaderVersion':
+                setFilters({...filters, loaderVersion: !filters.loaderVersion})
+                // Update the URL
+                router.push({
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        loaderVerF: !filters.loaderVersion
+                    }
+                }, undefined, {shallow: true})
                 break
         }
     }
+
+    useEffect(() => {
+        if (router.isReady) {
+            const {bNumF, bNameF, md5F, bDateF, loaderVerF, search} = router.query as unknown as { bNumF: string, bNameF: string, md5F: string, bDateF: string, loaderVerF: string, search: string }
+
+            setFilters({
+                buildNumber: bNumF !== 'false',
+                buildName: bNameF !== 'false',
+                buildMd5: md5F !== 'false',
+                buildDate: bDateF !== 'false',
+                loaderVersion: loaderVerF !== 'false'
+            })
+
+            if (search) {
+                const searchInput = document.getElementById('table-search') as HTMLInputElement
+                searchInput.value = search
+                handleSearch({target: searchInput} as ChangeEvent<HTMLInputElement>).catch()
+            }
+        }
+    }, [originalBuildPages])
 
     return (
         <div className={`flex gap-2 mb-1 md:flex-row flex-col items-center justify-center`}>
@@ -111,7 +193,7 @@ export default function SearchElement({
             <Dropdown label={strings['downloadSoftware.search.filter.btn']}>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input defaultChecked={true} id="checkbox-item-4" type="checkbox" value="" name={`buildNumber`}
+                    <input checked={filters.buildNumber} id="checkbox-item-4" type="checkbox" value="" name={`buildNumber`}
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-4"
@@ -119,7 +201,7 @@ export default function SearchElement({
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input defaultChecked={true} id="checkbox-item-5" type="checkbox" value="" name={`buildName`}
+                    <input checked={filters.buildName} id="checkbox-item-5" type="checkbox" value="" name={`buildName`}
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-5"
@@ -127,7 +209,7 @@ export default function SearchElement({
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input defaultChecked={true} id="checkbox-item-6" type="checkbox" value="" name={`buildMd5`}
+                    <input checked={filters.buildMd5} id="checkbox-item-6" type="checkbox" value="" name={`buildMd5`}
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-6"
@@ -135,11 +217,19 @@ export default function SearchElement({
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input defaultChecked={true} id="checkbox-item-7" type="checkbox" value="" name={`buildDate`}
+                    <input checked={filters.buildDate} id="checkbox-item-7" type="checkbox" value="" name={`buildDate`}
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-7"
                            className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.date']}</label>
+                </div>
+                <div
+                    className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input checked={filters.loaderVersion} id="checkbox-item-8" type="checkbox" value="" name={`loaderVersion`}
+                           onChange={handleFilter}
+                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+                    <label htmlFor="checkbox-item-8"
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings[project === Project.Mohist ? 'downloadSoftware.build.forgever' : 'downloadSoftware.build.fabricver']}</label>
                 </div>
             </Dropdown>
         </div>

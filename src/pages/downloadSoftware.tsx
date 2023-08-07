@@ -51,10 +51,10 @@ export default function DownloadSoftware() {
 
     useEffect(() => {
         if (router.isReady) {
-            const {software} = router.query as { software: Project }
+            const {project} = router.query as { project: Project }
 
-            if (software === Project.Mohist || software === Project.Banner)
-                setProject(software)
+            if (project === Project.Mohist || project === Project.Banner)
+                setProject(project)
             else
                 router.push('/404').catch()
         }
@@ -65,6 +65,15 @@ export default function DownloadSoftware() {
             setViewedBuildPages([])
             setOriginalBuildPages([])
             setNoBuild(false)
+
+            // Update the URL with the new version
+            await router.push({
+                pathname: router.pathname,
+                query: {
+                    ...router.query,
+                    projectVersion: selectedVersion
+                }
+            }, undefined, {shallow: true})
 
             if (project === Project.Mohist) {
                 switch (selectedVersion) {
@@ -155,9 +164,9 @@ export default function DownloadSoftware() {
                 <div className={`flex md:justify-between gap-2 justify-center items-center pb-4 flex-wrap`}>
                     <SearchElement originalBuildPages={originalBuildPages} setViewedBuildPages={setViewedBuildPages}
                                    setCurrentPage={setCurrentPage} setNoResult={setNoResult} perPage={perPage}
-                                   strings={strings}/>
+                                   strings={strings} project={project} router={router}/>
                     <VersionSelectorElement selectedVersion={selectedVersion} setSelectedVersion={setSelectedVersion}
-                                            software={project}/>
+                                            software={project} router={router}/>
                 </div>
                 <table
                     className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-separate border-spacing-0 rounded-lg overflow-hidden">
