@@ -24,8 +24,8 @@ const zhTranslation: LocaleState = {
         "button.software": "软件",
         "button.learnmore": "学习更多",
         "button.readmore": "阅读更多",
-        "button.home": "主页",
         "button.documentation": "文档",
+        "button.documentations": "文档",
         "button.about": "关于我们",
         "button.team": "我们的团队",
         "button.community": "我们的社区",
@@ -76,6 +76,12 @@ const zhTranslation: LocaleState = {
         "software.mohist.footer.title": "准备好提升您的 Minecraft 服务器体验?",
         "software.mohist.footer.desc": "通过模组和插件集成以及优化的性能体验无与伦比的稳定性。 加入MohistMC社区，为您的服务器解锁无限可能。 立即升级到 Mohist，彻底改变您的 Minecraft 体验.",
         "software.mohist.footer.discord": "加入我们的 Discord",
+        "404.title": "not found",
+        "404.subtitle": "很抱歉，本网站无法找到您要查找的资源.",
+        "docs.title": "MMohistMC的文档",
+        "docs.subtitle": "MohistMC为我们的软件提供了各种文档。 只需点击您要查找的软件!",
+        "docs.cards.websiteapi.title": "Website API",
+        "docs.cards.websiteapi.desc": "MohistMC为开发人员提供 JSON API 来获取有关 MohistMC 项目和构建的信息.",
     }
 }
 
