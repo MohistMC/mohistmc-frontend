@@ -14,7 +14,7 @@ const zhTranslation: LocaleState = {
         "index.stats.openedissues": "待修复的问题",
         "index.stats.players": "玩家总数",
         "index.stats.servers": "服务器总数",
-        "index.partner.title": "%特别谢鸣%",
+        "index.partner.title": "%特别鸣谢%",
         "button.downloads": "下载",
         "button.download": "下载",
         "button.discord": "Discord",
