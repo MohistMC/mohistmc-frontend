@@ -39,6 +39,10 @@ export default function Downloads() {
                           className="bg-blue-100 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
                         Forge
                     </Link>
+                    <Link href="https://neoforged.net/"
+                          className="bg-red-200 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
+                        NeoForge
+                    </Link>
                     <h1 className="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2 mt-1">Mohist</h1>
                     <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">{strings['downloads.mohist.desc']}</p>
                     <div className={`flex flex-row flex-wrap gap-2`}>
