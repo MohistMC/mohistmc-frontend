@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
+import {getCopyrightText} from "@/util/String";
 
 export default function Footer() {
     const strings = useAppSelector(selectTranslations);
@@ -71,7 +72,7 @@ export default function Footer() {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
                 <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2019-2023 <Link
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">{getCopyrightText()} <Link
               href="/" className="hover:underline md:dark:hover:text-gray-500">MohistMC</Link>
           </span>
                     <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">

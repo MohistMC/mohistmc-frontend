@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {DocsThemeConfig, useConfig} from 'nextra-theme-docs'
 import {useRouter} from "next/router";
+import {getCopyrightText} from "@/util/String";
 
 const config: DocsThemeConfig = {
     docsRepositoryBase: 'https://github.com/MohistMC/website/tree/frontend',
@@ -26,8 +27,8 @@ const config: DocsThemeConfig = {
 
         const section = router?.pathname.startsWith("/mohist") ? 'Mohist' : router?.pathname.startsWith('/blog') ? 'Blog' : 'Banner';
         const description = section === 'Blog' ?
-            "Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. © 2019-2023 MohistMC." :
-            'Need help setting up, configuring and using our software? The docs are here to help you. © 2019-2023 MohistMC.'
+            `Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. ${getCopyrightText()} MohistMC.` :
+            `Need help setting up, configuring and using our software? The docs are here to help you. ${getCopyrightText()} MohistMC.`
         const title = section === 'Blog' ? 'MohistMC - Blog' : 'MohistMC - Docs'
 
         return (

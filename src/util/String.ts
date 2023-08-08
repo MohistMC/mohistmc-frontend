@@ -17,3 +17,10 @@ export function getInitials(phrase: string): string {
         .map(word => word[0].toUpperCase())
         .join('');
 }
+
+/**
+ * Returns the copyright text with the current year
+ */
+export function getCopyrightText() {
+    return `© 2019-${new Date().getFullYear()}`;
+}

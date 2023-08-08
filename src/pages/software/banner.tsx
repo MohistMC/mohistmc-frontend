@@ -3,6 +3,7 @@ import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import Head from "next/head";
+import {getCopyrightText} from "@/util/String";
 
 export default function MohistSoftware() {
     const strings = useAppSelector(selectTranslations)
@@ -12,18 +13,18 @@ export default function MohistSoftware() {
             <Head>
                 <title>MohistMC - Banner</title>
                 <meta name="title" content="MohistMC - Banner" />
-                <meta name="description" content="Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. © 2019-2023 MohistMC." />
+                <meta name="description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://new.mohistmc.com/software/mohist" />
                 <meta property="og:title" content="MohistMC - Banner" />
-                <meta property="og:description" content="Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. © 2019-2023 MohistMC." />
+                <meta property="og:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />
                 <meta property="twitter:title" content="MohistMC - Banner" />
-                <meta property="twitter:description" content="Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. © 2019-2023 MohistMC." />
+                <meta property="twitter:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
                 <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
             </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
