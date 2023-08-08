@@ -54,6 +54,11 @@ export default function DefaultCarousel() {
                     alt="..."
                     src="/yourkit.png"
                 /></Link>
+                <Link href={`https://www.jetbrains.com`}><img
+                    className={`md:w-1/6`}
+                    alt="..."
+                    src="https://www.jetbrains.com/company/brand/img/logo6.svg"
+                /></Link>
             </Carousel>
         </Flowbite>
     )
