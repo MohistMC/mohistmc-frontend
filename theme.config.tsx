@@ -26,8 +26,8 @@ const config: DocsThemeConfig = {
 
         const section = router?.pathname.startsWith("/mohist") ? 'Mohist' : router?.pathname.startsWith('/blog') ? 'Blog' : 'Banner';
         const description = section === 'Blog' ?
-            "Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. © 2023 MohistMC." :
-            'Need help setting up, configuring and using our software? The docs are here to help you. © 2023 MohistMC.'
+            "Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. © 2019-2023 MohistMC." :
+            'Need help setting up, configuring and using our software? The docs are here to help you. © 2019-2023 MohistMC.'
         const title = section === 'Blog' ? 'MohistMC - Blog' : 'MohistMC - Docs'
 
         return (

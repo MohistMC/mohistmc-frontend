@@ -27,18 +27,18 @@ export default function MohistMCApi() {
             <Head>
                 <title>MohistMC - JSON API</title>
                 <meta name="title" content="MohistMC - JSON API" />
-                <meta name="description" content="Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! © 2023 MohistMC." />
+                <meta name="description" content="Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! © 2019-2023 MohistMC." />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://new.mohistmc.com/mohistmc-api" />
                 <meta property="og:title" content="MohistMC - JSON API" />
-                <meta property="og:description" content="Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! © 2023 MohistMC." />
+                <meta property="og:description" content="Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! © 2019-2023 MohistMC." />
                 <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/mohistmc-api" />
                 <meta property="twitter:title" content="MohistMC - JSON API" />
-                <meta property="twitter:description" content="Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! © 2023 MohistMC." />
+                <meta property="twitter:description" content="Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! © 2019-2023 MohistMC." />
                 <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
             </Head>
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">

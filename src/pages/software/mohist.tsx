@@ -12,18 +12,18 @@ export default function MohistSoftware() {
             <Head>
                 <title>MohistMC - Mohist</title>
                 <meta name="title" content="MohistMC - Mohist" />
-                <meta name="description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2023 MohistMC" />
+                <meta name="description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2019-2023 MohistMC" />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://new.mohistmc.com/software/mohist" />
                 <meta property="og:title" content="MohistMC - Mohist" />
-                <meta property="og:description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2023 MohistMC" />
+                <meta property="og:description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2019-2023 MohistMC" />
                 <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />
                 <meta property="twitter:title" content="MohistMC - Mohist" />
-                <meta property="twitter:description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2023 MohistMC" />
+                <meta property="twitter:description" content="Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. © 2019-2023 MohistMC" />
                 <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
             </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">

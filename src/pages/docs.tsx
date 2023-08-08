@@ -11,18 +11,18 @@ export default function Downloads() {
             <Head>
                 <title>MohistMC - Docs</title>
                 <meta name="title" content="MohistMC - Docs" />
-                <meta name="description" content="Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. © 2023 MohistMC." />
+                <meta name="description" content="Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. © 2019-2023 MohistMC." />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://new.mohistmc.com/docs" />
                 <meta property="og:title" content="MohistMC - Docs" />
-                <meta property="og:description" content="Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. © 2023 MohistMC." />
+                <meta property="og:description" content="Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. © 2019-2023 MohistMC." />
                 <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/docs" />
                 <meta property="twitter:title" content="MohistMC - Docs" />
-                <meta property="twitter:description" content="Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. © 2023 MohistMC." />
+                <meta property="twitter:description" content="Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. © 2019-2023 MohistMC." />
                 <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
 
             </Head>

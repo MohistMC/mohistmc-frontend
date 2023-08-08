@@ -12,18 +12,18 @@ export default function Downloads() {
             <Head>
                 <title>MohistMC - Downloads</title>
                 <meta name="title" content="MohistMC - Downloads" />
-                <meta name="description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2023 MohistMC." />
+                <meta name="description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2019-2023 MohistMC." />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://new.mohistmc.com/downloads" />
                 <meta property="og:title" content="MohistMC - Downloads" />
-                <meta property="og:description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2023 MohistMC." />
+                <meta property="og:description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2019-2023 MohistMC." />
                 <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/downloads" />
                 <meta property="twitter:title" content="MohistMC - Downloads" />
-                <meta property="twitter:description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2023 MohistMC." />
+                <meta property="twitter:description" content="Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. © 2019-2023 MohistMC." />
                 <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
             </Head>
             <h1 className="md:mt-20 mt-10 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{getLocaleStringAsArgs(strings['downloads.title'])[0]}
