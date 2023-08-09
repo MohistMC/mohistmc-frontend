@@ -106,7 +106,8 @@ const frTranslation: LocaleState = {
         "issuemodal.subtitle": "Nous sommes toujours ravis de vous aider avec tout problème que vous pourriez rencontrer. Il existe deux façons de signaler un problème :",
         "issuemodal.report.github": "Signaler via GitHub",
         "issuemodal.report.website": "Signaler via le site web",
-        "issuemodal.dropdown.item.website": "Site web"
+        "issuemodal.dropdown.item.website": "Site web",
+        "issuemodal.discord.text": "Vous avez également la possibilité de discuter avec nous sur Discord pour obtenir de l'aide à ce sujet ! Cependant, veuillez noter que dans la plupart des cas, il sera nécessaire d'ouvrir un ticket de problème, étant donné la forte demande que nous recevons. Ainsi, Discord ne constitue pas toujours le moyen le plus optimal pour résoudre vos bugs."
     }
 }
 

@@ -107,6 +107,7 @@ const enTranslation: LocaleState = {
         "issuemodal.report.github": "Report via GitHub",
         "issuemodal.report.website": "Report via website",
         "issuemodal.dropdown.item.website": "Website",
+        "issuemodal.discord.text": "You can also engage with us on Discord for assistance! However, please be aware that in most cases, opening an issue will still be necessary due to the high demand we experience. Thus, Discord might not always be the most effective way to address your bugs.",
     }
 }
 
