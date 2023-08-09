@@ -32,6 +32,7 @@ const enTranslation: LocaleState = {
         "button.download.mirror": "Mirror download",
         "button.sourcecode": "Source code",
         "button.blog": "Blog",
+        "button.close": "Close",
         "footer.heading.gettingstarted": "Getting started",
         "footer.heading.discover": "Discover us",
         "footer.heading.community": "Community",
@@ -98,6 +99,14 @@ const enTranslation: LocaleState = {
         "software.banner.cards.3.desc": "Join the Banner community for support and regular updates! Stay up-to-date with the latest Minecraft versions and access new features and improvements.",
         "software.banner.footer.desc": "Experience unparalleled stability with mod & plugin integration. Join the Banner community and unlock limitless possibilities for your server. Upgrade to Banner today and revolutionize your Minecraft experience.",
         'toast.filtersOn': "You still have filters on, if you see nothing, you may have to remove them.",
+        "loginmodal.title": "Login to report an issue",
+        "loginmodal.subtitle": "To be sure you're not a robot and to be able to contact you, please login to report an issue.",
+        "loginmodal.githublogin": "Login with Github",
+        "issuemodal.title": "Do you want to report an issue about one of our software?",
+        "issuemodal.subtitle": "We are always happy to help you with any problem you may have. There are two ways of reporting an issue:",
+        "issuemodal.report.github": "Report via GitHub",
+        "issuemodal.report.website": "Report via website",
+        "issuemodal.dropdown.item.website": "Website",
     }
 }
 

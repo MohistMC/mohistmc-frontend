@@ -6,6 +6,8 @@ import Link from "next/link";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import ProfileImage from "@/components/ProfileImage";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 
 interface BuildDetailsModalProps {
     build: Build | undefined
@@ -72,6 +74,7 @@ const customTheme: CustomFlowbiteTheme = {
 
 export default function BuildDetailsModal({build, project, openModal, setOpenModal}: BuildDetailsModalProps) {
     const isDark = useSelector(selectTheme)
+    const strings = useAppSelector(selectTranslations);
 
     const [commitMessage, setCommitMessage] = useState<string | undefined>(undefined)
     const [commitAuthor, setCommitAuthor] = useState<string | undefined>(undefined)
@@ -151,7 +154,7 @@ export default function BuildDetailsModal({build, project, openModal, setOpenMod
                         </Button>
                     </Link>
                     <Button color="gray" onClick={() => setOpenModal(undefined)}>GitHub</Button>
-                    <Button color="gray" onClick={() => setOpenModal(undefined)}>Close</Button>
+                    <Button color="gray" onClick={() => setOpenModal(undefined)}>{strings['button.close']}</Button>
                 </Modal.Footer>
             </Modal>
         </Flowbite>

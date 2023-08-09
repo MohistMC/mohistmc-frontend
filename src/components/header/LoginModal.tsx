@@ -3,6 +3,8 @@ import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import Link from "next/link";
 import {HiExternalLink} from "react-icons/hi";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 
 const customTheme: CustomFlowbiteTheme = {
     modal: {
@@ -67,18 +69,19 @@ interface LoginModalProps {
 
 const IssueReportModal = ({openModal, setOpenModal}: LoginModalProps) => {
     const isDark = useSelector(selectTheme)
+    const strings = useAppSelector(selectTranslations);
 
     return (
         <Flowbite theme={{theme: customTheme, dark: isDark}}>
             <Modal dismissible show={openModal === 'dismissible'} onClose={() => setOpenModal(undefined)}>
-                <Modal.Header>Login to report an issue</Modal.Header>
+                <Modal.Header>{strings['loginmodal.title']}</Modal.Header>
                 <Modal.Body>
                     <p className="text-sm text-gray-500 dark:text-gray-200 text-center">
-                        To be sure you're not a robot and to be able to contact you, please login to report an issue.
+                        {strings['loginmodal.subtitle']}
                         <div className={`flex flex-row gap-2 justify-center align-center mt-3`}>
                             <Button>
                                 <Link href={`https://github.com/login/oauth/authorize?client_id=38c3c24f71ee7aaff398`}>
-                                    Login with Github
+                                    {strings['loginmodal.githublogin']}
                                     <HiExternalLink className={`inline-block ml-1`}/>
                                 </Link>
                             </Button>

@@ -32,6 +32,7 @@ const frTranslation: LocaleState = {
         "button.download.mirror": "Téléchargement alternatif",
         "button.sourcecode": "Code source",
         "button.blog": "Blog",
+        "button.close": "Fermer",
         "footer.heading.gettingstarted": "Pour commencer",
         "footer.heading.discover": "Découvrez-nous",
         "footer.heading.community": "Communauté",
@@ -98,6 +99,14 @@ const frTranslation: LocaleState = {
         "software.banner.cards.3.desc": "Rejoignez la communauté Banner pour obtenir du support et des mises à jour régulières ! Restez à jour avec les dernières versions de Minecraft et accédez aux nouvelles fonctionnalités et améliorations.",
         "software.banner.footer.desc": "Découvrez une stabilité inégalée avec l'intégration de mods Fabric et de plugins Bukkit/Spigot. Rejoignez la communauté de Banner et débloquez des possibilités illimitées pour votre serveur. Passez à Banner dès aujourd'hui et révolutionnez votre expérience Minecraft.",
         "toast.filtersOn": "Vous avez toujours des filtres activés, si vous ne voyez rien, vous devrez peut-être les supprimer.",
+        "loginmodal.title": "Connexion pour signaler un problème",
+        "loginmodal.subtitle": "Pour être sûr(e) que vous n'êtes pas un robot et pour pouvoir vous contacter, veuillez vous connecter pour signaler un problème.",
+        "loginmodal.githublogin": "Se connecter avec Github",
+        "issuemodal.title": "Souhaitez-vous signaler un problème concernant l'un de nos logiciels ?",
+        "issuemodal.subtitle": "Nous sommes toujours ravis de vous aider avec tout problème que vous pourriez rencontrer. Il existe deux façons de signaler un problème :",
+        "issuemodal.report.github": "Signaler via GitHub",
+        "issuemodal.report.website": "Signaler via le site web",
+        "issuemodal.dropdown.item.website": "Site web"
     }
 }
 
