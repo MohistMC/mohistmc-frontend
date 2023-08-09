@@ -1,4 +1,3 @@
-import {wrapper} from "@/util/redux/Store";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
@@ -7,28 +6,47 @@ import StatisticsElement from "@/components/index/StatisticsElement";
 import DefaultCarousel from "@/components/index/Carousel";
 import Head from "next/head";
 import {getCopyrightText} from "@/util/String";
+import {useRouter} from "next/router";
+import {setCookie} from "cookies-next";
+import {useEffect} from "react";
 
-function Home() {
+const Home = () => {
     const strings = useAppSelector(selectTranslations);
+    const router = useRouter()
+
+    useEffect(() => {
+        if(!router.isReady) return
+
+        const {auth} = router.query as { auth: string }
+
+        // Store auth token in cookie and remove from url
+        if (auth && auth.length) {
+            setCookie('auth', auth, {path: '/', maxAge: 21600})
+            router.replace(router.pathname)
+        }
+    }, [router.isReady, router.query]);
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>MohistMC - Home</title>
-                <meta name="title" content="MohistMC - Home" />
-                <meta name="description" content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`} />
+                <meta name="title" content="MohistMC - Home"/>
+                <meta name="description"
+                      content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>
 
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://new.mohistmc.com/" />
-                <meta property="og:title" content="MohistMC - Home" />
-                <meta property="og:description" content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://new.mohistmc.com/"/>
+                <meta property="og:title" content="MohistMC - Home"/>
+                <meta property="og:description"
+                      content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>
+                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png"/>
 
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://new.mohistmc.com/" />
-                <meta property="twitter:title" content="MohistMC - Home" />
-                <meta property="twitter:description" content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`} />
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+                <meta property="twitter:card" content="summary_large_image"/>
+                <meta property="twitter:url" content="https://new.mohistmc.com/"/>
+                <meta property="twitter:title" content="MohistMC - Home"/>
+                <meta property="twitter:description"
+                      content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png"/>
             </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="pt-5 md:pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">

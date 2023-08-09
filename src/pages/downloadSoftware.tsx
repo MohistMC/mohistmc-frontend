@@ -16,7 +16,6 @@ import {CustomFlowbiteTheme, Flowbite, Toast} from "flowbite-react";
 import {HiExclamation} from "react-icons/hi";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
-import 'react-toastify/dist/ReactToastify.css';
 
 const customTheme: CustomFlowbiteTheme = {
     toast: {

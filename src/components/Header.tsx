@@ -7,6 +7,12 @@ import {LocaleState, selectTranslations, setLocale} from "@/features/i18n/Transl
 import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import UserDropdown from "@/components/header/UserDropdown";
+import {deleteCookie, getCookie, hasCookie} from "cookies-next";
+import {ToastLogger} from "@/util/Logger";
+import {Button} from "flowbite-react";
+import IssueReportModal from "@/components/header/IssueReportModal";
+import LoginModal from "@/components/header/LoginModal";
 
 export default function Header() {
     // React state
@@ -14,6 +20,9 @@ export default function Header() {
         locale={locales.current}/>);
     const [localesElementState, setLocalesElementState] = useState<ReactElement[]>([]);
     const [menuVisibilityState, setMenuVisibilityState] = useState<boolean>(false);
+    const [userDropdownState, setUserDropdownState] = useState<ReactElement | undefined>();
+    const [openIssueModal, setOpenIssueModal] = useState<string | undefined>();
+    const [openLoginModal, setOpenLoginModal] = useState<string | undefined>();
 
     // React redux
     const dispatch = useDispatch();
@@ -50,6 +59,33 @@ export default function Header() {
         dispatch(setLocale(locale));
         saveToStorage && localStorage.setItem('locale', locales.current.initials);
     }
+
+    useEffect(() => {
+        if(hasCookie('auth')) {
+            fetch('https://mohistmc.com/api/v2/user', {
+                method: 'GET',
+                headers: {
+                    'authorization': getCookie('auth')!.toString() || '',
+                    'Content-Type': 'application/json'
+                }
+            }).then(async res => {
+                if (res.status !== 200) {
+                    deleteCookie('auth')
+                    setUserDropdownState(undefined)
+                    ToastLogger.error(`You have been disconnected, please reconnect if you want to manage your issues or open a new one.`)
+                }
+
+                ToastLogger.info('You are logged in.')
+                const {username, avatarUrl} = await res.json()
+                setUserDropdownState(<UserDropdown username={username} avatarUrl={avatarUrl} setUserDropdownState={setUserDropdownState}/>)
+            }).catch(err => {
+                console.error(err)
+                deleteCookie('auth')
+                setUserDropdownState(undefined)
+                ToastLogger.error(`Could not join the server. Please try again later.`)
+            })
+        }
+    }, [hasCookie('auth')])
 
     return (
         <nav className="bg-white border-gray-200 dark:bg-dark-50 fixed top-0 w-full z-30 drop-shadow-md">
@@ -92,6 +128,12 @@ export default function Header() {
                         </svg>
                     </button>
                     <ThemeSwitcher className={`ml-2`}/>
+                    {userDropdownState}
+                    {!userDropdownState && <Button className={`ml-3`} onClick={() => setOpenIssueModal('dismissible')}>
+                        Report an issue
+                    </Button>}
+                    <IssueReportModal openIssueModal={openIssueModal} setOpenIssueModal={setOpenIssueModal} openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal}/>
+                    <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal}/>
                 </div>
                 <div
                     className={`${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}

@@ -12,6 +12,7 @@ import {Provider} from "react-redux";
 import {wrapper} from "@/util/redux/Store";
 import {hackNextra} from "@/util/Nextra";
 import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
