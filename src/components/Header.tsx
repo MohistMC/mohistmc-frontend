@@ -87,6 +87,19 @@ export default function Header() {
         }
     }, [hasCookie('auth')])
 
+    const AccountButtons = (rootCss: string, buttonCss: string = '') => {
+        return (
+            <div className={rootCss}>
+                {userDropdownState}
+                {!userDropdownState && <Button className={buttonCss} onClick={() => setOpenIssueModal('dismissible')}>
+                    Report an issue
+                </Button>}
+                <IssueReportModal openIssueModal={openIssueModal} setOpenIssueModal={setOpenIssueModal} openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal}/>
+                <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal}/>
+            </div>
+        )
+    }
+
     return (
         <nav className="bg-white border-gray-200 dark:bg-dark-50 fixed top-0 w-full z-30 drop-shadow-md">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -128,12 +141,7 @@ export default function Header() {
                         </svg>
                     </button>
                     <ThemeSwitcher className={`ml-2`}/>
-                    {userDropdownState}
-                    {!userDropdownState && <Button className={`ml-3`} onClick={() => setOpenIssueModal('dismissible')}>
-                        Report an issue
-                    </Button>}
-                    <IssueReportModal openIssueModal={openIssueModal} setOpenIssueModal={setOpenIssueModal} openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal}/>
-                    <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal}/>
+                    {AccountButtons('hidden md:block', 'ml-3')}
                 </div>
                 <div
                     className={`${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}
@@ -191,6 +199,7 @@ export default function Header() {
                                 {strings['button.api']}
                             </Link>
                         </li>
+                        {AccountButtons('md:hidden', 'ml-2 mt-1 mb-2')}
                         {languageButtonState}
                         <div
                             className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-dark-100"
