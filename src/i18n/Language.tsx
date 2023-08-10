@@ -16,3 +16,11 @@ export const locales: LocalesInterface = {
     current: enTranslation,
     available: availableLocales,
 }
+
+export const getCurrentLocale = () => {
+    const mergedStrings = Object.assign({}, locales.default.strings, locales.current.strings);
+    return {
+        ...locales.current,
+        strings: mergedStrings
+    }
+}

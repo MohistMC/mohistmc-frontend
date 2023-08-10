@@ -4,7 +4,7 @@ import {deleteCookie, getCookie, hasCookie} from "cookies-next";
 import {getAPIEndpoint} from "@/util/Environment";
 import {ToastLogger} from "@/util/Logger";
 import {User} from "@/interfaces/User";
-import {locales} from "@/i18n/Language";
+import {getCurrentLocale, locales} from "@/i18n/Language";
 
 export interface UserState extends User {
     isLogged: boolean;
@@ -32,7 +32,7 @@ export const userSlice = createSlice({
         },
         logout: (state) => {
             deleteCookie('auth')
-            ToastLogger.info(locales.current.strings['toast.logged.signout']);
+            ToastLogger.info(getCurrentLocale().strings['toast.logged.signout']);
 
             return {
                 ...state,
@@ -53,6 +53,8 @@ export const selectUser = (state: AppState) => state.user;
 export default userSlice.reducer;
 
 export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean = false) => {
+    const strings = getCurrentLocale().strings;
+
     if(!hasCookie('auth')) return
 
     const newState = {...initialState};
@@ -70,7 +72,7 @@ export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean =
         if (response.ok) {
             const {username, avatarUrl} = await response.json() as User;
 
-            ToastLogger.info(locales.current.strings['toast.logged.success']);
+            ToastLogger.info(strings['toast.logged.success']);
             dispatch(setState({
                 ...newState,
                 username,
@@ -79,7 +81,7 @@ export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean =
             }));
         } else {
             deleteCookie('auth');
-            ToastLogger.error(locales.current.strings['toast.logged.failed']);
+            ToastLogger.error(strings['toast.logged.failed']);
             dispatch(setState({
                 ...newState,
                 serverError: true
@@ -87,7 +89,7 @@ export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean =
         }
     } catch (error) {
         deleteCookie('auth');
-        ToastLogger.error(locales.current.strings['toast.logged.servererror']);
+        ToastLogger.error(strings['toast.logged.servererror']);
         dispatch(setState({
             ...newState,
             serverError: true

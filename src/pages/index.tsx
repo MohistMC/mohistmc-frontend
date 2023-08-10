@@ -22,6 +22,7 @@ const Home = () => {
 
     // React states
     const [openChoiceIssueModal, setOpenChoiceIssueModal] = useState<string | undefined>();
+    const [choiceModalOpened, setChoiceModalOpened] = useState<boolean>(false);
 
     useEffect(() => {
         if(!router.isReady) return
@@ -37,9 +38,11 @@ const Home = () => {
     }, [router.isReady, router.query]);
 
     useEffect(() => {
-        if(user.isFirstLogin && user.isLogged)
+        if(user.isFirstLogin && user.isLogged && !choiceModalOpened) {
             setOpenChoiceIssueModal('dismissible')
-    }, [user])
+            setChoiceModalOpened(true)
+        }
+    }, [user, choiceModalOpened])
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
