@@ -16,6 +16,7 @@ import {CustomFlowbiteTheme, Flowbite, Toast} from "flowbite-react";
 import {HiExclamation} from "react-icons/hi";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
+import {getAPIEndpoint} from "@/util/Environment";
 
 const customTheme: CustomFlowbiteTheme = {
     toast: {
@@ -104,7 +105,7 @@ export default function DownloadSoftware() {
                 }
             }
 
-            const projectBuildsReq = await fetch(`https://mohistmc.com/api/v2/projects/${project}/${selectedVersion}/builds`)
+            const projectBuildsReq = await fetch(`${getAPIEndpoint()}/projects/${project}/${selectedVersion}/builds`)
             const buildsJson: ProjectBuilds = await projectBuildsReq.json()
 
             if (!buildsJson?.builds || buildsJson?.builds?.length === 0) {

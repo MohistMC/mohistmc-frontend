@@ -1,15 +1,10 @@
-import {Avatar, Button, CustomFlowbiteTheme, Dropdown, Flowbite} from 'flowbite-react';
-import React, {ReactElement} from "react";
-import {useSelector} from "react-redux";
+import {Avatar, CustomFlowbiteTheme, Dropdown, Flowbite} from 'flowbite-react';
+import React, {ReactElement, useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
-import {deleteCookie} from "cookies-next";
-import {HiBan, HiDocumentReport, HiLogout, HiUserRemove, HiViewGrid} from "react-icons/hi";
-
-interface UserDropdownItemProps {
-    username: string;
-    avatarUrl: string;
-    setUserDropdownState: (state: ReactElement | undefined) => void;
-}
+import {HiDocumentReport, HiLogout, HiUserRemove, HiViewGrid} from "react-icons/hi";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {logout, selectUser} from "@/features/user/UserSlice";
 
 const customTheme: CustomFlowbiteTheme = {
     avatar: {
@@ -105,20 +100,29 @@ const customTheme: CustomFlowbiteTheme = {
     }
 }
 
-const UserDropdown = ({username, avatarUrl, setUserDropdownState}: UserDropdownItemProps) => {
+const UserDropdown = () => {
+    // React state
+    const [userDropdownState, setUserDropdownState] = useState<ReactElement | undefined>();
+
     const isDark = useSelector(selectTheme)
+    const user = useAppSelector(selectUser)
+    const dispatch = useDispatch()
 
     const signOut = () => {
-        deleteCookie('auth')
-        setUserDropdownState(undefined)
+        dispatch(logout())
     }
+
+    useEffect(() => {
+        if(!user.isLogged)
+            setUserDropdownState(undefined)
+    }, [user]);
 
     return (
         <Flowbite theme={{theme: customTheme, dark: isDark}}>
-            <Dropdown inline label={<Avatar alt="User settings" img={avatarUrl} rounded/>}>
+            <Dropdown inline label={<Avatar alt="User settings" img={user.avatarUrl} rounded/>}>
                 <Dropdown.Header>
         <span className="block text-sm">
-          {username}
+          {user.username}
         </span>
                     <span className="block truncate text-sm font-medium">
           Logged-in via GitHub

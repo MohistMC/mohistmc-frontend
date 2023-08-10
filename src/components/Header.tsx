@@ -8,11 +8,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import UserDropdown from "@/components/header/UserDropdown";
-import {deleteCookie, getCookie, hasCookie} from "cookies-next";
-import {ToastLogger} from "@/util/Logger";
 import {Button} from "flowbite-react";
-import IssueReportModal from "@/components/header/IssueReportModal";
-import LoginModal from "@/components/header/LoginModal";
+import IssueReportModal from "@/components/modals/IssueReportModal";
+import LoginModal from "@/components/modals/LoginModal";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectUser} from "@/features/user/UserSlice";
 
 export default function Header() {
     // React state
@@ -20,13 +20,13 @@ export default function Header() {
         locale={locales.current}/>);
     const [localesElementState, setLocalesElementState] = useState<ReactElement[]>([]);
     const [menuVisibilityState, setMenuVisibilityState] = useState<boolean>(false);
-    const [userDropdownState, setUserDropdownState] = useState<ReactElement | undefined>();
     const [openIssueModal, setOpenIssueModal] = useState<string | undefined>();
     const [openLoginModal, setOpenLoginModal] = useState<string | undefined>();
 
     // React redux
     const dispatch = useDispatch();
     const strings = useSelector(selectTranslations);
+    const user = useAppSelector(selectUser)
 
     // React effect
     useEffect(() => {
@@ -60,48 +60,21 @@ export default function Header() {
         saveToStorage && localStorage.setItem('locale', locales.current.initials);
     }
 
-    useEffect(() => {
-        if(hasCookie('auth')) {
-            fetch('https://mohistmc.com/api/v2/user', {
-                method: 'GET',
-                headers: {
-                    'authorization': getCookie('auth')!.toString() || '',
-                    'Content-Type': 'application/json'
-                }
-            }).then(async res => {
-                if (res.status !== 200) {
-                    deleteCookie('auth')
-                    setUserDropdownState(undefined)
-                    ToastLogger.error(`You have been disconnected, please reconnect if you want to manage your issues or open a new one.`)
-                }
-
-                ToastLogger.info('You are logged in.')
-                const {username, avatarUrl} = await res.json()
-                setUserDropdownState(<UserDropdown username={username} avatarUrl={avatarUrl} setUserDropdownState={setUserDropdownState}/>)
-            }).catch(err => {
-                console.error(err)
-                deleteCookie('auth')
-                setUserDropdownState(undefined)
-                ToastLogger.error(`Could not join the server. Please try again later.`)
-            })
-        }
-    }, [hasCookie('auth')])
-
     const AccountButtons = (rootCss: string, buttonCss: string = '') => {
         return (
             <div className={rootCss}>
-                {userDropdownState}
-                {!userDropdownState && <Button className={buttonCss} onClick={() => setOpenIssueModal('dismissible')}>
+                {user.isLogged && <UserDropdown/>}
+                {!user.isLogged && <Button className={buttonCss} onClick={() => setOpenIssueModal('dismissible')}>
                     Report an issue
                 </Button>}
-                <IssueReportModal openIssueModal={openIssueModal} setOpenIssueModal={setOpenIssueModal} openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal}/>
-                <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal}/>
             </div>
         )
     }
 
     return (
         <nav className="bg-white border-gray-200 dark:bg-dark-50 fixed top-0 w-full z-30 drop-shadow-md">
+            <IssueReportModal openIssueModal={openIssueModal} setOpenIssueModal={setOpenIssueModal} openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal}/>
+            <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal}/>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center">
                     <img src="/mohistLogo.png" className="h-8 mr-3" alt="MohistMC Logo"/>

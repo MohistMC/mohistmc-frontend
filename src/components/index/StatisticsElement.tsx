@@ -2,6 +2,7 @@ import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {useEffect, useState} from "react";
 import {useInView} from "react-intersection-observer";
+import {getAPIEndpoint} from "@/util/Environment";
 
 export default function StatisticsElement() {
     const strings = useAppSelector(selectTranslations);
@@ -17,7 +18,7 @@ export default function StatisticsElement() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://mohistmc.com/api/v2/stats');
+            const response = await fetch(`${getAPIEndpoint()}/stats`);
             const data: {
                 bstats: {
                     servers: {

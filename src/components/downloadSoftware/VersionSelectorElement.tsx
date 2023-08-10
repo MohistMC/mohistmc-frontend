@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Project} from "@/interfaces/Project";
 import {Dropdown} from "flowbite-react";
 import {NextRouter} from "next/router";
+import {getAPIEndpoint} from "@/util/Environment";
 
 interface VersionSelectorElementProps {
     selectedVersion: string | undefined
@@ -26,7 +27,7 @@ export default function VersionSelectorElement({
     // React effect
     useEffect(() => {
         const fetchSources = async () => {
-            const buildSources = await fetch(`https://mohistmc.com/api/v2/projects/${software}`)
+            const buildSources = await fetch(`${getAPIEndpoint()}/projects/${software}`)
             const buildSourcesJson: ProjectVersions = await buildSources.json()
 
             setAvailableVersions(buildSourcesJson?.versions || [])

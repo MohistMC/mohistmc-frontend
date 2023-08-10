@@ -1,10 +1,10 @@
 import {toast} from "react-toastify";
 
 const ToastLogger = {
-    log: (s: string, time: number | undefined = undefined) => {
+    log: (s: string, autoClose: number = 5000) => {
         toast.success(s, {
             position: "top-right",
-            autoClose: time ?? 5000,
+            autoClose,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -13,10 +13,10 @@ const ToastLogger = {
             theme: "dark",
         });
     },
-    info: (s: string, time: number | undefined = undefined) => {
+    info: (s: string, autoClose: number = 5000) => {
         toast.info(s, {
             position: "top-right",
-            autoClose: time ?? 5000,
+            autoClose,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -25,10 +25,10 @@ const ToastLogger = {
             theme: "dark",
         });
     },
-    error: (s: string) => {
+    error: (s: string, autoClose: number = 5000) => {
         toast.error(s, {
             position: "top-right",
-            autoClose: 5000,
+            autoClose,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -37,10 +37,10 @@ const ToastLogger = {
             theme: "dark",
         });
     },
-    warn: (s: string) => {
+    warn: (s: string, autoClose: number = 5000) => {
         toast.warn(s, {
             position: "top-right",
-            autoClose: 5000,
+            autoClose,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

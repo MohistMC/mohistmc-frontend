@@ -1,8 +1,6 @@
 import {Button, CustomFlowbiteTheme, Flowbite, Modal} from "flowbite-react";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
-import Link from "next/link";
-import {HiExternalLink} from "react-icons/hi";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 
@@ -62,38 +60,36 @@ const customTheme: CustomFlowbiteTheme = {
     }
 }
 
-interface LoginModalProps {
-    openModal: string | undefined
-    setOpenModal: (modal: string | undefined) => void
+interface ChoiceIssueModalProps {
+    openIssueModal: string | undefined
+    setOpenIssueModal: (modal: string | undefined) => void
 }
 
-const IssueReportModal = ({openModal, setOpenModal}: LoginModalProps) => {
+const ChoiceIssueModal = ({openIssueModal, setOpenIssueModal}: ChoiceIssueModalProps) => {
     const isDark = useSelector(selectTheme)
     const strings = useAppSelector(selectTranslations);
 
     return (
         <Flowbite theme={{theme: customTheme, dark: isDark}}>
-            <Modal dismissible show={openModal === 'dismissible'} onClose={() => setOpenModal(undefined)}>
-                <Modal.Header>{strings['loginmodal.title']}</Modal.Header>
+            <Modal dismissible show={openIssueModal === 'dismissible'} onClose={() => setOpenIssueModal(undefined)}>
+                <Modal.Header>You are logged in! Choose an action</Modal.Header>
                 <Modal.Body>
-                    <p className="text-sm text-gray-500 dark:text-gray-200 text-center">
-                        {strings['loginmodal.subtitle']}
-                        <div className={`flex flex-row gap-2 justify-center align-center mt-3`}>
-                            <Button>
-                                <Link href={`https://github.com/login/oauth/authorize?client_id=38c3c24f71ee7aaff398`}>
-                                    {strings['loginmodal.githublogin']}
-                                    <HiExternalLink className={`inline-block ml-1`}/>
-                                </Link>
-                            </Button>
-                        </div>
-                    </p>
+                    <div className={`flex flex-row gap-2 justify-center align-center mt-3`}>
+                        <Button>
+                            Open an issue
+                        </Button>
+                        <Button>
+                            View existing issues
+                        </Button>
+                    </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button color="gray" onClick={() => setOpenModal(undefined)}>Cancel</Button>
+                    <Button onClick={() => setOpenIssueModal(undefined)}>Sign out</Button>
+                    <Button color="gray" onClick={() => setOpenIssueModal(undefined)}>{strings['button.close']}</Button>
                 </Modal.Footer>
             </Modal>
         </Flowbite>
     )
 }
 
-export default IssueReportModal
+export default ChoiceIssueModal

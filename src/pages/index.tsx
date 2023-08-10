@@ -8,11 +8,20 @@ import Head from "next/head";
 import {getCopyrightText} from "@/util/String";
 import {useRouter} from "next/router";
 import {setCookie} from "cookies-next";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import ChoiceIssueModal from "@/components/modals/ChoiceIssueModal";
+import {useDispatch} from "react-redux";
+import {loginUserAsync, selectUser} from "@/features/user/UserSlice";
 
 const Home = () => {
+    // React redux
+    const dispatch = useDispatch();
     const strings = useAppSelector(selectTranslations);
+    const user = useAppSelector(selectUser)
     const router = useRouter()
+
+    // React states
+    const [openChoiceIssueModal, setOpenChoiceIssueModal] = useState<string | undefined>();
 
     useEffect(() => {
         if(!router.isReady) return
@@ -23,8 +32,14 @@ const Home = () => {
         if (auth && auth.length) {
             setCookie('auth', auth, {path: '/', maxAge: 21600})
             router.replace(router.pathname)
+            loginUserAsync(dispatch, true)
         }
     }, [router.isReady, router.query]);
+
+    useEffect(() => {
+        if(user.isFirstLogin && user.isLogged)
+            setOpenChoiceIssueModal('dismissible')
+    }, [user])
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
@@ -48,6 +63,7 @@ const Home = () => {
                       content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>
                 <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png"/>
             </Head>
+            <ChoiceIssueModal openIssueModal={openChoiceIssueModal} setOpenIssueModal={setOpenChoiceIssueModal}/>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="pt-5 md:pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{strings['index.head.title']}</h1>
