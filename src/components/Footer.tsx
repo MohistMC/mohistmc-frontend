@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className="md:flex md:justify-between">
                     <div className="mb-10 md:mb-0">
                         <Link href="/" className="flex items-center">
-                            <img src="/mohistLogo.png" className="h-8 mr-3"
+                            <img src="/mohistLogo.webp" className="h-8 mr-3"
                                  alt="MohistMC Logo"/>
                             <span
                                 className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">MohistMC</span>
@@ -27,6 +27,9 @@ export default function Footer() {
                             <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
                                     <Link href="/downloads" className="md:hover:text-blue-500">{strings['button.downloads']}</Link>
+                                </li>
+                                <li>
+                                    <Link href="/contribute" className="md:hover:text-blue-500">{strings['button.contribute']}</Link>
                                 </li>
                                 <li>
                                     <Link href="/docs" className="md:hover:text-blue-500">{strings['button.documentation']}</Link>

@@ -34,6 +34,7 @@ const enTranslation: LocaleState = {
         "button.sourcecode": "Source code",
         "button.blog": "Blog",
         "button.close": "Close",
+        "button.contribute": "Contribute",
         "footer.heading.gettingstarted": "Getting started",
         "footer.heading.discover": "Discover us",
         "footer.heading.community": "Community",
@@ -120,6 +121,20 @@ const enTranslation: LocaleState = {
         "issuemodal.report.website": "Report via website",
         "issuemodal.dropdown.item.website": "Website",
         "issuemodal.discord.text": "You can also engage with us on Discord for assistance! However, please be aware that in most cases, opening an issue will still be necessary due to the high demand we experience. Thus, Discord might not always be the most effective way to address your bugs.",
+        "contribute.page.title": "MohistMC - Contribute",
+        "contribute.title": "Contribute to %MohistMC%, help us making better softwares!",
+        "contribute.subtitle": "MohistMC makes open-source projects, powered by community contributions. There are diverse ways for you to participate in shaping these projects.",
+        "contribute.cards.1.title": "Contribute financially",
+        "contribute.cards.1.desc": "MohistMC is a non-profit organization. We rely on donations to fund our operations and continue to develop our projects and maintain our infrastructure. Your contribution will help us to continue to provide our services to the community.",
+        "contribute.cards.2.title": "Contribute to the code",
+        "contribute.cards.2.desc": "MohistMC makes open-source projects! We welcome contributions from the community. You can contribute to our projects by submitting pull requests or reporting issues on GitHub.",
+        "contribute.cards.3.title": "Contribute to the documentation",
+        "contribute.cards.3.desc": "MohistMC provides various documentations for our softwares, and a lot of users needs them. You can help us to improve the documentation by contributing to it on GitHub.",
+        "contribute.cards.4.title": "Become a translator",
+        "contribute.cards.4.desc": "We make our projects available in multiple languages so that everyone can use them. If you are fluent in a language other than English, you can help us to translate our projects!",
+        "contribute.cards.4.button": "Crowdin page",
+        "contribute.footer.title": "Join our community and help us to create better projects!",
+        "contribute.footer.desc": "MohistMC is a community-driven organization. We welcome contributions from the community. Join our community and help us to create better projects!",
     }
 }
 

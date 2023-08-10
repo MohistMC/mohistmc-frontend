@@ -44,19 +44,19 @@ export default function Sponsor() {
             <Head>
                 <title>{strings['sponsor.page.title']}</title>
                 <meta name="title" content="MohistMC - Sponsor" />
-                <meta name="description" content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!" />
+                <meta name="description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://new.mohistmc.com/sponsor" />
                 <meta property="og:title" content="MohistMC - Sponsor" />
-                <meta property="og:description" content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!" />
-                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+                <meta property="og:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
+                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/sponsor" />
                 <meta property="twitter:title" content="MohistMC - Sponsor" />
-                <meta property="twitter:description" content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!" />
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+                <meta property="twitter:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohistLogo.png" />
             </Head>
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                 <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">

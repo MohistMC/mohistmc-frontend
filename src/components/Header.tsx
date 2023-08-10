@@ -80,7 +80,7 @@ export default function Header() {
             <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal}/>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center">
-                    <img src="/mohistLogo.png" className="h-8 mr-3" alt="MohistMC Logo"/>
+                    <img src="/mohistLogo.webp" className="h-8 mr-3" alt="MohistMC Logo"/>
                     <span
                         className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">MohistMC</span>
                 </Link>
@@ -158,9 +158,9 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/sponsor"
+                            <Link href="/contribute"
                                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
-                                {strings['button.sponsor']}
+                                {strings['button.contribute']}
                             </Link>
                         </li>
                         <li>

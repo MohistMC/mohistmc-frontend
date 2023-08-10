@@ -18,13 +18,13 @@ export default function Downloads() {
                 <meta property="og:url" content="https://new.mohistmc.com/docs" />
                 <meta property="og:title" content="MohistMC - Docs" />
                 <meta property="og:description" content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/docs" />
                 <meta property="twitter:title" content="MohistMC - Docs" />
                 <meta property="twitter:description" content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`} />
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png" />
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohistLogo.png" />
 
             </Head>
             <h1 className="mb-4 mt-10 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">{strings['docs.title']}</h1>

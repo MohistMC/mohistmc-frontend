@@ -42,17 +42,17 @@ export default function DefaultCarousel() {
                 <Link href={`https://ci.codemc.io/`}><img
                     className={`md:w-1/6`}
                     alt="..."
-                    src="/codemc.png"
+                    src="/codemc.webp"
                 /></Link>
                 <Link href={`https://www.bisecthosting.com/mohistmc`}><img
                     className={`md:w-1/4`}
                     alt="..."
-                    src="/bisecthosting.png"
+                    src="/bisecthosting.webp"
                 /></Link>
                 <Link href={`https://www.yourkit.com/`}><img
                     className={`md:w-1/6`}
                     alt="..."
-                    src="/yourkit.png"
+                    src="/yourkit.webp"
                 /></Link>
                 <Link href={`https://www.jetbrains.com`}><img
                     className={`md:w-1/6`}

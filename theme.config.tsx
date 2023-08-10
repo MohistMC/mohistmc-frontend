@@ -43,14 +43,14 @@ const config: DocsThemeConfig = {
                 <meta property="og:title" content={title}/>
                 <meta property="og:description"
                       content={description}/>
-                <meta property="og:image" content="https://new.mohistmc.com/mohist_logo_transparent.png"/>
+                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png"/>
 
                 <meta property="twitter:card" content="summary_large_image"/>
                 <meta property="twitter:url" content="https://new.mohistmc.com/team"/>
                 <meta property="twitter:title" content={title}/>
                 <meta property="twitter:description"
                       content={description}/>
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohist_logo_transparent.png"/>
+                <meta property="twitter:image" content="https://new.mohistmc.com/mohistLogo.png"/>
             </>
         )
     },
