@@ -12,8 +12,8 @@ export default function Team() {
     return (
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
             <Head>
-                <title>MohistMC - Team</title>
-                <meta name="title" content="MohistMC - Team" />
+                <title>{strings['team.page.title']}</title>
+                <meta name="title" content="MohistMC - Our team" />
                 <meta name="description" content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`} />
 
                 <meta property="og:type" content="website" />

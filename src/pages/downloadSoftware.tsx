@@ -17,6 +17,7 @@ import {HiExclamation} from "react-icons/hi";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import {getAPIEndpoint} from "@/util/Environment";
+import Head from "next/head";
 
 const customTheme: CustomFlowbiteTheme = {
     toast: {
@@ -139,6 +140,9 @@ export default function DownloadSoftware() {
 
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">
+            <Head>
+                <title>{getLocaleStringAsArgs(strings['downloadSoftware.page.title'])[0]}{capitalizeFirstLetter(project)}{getLocaleStringAsArgs(strings['downloadSoftware.page.title'])[1]}</title>
+            </Head>
             <div className={`flex items-center justify-center pt-10 md:pt-0`}>
                 <h1 className="text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white md:mt-10 text-center">{getLocaleStringAsArgs(strings['downloadSoftware.title'])[0]}
                     <span

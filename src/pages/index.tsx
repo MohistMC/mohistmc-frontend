@@ -44,7 +44,7 @@ const Home = () => {
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
             <Head>
-                <title>MohistMC - Home</title>
+                <title>{strings['index.page.title']}</title>
                 <meta name="title" content="MohistMC - Home"/>
                 <meta name="description"
                       content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>

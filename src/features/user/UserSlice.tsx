@@ -1,9 +1,10 @@
 import {AppState} from "@/util/redux/Store";
 import {createSlice, Dispatch, PayloadAction} from "@reduxjs/toolkit";
-import {deleteCookie, getCookie} from "cookies-next";
+import {deleteCookie, getCookie, hasCookie} from "cookies-next";
 import {getAPIEndpoint} from "@/util/Environment";
 import {ToastLogger} from "@/util/Logger";
 import {User} from "@/interfaces/User";
+import {locales} from "@/i18n/Language";
 
 export interface UserState extends User {
     isLogged: boolean;
@@ -30,9 +31,8 @@ export const userSlice = createSlice({
             }
         },
         logout: (state) => {
-            console.log("aaaa")
             deleteCookie('auth')
-            ToastLogger.info('You have been signed out')
+            ToastLogger.info(locales.current.strings['toast.logged.signout']);
 
             return {
                 ...state,
@@ -53,6 +53,8 @@ export const selectUser = (state: AppState) => state.user;
 export default userSlice.reducer;
 
 export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean = false) => {
+    if(!hasCookie('auth')) return
+
     const newState = {...initialState};
     newState.isFirstLogin = isFirstLogin;
 
@@ -68,7 +70,7 @@ export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean =
         if (response.ok) {
             const {username, avatarUrl} = await response.json() as User;
 
-            ToastLogger.info('You are logged in.');
+            ToastLogger.info(locales.current.strings['toast.logged.success']);
             dispatch(setState({
                 ...newState,
                 username,
@@ -77,7 +79,7 @@ export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean =
             }));
         } else {
             deleteCookie('auth');
-            ToastLogger.error(`Login failed, probably wrong token.`);
+            ToastLogger.error(locales.current.strings['toast.logged.failed']);
             dispatch(setState({
                 ...newState,
                 serverError: true
@@ -85,7 +87,7 @@ export const loginUserAsync = async (dispatch: Dispatch, isFirstLogin: boolean =
         }
     } catch (error) {
         deleteCookie('auth');
-        ToastLogger.error(`Could not join the server. Please try again later.`);
+        ToastLogger.error(locales.current.strings['toast.logged.servererror']);
         dispatch(setState({
             ...newState,
             serverError: true

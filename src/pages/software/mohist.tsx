@@ -11,7 +11,7 @@ export default function MohistSoftware() {
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
             <Head>
-                <title>MohistMC - Mohist</title>
+                <title>{strings['software.mohist.page.title']}</title>
                 <meta name="title" content="MohistMC - Mohist" />
                 <meta name="description" content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`} />
 

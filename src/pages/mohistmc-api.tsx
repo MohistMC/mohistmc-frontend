@@ -26,7 +26,7 @@ export default function MohistMCApi() {
     return (
         <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
             <Head>
-                <title>MohistMC - JSON API</title>
+                <title>{strings['mohistapi.page.title']}</title>
                 <meta name="title" content="MohistMC - JSON API" />
                 <meta name="description" content={`Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! ${getCopyrightText()} MohistMC.`} />
 

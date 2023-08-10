@@ -56,7 +56,10 @@ export default function Header() {
         setLocalesElementState(locales.available.filter(locale => locale !== locales.current).map(locale =>
             <LanguageDropElement locale={locale} key={locale.initials}
                                  handleLocaleChangeCallback={handleLanguageChange}/>));
-        dispatch(setLocale(locale));
+
+        // Merge strings from default locale with the selected locale
+        const mergedStrings = Object.assign({}, locales.default.strings, locale.strings);
+        dispatch(setLocale({...locale, strings: mergedStrings}));
         saveToStorage && localStorage.setItem('locale', locales.current.initials);
     }
 

@@ -5,12 +5,14 @@ import {LocaleState} from "@/features/i18n/TranslatorSlice";
 
 const availableLocales = [frTranslation, enTranslation, zhTranslation];
 
-interface localesInterface {
+interface LocalesInterface {
+    default: LocaleState;
     current: LocaleState;
     available: LocaleState[];
 }
 
-export const locales: localesInterface = {
+export const locales: LocalesInterface = {
+    default: enTranslation,
     current: enTranslation,
     available: availableLocales,
 }

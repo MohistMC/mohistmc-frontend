@@ -11,7 +11,7 @@ export default function MohistSoftware() {
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
             <Head>
-                <title>MohistMC - Banner</title>
+                <title>{strings['software.banner.page.title']}</title>
                 <meta name="title" content="MohistMC - Banner" />
                 <meta name="description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
 

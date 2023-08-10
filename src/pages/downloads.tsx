@@ -11,7 +11,7 @@ export default function Downloads() {
     return (
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
             <Head>
-                <title>MohistMC - Downloads</title>
+                <title>{strings['downloads.page.title']}</title>
                 <meta name="title" content="MohistMC - Downloads" />
                 <meta name="description" content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`} />
 

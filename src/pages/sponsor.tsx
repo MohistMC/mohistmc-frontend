@@ -42,7 +42,7 @@ export default function Sponsor() {
     return (
         <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
             <Head>
-                <title>MohistMC - Sponsor</title>
+                <title>{strings['sponsor.page.title']}</title>
                 <meta name="title" content="MohistMC - Sponsor" />
                 <meta name="description" content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!" />
 

@@ -165,7 +165,7 @@ export default function SearchElement({
      */
     useEffect(() => {
         if (searchInputRef.current && searchInputRef.current.value.length)
-            ToastLogger.info(strings['toast.filtersOn'])
+            ToastLogger.info(strings['toast.filters.enabled'])
     }, [selectedVersion]);
 
     return (

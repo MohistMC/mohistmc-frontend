@@ -16,6 +16,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import {ToastLogger} from "@/util/Logger";
 import {getAPIEndpoint} from "@/util/Environment";
 import {loginUserAsync} from "@/features/user/UserSlice";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
