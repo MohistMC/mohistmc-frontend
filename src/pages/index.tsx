@@ -11,7 +11,7 @@ import {setCookie} from "cookies-next";
 import {useEffect, useState} from "react";
 import ChoiceIssueModal from "@/components/modals/ChoiceIssueModal";
 import {useDispatch} from "react-redux";
-import {loginUserAsync, selectUser} from "@/features/user/UserSlice";
+import {loginUserAsync, selectUser, setState} from "@/features/user/UserSlice";
 
 const Home = () => {
     // React redux
@@ -22,7 +22,6 @@ const Home = () => {
 
     // React states
     const [openChoiceIssueModal, setOpenChoiceIssueModal] = useState<string | undefined>();
-    const [choiceModalOpened, setChoiceModalOpened] = useState<boolean>(false);
 
     useEffect(() => {
         if(!router.isReady) return
@@ -38,11 +37,13 @@ const Home = () => {
     }, [router.isReady, router.query]);
 
     useEffect(() => {
-        if(user.isFirstLogin && user.isLogged && !choiceModalOpened) {
+        if(user.isFirstLogin && user.isLogged) {
             setOpenChoiceIssueModal('dismissible')
-            setChoiceModalOpened(true)
+            dispatch(setState({
+                isFirstLogin: false
+            }))
         }
-    }, [user, choiceModalOpened])
+    }, [user])
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">

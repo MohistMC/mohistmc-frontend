@@ -15,11 +15,13 @@ div[dir="ltr"] {
   }
 
   .nextra-search {
-    margin-top: 10em;
+    margin-top: 9em;
   }
 
-  .nextra-toc > div > div {
-      margin-top: 4em;
+  .nextra-toc {
+    .nextra-scrollbar {
+      padding-top: 6em;
+    }
   }
 
   @media (max-width: 767px) {
@@ -71,4 +73,8 @@ div[dir="ltr"] {
       margin-top: 2rem;
     }
   }
+}
+
+hr {
+  border-top: 1px solid #29292a !important;
 }

@@ -1,3 +1,7 @@
 {
-  "index": "Quickstart"
+  "introduction": "Introduction",
+  "requirements": "Requirements",
+  "installation": "Installation",
+  "versions": "Versions",
+  "developers": "Developers"
 }
