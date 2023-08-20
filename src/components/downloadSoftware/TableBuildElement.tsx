@@ -42,11 +42,11 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
             </td>
             <td className="px-6 py-4 hidden md:table-cell">
                 {project === Project.Banner && (build.fabricLoaderVersion || 'Unknown')}
-                <div className={`flex flex-col`}>
+                {project === Project.Mohist && <div className={`flex flex-col`}>
                     {build.forgeVersion && <p>Forge: {build.forgeVersion}</p>}
                     {build.neoForgeVersion && <p>NeoForge: {build.neoForgeVersion}</p>}
                     {!build.forgeVersion && !build.neoForgeVersion && <p>Unknown</p>}
-                </div>
+                </div>}
             </td>
             <td className="md:px-6 px-3 py-4 text-right">
                 <DownloadButton build={build} strings={strings}/>
