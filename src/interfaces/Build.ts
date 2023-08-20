@@ -4,6 +4,7 @@ export interface Build {
     gitSha: string;
     forgeVersion?: string;
     fabricLoaderVersion?: string;
+    neoForgeVersion?: string;
     fileMd5: string;
     originUrl: string;
     url: string;

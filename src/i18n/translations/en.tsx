@@ -60,7 +60,7 @@ const enTranslation: LocaleState = {
         "downloadSoftware.build.name": "Build name",
         "downloadSoftware.build.md5": "MD5 Checksum",
         "downloadSoftware.build.date": "Build date",
-        "downloadSoftware.build.forgever": "Forge version",
+        "downloadSoftware.build.forgever": "Forge/NeoForge version",
         "downloadSoftware.build.fabricver": "Fabric loader version",
         "downloadSoftware.seemore": "See more",
         "downloadSoftware.mohist.1.7.10.toast": "Mohist 1.7.10 has been discontinued, its usage is not recommended. We DO NOT provide support for Mohist 1.7.10. Alternatively, you can use CrucibleMC.",
