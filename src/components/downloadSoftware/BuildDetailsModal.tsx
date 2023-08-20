@@ -120,6 +120,11 @@ export default function BuildDetailsModal({build, project, openModal, setOpenMod
                                     Forge version: <span
                                     className={`font-bold dark:text-gray-300`}>{build?.forgeVersion}</span>
                                 </p>}
+                            {build?.neoForgeVersion &&
+                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                    NeoForge version: <span
+                                    className={`font-bold dark:text-gray-300`}>{build?.neoForgeVersion}</span>
+                                </p>}
                             {build?.fabricLoaderVersion &&
                                 <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     Fabric version: <span
