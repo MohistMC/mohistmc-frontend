@@ -66,7 +66,7 @@ const customTheme: CustomFlowbiteTheme = {
             }
         },
         "footer": {
-            "base": "flex items-center space-x-2 rounded-b border-gray-200 p-6 dark:border-dark-400",
+            "base": "flex flex-wrap items-center space-x-2 rounded-b border-gray-200 p-6 dark:border-dark-400",
             "popup": "border-t"
         },
     }

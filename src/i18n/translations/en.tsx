@@ -56,6 +56,7 @@ const enTranslation: LocaleState = {
         "downloadSoftware.search.noresults": "No results found.",
         "downloadSoftware.search.nobuilds": "No builds found.",
         "downloadSoftware.search.filter.btn": "Filter by",
+        "downloadSoftware.search.exactMatch": "Exact match",
         "downloadSoftware.build.number": "Build number",
         "downloadSoftware.build.name": "Build name",
         "downloadSoftware.build.md5": "MD5 Checksum",

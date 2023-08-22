@@ -2,6 +2,7 @@ import Link from "next/link";
 import {Build} from "@/interfaces/Build";
 import {Project} from "@/interfaces/Project";
 import DownloadButton from "@/components/downloadSoftware/DownloadButton";
+import {Button} from "flowbite-react";
 
 interface TableBuildElementProps {
     build: Build;
@@ -51,10 +52,10 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
             <td className="md:px-6 px-3 py-4 text-right">
                 <DownloadButton build={build} strings={strings}/>
 
-                <Link href="#" onClick={handleModalOpen}
+                <Button onClick={handleModalOpen}
                       className="md:hidden inline-flex justify-center items-center py-2 px-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                     {strings['downloadSoftware.seemore']}
-                </Link>
+                </Button>
             </td>
             <td className="hidden px-6 py-4 text-right md:table-cell">
                 <Link href={buildGithubCommitUrl}

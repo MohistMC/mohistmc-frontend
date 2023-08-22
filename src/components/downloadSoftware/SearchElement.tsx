@@ -1,6 +1,6 @@
 import {ChangeEvent, useEffect, useRef, useState} from "react";
 import {Build} from "@/interfaces/Build";
-import {Dropdown} from "flowbite-react";
+import {Checkbox, Dropdown, Label} from "flowbite-react";
 import {Project} from "@/interfaces/Project";
 import {NextRouter} from "next/router";
 import {ToastLogger} from "@/util/Logger";
@@ -42,6 +42,7 @@ export default function SearchElement({
         buildDate: true,
         loaderVersion: true
     })
+    const [exactMatchChecked, setExactMatchChecked] = useState(false)
 
     // React refs
     const searchInputRef = useRef<HTMLInputElement>(null)
@@ -71,14 +72,26 @@ export default function SearchElement({
         const modifiedBuildPages: Build[] = []
 
         for (const page of originalBuildPages) {
-            const filteredPage = page.filter((build) =>
-                (filters.buildNumber && String(build.number).toLowerCase().includes(search.toLowerCase())) ||
-                (filters.buildMd5 && build.fileMd5.toLowerCase().includes(search.toLowerCase())) ||
-                (filters.buildName && build.fileName?.toLowerCase().includes(search.toLowerCase())) ||
-                (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase().includes(search.toLowerCase()) ||
-                    (filters.loaderVersion && build.forgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
-                        (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase().includes(search.toLowerCase())
-                        ))))
+            const filteredPage = exactMatchChecked ?
+                page.filter((build) =>
+                    (filters.buildNumber && String(build.number).toLowerCase() === search.toLowerCase()) ||
+                    (filters.buildMd5 && build.fileMd5.toLowerCase() === search.toLowerCase()) ||
+                    (filters.buildName && build.fileName?.toLowerCase() === search.toLowerCase()) ||
+                    (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase() === search.toLowerCase()) ||
+                    (filters.loaderVersion && build.forgeVersion?.toLowerCase() === search.toLowerCase()) ||
+                    (filters.loaderVersion && build.neoForgeVersion?.toLowerCase() === search.toLowerCase()) ||
+                    (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase() === search.toLowerCase()))
+                :
+                page.filter((build) =>
+                    (filters.buildNumber && String(build.number).toLowerCase().includes(search.toLowerCase())) ||
+                    (filters.buildMd5 && build.fileMd5.toLowerCase().includes(search.toLowerCase())) ||
+                    (filters.buildName && build.fileName?.toLowerCase().includes(search.toLowerCase())) ||
+                    (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase().includes(search.toLowerCase()) ||
+                        (filters.loaderVersion && build.forgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
+                            (filters.loaderVersion && build.neoForgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
+                                (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase().includes(search.toLowerCase())
+                                )))))
+
             modifiedBuildPages.push(...filteredPage)
         }
 
@@ -168,6 +181,14 @@ export default function SearchElement({
             ToastLogger.info(strings['toast.filters.enabled'])
     }, [selectedVersion]);
 
+    /**
+     * On filters change or exact match checkbox change, update the results table.
+     */
+    useEffect(() => {
+        if (searchInputRef.current)
+            handleSearch({target: searchInputRef.current} as ChangeEvent<HTMLInputElement>).catch()
+    }, [filters, exactMatchChecked]);
+
     return (
         <div className={`flex gap-2 mb-1 md:flex-row flex-col items-center justify-center`}>
             <div className="bg-white dark:bg-dark-50">
@@ -232,6 +253,15 @@ export default function SearchElement({
                            className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings[project === Project.Mohist ? 'downloadSoftware.build.forgever' : 'downloadSoftware.build.fabricver']}</label>
                 </div>
             </Dropdown>
+            <div className="flex items-center gap-2">
+                <Checkbox id="exactMatch" checked={exactMatchChecked}
+                          onChange={(evt) => setExactMatchChecked(evt.currentTarget.checked)}/>
+                <Label className="flex" htmlFor="exactMatch">
+                    <p>
+                        {strings['downloadSoftware.search.exactMatch']}
+                    </p>
+                </Label>
+            </div>
         </div>
     )
 }
