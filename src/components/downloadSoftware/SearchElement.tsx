@@ -43,23 +43,13 @@ export default function SearchElement({
         loaderVersion: true
     })
     const [exactMatchChecked, setExactMatchChecked] = useState(false)
+    const [search, setSearch] = useState<string>('')
 
     // React refs
     const searchInputRef = useRef<HTMLInputElement>(null)
 
-    const handleSearch = async (event: ChangeEvent<HTMLInputElement>) => {
+    const updateTable = () => {
         setCurrentPage(0) // Reset the page because the builds will change
-
-        const search = event.target.value
-
-        // Update the URL
-        await router.push({
-            pathname: router.pathname,
-            query: {
-                ...router.query,
-                search
-            }
-        }, undefined, {shallow: true})
 
         // If no search query, reset the pages
         if (search.length === 0) {
@@ -107,18 +97,26 @@ export default function SearchElement({
         setViewedBuildPages(modifiedPages)
     }
 
+    /**
+     * Handle the search input change.
+     * @param event The event.
+     */
+    const handleSearch = async (event: ChangeEvent<HTMLInputElement>) => {
+        setSearch(event.target.value)
+    }
+
+    const updateUrl = (filter: string, value: boolean) => {
+        router.push({
+            pathname: router.pathname,
+            query: {
+                ...router.query,
+                [filter]: value
+            }
+        }, undefined, {shallow: true}).catch()
+    }
+
     const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
         const filter = event.target.name
-
-        const updateUrl = (filter: string, value: boolean) => {
-            router.push({
-                pathname: router.pathname,
-                query: {
-                    ...router.query,
-                    [filter]: value
-                }
-            }, undefined, {shallow: true}).catch()
-        }
 
         switch (filter) {
             case 'buildNumber':
@@ -144,17 +142,23 @@ export default function SearchElement({
         }
     }
 
+    const handleExactMatch = (event: ChangeEvent<HTMLInputElement>) => {
+        setExactMatchChecked(event.target.checked)
+        updateUrl('eM', event.target.checked)
+    }
+
     /**
      * On builds loaded, apply filters that are in the URL, and fill the search input.
      */
     useEffect(() => {
         if (router.isReady) {
-            const {bNumF, bNameF, md5F, bDateF, loaderVerF, search} = router.query as unknown as {
+            const {bNumF, bNameF, md5F, bDateF, loaderVerF, eM, search} = router.query as unknown as {
                 bNumF: string,
                 bNameF: string,
                 md5F: string,
                 bDateF: string,
                 loaderVerF: string,
+                eM: string,
                 search: string
             }
 
@@ -165,6 +169,8 @@ export default function SearchElement({
                 buildDate: bDateF !== 'false',
                 loaderVersion: loaderVerF !== 'false'
             })
+
+            setExactMatchChecked(eM !== 'false')
 
             if (search && searchInputRef.current) {
                 searchInputRef.current.value = search
@@ -186,8 +192,26 @@ export default function SearchElement({
      */
     useEffect(() => {
         if (searchInputRef.current)
-            handleSearch({target: searchInputRef.current} as ChangeEvent<HTMLInputElement>).catch()
+            updateTable()
     }, [filters, exactMatchChecked]);
+
+    /**
+     * On search change, update the URL.
+     */
+    useEffect(() => {
+        if(searchInputRef.current) {
+            updateTable()
+
+            if (search.length > 0)
+                router.push({
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        search
+                    }
+                }, undefined, {shallow: true})
+        }
+    }, [search]);
 
     return (
         <div className={`flex gap-2 mb-1 md:flex-row flex-col items-center justify-center`}>
@@ -254,8 +278,7 @@ export default function SearchElement({
                 </div>
             </Dropdown>
             <div className="flex items-center gap-2">
-                <Checkbox id="exactMatch" checked={exactMatchChecked}
-                          onChange={(evt) => setExactMatchChecked(evt.currentTarget.checked)}/>
+                <Checkbox id="exactMatch" onChange={handleExactMatch}/>
                 <Label className="flex" htmlFor="exactMatch">
                     <p>
                         {strings['downloadSoftware.search.exactMatch']}
