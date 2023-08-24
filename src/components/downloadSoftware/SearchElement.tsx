@@ -170,7 +170,7 @@ export default function SearchElement({
                 loaderVersion: loaderVerF !== 'false'
             })
 
-            setExactMatchChecked(eM !== 'false')
+            setExactMatchChecked(eM === 'true')
 
             if (search && searchInputRef.current) {
                 searchInputRef.current.value = search
