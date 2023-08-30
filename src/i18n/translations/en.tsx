@@ -116,6 +116,7 @@ const enTranslation: LocaleState = {
         "loginmodal.title": "Login to report an issue",
         "loginmodal.subtitle": "To be sure you're not a robot and to be able to contact you, please login to report an issue.",
         "loginmodal.githublogin": "Login with Github",
+        "loginmodal.discordlogin": "Login with Discord",
         "issuemodal.title": "Do you want to report an issue about one of our software?",
         "issuemodal.subtitle": "We are always happy to help you with any problem you may have. There are two ways of reporting an issue:",
         "issuemodal.report.github": "Report via GitHub",

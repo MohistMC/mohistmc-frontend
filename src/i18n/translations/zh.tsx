@@ -91,7 +91,7 @@ const zhTranslation: LocaleState = {
         "software.mohist.cards.3.desc": "加入Mohist社区获取支持和定期更新！保持与最新的Minecraft版本同步，并获得新功能和改进。",
         "software.mohist.footer.title": "准备提升您的Minecraft服务器体验吗？",
         "software.mohist.footer.desc": "通过模组和插件的集成，以及优化的性能，体验无与伦比的稳定性。加入Mohist社区，为您的服务器解锁无限可能性。立即升级到Mohist，革新您的Minecraft体验。",
-        "software.mohist.footer.discord": "加入我们的Discord"
+        "software.mohist.footer.discord": "加入我们的Discord",
         "404.title": "未找到",
         "404.subtitle": "很抱歉，您所寻找的资源在本网站上找不到。",
         "docs.title": "MohistMC的文档",
