@@ -59,6 +59,11 @@ export default function DefaultCarousel() {
                     alt="..."
                     src="https://www.jetbrains.com/company/brand/img/logo6.svg"
                 /></Link>
+                <Link href={`https://www.elfidc.com/aff.php?aff=24`}><img
+                    className={`md:w-1/4`}
+                    alt="..."
+                    src="/elfidc.png"
+                /></Link>
             </Carousel>
         </Flowbite>
     )
