@@ -24,7 +24,7 @@ const enTranslation: LocaleState = {
         "button.api": "API",
         "button.software": "Software",
         "button.learnmore": "Learn more",
-        "button.readmore": "Read more",
+        "button.readmore": "Read more →",
         "button.documentation": "Documentation",
         "button.documentations": "Documentations",
         "button.about": "About us",
@@ -137,6 +137,8 @@ const enTranslation: LocaleState = {
         "contribute.cards.4.button": "Crowdin page",
         "contribute.footer.title": "Join our community and help us to create better projects!",
         "contribute.footer.desc": "MohistMC is a community-driven organization. We welcome contributions from the community. Join our community and help us to create better projects!",
+        "blog.subtitle": "The latest updates and releases from MohistMC.",
+        "blog.lastupdated": "Last updated on"
     }
 }
 

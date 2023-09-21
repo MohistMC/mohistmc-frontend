@@ -23,7 +23,7 @@ const frTranslation: LocaleState = {
         "button.api": "API",
         "button.software": "Logiciel",
         "button.learnmore": "En savoir plus",
-        "button.readmore": "Lire plus",
+        "button.readmore": "Lire plus →",
         "button.documentation": "Documentation",
         "button.documentations": "Documentations",
         "button.about": "À propos de nous",

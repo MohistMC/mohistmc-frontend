@@ -24,7 +24,7 @@ const zhTranslation: LocaleState = {
         "button.api": "API",
         "button.software": "软件",
         "button.learnmore": "了解更多",
-        "button.readmore": "阅读更多",
+        "button.readmore": "阅读更多 →",
         "button.documentation": "文档",
         "button.documentations": "文档",
         "button.about": "关于我们",
@@ -136,6 +136,8 @@ const zhTranslation: LocaleState = {
         "contribute.cards.4.button": "Crowdin页面",
         "contribute.footer.title": "加入我们的社区，共同创建更好的项目！",
         "contribute.footer.desc": "MohistMC是一个社区驱动的组织。我们欢迎社区的贡献。加入我们的社区，帮助我们创建更好的项目！",
+        "blog.subtitle": "MohistMC 的最新更新和发布.",
+        "blog.lastupdated": "最后编辑于"
     }
 }
 
