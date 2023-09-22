@@ -20,6 +20,8 @@ export default function Downloads() {
                 <meta property="og:title" content="MohistMC - Downloads" />
                 <meta property="og:description" content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image:width" content="50" />
+                <meta property="og:image:height" content="50" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/downloads" />

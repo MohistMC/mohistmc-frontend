@@ -21,6 +21,8 @@ export default function Team() {
                 <meta property="og:title" content="MohistMC - Team" />
                 <meta property="og:description" content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image:width" content="50" />
+                <meta property="og:image:height" content="50" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/team" />

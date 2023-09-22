@@ -20,6 +20,8 @@ export default function MohistSoftware() {
                 <meta property="og:title" content="MohistMC - Banner" />
                 <meta property="og:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image:width" content="50" />
+                <meta property="og:image:height" content="50" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />

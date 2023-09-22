@@ -17,9 +17,12 @@ export default function Footer() {
                             <span
                                 className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">MohistMC</span>
                         </Link>
-                        <Link href={`mailto:mohistmc@gmail.com`} className="block text-gray-600 mt-4 text-sm dark:text-gray-300 hover:underline">
+                        <Link href={`mailto:mohistmc@gmail.com`} className="block text-gray-600 mt-4 text-sm dark:text-gray-300 md:hover:text-blue-500">
                             mohistmc@gmail.com
                         </Link>
+                        <p className={`text-gray-400 text-sm max-w-sm pt-1`}>
+                            Do not send your bugs to this email, please use our <Link href="/user/report-issue" className="text-blue-500">issue tracker</Link> instead.
+                        </p>
                     </div>
                     <div className="flex gap-12 flex-wrap">
                         <div>

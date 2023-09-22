@@ -48,6 +48,8 @@ const Contribute = () => {
                     <meta property="og:description"
                           content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!"/>
                     <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png"/>
+                    <meta property="og:image:width" content="50" />
+                    <meta property="og:image:height" content="50" />
 
                     <meta property="twitter:card" content="summary_large_image"/>
                     <meta property="twitter:url" content="https://new.mohistmc.com/contribute"/>

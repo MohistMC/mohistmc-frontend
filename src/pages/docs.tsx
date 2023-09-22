@@ -19,6 +19,8 @@ export default function Downloads() {
                 <meta property="og:title" content="MohistMC - Docs" />
                 <meta property="og:description" content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image:width" content="50" />
+                <meta property="og:image:height" content="50" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/docs" />

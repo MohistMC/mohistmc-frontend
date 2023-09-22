@@ -20,6 +20,8 @@ export default function MohistSoftware() {
                 <meta property="og:title" content="MohistMC - Mohist" />
                 <meta property="og:description" content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image:width" content="50" />
+                <meta property="og:image:height" content="50" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />
