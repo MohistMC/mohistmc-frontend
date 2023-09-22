@@ -21,14 +21,13 @@ export default function Team() {
                 <meta property="og:title" content="MohistMC - Team" />
                 <meta property="og:description" content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
-                <meta property="og:image:width" content="50" />
-                <meta property="og:image:height" content="50" />
+                <meta property="og:image:type" content="image/png"/>
+                <meta property="og:image:width" content="100" />
+                <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/team" />
                 <meta property="twitter:title" content="MohistMC - Team" />
                 <meta property="twitter:description" content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`} />
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohistLogo.png" />
             </Head>
             <h1 className="md:mt-20 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{getLocaleStringAsArgs(strings['team.title'])[0]} <span className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['team.title'])[1]}</span>{getLocaleStringAsArgs(strings['team.title'])[2]}</h1>
 

@@ -51,12 +51,13 @@ export default function Sponsor() {
                 <meta property="og:title" content="MohistMC - Sponsor" />
                 <meta property="og:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image:type" content="image/png"/>
+                <meta property="og:image:width" content="100" />
+                <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/sponsor" />
                 <meta property="twitter:title" content="MohistMC - Sponsor" />
                 <meta property="twitter:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohistLogo.png" />
             </Head>
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                 <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">

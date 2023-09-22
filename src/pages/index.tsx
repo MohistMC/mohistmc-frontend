@@ -59,15 +59,14 @@ const Home = () => {
                 <meta property="og:description"
                       content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png"/>
-                <meta property="og:image:width" content="50" />
-                <meta property="og:image:height" content="50" />
+                <meta property="og:image:type" content="image/png"/>
+                <meta property="og:image:width" content="100" />
+                <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:card" content="summary_large_image"/>
                 <meta property="twitter:url" content="https://new.mohistmc.com/"/>
                 <meta property="twitter:title" content="MohistMC - Home"/>
                 <meta property="twitter:description"
                       content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohistLogo.png"/>
             </Head>
             <ChoiceIssueModal openIssueModal={openChoiceIssueModal} setOpenIssueModal={setOpenChoiceIssueModal}/>
             <section className="bg-white dark:bg-dark-25 pt-10">

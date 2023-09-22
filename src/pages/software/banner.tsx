@@ -20,14 +20,13 @@ export default function MohistSoftware() {
                 <meta property="og:title" content="MohistMC - Banner" />
                 <meta property="og:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
                 <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
-                <meta property="og:image:width" content="50" />
-                <meta property="og:image:height" content="50" />
+                <meta property="og:image:type" content="image/png"/>
+                <meta property="og:image:width" content="100" />
+                <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />
                 <meta property="twitter:title" content="MohistMC - Banner" />
                 <meta property="twitter:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
-                <meta property="twitter:image" content="https://new.mohistmc.com/mohistLogo.png" />
             </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
