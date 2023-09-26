@@ -1,7 +1,7 @@
 <div align="center">
   <img height="150px"
     src="https://avatars.githubusercontent.com/u/54493246"
-  />     
+   alt=""/>     
   <h1 align="center">Mohist website</h1>
 
 ### The front-end website for MohistMC
