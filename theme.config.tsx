@@ -35,7 +35,6 @@ const config: DocsThemeConfig = {
 
         return (
             <>
-
                 <meta name="title" content={title}/>
                 <meta name="description"
                       content={description}/>

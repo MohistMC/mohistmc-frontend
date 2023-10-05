@@ -4,7 +4,9 @@ import {createWrapper} from "next-redux-wrapper";
 import {themeSlice} from "@/features/theme/ThemeSlice";
 import {userSlice} from "@/features/user/UserSlice";
 
-const makeStore = () =>
+let store: ReturnType<typeof configStore>
+
+const configStore = () =>
     configureStore({
         reducer: {
             translator: translatorSlice.reducer,
@@ -13,7 +15,13 @@ const makeStore = () =>
         }
     });
 
-export type AppStore = ReturnType<typeof makeStore>;
+export const getStore = () => {
+    if (!store)
+        store = configStore()
+    return store
+}
+
+export type AppStore = ReturnType<typeof getStore>;
 export type AppState = ReturnType<AppStore["getState"]>;
 
-export const wrapper = createWrapper<AppStore>(makeStore);
+export const wrapper = createWrapper<AppStore>(getStore);

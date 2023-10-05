@@ -1,6 +1,4 @@
-import {LocaleState} from "@/features/i18n/TranslatorSlice";
-
-const enTranslation: LocaleState = {
+const enTranslation= {
     name: "English (US)",
     initials: "en",
     strings: {
@@ -24,7 +22,7 @@ const enTranslation: LocaleState = {
         "button.api": "API",
         "button.software": "Software",
         "button.learnmore": "Learn more",
-        "button.readmore": "Read more →",
+        "button.readmore": "Read more",
         "button.documentation": "Documentation",
         "button.documentations": "Documentations",
         "button.about": "About us",

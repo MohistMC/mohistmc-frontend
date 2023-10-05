@@ -1,6 +1,6 @@
-import {LocaleState} from "@/features/i18n/TranslatorSlice";
+import {PartialLocaleState} from "@/features/i18n/TranslatorSlice";
 
-const frTranslation: LocaleState = {
+const frTranslation: PartialLocaleState = {
     name: "Français",
     initials: "fr",
     strings: {
@@ -23,7 +23,7 @@ const frTranslation: LocaleState = {
         "button.api": "API",
         "button.software": "Logiciel",
         "button.learnmore": "En savoir plus",
-        "button.readmore": "Lire plus →",
+        "button.readmore": "Lire plus",
         "button.documentation": "Documentation",
         "button.documentations": "Documentations",
         "button.about": "À propos de nous",
@@ -99,7 +99,7 @@ const frTranslation: LocaleState = {
         "software.banner.cards.3.title": "Support de la communauté et mises à jour régulières",
         "software.banner.cards.3.desc": "Rejoignez la communauté Banner pour obtenir du support et des mises à jour régulières ! Restez à jour avec les dernières versions de Minecraft et accédez aux nouvelles fonctionnalités et améliorations.",
         "software.banner.footer.desc": "Découvrez une stabilité inégalée avec l'intégration de mods Fabric et de plugins Bukkit/Spigot. Rejoignez la communauté de Banner et débloquez des possibilités illimitées pour votre serveur. Passez à Banner dès aujourd'hui et révolutionnez votre expérience Minecraft.",
-        "toast.filtersOn": "Vous avez toujours des filtres activés, si vous ne voyez rien, vous devrez peut-être les supprimer.",
+        "toast.filters.enabled": "Vous avez toujours des filtres activés, si vous ne voyez rien, vous devrez peut-être les supprimer.",
         "loginmodal.title": "Connexion pour signaler un problème",
         "loginmodal.subtitle": "Pour être sûr(e) que vous n'êtes pas un robot et pour pouvoir vous contacter, veuillez vous connecter pour signaler un problème.",
         "loginmodal.githublogin": "Se connecter avec Github",
