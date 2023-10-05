@@ -3,31 +3,11 @@ import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import React from "react";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
-import {Button, Card, CustomFlowbiteTheme, Flowbite} from "flowbite-react";
+import {Button, Card, Flowbite} from "flowbite-react";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import Link from "next/link";
-
-const customTheme: CustomFlowbiteTheme = {
-    card: {
-        "root": {
-            "base": "flex rounded-lg border border-gray-200 bg-white shadow-md dark:border-dark-200 dark:bg-dark-100 max-w-sm",
-            "children": "flex h-full flex-col justify-center gap-4 p-6",
-            "horizontal": {
-                "off": "flex-col items-center p-2 pt-5",
-                "on": "flex-col md:max-w-xl md:flex-row"
-            },
-            "href": "hover:bg-gray-100 dark:hover:bg-gray-700"
-        },
-        "img": {
-            "base": "",
-            "horizontal": {
-                "off": "rounded-t-lg object-cover h-auto w-48 md:rounded",
-                "on": "h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-            }
-        }
-    }
-}
+import {customTheme} from "@/util/Theme";
 
 const Contribute = () => {
     const strings = useAppSelector(selectTranslations);
@@ -75,23 +55,23 @@ const Contribute = () => {
                             className="shadow fill-gray-100 dark:fill-dark-50"></path>
                     </svg>
                 </div>
-                <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-white dark:bg-dark-50 gap-10 flex-wrap">
+                <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
                     <Card imgAlt="Contribute financially" imgSrc="/finance.webp">
-                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {strings['contribute.cards.1.title']}
-                        </h5>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                        </h2>
+                        <p className="font-normal text-gray-700 dark:text-gray-300">
                             {strings['contribute.cards.1.desc']}
                         </p>
-                        <Button href={`/sponsor`}>
+                        <Button href={`/sponsor`} aria-label={"Sponsor button"}>
                             {strings['button.learnmore']}
                         </Button>
                     </Card>
                     <Card imgAlt="Contribute to the code" imgSrc="/code.webp">
-                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {strings['contribute.cards.2.title']}
-                        </h5>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                        </h2>
+                        <p className="font-normal text-gray-700 dark:text-gray-300">
                             {strings['contribute.cards.2.desc']}
                         </p>
                         <Button href={'https://github.com/MohistMC'}>
@@ -99,21 +79,21 @@ const Contribute = () => {
                         </Button>
                     </Card>
                     <Card imgAlt="Contribute to the docs" imgSrc="/docs.webp">
-                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {strings['contribute.cards.3.title']}
-                        </h5>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                        </h2>
+                        <p className="font-normal text-gray-700 dark:text-gray-300">
                             {strings['contribute.cards.3.desc']}
                         </p>
-                        <Button href={'/docs/website'}>
+                        <Button href={'/docs/website'} aria-label={"Learn more button"}>
                             {strings['button.learnmore']}
                         </Button>
                     </Card>
                     <Card imgAlt="Contribute to the translation" imgSrc="/translate.webp">
-                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {strings['contribute.cards.4.title']}
-                        </h5>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                        </h2>
+                        <p className="font-normal text-gray-700 dark:text-gray-300">
                             {strings['contribute.cards.4.desc']}
                         </p>
                         <Button href={'https://crowdin.com/project/mohist'}>
@@ -133,7 +113,7 @@ const Contribute = () => {
                 <section className={`pt-5`}>
                     <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
                         <h2 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">{strings['contribute.footer.title']}</h2>
-                        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['contribute.footer.desc']}</p>
+                        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{strings['contribute.footer.desc']}</p>
                         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                             <Link href="https://discord.gg/MohistMC" target="_blank"
                                   className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">

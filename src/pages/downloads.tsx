@@ -48,7 +48,7 @@ export default function Downloads() {
                         </Link>
                     </div>
                     <h1 className="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2 mt-1">Mohist</h1>
-                    <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">{strings['downloads.mohist.desc']}</p>
+                    <p className="text-lg font-normal text-gray-500 dark:text-gray-300 mb-6">{strings['downloads.mohist.desc']}</p>
                     <div className={`flex flex-row flex-wrap gap-2`}>
                         <Link href={`/downloadSoftware?project=mohist`}
                               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium inline-flex items-center rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
@@ -76,7 +76,7 @@ export default function Downloads() {
                             Fabric
                         </Link>
                         <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2 mt-1">Banner</h2>
-                        <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">{strings['downloads.banner.desc']}</p>
+                        <p className="text-lg font-normal text-gray-500 dark:text-gray-300 mb-4">{strings['downloads.banner.desc']}</p>
                         <div className={`flex flex-row flex-wrap gap-2`}>
                             <Link href={`/downloadSoftware?project=banner`}
                                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium inline-flex items-center rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
@@ -98,7 +98,7 @@ export default function Downloads() {
                     </div>
                     <div className={`flex justify-center items-center`}>
                         <h2 className="text-5xl text-center font-extrabold text-dark-25 dark:text-white">{getLocaleStringAsArgs(strings['downloads.endtext'])[0]}<small
-                            className="ml-2 font-semibold text-gray-500 dark:text-gray-400">{getLocaleStringAsArgs(strings['downloads.endtext'])[1]}</small>
+                            className="ml-2 font-semibold text-gray-500 dark:text-gray-300">{getLocaleStringAsArgs(strings['downloads.endtext'])[1]}</small>
                             {getLocaleStringAsArgs(strings['downloads.endtext'])[2]}
                         </h2>
                     </div>

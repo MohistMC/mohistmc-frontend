@@ -7,7 +7,7 @@ import DefaultCarousel from "@/components/index/Carousel";
 import Head from "next/head";
 import {getCopyrightText} from "@/util/String";
 import {useRouter} from "next/router";
-import {setCookie} from "cookies-next";
+import {deleteCookie, getCookie, setCookie} from "cookies-next";
 import {useEffect, useState} from "react";
 import ChoiceIssueModal from "@/components/modals/ChoiceIssueModal";
 import {useDispatch} from "react-redux";
@@ -29,12 +29,16 @@ const Home = () => {
         const {auth} = router.query as { auth: string }
 
         // Store auth token in cookie and remove from url
-        if (auth && auth.length) {
-            setCookie('auth', auth, {path: '/', maxAge: 21600})
-            router.replace(router.pathname)
-            loginUserAsync(dispatch, true)
+        const handleLogin = async () => {
+            if (auth && auth.length) {
+                setCookie('auth', auth, {path: '/', maxAge: 21600})
+                await loginUserAsync(true)
+                router.replace(getCookie('redirect') || router.pathname, undefined, {shallow: true})
+                deleteCookie('redirect')
+            }
         }
-    }, [router.isReady, router.query]);
+        handleLogin().catch()
+    }, [router]);
 
     useEffect(() => {
         if(user.isFirstLogin && user.isLogged) {
@@ -43,7 +47,7 @@ const Home = () => {
                 isFirstLogin: false
             }))
         }
-    }, [user])
+    }, [user, dispatch])
 
     return (
         <div className="bg-white dark:bg-dark-25 pt-12">
@@ -72,7 +76,7 @@ const Home = () => {
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="pt-5 md:pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{strings['index.head.title']}</h1>
-                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['index.head.subtitle']}</p>
+                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{strings["index.head.subtitle"]}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link href="/downloads"
                               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
@@ -109,8 +113,8 @@ const Home = () => {
                 <div className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}>
                     <div
                         className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mohist</h5>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.mohist.description']}</p>
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mohist</h2>
+                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">{strings['index.cards.mohist.description']}</p>
                         <Link href="/software/mohist"
                               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             {strings['button.readmore']}
@@ -125,8 +129,8 @@ const Home = () => {
                     </div>
                     <div
                         className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Banner</h5>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.banner.description']}</p>
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Banner</h2>
+                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">{strings['index.cards.banner.description']}</p>
                         <Link href="/software/banner"
                               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             {strings['button.readmore']}

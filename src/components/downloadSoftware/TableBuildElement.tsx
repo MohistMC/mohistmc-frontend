@@ -52,14 +52,14 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
             <td className="md:px-6 px-3 py-4 text-right">
                 <DownloadButton build={build} strings={strings}/>
 
-                <Button onClick={handleModalOpen}
+                <Button onClick={handleModalOpen} aria-label="See more"
                       className="md:hidden inline-flex justify-center items-center py-2 px-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                     {strings['downloadSoftware.seemore']}
                 </Button>
             </td>
             <td className="hidden px-6 py-4 text-right md:table-cell">
                 <Link href={buildGithubCommitUrl}
-                      className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-sm dark:hover:opacity-75">
+                      className="text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-sm dark:hover:opacity-75">
                     <svg className="w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fab"
                          data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 496 512">

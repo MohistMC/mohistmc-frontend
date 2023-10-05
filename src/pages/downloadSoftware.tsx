@@ -8,29 +8,17 @@ import TableBuildElement from "@/components/downloadSoftware/TableBuildElement";
 import LoadingParagraph from "@/components/downloadSoftware/LoadingParagraph";
 import {capitalizeFirstLetter} from "@/util/String";
 import {useAppSelector} from "@/util/redux/Hooks";
-import {selectTranslations} from "@/features/i18n/TranslatorSlice";
+import {selectTranslations, StringKey} from "@/features/i18n/TranslatorSlice";
 import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import SearchElement from "@/components/downloadSoftware/SearchElement";
 import BuildDetailsModal from "@/components/downloadSoftware/BuildDetailsModal";
-import {CustomFlowbiteTheme, Flowbite, Toast} from "flowbite-react";
-import {HiExclamation} from "react-icons/hi";
+import {Flowbite, Toast} from "flowbite-react";
+import {HiExclamation, HiInformationCircle} from "react-icons/hi";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import {getAPIEndpoint} from "@/util/Environment";
 import Head from "next/head";
-
-const customTheme: CustomFlowbiteTheme = {
-    toast: {
-        "root": {
-            "base": "flex w-full max-w-sm md:max-w-2xl items-center rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-dark-100 dark:text-gray-300",
-            "closed": "opacity-0 ease-out"
-        },
-        "toggle": {
-            "base": "-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg bg-white p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-gray-300 dark:bg-dark-200 dark:text-gray-500 dark:hover:bg-dark-300 dark:hover:text-white",
-            "icon": "h-5 w-5 shrink-0"
-        }
-    }
-}
+import {customTheme} from "@/util/Theme";
 
 export default function DownloadSoftware() {
     const router = useRouter()
@@ -48,7 +36,7 @@ export default function DownloadSoftware() {
     const [noBuild, setNoBuild] = useState<boolean>(false)
     const [openModal, setOpenModal] = useState<string | undefined>();
     const [modalBuild, setModalBuild] = useState<Build | undefined>();
-    const [toastMessageKey, setToastMessageKey] = useState<string | undefined>();
+    const [toastMessageKey, setToastMessageKey] = useState<StringKey | undefined>();
     const [hiColor, setHiColor] = useState<string>('orange');
 
     useEffect(() => {
@@ -150,8 +138,22 @@ export default function DownloadSoftware() {
                     {getLocaleStringAsArgs(strings['downloadSoftware.title'])[1]}
                 </h1>
             </div>
-            <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-3">{strings[`downloadSoftware.${project}.desc`]}</p>
+            <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-300 mb-3">{project === Project.Mohist ? strings["downloadSoftware.mohist.desc"] : strings[`downloadSoftware.banner.desc`]}</p>
             <BuildDetailsModal build={modalBuild} project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+            <Flowbite theme={{theme: customTheme, dark: isDark}}>
+                <Toast>
+                    <div
+                        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-600 dark:text-white`}>
+                        <HiInformationCircle className="h-5 w-5"/>
+                    </div>
+                    <div className="ml-3 text-sm font-normal">
+                        <span className={'font-bold'}>Do NOT ask for help in Spigot, PaperMC or Forge forums.</span> They are not related to Mohist and will
+                        not help you. If you have any issue, please use our <a href="https://discord.gg/mohistmc"
+                                                                               className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500">Discord server</a>.
+                    </div>
+                    <Toast.Toggle/>
+                </Toast>
+            </Flowbite>
             {toastMessageKey?.length && <Flowbite theme={{theme: customTheme, dark: isDark}}>
                 <Toast>
                     <div
@@ -169,12 +171,13 @@ export default function DownloadSoftware() {
                 <div className={`flex md:justify-between gap-2 justify-center items-center pb-4 flex-wrap`}>
                     <SearchElement originalBuildPages={originalBuildPages} setViewedBuildPages={setViewedBuildPages}
                                    setCurrentPage={setCurrentPage} setNoResult={setNoResult} perPage={perPage}
-                                   strings={strings} project={project} router={router} selectedVersion={selectedVersion}/>
+                                   strings={strings} project={project}
+                                   selectedVersion={selectedVersion}/>
                     <VersionSelectorElement selectedVersion={selectedVersion} setSelectedVersion={setSelectedVersion}
-                                            software={project} router={router}/>
+                                            software={project}/>
                 </div>
                 <table
-                    className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-separate border-spacing-0 rounded-lg overflow-hidden">
+                    className="w-full text-sm text-left text-gray-500 dark:text-gray-300 border-separate border-spacing-0 rounded-lg overflow-hidden">
                     <thead
                         className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-dark-200 dark:text-gray-300 rounded-xl">
                     <tr>
@@ -226,12 +229,12 @@ export default function DownloadSoftware() {
                 }
                 {noResult &&
                     <div className="flex justify-center mt-4">
-                        <p className="text-gray-500 dark:text-gray-400">{strings['downloadSoftware.search.noresults']}</p>
+                        <p className="text-gray-500 dark:text-gray-300">{strings['downloadSoftware.search.noresults']}</p>
                     </div>
                 }
                 {noBuild &&
                     <div className="flex justify-center mt-4">
-                        <p className="text-gray-500 dark:text-gray-400">{strings['downloadSoftware.search.nobuilds']}</p>
+                        <p className="text-gray-500 dark:text-gray-300">{strings['downloadSoftware.search.nobuilds']}</p>
                     </div>
                 }
                 <NavigationTableElement buildPages={viewedBuildPages} currentPage={currentPage}

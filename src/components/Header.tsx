@@ -13,8 +13,12 @@ import IssueReportModal from "@/components/modals/IssueReportModal";
 import LoginModal from "@/components/modals/LoginModal";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectUser} from "@/features/user/UserSlice";
+import Image from "next/image";
+import mohistLogo from '../../public/mohistLogo.webp'
 
 export default function Header() {
+    const dispatch = useDispatch();
+
     // React state
     const [languageButtonState, setLanguageButtonState] = useState<ReactElement>(<LanguageDropButtonElement
         locale={locales.current}/>);
@@ -24,7 +28,6 @@ export default function Header() {
     const [openLoginModal, setOpenLoginModal] = useState<string | undefined>();
 
     // React redux
-    const dispatch = useDispatch();
     const strings = useSelector(selectTranslations);
     const user = useAppSelector(selectUser)
 
@@ -38,8 +41,22 @@ export default function Header() {
             return localStorage.getItem('locale') || (navigator.language.includes('-') ? navigator.language.split('-')[0] : navigator.language);
         };
 
+        function handleLanguageChange(locale: LocaleState, saveToStorage: boolean = true)  {
+            locales.current = locale;
+
+            setLanguageButtonState(<LanguageDropButtonElement locale={locale}/>);
+            setLocalesElementState(locales.available.filter(locale => locale !== locales.current).map(locale =>
+                <LanguageDropElement locale={locale} key={locale.initials}
+                                     handleLocaleChangeCallback={handleLanguageChange}/>));
+
+            // Merge strings from default locale with the selected locale
+            const mergedStrings = Object.assign({}, locales.default.strings, locale.strings);
+            dispatch(setLocale({...locale, strings: mergedStrings}));
+            saveToStorage && localStorage.setItem('locale', locales.current.initials);
+        }
+
         handleLanguageChange(locales.available.find(locale => locale.initials === getBrowserLanguage()) || locales.current, false);
-    }, [])
+    }, [dispatch])
 
     const router = useRouter();
     const pageName = router.pathname.split('/')[1];
@@ -48,20 +65,6 @@ export default function Header() {
     useEffect(() => {
         setMenuVisibilityState(false);
     }, [router.pathname])
-
-    const handleLanguageChange = (locale: LocaleState, saveToStorage: boolean = true) => {
-        locales.current = locale;
-
-        setLanguageButtonState(<LanguageDropButtonElement locale={locale}/>);
-        setLocalesElementState(locales.available.filter(locale => locale !== locales.current).map(locale =>
-            <LanguageDropElement locale={locale} key={locale.initials}
-                                 handleLocaleChangeCallback={handleLanguageChange}/>));
-
-        // Merge strings from default locale with the selected locale
-        const mergedStrings = Object.assign({}, locales.default.strings, locale.strings);
-        dispatch(setLocale({...locale, strings: mergedStrings}));
-        saveToStorage && localStorage.setItem('locale', locales.current.initials);
-    }
 
     const AccountButtons = (rootCss: string, buttonCss: string = '') => {
         return (
@@ -80,21 +83,21 @@ export default function Header() {
             <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal}/>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center">
-                    <img src="/mohistLogo.webp" className="h-8 mr-3" alt="MohistMC Logo"/>
+                    <Image src={mohistLogo} className="h-8 w-auto mr-3" alt="MohistMC Logo"/>
                     <span
                         className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">MohistMC</span>
                 </Link>
                 <div className="flex items-center md:order-2">
-                    <Link href="https://github.com/MohistMC"
-                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
+                    <Link href="https://github.com/MohistMC" aria-label="Github"
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
                         <svg className="w-5 h-5 " aria-hidden="true" focusable="false" data-prefix="fab"
                              data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                             <path fill="currentColor"
                                   d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
                         </svg>
                     </Link>
-                    <Link href="https://discord.gg/mohistmc"
-                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <Link href="https://discord.gg/mohistmc" aria-label={"Discord"}
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
                         <svg className="w-6 h-6" aria-hidden="true" focusable="false" data-prefix="fab"
                              data-icon="discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                             <path fill="currentColor"
@@ -102,15 +105,16 @@ export default function Header() {
                         </svg>
                     </Link>
                     <Link href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=dDX-3YVb6E1EUGPM0mLq3ZQ1ZAVHZip-&authKey=RQvCDMf6mUgXEFWvw%2Bey%2Ft02Lr34yN%2FZCWIJ05JF0U%2FhKRY8QoosLCrPA8uEay7w&noverify=0&group_code=782534813"
-                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
+                            aria-label="QQ"
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                         <svg className="w-5 h-5 " aria-hidden="true" focusable="false" data-prefix="fab"
-                             data-icon="qq" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                             data-icon="qq" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path fill="currentColor"
-                                  d="M 16 5.886719 C 22.085938 5.886719 22.394531 11.324219 22.730469 12.394531 C 22.730469 12.394531 23.210938 12.929688 23.324219 13.746094 C 23.398438 14.273438 23.097656 14.871094 23.097656 14.871094 C 23.097656 14.871094 25.042969 17.492188 25.042969 19.550781 C 25.042969 20.835938 24.664063 21.5 24.222656 21.5 C 23.777344 21.5 23.128906 20.140625 23.128906 20.140625 C 23.128906 20.140625 22.113281 22.308594 21.605469 22.621094 C 21.097656 22.929688 23.4375 23.269531 23.4375 24.28125 C 23.4375 25.296875 21.578125 25.746094 20.058594 25.746094 C 18.535156 25.746094 16.113281 24.957031 16.113281 24.957031 L 15.238281 24.929688 C 15.238281 24.929688 14.5625 25.886719 11.773438 25.886719 C 8.984375 25.886719 7.773438 25.128906 7.773438 24.226563 C 7.773438 23.011719 9.550781 22.847656 9.550781 22.847656 C 9.550781 22.847656 8.417969 22.53125 7.460938 19.851563 C 7.460938 19.851563 6.796875 21.296875 5.859375 21.296875 C 5.859375 21.296875 5.464844 21.0625 5.464844 19.746094 C 5.464844 17.023438 7.421875 15.695313 8.265625 14.878906 C 8.265625 14.878906 8.125 14.523438 8.199219 14.082031 C 8.28125 13.589844 8.574219 13.292969 8.574219 13.292969 C 8.574219 13.292969 8.464844 12.703125 8.875 12.226563 C 8.957031 10.902344 9.914063 5.886719 16 5.886719 M 16 3.886719 C 9.601563 3.886719 7.332031 8.476563 6.929688 11.554688 C 6.738281 11.929688 6.628906 12.316406 6.585938 12.679688 C 6.433594 12.96875 6.296875 13.324219 6.226563 13.746094 C 6.207031 13.851563 6.195313 13.960938 6.1875 14.0625 C 5.078125 15.082031 3.464844 16.820313 3.464844 19.746094 C 3.464844 21.777344 4.210938 22.644531 4.839844 23.015625 L 5.308594 23.296875 L 5.859375 23.296875 C 5.875 23.296875 5.890625 23.296875 5.910156 23.296875 C 5.820313 23.582031 5.773438 23.890625 5.773438 24.226563 C 5.773438 25.085938 6.207031 27.890625 11.773438 27.890625 C 13.8125 27.890625 15.085938 27.449219 15.867188 26.976563 C 16.6875 27.222656 18.605469 27.746094 20.054688 27.746094 C 23.324219 27.746094 25.4375 26.386719 25.4375 24.28125 C 25.4375 23.90625 25.363281 23.574219 25.242188 23.277344 C 26.207031 22.839844 27.039063 21.710938 27.039063 19.550781 C 27.039063 17.65625 25.992188 15.667969 25.28125 14.535156 C 25.335938 14.210938 25.355469 13.847656 25.304688 13.472656 C 25.1875 12.632813 24.851563 11.964844 24.582031 11.546875 C 24.574219 11.507813 24.566406 11.46875 24.558594 11.429688 C 23.511719 6.421875 20.628906 3.886719 16 3.886719 Z"></path>
+                                  d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"></path>
                         </svg>
                     </Link>
-                    <button data-collapse-toggle="mobile-menu-language-select" type="button"
-                            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
+                    <button data-collapse-toggle="mobile-menu-language-select" type="button" aria-label="Toggle menu"
+                            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
                             aria-controls="mobile-menu-language-select" aria-expanded="false"
                             onClick={() => {
                                 // Override the default behavior of the button
@@ -132,7 +136,7 @@ export default function Header() {
                     id="mobile-menu-language-select">
                     <ul className="flex flex-col md:items-center font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
                         <li>
-                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="Toggle software menu"
                                     data-dropdown-trigger="hover"
                                     className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 md:dark:bg-transparent md:dark:hover:bg-transparent md:bg-transparent ${pageName === 'software' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}>
                                 {strings['button.software']}
