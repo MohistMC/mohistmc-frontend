@@ -2,7 +2,7 @@ import {ChangeEvent, useEffect, useRef, useState} from "react";
 import {Build} from "@/interfaces/Build";
 import {Checkbox, Dropdown, Label} from "flowbite-react";
 import {Project} from "@/interfaces/Project";
-import {NextRouter} from "next/router";
+import {NextRouter, useRouter} from "next/router";
 import {ToastLogger} from "@/util/Logger";
 
 interface FilterDropdownProps {
@@ -13,7 +13,6 @@ interface FilterDropdownProps {
     perPage: number
     strings: Record<string, string>
     project: Project | undefined
-    router: NextRouter
     selectedVersion: string | undefined
 }
 
@@ -25,7 +24,6 @@ export default function SearchElement({
                                           perPage,
                                           strings,
                                           project,
-                                          router,
                                           selectedVersion
                                       }: FilterDropdownProps) {
     // React states
@@ -48,54 +46,7 @@ export default function SearchElement({
     // React refs
     const searchInputRef = useRef<HTMLInputElement>(null)
 
-    const updateTable = () => {
-        setCurrentPage(0) // Reset the page because the builds will change
-
-        // If no search query, reset the pages
-        if (search.length === 0) {
-            setViewedBuildPages(originalBuildPages)
-            setNoResult(false)
-            return
-        }
-
-        // Filter the builds
-        const modifiedBuildPages: Build[] = []
-
-        for (const page of originalBuildPages) {
-            const filteredPage = exactMatchChecked ?
-                page.filter((build) =>
-                    (filters.buildNumber && String(build.number).toLowerCase() === search.toLowerCase()) ||
-                    (filters.buildMd5 && build.fileMd5.toLowerCase() === search.toLowerCase()) ||
-                    (filters.buildName && build.fileName?.toLowerCase() === search.toLowerCase()) ||
-                    (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase() === search.toLowerCase()) ||
-                    (filters.loaderVersion && build.forgeVersion?.toLowerCase() === search.toLowerCase()) ||
-                    (filters.loaderVersion && build.neoForgeVersion?.toLowerCase() === search.toLowerCase()) ||
-                    (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase() === search.toLowerCase()))
-                :
-                page.filter((build) =>
-                    (filters.buildNumber && String(build.number).toLowerCase().includes(search.toLowerCase())) ||
-                    (filters.buildMd5 && build.fileMd5.toLowerCase().includes(search.toLowerCase())) ||
-                    (filters.buildName && build.fileName?.toLowerCase().includes(search.toLowerCase())) ||
-                    (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase().includes(search.toLowerCase()) ||
-                        (filters.loaderVersion && build.forgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
-                            (filters.loaderVersion && build.neoForgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
-                                (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase().includes(search.toLowerCase())
-                                )))))
-
-            modifiedBuildPages.push(...filteredPage)
-        }
-
-        // Check if there is no result
-        if (modifiedBuildPages.length === 0)
-            setNoResult(true)
-
-        // Split the builds into pages
-        const modifiedPages: Build[][] = []
-        for (let i = 0; i < modifiedBuildPages.length; i += perPage)
-            modifiedPages.push(modifiedBuildPages.slice(i, i + perPage))
-
-        setViewedBuildPages(modifiedPages)
-    }
+    const router = useRouter()
 
     /**
      * Handle the search input change.
@@ -188,17 +139,58 @@ export default function SearchElement({
     }, [selectedVersion]);
 
     /**
-     * On filters change or exact match checkbox change, update the results table.
-     */
-    useEffect(() => {
-        if (searchInputRef.current)
-            updateTable()
-    }, [filters, exactMatchChecked]);
-
-    /**
      * On search change, update the URL.
      */
     useEffect(() => {
+        const updateTable = () => {
+            setCurrentPage(0) // Reset the page because the builds will change
+
+            // If no search query, reset the pages
+            if (search.length === 0) {
+                setViewedBuildPages(originalBuildPages)
+                setNoResult(false)
+                return
+            }
+
+            // Filter the builds
+            const modifiedBuildPages: Build[] = []
+
+            for (const page of originalBuildPages) {
+                const filteredPage = exactMatchChecked ?
+                    page.filter((build) =>
+                        (filters.buildNumber && String(build.number).toLowerCase() === search.toLowerCase()) ||
+                        (filters.buildMd5 && build.fileMd5.toLowerCase() === search.toLowerCase()) ||
+                        (filters.buildName && build.fileName?.toLowerCase() === search.toLowerCase()) ||
+                        (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase() === search.toLowerCase()) ||
+                        (filters.loaderVersion && build.forgeVersion?.toLowerCase() === search.toLowerCase()) ||
+                        (filters.loaderVersion && build.neoForgeVersion?.toLowerCase() === search.toLowerCase()) ||
+                        (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase() === search.toLowerCase()))
+                    :
+                    page.filter((build) =>
+                        (filters.buildNumber && String(build.number).toLowerCase().includes(search.toLowerCase())) ||
+                        (filters.buildMd5 && build.fileMd5.toLowerCase().includes(search.toLowerCase())) ||
+                        (filters.buildName && build.fileName?.toLowerCase().includes(search.toLowerCase())) ||
+                        (filters.buildDate && new Date(build.createdAt).toDateString().toLowerCase().includes(search.toLowerCase()) ||
+                            (filters.loaderVersion && build.forgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
+                                (filters.loaderVersion && build.neoForgeVersion?.toLowerCase().includes(search.toLowerCase()) ||
+                                    (filters.loaderVersion && build.fabricLoaderVersion?.toLowerCase().includes(search.toLowerCase())
+                                    )))))
+
+                modifiedBuildPages.push(...filteredPage)
+            }
+
+            // Check if there is no result
+            if (modifiedBuildPages.length === 0)
+                setNoResult(true)
+
+            // Split the builds into pages
+            const modifiedPages: Build[][] = []
+            for (let i = 0; i < modifiedBuildPages.length; i += perPage)
+                modifiedPages.push(modifiedBuildPages.slice(i, i + perPage))
+
+            setViewedBuildPages(modifiedPages)
+        }
+
         if(searchInputRef.current) {
             updateTable()
 
@@ -220,7 +212,7 @@ export default function SearchElement({
                        className="sr-only">{strings['downloadSoftware.search.placeholder']}</label>
                 <div className="relative">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        <svg className="w-5 h-5 text-gray-500 dark:text-gray-300" aria-hidden="true"
                              fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd"
                                   d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"

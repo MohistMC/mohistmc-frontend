@@ -1,14 +1,13 @@
 import {useEffect, useState} from "react";
 import {Project} from "@/interfaces/Project";
 import {Dropdown} from "flowbite-react";
-import {NextRouter} from "next/router";
+import {NextRouter, useRouter} from "next/router";
 import {getAPIEndpoint} from "@/util/Environment";
 
 interface VersionSelectorElementProps {
     selectedVersion: string | undefined
     setSelectedVersion: (version: string | undefined) => void
     software: Project | undefined
-    router: NextRouter
 }
 
 interface ProjectVersions {
@@ -19,10 +18,11 @@ export default function VersionSelectorElement({
                                                    selectedVersion,
                                                    setSelectedVersion,
                                                    software,
-                                                   router
                                                }: VersionSelectorElementProps) {
     // React state
     const [availableVersions, setAvailableVersions] = useState<string[]>([]);
+
+    const router = useRouter()
 
     // React effect
     useEffect(() => {
