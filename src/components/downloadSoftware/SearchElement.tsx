@@ -233,7 +233,7 @@ export default function SearchElement({
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-4"
-                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-400">{strings['downloadSoftware.build.number']}</label>
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.number']}</label>
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -241,7 +241,7 @@ export default function SearchElement({
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-5"
-                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-400">{strings['downloadSoftware.build.name']}</label>
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.name']}</label>
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -249,7 +249,7 @@ export default function SearchElement({
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-6"
-                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-400">{strings['downloadSoftware.build.md5']}</label>
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.md5']}</label>
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -257,7 +257,7 @@ export default function SearchElement({
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-7"
-                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-400">{strings['downloadSoftware.build.date']}</label>
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings['downloadSoftware.build.date']}</label>
                 </div>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -266,7 +266,7 @@ export default function SearchElement({
                            onChange={handleFilter}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
                     <label htmlFor="checkbox-item-8"
-                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-400">{strings[project === Project.Mohist ? 'downloadSoftware.build.forgever' : 'downloadSoftware.build.fabricver']}</label>
+                           className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings[project === Project.Mohist ? 'downloadSoftware.build.forgever' : 'downloadSoftware.build.fabricver']}</label>
                 </div>
             </Dropdown>
             <div className="flex items-center gap-2">

@@ -114,7 +114,7 @@ export default function Header() {
                         </svg>
                     </Link>
                     <button data-collapse-toggle="mobile-menu-language-select" type="button" aria-label="Toggle menu"
-                            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
+                            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
                             aria-controls="mobile-menu-language-select" aria-expanded="false"
                             onClick={() => {
                                 // Override the default behavior of the button

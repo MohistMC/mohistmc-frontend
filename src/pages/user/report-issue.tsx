@@ -95,7 +95,7 @@ export default function ReportIssue() {
                 <div className="px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
                         Report an issue</h1>
-                    <p className="mb-5 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Wants
+                    <p className="mb-5 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">Wants
                         to report an issue, ask a question or making suggestions / feature requests? You&apos;re in the right
                         place.</p>
                 </div>

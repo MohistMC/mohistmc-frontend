@@ -3,7 +3,7 @@ import {CustomFlowbiteTheme} from "flowbite-react";
 export const customTheme: CustomFlowbiteTheme = {
     toast: {
         root: {
-            base: "flex w-full max-w-sm md:max-w-2xl items-center rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-dark-100 dark:text-gray-400",
+            base: "flex w-full max-w-sm md:max-w-2xl items-center rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-dark-100 dark:text-gray-300",
             closed: "opacity-0 ease-out"
         },
         toggle: {
@@ -112,7 +112,7 @@ export const customTheme: CustomFlowbiteTheme = {
                 online: "bg-green-400"
             },
             initials: {
-                text: "font-medium text-gray-600 dark:text-gray-400",
+                text: "font-medium text-gray-600 dark:text-gray-300",
                 base: "inline-flex overflow-hidden relative justify-center items-center bg-gray-100 dark:bg-gray-600"
             }
         },
@@ -124,7 +124,7 @@ export const customTheme: CustomFlowbiteTheme = {
         }
     },
     dropdown: {
-        arrowIcon: "ml-1 h-4 w-4 dark:text-gray-400",
+        arrowIcon: "ml-1 h-4 w-4 dark:text-gray-300",
         content: "py-1 focus:outline-none",
         floating: {
             animation: "transition-opacity",
@@ -237,16 +237,16 @@ export const customTheme: CustomFlowbiteTheme = {
     },
     textInput: {
         base: "flex",
-        addon: "inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-dark-300 dark:text-gray-400",
+        addon: "inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-dark-300 dark:text-gray-300",
         field: {
             base: "relative w-full",
             icon: {
                 base: "pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3",
-                svg: "h-5 w-5 text-gray-500 dark:text-gray-400"
+                svg: "h-5 w-5 text-gray-500 dark:text-gray-300"
             },
             rightIcon: {
                 base: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3",
-                svg: "h-5 w-5 text-gray-500 dark:text-gray-400"
+                svg: "h-5 w-5 text-gray-500 dark:text-gray-300"
             },
             input: {
                 base: "block w-full border disabled:cursor-not-allowed disabled:opacity-50",
@@ -302,7 +302,7 @@ export const customTheme: CustomFlowbiteTheme = {
                 on: "cursor-pointer",
                 off: "cursor-not-allowed opacity-50"
             },
-            label: "ml-3 text-sm font-medium text-gray-900 dark:text-gray-400"
+            label: "ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
         },
         toggle: {
             base: "toggle-bg h-6 w-11 rounded-full border group-focus:ring-4 group-focus:ring-cyan-500/25",

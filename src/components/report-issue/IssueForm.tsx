@@ -59,7 +59,7 @@ const IssueForm = () => {
 
     return (
         <div>
-            <div className={`dark:text-gray-400 mb-2 mt-2`}>
+            <div className={`dark:text-gray-300 mb-2 mt-2`}>
                 <p><span className={`font-bold`}>Product</span> - {capitalizeFirstLetter(product)}</p>
                 <p><span className={`font-bold`}>Issue type</span> - {capitalizeFirstLetter(issueType)}</p>
             </div>

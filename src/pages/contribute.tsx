@@ -43,7 +43,7 @@ const Contribute = () => {
                             <span
                                 className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['contribute.title'])[1]}</span>
                             {getLocaleStringAsArgs(strings['contribute.title'])[2]}</h1>
-                        <p className="mb-5 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['contribute.subtitle']}</p>
+                        <p className="mb-5 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{strings['contribute.subtitle']}</p>
                     </div>
                 </section>
                 <div className="top-0 left-0 w-full overflow-hidden leading-none rotate-180">

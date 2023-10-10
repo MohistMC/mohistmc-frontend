@@ -179,7 +179,7 @@ export default function DownloadSoftware() {
                 <table
                     className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-separate border-spacing-0 rounded-lg overflow-hidden">
                     <thead
-                        className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-dark-200 dark:text-gray-400 rounded-xl">
+                        className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-dark-200 dark:text-gray-300 rounded-xl">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             {strings['downloadSoftware.build.name']}
