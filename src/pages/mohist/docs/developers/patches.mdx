@@ -1,0 +1,20 @@
+import {Tabs} from "nextra/components";
+
+# Generate patches
+
+If you modified the Minecraft source code, you can generate patches with the following command:
+
+<Tabs items={['Windows', 'Linux']}>
+    <Tabs.Tab>
+        ```bash
+        gradlew.bat genPatches
+        ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```bash
+        ./gradlew genPatches
+        ```
+    </Tabs.Tab>
+</Tabs>
+
+After entering the command, you can go and have a cup of tea, it can take a long time (allow up to 5 minutes).

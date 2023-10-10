@@ -1,5 +1,6 @@
 {
-  "writemodandplugin": "Writing mods & plugins",
-  "callforgefrombukkit": "Calling Forge from Bukkit",
-  "callbukkitfromforge": "Calling Bukkit from Forge"
+  "modsandplugins": "Mods and Plugins",
+  "setup": "Setup",
+  "build": "Build",
+  "patches": "Generate patches"
 }

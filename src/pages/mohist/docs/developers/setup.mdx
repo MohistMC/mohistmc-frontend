@@ -1,0 +1,29 @@
+import {Steps, Tabs} from "nextra/components";
+
+# Setup Mohist for development
+
+<Steps>
+    ### Checkout project
+
+    ```bash
+    git clone https://github.com/MohistMC/Mohist.git -b mc-version
+    cd Mohist
+    ```
+
+    Or clone it manually to an empty folder.
+
+    ### Setup workspace
+
+    <Tabs items={['Windows', 'Linux']}>
+        <Tabs.Tab>
+            ```bash
+            gradlew.bat setup
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ```bash
+            ./gradlew setup
+            ```
+        </Tabs.Tab>
+    </Tabs>
+</Steps>

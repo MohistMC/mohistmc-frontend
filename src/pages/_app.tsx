@@ -59,6 +59,7 @@ export default function App({Component, pageProps}: AppProps) {
     return (
         <>
             <Head>
+                <html lang={"en"}/>
                 <title>MohistMC</title>
             </Head>
             <style jsx global>{`
