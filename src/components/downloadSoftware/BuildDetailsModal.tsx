@@ -47,33 +47,33 @@ export default function BuildDetailsModal({build, project, openModal, setOpenMod
                         <section className={`flex flex-col`}>
                             <h2 className="text-xl font-extrabold leading-none text-dark-25 dark:text-white mb-1">Build
                                 information</h2>
-                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
-                                Build number: <span className={`font-bold dark:text-gray-300`}>{build?.number}</span>
+                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                Build number: <span className={`font-bold dark:text-gray-400`}>{build?.number}</span>
                             </p>
-                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
-                                Build name: <span className={`font-bold dark:text-gray-300`}>{build?.fileName}</span>
+                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                Build name: <span className={`font-bold dark:text-gray-400`}>{build?.fileName}</span>
                             </p>
-                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
-                                MD5 Checksum: <span className={`font-bold dark:text-gray-300`}>{build?.fileMd5}</span>
+                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                MD5 Checksum: <span className={`font-bold dark:text-gray-400`}>{build?.fileMd5}</span>
                             </p>
-                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
+                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                 Build date: <span
-                                className={`font-bold dark:text-gray-300`}>{new Date(build?.createdAt || 0).toLocaleString()}</span>
+                                className={`font-bold dark:text-gray-400`}>{new Date(build?.createdAt || 0).toLocaleString()}</span>
                             </p>
                             {build?.forgeVersion &&
-                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
+                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     Forge version: <span
-                                    className={`font-bold dark:text-gray-300`}>{build?.forgeVersion}</span>
+                                    className={`font-bold dark:text-gray-400`}>{build?.forgeVersion}</span>
                                 </p>}
                             {build?.neoForgeVersion &&
-                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
+                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     NeoForge version: <span
-                                    className={`font-bold dark:text-gray-300`}>{build?.neoForgeVersion}</span>
+                                    className={`font-bold dark:text-gray-400`}>{build?.neoForgeVersion}</span>
                                 </p>}
                             {build?.fabricLoaderVersion &&
-                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
+                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     Fabric version: <span
-                                    className={`font-bold dark:text-gray-300`}>{build?.fabricLoaderVersion}</span>
+                                    className={`font-bold dark:text-gray-400`}>{build?.fabricLoaderVersion}</span>
                                 </p>}
                         </section>
                         <section className={`flex flex-col gap-1`}>
@@ -86,13 +86,13 @@ export default function BuildDetailsModal({build, project, openModal, setOpenMod
                                 <div className="font-medium dark:text-white">
                                     <div>{commitAuthor}</div>
                                     <div
-                                        className="text-sm text-gray-500 dark:text-gray-300">{new Date(commitDate ?? 0).toLocaleString()}</div>
+                                        className="text-sm text-gray-500 dark:text-gray-400">{new Date(commitDate ?? 0).toLocaleString()}</div>
                                     <div
-                                        className={`text-xs md:text-sm text-gray-500 dark:text-gray-300`}>{build?.gitSha}</div>
+                                        className={`text-xs md:text-sm text-gray-500 dark:text-gray-400`}>{build?.gitSha}</div>
                                 </div>
                             </div>
-                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
-                                Commit message: <span className={`font-bold dark:text-gray-300`}>{commitMessage}</span>
+                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                Commit message: <span className={`font-bold dark:text-gray-400`}>{commitMessage}</span>
                             </p>
                         </section>
                     </div>

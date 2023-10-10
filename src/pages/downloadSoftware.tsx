@@ -138,7 +138,7 @@ export default function DownloadSoftware() {
                     {getLocaleStringAsArgs(strings['downloadSoftware.title'])[1]}
                 </h1>
             </div>
-            <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-300 mb-3">{project === Project.Mohist ? strings["downloadSoftware.mohist.desc"] : strings[`downloadSoftware.banner.desc`]}</p>
+            <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-3">{project === Project.Mohist ? strings["downloadSoftware.mohist.desc"] : strings[`downloadSoftware.banner.desc`]}</p>
             <BuildDetailsModal build={modalBuild} project={project} openModal={openModal} setOpenModal={setOpenModal}/>
             <Flowbite theme={{theme: customTheme, dark: isDark}}>
                 <Toast>
@@ -177,9 +177,9 @@ export default function DownloadSoftware() {
                                             software={project}/>
                 </div>
                 <table
-                    className="w-full text-sm text-left text-gray-500 dark:text-gray-300 border-separate border-spacing-0 rounded-lg overflow-hidden">
+                    className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-separate border-spacing-0 rounded-lg overflow-hidden">
                     <thead
-                        className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-dark-200 dark:text-gray-300 rounded-xl">
+                        className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-dark-200 dark:text-gray-400 rounded-xl">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             {strings['downloadSoftware.build.name']}
@@ -229,12 +229,12 @@ export default function DownloadSoftware() {
                 }
                 {noResult &&
                     <div className="flex justify-center mt-4">
-                        <p className="text-gray-500 dark:text-gray-300">{strings['downloadSoftware.search.noresults']}</p>
+                        <p className="text-gray-500 dark:text-gray-400">{strings['downloadSoftware.search.noresults']}</p>
                     </div>
                 }
                 {noBuild &&
                     <div className="flex justify-center mt-4">
-                        <p className="text-gray-500 dark:text-gray-300">{strings['downloadSoftware.search.nobuilds']}</p>
+                        <p className="text-gray-500 dark:text-gray-400">{strings['downloadSoftware.search.nobuilds']}</p>
                     </div>
                 }
                 <NavigationTableElement buildPages={viewedBuildPages} currentPage={currentPage}

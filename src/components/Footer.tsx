@@ -19,7 +19,7 @@ export default function Footer() {
                             <span
                                 className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">MohistMC</span>
                         </Link>
-                        <Link href={`mailto:mohistmc@gmail.com`} className="block text-gray-600 mt-4 text-sm dark:text-gray-300 md:hover:text-blue-500">
+                        <Link href={`mailto:mohistmc@gmail.com`} className="block text-gray-600 mt-4 text-sm dark:text-gray-400 md:hover:text-blue-500">
                             mohistmc@gmail.com
                         </Link>
                         <p className={`dark:text-gray-400 text-gray-600 text-sm max-w-sm pt-1`}>
@@ -29,7 +29,7 @@ export default function Footer() {
                     <div className="flex gap-12 flex-wrap">
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{strings['footer.heading.gettingstarted']}</h2>
-                            <ul className="text-gray-600 dark:text-gray-300 font-medium">
+                            <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
                                     <Link href="/downloads" className="md:hover:text-blue-500">{strings['button.downloads']}</Link>
                                 </li>
@@ -46,7 +46,7 @@ export default function Footer() {
                         </div>
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{strings['button.about']}</h2>
-                            <ul className="text-gray-600 dark:text-gray-300 font-medium">
+                            <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
                                     <Link href="#"
                                        className="md:hover:text-blue-500 ">{strings['footer.heading.discover']}</Link>
@@ -61,7 +61,7 @@ export default function Footer() {
                         </div>
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{strings['footer.heading.community']}</h2>
-                            <ul className="text-gray-600 dark:text-gray-300 font-medium">
+                            <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
                                     <Link href="#" className="md:hover:text-blue-500">{strings['button.community']}</Link>
                                 </li>
@@ -80,7 +80,7 @@ export default function Footer() {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
                 <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-300">{getCopyrightText()} <Link
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">{getCopyrightText()} <Link
               href="/" className="hover:underline md:dark:hover:text-gray-500">MohistMC</Link>
           </span>
                     <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">

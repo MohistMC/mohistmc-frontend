@@ -52,7 +52,7 @@ export default function MohistMCApi() {
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                 <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">{getLocaleStringAsArgs(strings['mohistapi.title'])[0]} <span className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['mohistapi.title'])[1]}</span>{getLocaleStringAsArgs(strings['mohistapi.title'])[2]}</h1>
-                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{strings['mohistapi.subtitle']}</p>
+                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['mohistapi.subtitle']}</p>
                 </div>
             </section>
             <section className={`flex justify-center items-center mb-10`}>
@@ -62,7 +62,7 @@ export default function MohistMCApi() {
                         className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-500 dark:bg-blue-600 dark:text-white`}>
                         <HiExclamation className="h-5 w-5"/>
                     </div>
-                    <div className="ml-3 text-sm font-normal text-gray-600 dark:text-gray-300">
+                    <div className="ml-3 text-sm font-normal text-gray-600 dark:text-gray-400">
                         Are you a developer/manager of a hosting service and wish to add one of our products to make it available to your users? <a href={`#`} onClick={() => setOpenHostModal('dismissible')} className="font-medium underline">Please read this note.</a>
                     </div>
                     <Toast.Toggle/>

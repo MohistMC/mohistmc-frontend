@@ -70,9 +70,9 @@ export default function Header() {
         return (
             <div className={rootCss}>
                 {user.isLogged && <UserDropdown/>}
-                {!user.isLogged && <Button className={buttonCss} onClick={() => setOpenIssueModal('dismissible')}>
+                {/*!user.isLogged && <Button className={buttonCss} onClick={() => setOpenIssueModal('dismissible')}>
                     Report an issue
-                </Button>}
+                </Button>*/}
             </div>
         )
     }
@@ -89,7 +89,7 @@ export default function Header() {
                 </Link>
                 <div className="flex items-center md:order-2">
                     <Link href="https://github.com/MohistMC" aria-label="Github"
-                          className="hidden xl:inline-block text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
                         <svg className="w-5 h-5 " aria-hidden="true" focusable="false" data-prefix="fab"
                              data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                             <path fill="currentColor"
@@ -97,7 +97,7 @@ export default function Header() {
                         </svg>
                     </Link>
                     <Link href="https://discord.gg/mohistmc" aria-label={"Discord"}
-                          className="hidden xl:inline-block text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
                         <svg className="w-6 h-6" aria-hidden="true" focusable="false" data-prefix="fab"
                              data-icon="discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                             <path fill="currentColor"
@@ -106,7 +106,7 @@ export default function Header() {
                     </Link>
                     <Link href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=dDX-3YVb6E1EUGPM0mLq3ZQ1ZAVHZip-&authKey=RQvCDMf6mUgXEFWvw%2Bey%2Ft02Lr34yN%2FZCWIJ05JF0U%2FhKRY8QoosLCrPA8uEay7w&noverify=0&group_code=782534813"
                             aria-label="QQ"
-                          className="hidden xl:inline-block text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                          className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                         <svg className="w-5 h-5 " aria-hidden="true" focusable="false" data-prefix="fab"
                              data-icon="qq" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path fill="currentColor"
@@ -114,7 +114,7 @@ export default function Header() {
                         </svg>
                     </Link>
                     <button data-collapse-toggle="mobile-menu-language-select" type="button" aria-label="Toggle menu"
-                            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
+                            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
                             aria-controls="mobile-menu-language-select" aria-expanded="false"
                             onClick={() => {
                                 // Override the default behavior of the button

@@ -68,19 +68,19 @@ export default function StatisticsElement() {
                 className="bg-gray-100 mr-5 ml-5 py-10 md:mr-0 md:ml-0 grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-2 xl:grid-cols-4 dark:bg-dark-25 rounded-xl dark:text-white sm:p-8">
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">{resolvedBugs}</dt>
-                    <dd className="text-gray-500 text-center dark:text-gray-300">{strings['index.stats.resolvedbugs']}</dd>
+                    <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.resolvedbugs']}</dd>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">{openedIssues}</dt>
-                    <dd className="text-gray-500 text-center dark:text-gray-300">{strings['index.stats.openedissues']}</dd>
+                    <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.openedissues']}</dd>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">{players}+</dt>
-                    <dd className="text-gray-500 text-center dark:text-gray-300">{strings['index.stats.players']}</dd>
+                    <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.players']}</dd>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">{servers}+</dt>
-                    <dd className="text-gray-500 text-center dark:text-gray-300">{strings['index.stats.servers']}</dd>
+                    <dd className="text-gray-500 text-center dark:text-gray-400">{strings['index.stats.servers']}</dd>
                 </div>
             </dl>
         </section>

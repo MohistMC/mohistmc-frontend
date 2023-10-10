@@ -13,7 +13,7 @@ function Date({
   const strings = useSelector(selectTranslations);
 
   return (
-    <div className="text-sm mt-2 text-center text-gray-500 dark:text-gray-300 font-space-grotesk">
+    <div className="text-sm mt-2 text-center text-gray-500 dark:text-gray-400 font-space-grotesk">
       {children}
 
       {update != null && (

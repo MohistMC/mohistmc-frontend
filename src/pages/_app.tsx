@@ -18,6 +18,7 @@ import {getAPIEndpoint} from "@/util/Environment";
 import {loginUserAsync} from "@/features/user/UserSlice";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
+import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -39,11 +40,11 @@ export default function App({Component, pageProps}: AppProps) {
     })
 
     useEffect(() => {
-        if(process.env.NODE_ENV === 'development') {
+        if (process.env.NODE_ENV === 'development') {
             ToastLogger.info('You are running MohistMC in development mode.')
 
             fetch(`${getAPIEndpoint()}/ping`).then(res => {
-                if(res.status === 200)
+                if (res.status === 200)
                     ToastLogger.info('The backend server is running')
                 else
                     ToastLogger.error('The backend server is not responding. If you plan on working with it, make sure to start it. If the port has been changed (default is 2024), make sure to change it in the src/util/Environment.ts file.', 30000)
@@ -52,7 +53,7 @@ export default function App({Component, pageProps}: AppProps) {
             })
         }
 
-        loginUserAsync(store.dispatch)
+        loginUserAsync().catch()
     }, []);
 
     return (
@@ -66,10 +67,18 @@ export default function App({Component, pageProps}: AppProps) {
               }
             `}</style>
             <Provider store={store}>
-                <ToastContainer/>
-                <Header/>
-                <Component {...pageProps} />
-                <Footer/>
+                <GoogleReCaptchaProvider
+                    reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTHA_SITE_KEY as string}
+                    scriptProps={{
+                        async: false,
+                        defer: true,
+                        nonce: undefined,
+                    }}>
+                    <ToastContainer/>
+                    <Header/>
+                    <Component {...pageProps} />
+                    <Footer/>
+                </GoogleReCaptchaProvider>
             </Provider>
         </>
     );
