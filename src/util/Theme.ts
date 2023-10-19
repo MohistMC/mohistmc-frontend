@@ -168,8 +168,8 @@ export const customTheme: CustomFlowbiteTheme = {
         img: {
             base: "",
             horizontal: {
-                off: "rounded-t-lg object-cover h-auto w-48 md:rounded",
-                on: "h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                off: "rounded-t-lg object-cover h-auto w-44 md:rounded",
+                on: "h-96 w-full rounded-t-lg object-cover md:h-auto md:w-44 md:rounded-none md:rounded-l-lg"
             }
         }
     },
