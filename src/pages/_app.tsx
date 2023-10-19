@@ -40,6 +40,8 @@ export default function App({Component, pageProps}: AppProps) {
     })
 
     useEffect(() => {
+        document.documentElement.lang = 'en'
+
         if (process.env.NODE_ENV === 'development') {
             ToastLogger.info('You are running MohistMC in development mode.')
 
@@ -59,7 +61,6 @@ export default function App({Component, pageProps}: AppProps) {
     return (
         <>
             <Head>
-                <html lang={"en"}/>
                 <title>MohistMC</title>
             </Head>
             <style jsx global>{`
