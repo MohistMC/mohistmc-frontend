@@ -33,6 +33,7 @@ const enTranslation= {
         "button.blog": "Blog",
         "button.close": "Close",
         "button.contribute": "Contribute",
+        "button.shop": "Shop",
         "footer.heading.gettingstarted": "Getting started",
         "footer.heading.discover": "Discover us",
         "footer.heading.community": "Community",
@@ -90,6 +91,7 @@ const enTranslation= {
         "software.mohist.footer.title": "Ready to level up your Minecraft server experience?",
         "software.mohist.footer.desc": "Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the Mohist community and unlock limitless possibilities for your server. Upgrade to Mohist today and revolutionize your Minecraft experience.",
         "software.mohist.footer.discord": "Join our Discord",
+        "software.mohist.footer.shop": "Join our Shop",
         "404.title": "not found",
         "404.subtitle": "We're sorry, the resource you're looking for cannot be found on this website.",
         "docs.title": "MohistMC's documentations",
@@ -136,7 +138,21 @@ const enTranslation= {
         "contribute.footer.title": "Join our community and help us to create better projects!",
         "contribute.footer.desc": "MohistMC is a community-driven organization. We welcome contributions from the community. Join our community and help us to create better projects!",
         "blog.subtitle": "The latest updates and releases from MohistMC.",
-        "blog.lastupdated": "Last updated on"
+        "blog.lastupdated": "Last updated on",
+        "shop.page.title": "MohistMC - Shop",
+        "shop.title": "Contribute to %MohistMC%, help us making better softwares!",
+        "shop.subtitle": "MohistMC makes open-source projects, powered by community contributions. There are diverse ways for you to participate in shaping these projects.",
+        "shop.cards.1.title": "Contribute financially",
+        "shop.cards.1.desc": "MohistMC is a non-profit organization. We rely on donations to fund our operations and continue to develop our projects and maintain our infrastructure. Your contribution will help us to continue to provide our services to the community.",
+        "shop.cards.2.title": "Contribute to the code",
+        "shop.cards.2.desc": "MohistMC makes open-source projects! We welcome contributions from the community. You can contribute to our projects by submitting pull requests or reporting issues on GitHub.",
+        "shop.cards.3.title": "Contribute to the documentation",
+        "shop.cards.3.desc": "MohistMC provides various documentations for our softwares, and a lot of users needs them. You can help us to improve the documentation by contributing to it on GitHub.",
+        "shop.cards.4.title": "Become a translator",
+        "shop.cards.4.desc": "We make our projects available in multiple languages so that everyone can use them. If you are fluent in a language other than English, you can help us to translate our projects!",
+        "shop.cards.4.button": "Crowdin page",
+        "shop.footer.title": "Join our community and help us to create better projects!",
+        "shop.footer.desc": "MohistMC is a community-driven organization. We welcome contributions from the community. Join our community and help us to create better projects!",
     }
 }
 
