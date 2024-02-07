@@ -34,9 +34,9 @@ export default function VersionSelectorElement({
             const {projectVersion} = router.query as { projectVersion: string | undefined }
 
             if (!selectedVersion) {
-                if (software === Project.Mohist)
+                if (software === Project.Mohist || software === Project.Banner) {
                     setSelectedVersion(buildSourcesJson?.versions.find((version) => version === projectVersion) || buildSourcesJson?.versions.find((version) => version === '1.20.1'))
-                else {
+                } else {
                     if (buildSourcesJson?.versions.length > 0)
                         setSelectedVersion(buildSourcesJson?.versions[0])
                     // TODO: Else toast error
