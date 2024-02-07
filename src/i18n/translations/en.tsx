@@ -33,6 +33,7 @@ const enTranslation= {
         "button.blog": "Blog",
         "button.close": "Close",
         "button.contribute": "Contribute",
+        "button.shop": "Shop",
         "footer.heading.gettingstarted": "Getting started",
         "footer.heading.discover": "Discover us",
         "footer.heading.community": "Community",
@@ -90,6 +91,7 @@ const enTranslation= {
         "software.mohist.footer.title": "Ready to level up your Minecraft server experience?",
         "software.mohist.footer.desc": "Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the Mohist community and unlock limitless possibilities for your server. Upgrade to Mohist today and revolutionize your Minecraft experience.",
         "software.mohist.footer.discord": "Join our Discord",
+        "software.mohist.footer.shop": "Join our Shop",
         "404.title": "not found",
         "404.subtitle": "We're sorry, the resource you're looking for cannot be found on this website.",
         "docs.title": "MohistMC's documentations",
@@ -136,7 +138,20 @@ const enTranslation= {
         "contribute.footer.title": "Join our community and help us to create better projects!",
         "contribute.footer.desc": "MohistMC is a community-driven organization. We welcome contributions from the community. Join our community and help us to create better projects!",
         "blog.subtitle": "The latest updates and releases from MohistMC.",
-        "blog.lastupdated": "Last updated on"
+        "blog.lastupdated": "Last updated on",
+        "shop.page.title": "MohistMC - Shop",
+        "shop.title": "%MohistMC% Some of the value-added services offered!",
+        "shop.subtitle": "We need some extra income for our daily expenses. So that we can work full-time to make more community products. And 5% of it will be used for public donations.",
+        "shop.cards.1.title": "SPEED TORCH",
+        "shop.cards.1.desc": "We're not perfect and have a lot of published issues. When you need to solve a problem urgently, you need an accelerator torch!",
+        "shop.cards.2.title": "Customization and Magic",
+        "shop.cards.2.desc": "There is only what you can't think of, and there is nothing we can't do. It's all possible!",
+        "shop.cards.3.title": "Development of teaching",
+        "shop.cards.3.desc": "Still worried about expensive customization fees and easy for developers to run away? Do it yourself, learn how to write plugins from scratch, and how to make the features you want.",
+        "shop.cards.4.title": "Merchandise",
+        "shop.cards.4.desc": "Some of the team related souvenirs and peripherals!",
+        "shop.footer.title": "Go to our store page and choose the service you want!",
+        "shop.footer.desc": "Your needs are our motivation!",
     }
 }
 
