@@ -35,7 +35,7 @@ export default function VersionSelectorElement({
 
             if (!selectedVersion) {
                 if (software === Project.Mohist)
-                    setSelectedVersion(buildSourcesJson?.versions.find((version) => version === projectVersion) || buildSourcesJson?.versions.find((version) => version === '1.16.5'))
+                    setSelectedVersion(buildSourcesJson?.versions.find((version) => version === projectVersion) || buildSourcesJson?.versions.find((version) => version === '1.20.1'))
                 else {
                     if (buildSourcesJson?.versions.length > 0)
                         setSelectedVersion(buildSourcesJson?.versions[0])

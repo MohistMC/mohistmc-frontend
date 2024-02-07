@@ -87,10 +87,6 @@ export default function DownloadSoftware() {
                         setHiColor('orange')
                         setToastMessageKey('downloadSoftware.mohist.1.20.toast')
                         break
-                    case "1.20.1":
-                        setHiColor('blue')
-                        setToastMessageKey('downloadSoftware.mohist.1.20.1.toast')
-                        break
                 }
             }
 
