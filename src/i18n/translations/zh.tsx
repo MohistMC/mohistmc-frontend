@@ -146,7 +146,7 @@ const zhTranslation: PartialLocaleState = {
         "shop.cards.1.title": "加速火把",
         "shop.cards.1.desc": "我们并不是完美的，并且存在很多已发布的issues. 当你急需解决某个问题时，就需要一根加速火把！",
         "shop.cards.2.title": "定制与魔改",
-        "shop.cards.2.desc": "只有你想不到的，没有我们做不到的. 一切仅有可能！",
+        "shop.cards.2.desc": "只有你想不到的，没有我们做不到的. 一切皆有可能！",
         "shop.cards.3.title": "指导与教学",
         "shop.cards.3.desc": "还在为昂贵的定制费用和开发者容易跑路发愁? 自己动手丰衣足食，从零学习如何编写插件，如何魔改出你想要的功能。",
         "shop.cards.4.title": "周边",

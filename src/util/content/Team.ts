@@ -9,6 +9,11 @@ const MOHISTMC_TEAM: Record<string, AuthorDetails> = {
     role: 'Admin & Developer',
     pageUrl: 'https://github.com/Shawiizz'
   },
+  wdog5: {
+    name: 'Wdog5',
+    role: 'Developer',
+    pageUrl: 'https://github.com/wdog5'
+  },
   romaindu35: {
     name: 'Romaindu35',
     role: 'Developer',
@@ -18,11 +23,6 @@ const MOHISTMC_TEAM: Record<string, AuthorDetails> = {
     name: 'InkerBot',
     role: 'Developer',
     pageUrl: 'https://github.com/InkerBot'
-  },
-  wdog5: {
-    name: 'Wdog5',
-    role: 'Developer',
-    pageUrl: 'https://github.com/wdog5'
   },
   KR33PYK1NG: {
     name: 'KR33PY',
