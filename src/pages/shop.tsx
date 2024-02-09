@@ -98,25 +98,6 @@ const Shop = () => {
                             className="shadow fill-gray-100 dark:fill-dark-50"></path>
                     </svg>
                 </div>
-                <section className={`pt-5`}>
-                    <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">{strings['shop.footer.title']}</h2>
-                        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['shop.footer.desc']}</p>
-                        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                            <Link href="https://mohistmc.shop/" target="_blank"
-                                  className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                                {strings['software.mohist.footer.shop']}
-                                <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                                    <path
-                                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-                                </svg>
-                            </Link>
-                        </div>
-                    </div>
-                </section>
             </div>
         </Flowbite>
     )
