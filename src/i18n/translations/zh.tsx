@@ -44,6 +44,7 @@ const zhTranslation: PartialLocaleState = {
         "social.forum": "论坛",
         "social.opencollective": "OpenCollective",
         "social.ghsponsors": "GitHub 赞助商",
+        "social.alipay": "支付宝",
         "downloads.page.title": "MohistMC - 下载",
         "downloads.title": "免费下载我们的任何软件！",
         "downloads.mohist.desc": "一个实现了Bukkit、Spigot和Paper API的Minecraft Forge服务器软件。使用此软件，您可以创建一个带有模组和插件的Minecraft服务器！",

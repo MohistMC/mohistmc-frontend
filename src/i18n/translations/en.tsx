@@ -42,6 +42,7 @@ const enTranslation= {
         "social.forum": "Forum",
         "social.opencollective": "OpenCollective",
         "social.ghsponsors": "GitHub Sponsors",
+        "social.alipay": "AliPay",
         "downloads.page.title": "MohistMC - Downloads",
         "downloads.title": "Download any of our software %for free!%",
         "downloads.mohist.desc": "A Minecraft Forge server software implementing Bukkit, Spigot and Paper APIs. With this software, you can create a Minecraft server with mods and plugins together!",
