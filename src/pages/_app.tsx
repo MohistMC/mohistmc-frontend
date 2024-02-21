@@ -69,18 +69,10 @@ export default function App({Component, pageProps}: AppProps) {
               }
             `}</style>
             <Provider store={store}>
-                <GoogleReCaptchaProvider
-                    reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTHA_SITE_KEY as string}
-                    scriptProps={{
-                        async: false,
-                        defer: true,
-                        nonce: undefined,
-                    }}>
                     <ToastContainer/>
                     <Header/>
                     <Component {...pageProps} />
                     <Footer/>
-                </GoogleReCaptchaProvider>
             </Provider>
         </>
     );
