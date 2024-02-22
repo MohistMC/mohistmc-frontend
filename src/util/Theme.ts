@@ -363,7 +363,10 @@ export const customTheme: CustomFlowbiteTheme = {
         },
         item: {
             base: "absolute top-1/2 left-1/2 block w-full -translate-x-1/2 -translate-y-1/2 flex items-center justify-center",
-            wrapper: "w-full flex-shrink-0 transform cursor-grab snap-center"
+            wrapper: {
+                off: "w-full flex-shrink-0 transform cursor-default snap-center",
+                on: "w-full flex-shrink-0 transform cursor-grab snap-center"
+            }
         },
         control: {
             base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-300 group-hover:bg-gray-400 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-dark-200 dark:group-hover:dark:bg-dark-100 dark:group-focus:dark:bg-dark-100 sm:h-10 sm:w-10",

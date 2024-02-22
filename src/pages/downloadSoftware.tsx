@@ -24,7 +24,7 @@ export default function DownloadSoftware() {
     const router = useRouter()
     const strings = useAppSelector(selectTranslations);
     const perPage = 10
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
 
     // React states
     const [project, setProject] = useState<Project | undefined>()
@@ -136,7 +136,7 @@ export default function DownloadSoftware() {
             </div>
             <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-3">{project === Project.Mohist ? strings["downloadSoftware.mohist.desc"] : strings[`downloadSoftware.banner.desc`]}</p>
             <BuildDetailsModal build={modalBuild} project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-            <Flowbite theme={{theme: customTheme, dark: isDark}}>
+            <Flowbite theme={{theme: customTheme, mode}}>
                 <Toast>
                     <div
                         className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-600 dark:text-white`}>
@@ -150,7 +150,7 @@ export default function DownloadSoftware() {
                     <Toast.Toggle/>
                 </Toast>
             </Flowbite>
-            {toastMessageKey?.length && <Flowbite theme={{theme: customTheme, dark: isDark}}>
+            {toastMessageKey?.length && <Flowbite theme={{theme: customTheme, mode}}>
                 <Toast>
                     <div
                         className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-${hiColor}-100 text-${hiColor}-500 dark:bg-${hiColor}-600 dark:text-white`}>

@@ -12,15 +12,15 @@ import jetbrains from "../../../public/jetbrains.svg"
 import elfidc from "../../../public/elfidc.webp"
 
 export default function DefaultCarousel() {
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <Carousel>
                 <Link href={`https://ci.codemc.io/`}><Image
                     className={`md:w-1/6`}
                     alt="CodeMC Logo"
-                    src={isDark ? codemcWhite : codemcDark}
+                    src={mode === 'dark' ? codemcWhite : codemcDark}
                 /></Link>
                 <Link href={`https://www.bisecthosting.com/mohistmc`}><Image
                     className={`md:w-1/4`}

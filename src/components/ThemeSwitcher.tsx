@@ -1,6 +1,6 @@
 import {useEffect, useRef} from "react";
 import {useDispatch} from "react-redux";
-import {setDark} from "@/features/theme/ThemeSlice";
+import {setMode} from "@/features/theme/ThemeSlice";
 
 export default function ThemeSwitcher({className}: { className?: string}) {
     const themeToggleDarkIconRef = useRef<SVGSVGElement>(null);
@@ -15,10 +15,10 @@ export default function ThemeSwitcher({className}: { className?: string}) {
         // Change the icons inside the button based on previous settings
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             themeToggleLightIconRef.current.classList.remove('hidden');
-            dispatch(setDark(true))
+            dispatch(setMode('dark'))
         } else {
             themeToggleDarkIconRef.current.classList.remove('hidden');
-            dispatch(setDark(false))
+            dispatch(setMode('light'))
         }
     })
 
@@ -34,21 +34,21 @@ export default function ThemeSwitcher({className}: { className?: string}) {
             if (localStorage.getItem('color-theme') === 'light') {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
-                dispatch(setDark(true))
+                dispatch(setMode('dark'))
             } else {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
-                dispatch(setDark(false))
+                dispatch(setMode('light'))
             }
         } else {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
-                dispatch(setDark(false))
+                dispatch(setMode('light'))
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
-                dispatch(setDark(true))
+                dispatch(setMode('dark'))
             }
         }
     }

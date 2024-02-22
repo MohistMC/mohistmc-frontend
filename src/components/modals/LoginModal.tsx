@@ -19,7 +19,7 @@ interface LoginModalProps {
 
 const LoginModal = ({openModal, setOpenModal, mustLogin}: LoginModalProps) => {
     const router = useRouter()
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
     const strings = useAppSelector(selectTranslations);
     const {executeRecaptcha} = useGoogleReCaptcha();
 
@@ -38,7 +38,7 @@ const LoginModal = ({openModal, setOpenModal, mustLogin}: LoginModalProps) => {
     }
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <Modal dismissible show={openModal === 'dismissible'} onClose={() => setOpenModal(undefined)}>
                 <Modal.Header>{strings['loginmodal.title']}</Modal.Header>
                 <Modal.Body>

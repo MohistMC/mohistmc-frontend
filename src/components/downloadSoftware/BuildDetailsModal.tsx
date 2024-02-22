@@ -18,7 +18,7 @@ interface BuildDetailsModalProps {
 }
 
 export default function BuildDetailsModal({build, project, openModal, setOpenModal}: BuildDetailsModalProps) {
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
     const strings = useAppSelector(selectTranslations);
 
     const [commitMessage, setCommitMessage] = useState<string | undefined>(undefined)
@@ -39,7 +39,7 @@ export default function BuildDetailsModal({build, project, openModal, setOpenMod
     }, [build, project])
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <Modal dismissible show={openModal === 'dismissible'} onClose={() => setOpenModal(undefined)}>
                 <Modal.Header>Build #{build?.number}</Modal.Header>
                 <Modal.Body>

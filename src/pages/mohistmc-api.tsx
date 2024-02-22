@@ -18,7 +18,7 @@ export default function MohistMCApi() {
     const strings = useAppSelector(selectTranslations);
 
     // Redux
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
 
     // React states
     const [isSwaggerLoaded, setIsSwaggerLoaded] = useState<boolean>(false)
@@ -56,7 +56,7 @@ export default function MohistMCApi() {
                 </div>
             </section>
             <section className={`flex justify-center items-center mb-10`}>
-            <Flowbite theme={{theme: customTheme, dark: isDark}}>
+            <Flowbite theme={{theme: customTheme, mode}}>
                 <Toast>
                     <div
                         className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-500 dark:bg-blue-600 dark:text-white`}>
@@ -69,7 +69,7 @@ export default function MohistMCApi() {
                 </Toast>
             </Flowbite>
             </section>
-            <section className={`${isDark ? 'dark-theme' : 'white-theme' } ${!isSwaggerLoaded && 'flex items-center flex-col'}`}>
+            <section className={`${mode === 'dark' ? 'dark-theme' : 'white-theme' } ${!isSwaggerLoaded && 'flex items-center flex-col'}`}>
                 <div role="status"
                      className={`${isSwaggerLoaded && 'hidden'} max-w-2xl mb-10 p-4 space-y-4 w-75 w-full border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-dark-400 md:p-6 dark:border-dark-200`}>
                     <LoaderBarElement/>

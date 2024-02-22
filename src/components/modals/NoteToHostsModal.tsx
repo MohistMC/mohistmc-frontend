@@ -11,11 +11,11 @@ interface NoteToHostsModalProps {
 }
 
 const NoteToHostsModal = ({openHostModal, setOpenHostModal}: NoteToHostsModalProps) => {
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
     const strings = useAppSelector(selectTranslations);
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <Modal dismissible show={openHostModal === 'dismissible'} onClose={() => setOpenHostModal(undefined)}>
                 <Modal.Header>Note to host provider</Modal.Header>
                 <Modal.Body>

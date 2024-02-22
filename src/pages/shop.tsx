@@ -11,10 +11,10 @@ import {customTheme} from "@/util/Theme";
 
 const Shop = () => {
     const strings = useAppSelector(selectTranslations);
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
                 <Head>
                     <title>{strings['shop.page.title']}</title>

@@ -15,7 +15,7 @@ interface LoginModalProps {
 }
 
 const IssueReportModal = ({openIssueModal, setOpenIssueModal, setOpenLoginModal, openLoginModal}: LoginModalProps) => {
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
     const strings = useAppSelector(selectTranslations);
 
     const reportViaWebsite = () => {
@@ -24,7 +24,7 @@ const IssueReportModal = ({openIssueModal, setOpenIssueModal, setOpenLoginModal,
     }
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <Modal dismissible show={openIssueModal === 'dismissible'} onClose={() => setOpenIssueModal(undefined)}>
                 <Modal.Header>{strings['issuemodal.title']}</Modal.Header>
                 <Modal.Body>

@@ -11,11 +11,11 @@ interface ChoiceIssueModalProps {
 }
 
 const ChoiceIssueModal = ({openIssueModal, setOpenIssueModal}: ChoiceIssueModalProps) => {
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
     const strings = useAppSelector(selectTranslations);
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <Modal dismissible show={openIssueModal === 'dismissible'} onClose={() => setOpenIssueModal(undefined)}>
                 <Modal.Header>You are logged in! Choose an action</Modal.Header>
                 <Modal.Body>

@@ -11,7 +11,7 @@ const UserDropdown = () => {
     // React state
     const [userDropdownState, setUserDropdownState] = useState<ReactElement | undefined>();
 
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
     const user = useAppSelector(selectUser)
     const dispatch = useDispatch()
 
@@ -25,7 +25,7 @@ const UserDropdown = () => {
     }, [user]);
 
     return (
-        <Flowbite theme={{theme: customTheme, dark: isDark}}>
+        <Flowbite theme={{theme: customTheme, mode}}>
             <Dropdown inline label={<Avatar alt="User settings" img={user.avatarUrl} rounded/>}>
                 <Dropdown.Header>
         <span className="block text-sm">

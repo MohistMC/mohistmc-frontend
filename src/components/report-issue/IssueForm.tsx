@@ -9,7 +9,7 @@ import {Build} from "@/interfaces/Build";
 import {customTheme} from "@/util/Theme";
 
 const IssueForm = () => {
-    const isDark = useSelector(selectTheme)
+    const mode = useSelector(selectTheme)
     const router = useRouter();
 
     const {product, issueType} = router.query as { product: string, issueType: string };
@@ -63,7 +63,7 @@ const IssueForm = () => {
                 <p><span className={`font-bold`}>Product</span> - {capitalizeFirstLetter(product)}</p>
                 <p><span className={`font-bold`}>Issue type</span> - {capitalizeFirstLetter(issueType)}</p>
             </div>
-            <Flowbite theme={{theme: customTheme, dark: isDark}}>
+            <Flowbite theme={{theme: customTheme, mode}}>
                 <form className="flex max-w-md flex-col gap-4">
                     <div
                         className="max-w-md"
