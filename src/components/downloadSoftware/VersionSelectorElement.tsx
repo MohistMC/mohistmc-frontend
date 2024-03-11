@@ -10,7 +10,7 @@ interface VersionSelectorElementProps {
     software: Project | undefined
 }
 
-interface ProjectVersions {
+export interface ProjectVersions {
     versions: string[]
 }
 

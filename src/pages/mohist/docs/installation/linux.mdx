@@ -20,7 +20,6 @@ import {Callout, Steps, Tabs} from 'nextra/components'
             curl -O https://mohistmc.com/api/v2/projects/mohist/[minecraftVersion]/builds/latest/download
             ```
         </Tabs.Tab>
-
     </Tabs>
 
     Make sure to replace `[minecraftVersion]` by the right version you want to download. See [available
@@ -42,15 +41,6 @@ import {Callout, Steps, Tabs} from 'nextra/components'
 
     <Tabs items={['Using script', 'Using terminal']}>
         <Tabs.Tab>
-            Open a terminal and go to the folder where you dropped the Mohist jar file.
-
-            Then, run this command:
-            ```bash
-            java -jar -Xmx4G downloaded-jar-file.jar
-            ```
-            Replace `downloaded-jar-file.jar` by the real name of the jar file you dropped to your server folder.
-        </Tabs.Tab>
-        <Tabs.Tab>
             You have to create a file called
             `start.sh` where you dropped the Mohist jar file.
 
@@ -62,6 +52,15 @@ import {Callout, Steps, Tabs} from 'nextra/components'
             Replace `downloaded-jar-file.jar` by the real name of the jar file you dropped to your server folder.
 
             When it's done, double click `start.sh`.
+        </Tabs.Tab>
+        <Tabs.Tab>
+            Open a terminal and go to the folder where you dropped the Mohist jar file.
+
+            Then, run this command:
+            ```bash
+            java -jar -Xmx4G downloaded-jar-file.jar
+            ```
+            Replace `downloaded-jar-file.jar` by the real name of the jar file you dropped to your server folder.
         </Tabs.Tab>
     </Tabs>
 
