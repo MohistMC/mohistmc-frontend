@@ -150,7 +150,7 @@ const zhTranslation: PartialLocaleState = {
         "shop.cards.3.title": "指导与教学",
         "shop.cards.3.desc": "还在为昂贵的定制费用和开发者容易跑路发愁? 自己动手丰衣足食，从零学习如何编写插件，如何魔改出你想要的功能。",
         "shop.cards.4.title": "周边",
-        "shop.cards.4.desc": "一些团队相关得纪念品和周边!",
+        "shop.cards.4.desc": "一些团队相关的纪念品和周边!",
         "shop.footer.title": "前往我们的商城页面，挑选你心意的服务吧!",
         "shop.footer.desc": "你的需求就是我们的动力来源!",
 
