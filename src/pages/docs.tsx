@@ -15,15 +15,15 @@ export default function Downloads() {
                 <meta name="description" content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`} />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://new.mohistmc.com/docs" />
+                <meta property="og:url" content="https://mohistmc.com/docs" />
                 <meta property="og:title" content="MohistMC - Docs" />
                 <meta property="og:description" content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
                 <meta property="og:image:type" content="image/png"/>
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:url" content="https://new.mohistmc.com/docs" />
+                <meta property="twitter:url" content="https://mohistmc.com/docs" />
                 <meta property="twitter:title" content="MohistMC - Docs" />
                 <meta property="twitter:description" content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`} />
             </Head>

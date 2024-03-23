@@ -16,15 +16,15 @@ export default function Downloads() {
                 <meta name="description" content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`} />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://new.mohistmc.com/downloads" />
+                <meta property="og:url" content="https://mohistmc.com/downloads" />
                 <meta property="og:title" content="MohistMC - Downloads" />
                 <meta property="og:description" content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
                 <meta property="og:image:type" content="image/png"/>
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:url" content="https://new.mohistmc.com/downloads" />
+                <meta property="twitter:url" content="https://mohistmc.com/downloads" />
                 <meta property="twitter:title" content="MohistMC - Downloads" />
                 <meta property="twitter:description" content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`} />
             </Head>

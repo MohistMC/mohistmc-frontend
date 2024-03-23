@@ -36,15 +36,15 @@ export default function MohistMCApi() {
                 <meta name="description" content={`Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! ${getCopyrightText()} MohistMC.`} />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://new.mohistmc.com/mohistmc-api" />
+                <meta property="og:url" content="https://mohistmc.com/mohistmc-api" />
                 <meta property="og:title" content="MohistMC - JSON API" />
                 <meta property="og:description" content={`Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
                 <meta property="og:image:type" content="image/png"/>
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:url" content="https://new.mohistmc.com/mohistmc-api" />
+                <meta property="twitter:url" content="https://mohistmc.com/mohistmc-api" />
                 <meta property="twitter:title" content="MohistMC - JSON API" />
                 <meta property="twitter:description" content={`Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! ${getCopyrightText()} MohistMC.`} />
             </Head>

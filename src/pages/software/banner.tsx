@@ -16,15 +16,15 @@ export default function MohistSoftware() {
                 <meta name="description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://new.mohistmc.com/software/mohist" />
+                <meta property="og:url" content="https://mohistmc.com/software/mohist" />
                 <meta property="og:title" content="MohistMC - Banner" />
                 <meta property="og:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
                 <meta property="og:image:type" content="image/png"/>
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:url" content="https://new.mohistmc.com/software/mohist" />
+                <meta property="twitter:url" content="https://mohistmc.com/software/mohist" />
                 <meta property="twitter:title" content="MohistMC - Banner" />
                 <meta property="twitter:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
             </Head>

@@ -23,16 +23,16 @@ const Contribute = () => {
                           content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!"/>
 
                     <meta property="og:type" content="website"/>
-                    <meta property="og:url" content="https://new.mohistmc.com/contribute"/>
+                    <meta property="og:url" content="https://mohistmc.com/contribute"/>
                     <meta property="og:title" content="MohistMC - Contribute"/>
                     <meta property="og:description"
                           content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!"/>
-                    <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png"/>
+                    <meta property="og:image" content="https://mohistmc.com/mohistLogo.png"/>
                     <meta property="og:image:type" content="image/png"/>
                     <meta property="og:image:width" content="100" />
                     <meta property="og:image:height" content="100" />
 
-                    <meta property="twitter:url" content="https://new.mohistmc.com/contribute"/>
+                    <meta property="twitter:url" content="https://mohistmc.com/contribute"/>
                     <meta property="twitter:title" content="MohistMC - Contribute"/>
                     <meta property="twitter:description"
                           content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!"/>

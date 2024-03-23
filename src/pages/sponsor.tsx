@@ -47,15 +47,15 @@ export default function Sponsor() {
                 <meta name="description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://new.mohistmc.com/sponsor" />
+                <meta property="og:url" content="https://mohistmc.com/sponsor" />
                 <meta property="og:title" content="MohistMC - Sponsor" />
                 <meta property="og:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
-                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
                 <meta property="og:image:type" content="image/png"/>
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:url" content="https://new.mohistmc.com/sponsor" />
+                <meta property="twitter:url" content="https://mohistmc.com/sponsor" />
                 <meta property="twitter:title" content="MohistMC - Sponsor" />
                 <meta property="twitter:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
             </Head>
@@ -81,7 +81,7 @@ export default function Sponsor() {
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['social.ghsponsors']}
                         </Link>
-                        <Link href="https://new.mohistmc.com/alipay.jpg"
+                        <Link href="https://mohistmc.com/alipay.jpg"
                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['social.alipay']}
                         </Link>

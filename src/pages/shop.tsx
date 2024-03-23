@@ -23,16 +23,16 @@ const Shop = () => {
                           content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Shop now!"/>
 
                     <meta property="og:type" content="website"/>
-                    <meta property="og:url" content="https://new.mohistmc.com/shop"/>
+                    <meta property="og:url" content="https://mohistmc.com/shop"/>
                     <meta property="og:title" content="MohistMC - Shop"/>
                     <meta property="og:description"
                           content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Shop now!"/>
-                    <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png"/>
+                    <meta property="og:image" content="https://mohistmc.com/mohistLogo.png"/>
                     <meta property="og:image:type" content="image/png"/>
                     <meta property="og:image:width" content="100" />
                     <meta property="og:image:height" content="100" />
 
-                    <meta property="twitter:url" content="https://new.mohistmc.com/shop"/>
+                    <meta property="twitter:url" content="https://mohistmc.com/shop"/>
                     <meta property="twitter:title" content="MohistMC - Shop"/>
                     <meta property="twitter:description"
                           content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Shop now!"/>

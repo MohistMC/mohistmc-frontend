@@ -17,15 +17,15 @@ export default function Team() {
                 <meta name="description" content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`} />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://new.mohistmc.com/team" />
+                <meta property="og:url" content="https://mohistmc.com/team" />
                 <meta property="og:title" content="MohistMC - Team" />
                 <meta property="og:description" content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://new.mohistmc.com/mohistLogo.png" />
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
                 <meta property="og:image:type" content="image/png"/>
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
 
-                <meta property="twitter:url" content="https://new.mohistmc.com/team" />
+                <meta property="twitter:url" content="https://mohistmc.com/team" />
                 <meta property="twitter:title" content="MohistMC - Team" />
                 <meta property="twitter:description" content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`} />
             </Head>
