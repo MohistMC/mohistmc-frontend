@@ -30,3 +30,11 @@ export default function getLocaleIconSVG(locale: LocaleState) {
 export function getLocaleStringAsArgs(str: string): string[] {
     return str ? str.split(/%([^%]+)%/).filter(Boolean) : [];
 }
+
+/**
+ * Returns whether the current language is Chinese for some special function settings
+ * @param locale
+ */
+export function isCN(locale: LocaleState): boolean {
+    return locale.initials == "zh";
+}
