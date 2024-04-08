@@ -3,9 +3,9 @@
 module.exports = {
     content: [
         './node_modules/flowbite-react/**/*.js',
-        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/pages/**/*.{js,ts,jsx,tsx,md,mdx}',
+        './src/components/**/*.{js,ts,jsx,tsx,md,mdx}',
+        './src/app/**/*.{js,ts,jsx,tsx,md,mdx}',
         './node_modules/tw-elements/dist/js/**/*.js',
     ],
     theme: {

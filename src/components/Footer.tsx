@@ -25,8 +25,7 @@ export default function Footer() {
                         </Link>
                         <p className={`dark:text-gray-400 text-gray-600 text-sm max-w-sm pt-1`}>
                             Do not send your bugs to this email, please use our <Link href="/user/report-issue"
-                                                                                      className="dark:text-blue-500 text-blue-700">issue
-                            tracker</Link> instead.
+                            className="dark:text-blue-500 text-blue-700">issue tracker</Link> instead.
                         </p>
                     </div>
                     <div className="flex gap-12 flex-wrap">

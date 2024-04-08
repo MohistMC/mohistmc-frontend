@@ -138,6 +138,7 @@ const enTranslation= {
         "contribute.cards.4.button": "Crowdin page",
         "contribute.footer.title": "Join our community and help us to create better projects!",
         "contribute.footer.desc": "MohistMC is a community-driven organization. We welcome contributions from the community. Join our community and help us to create better projects!",
+        "blog.title": "Blog",
         "blog.subtitle": "The latest updates and releases from MohistMC.",
         "blog.lastupdated": "Last updated on",
         "shop.page.title": "MohistMC - Shop",

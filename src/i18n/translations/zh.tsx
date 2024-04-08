@@ -140,6 +140,7 @@ const zhTranslation: PartialLocaleState = {
         "contribute.cards.4.button": "Crowdin页面",
         "contribute.footer.title": "加入我们的社区，共同创建更好的项目！",
         "contribute.footer.desc": "MohistMC是一个社区驱动的组织。我们欢迎社区的贡献。加入我们的社区，帮助我们创建更好的项目！",
+        "blog.title": "博客",
         "blog.subtitle": "MohistMC 的最新更新和发布.",
         "blog.lastupdated": "最后编辑于",
         "shop.page.title": "MohistMC - Shop",
