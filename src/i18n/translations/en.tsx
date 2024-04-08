@@ -79,6 +79,7 @@ const enTranslation= {
         "mohistapi.subtitle": "MohistMC provides a JSON API for developers to get information about MohistMC's projects and builds.",
         "team.page.title": "MohistMC - Our team",
         "team.title": "Meet our %team!%",
+        "team.community.title": "Community Contributors",
         "software.mohist.page.title": "MohistMC - Mohist",
         "software.mohist.subtitle": "Mohist is an exceptional server software for Minecraft Forge that implements Bukkit, Spigot, and Paper APIs. By leveraging this powerful combination, you can create a high-performing Minecraft server with the ability to integrate mods and plugins, ensuring stability and optimal performance.",
         "software.mohist.cards.title": "What makes %Mohist% so special?",

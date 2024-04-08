@@ -1,4 +1,5 @@
 import {PartialLocaleState} from "@/features/i18n/TranslatorSlice";
+import COMMUNITY_TEAM from "@/util/content/CommunityTeam";
 
 const zhTranslation: PartialLocaleState = {
     name: "简体中文",
@@ -80,7 +81,8 @@ const zhTranslation: PartialLocaleState = {
         "mohistapi.title": "MohistMC的JSON API",
         "mohistapi.subtitle": "MohistMC为开发人员提供了一个JSON API，用于获取有关MohistMC项目和构建的信息。",
         "team.page.title": "MohistMC - 我们的团队",
-        "team.title": "认识我们的%团队！%",
+        "team.title": "MohistMC%成员%",
+        "team.community.title": "社区贡献者",
         "software.mohist.page.title": "MohistMC - Mohist",
         "software.mohist.subtitle": "Mohist是一个出色的Minecraft Forge服务器软件，实现了Bukkit、Spigot和Paper API。通过利用这个强大的组合，您可以创建一个高性能的Minecraft服务器，能够集成模组和插件，确保稳定性和最佳性能。",
         "software.mohist.cards.title": "Mohist有什么特别之处？",
