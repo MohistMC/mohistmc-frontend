@@ -1,4 +1,5 @@
 import {PartialLocaleState} from "@/features/i18n/TranslatorSlice";
+import COMMUNITY_TEAM from "@/util/content/CommunityTeam";
 
 const zhTranslation: PartialLocaleState = {
     name: "简体中文",
@@ -80,7 +81,8 @@ const zhTranslation: PartialLocaleState = {
         "mohistapi.title": "MohistMC的JSON API",
         "mohistapi.subtitle": "MohistMC为开发人员提供了一个JSON API，用于获取有关MohistMC项目和构建的信息。",
         "team.page.title": "MohistMC - 我们的团队",
-        "team.title": "认识我们的%团队！%",
+        "team.title": "MohistMC%成员%",
+        "team.community.title": "社区贡献者",
         "software.mohist.page.title": "MohistMC - Mohist",
         "software.mohist.subtitle": "Mohist是一个出色的Minecraft Forge服务器软件，实现了Bukkit、Spigot和Paper API。通过利用这个强大的组合，您可以创建一个高性能的Minecraft服务器，能够集成模组和插件，确保稳定性和最佳性能。",
         "software.mohist.cards.title": "Mohist有什么特别之处？",
@@ -143,16 +145,23 @@ const zhTranslation: PartialLocaleState = {
         "shop.page.title": "MohistMC - Shop",
         "shop.title": "%MohistMC% 提供的一些增值服务!",
         "shop.subtitle": "我们需要一些额外的收入，用于日常的开销。以便我们可以全职状态去制作更多社区产品。并将其中5%的部分用于公益捐赠。",
+        "shop.cart": "详情",
+        "shop.none": "缺货",
+        "shop.alert": "警告!",
+        "shop.alert.1": "当前页面是实验性的，不代表最终结果",
+        "shop.alert.2": "部分服务仅在中国提供.",
         "shop.cards.1.title": "加速火把",
         "shop.cards.1.desc": "我们并不是完美的，并且存在很多已发布的issues. 当你急需解决某个问题时，就需要一根加速火把！",
         "shop.cards.2.title": "定制与魔改",
-        "shop.cards.2.desc": "只有你想不到的，没有我们做不到的. 一切皆有可能！",
+        "shop.cards.2.desc": "涉及领域广阔， 插件/模组/服务端/地图/材质/建模/皮肤等等， 只有你想不到，没有我们做不到！",
         "shop.cards.3.title": "指导与教学",
         "shop.cards.3.desc": "还在为昂贵的定制费用和开发者容易跑路发愁? 自己动手丰衣足食，从零学习如何编写插件，如何魔改出你想要的功能。",
         "shop.cards.4.title": "周边",
         "shop.cards.4.desc": "一些团队相关的纪念品和周边!",
-        "shop.footer.title": "前往我们的商城页面，挑选你心意的服务吧!",
-        "shop.footer.desc": "你的需求就是我们的动力来源!",
+        "shop.cards.5.title": "硬件出售",
+        "shop.cards.5.desc": "电脑硬件零售，组装，调试!",
+        "shop.cards.6.title": "云服务器",
+        "shop.cards.6.desc": "游戏云服务器!",
 
     },
 }
