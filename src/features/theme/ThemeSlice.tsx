@@ -1,7 +1,6 @@
 import {AppState} from "@/util/redux/Store";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-// @ts-ignore
-import {ThemeMode} from "flowbite-react/lib/esm/hooks/use-theme-mode";
+import {ThemeMode} from "flowbite-react";
 
 export interface ThemeState {
     mode: ThemeMode;

@@ -62,7 +62,7 @@ const config: DocsThemeConfig = {
     editLink: {
         text: "Edit this page on GitHub",
     },
-    gitTimestamp({ timestamp }) {
+    gitTimestamp: function GitTimestamp({ timestamp }) {
         const [dateString, setDateString] = useState(timestamp.toISOString());
         const strings = useSelector(selectTranslations);
 
