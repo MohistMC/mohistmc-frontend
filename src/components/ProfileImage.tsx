@@ -1,6 +1,7 @@
 import {getInitials} from "@/util/String";
+import React from "react";
 
-const ProfileImage = ({name, githubUrl, size}: {name: string, githubUrl: string, size: number}): JSX.Element => {
+const ProfileImage = ({name, githubUrl, size}: {name: string, githubUrl: string, size: number}): React.JSX.Element => {
     const githubUsername = githubUrl?.split('/')?.pop()
 
     if (githubUsername) {
