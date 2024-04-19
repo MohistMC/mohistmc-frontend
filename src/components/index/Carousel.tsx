@@ -1,4 +1,4 @@
-import {Carousel, CustomFlowbiteTheme, Flowbite} from 'flowbite-react';
+import {Carousel, Flowbite} from 'flowbite-react';
 import Link from "next/link";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
