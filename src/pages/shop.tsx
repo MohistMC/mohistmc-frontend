@@ -3,12 +3,11 @@ import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import React from "react";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
-import {Alert, Card, Flowbite} from "flowbite-react";
+import {Card, Flowbite, Toast} from "flowbite-react";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import {customTheme} from "@/util/Theme";
-
-import {HiInformationCircle} from "react-icons/hi";
+import {HiExclamation } from "react-icons/hi";
 
 const Shop = () => {
     const strings = useAppSelector(selectTranslations);
@@ -47,28 +46,14 @@ const Shop = () => {
                         <p className="mb-5 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{strings['shop.subtitle']}</p>
                     </div>
                 </section>
-                <div className="top-0 left-0 w-full overflow-hidden leading-none rotate-180">
-                    <svg className={`h-20 w-full`} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 1200 120"
-                         preserveAspectRatio="none">
-                        <path
-                            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                            className="shadow fill-gray-100 dark:fill-dark-50"></path>
-                    </svg>
-                </div>
-                <section className="relative flex flex-row justify-center flex-wrap">
-                    <Alert color="failure" icon={HiInformationCircle}>
-                        <span className="font-medium">
-                            {strings['shop.alert']}</span> {strings['shop.alert.1']}
-                    </Alert>
-                </section>
-                <section className="relative flex flex-row justify-center pt-4 flex-wrap">
-                    <Alert color="failure" icon={HiInformationCircle}>
-                        <span className="font-medium">
-                            {strings['shop.alert']}
-                        </span>
-                        {strings['shop.alert.2']}
-                    </Alert>
+                <section className="relative flex flex-row justify-center pt-10 flex-wrap">
+                    <Toast>
+                        <div
+                            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-700 text-white dark:bg-red-700 dark:text-white`}>
+                            <HiExclamation className="h-5 w-5"/>
+                        </div>
+                        <div className="ml-2 text-sm text-red-600 font-medium"> {strings['shop.alert']} </div>
+                    </Toast>
                 </section>
                 <section
                     className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
@@ -76,8 +61,6 @@ const Shop = () => {
                     {commodity(strings['shop.cards.2.title'], strings['shop.cards.2.desc'], strings['shop.none'], 5, '')}
                     {commodity(strings['shop.cards.3.title'], strings['shop.cards.3.desc'], strings['shop.none'], 5, '')}
                     {commodity(strings['shop.cards.4.title'], strings['shop.cards.4.desc'], strings['shop.none'], 5, '')}
-                    {commodity(strings['shop.cards.5.title'], strings['shop.cards.5.desc'], strings['shop.none'], 5, '')}
-                    {commodity(strings['shop.cards.6.title'], strings['shop.cards.6.desc'], strings['shop.none'], 5, '')}
                 </section>
                 <div className="top-0 left-0 w-full overflow-hidden leading-none rotate-180">
                     <svg className={`h-20 w-full`} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
