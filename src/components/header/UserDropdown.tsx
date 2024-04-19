@@ -1,4 +1,4 @@
-import {Avatar, CustomFlowbiteTheme, Dropdown, Flowbite} from 'flowbite-react';
+import {Avatar, Dropdown, Flowbite} from 'flowbite-react';
 import React, {ReactElement, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";

@@ -62,122 +62,22 @@ const Shop = () => {
                             {strings['shop.alert']}</span> {strings['shop.alert.1']}
                     </Alert>
                 </section>
-                <section className="relative flex flex-row justify-center flex-wrap">
+                <section className="relative flex flex-row justify-center pt-4 flex-wrap">
                     <Alert color="failure" icon={HiInformationCircle}>
                         <span className="font-medium">
-                            {strings['shop.alert']}</span> {strings['shop.alert.2']}
+                            {strings['shop.alert']}
+                        </span>
+                        {strings['shop.alert.2']}
                     </Alert>
                 </section>
                 <section
                     className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
-                    <Card imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['shop.cards.1.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['shop.cards.1.desc']}
-                        </p>
-                        {renderRatingStars('5.0')}
-                        <div className="flex items-center justify-between">
-                            <span className="text-3xl font-bold text-gray-900 dark:text-white"></span>
-                            <a href="#"
-                               className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
-                                {strings['shop.none']}
-                            </a>
-                        </div>
-                    </Card>
-                    <Card imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['shop.cards.2.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['shop.cards.2.desc']}
-                        </p>
-                        {renderRatingStars('5.0')}
-                        <div className="flex items-center justify-between">
-                            <span className="text-3xl font-bold text-gray-900 dark:text-white"></span>
-                            <a href="#"
-                               className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
-                                {strings['shop.none']}
-                            </a>
-                        </div>
-                    </Card>
-                    <Card imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['shop.cards.3.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['shop.cards.3.desc']}
-                        </p>
-                        {renderRatingStars('5.0')}
-                        <div className="flex items-center justify-between">
-                            <span className="text-3xl font-bold text-gray-900 dark:text-white"></span>
-                            <a href="#"
-                               className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
-                                {strings['shop.none']}
-                            </a>
-                        </div>
-                    </Card>
-                    <Card imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['shop.cards.4.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['shop.cards.4.desc']}<br/>
-                            {""}<br/>
-                            {""}<br/>
-                            {""}
-                        </p>
-                        {renderRatingStars('5.0')}
-                        <div className="flex items-center justify-between">
-                            <span className="text-3xl font-bold text-gray-900 dark:text-white"></span>
-                            <a href="#"
-                               className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
-                                {strings['shop.none']}
-                            </a>
-                        </div>
-                    </Card>
-                </section>
-                <section
-                    className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
-                    <Card imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['shop.cards.5.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['shop.cards.5.desc']}<br/>
-                            {""}<br/>
-                            {""}<br/>
-                            {""}
-                        </p>
-                        {renderRatingStars('5.0')}
-                        <div className="flex items-center justify-between">
-                            <span className="text-3xl font-bold text-gray-900 dark:text-white"></span>
-                            <a href="#"
-                               className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
-                                {strings['shop.none']}
-                            </a>
-                        </div>
-                    </Card>
-                    <Card imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['shop.cards.6.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['shop.cards.6.desc']}<br/>
-                            {""}<br/>
-                            {""}<br/>
-                            {""}
-                        </p>
-                        {renderRatingStars('5.0')}
-                        <div className="flex items-center justify-between">
-                            <span className="text-3xl font-bold text-gray-900 dark:text-white"></span>
-                            <a href="#"
-                               className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
-                                {strings['shop.none']}
-                            </a>
-                        </div>
-                    </Card>
+                    {commodity(strings['shop.cards.1.title'], strings['shop.cards.1.desc'], strings['shop.none'], 5, '')}
+                    {commodity(strings['shop.cards.2.title'], strings['shop.cards.2.desc'], strings['shop.none'], 5, '')}
+                    {commodity(strings['shop.cards.3.title'], strings['shop.cards.3.desc'], strings['shop.none'], 5, '')}
+                    {commodity(strings['shop.cards.4.title'], strings['shop.cards.4.desc'], strings['shop.none'], 5, '')}
+                    {commodity(strings['shop.cards.5.title'], strings['shop.cards.5.desc'], strings['shop.none'], 5, '')}
+                    {commodity(strings['shop.cards.6.title'], strings['shop.cards.6.desc'], strings['shop.none'], 5, '')}
                 </section>
                 <div className="top-0 left-0 w-full overflow-hidden leading-none rotate-180">
                     <svg className={`h-20 w-full`} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
@@ -193,21 +93,43 @@ const Shop = () => {
     )
 }
 
+export function commodity(title: string, desc: string, none: string, stars: number, money: string) {
+    return (
+        <Card imgSrc="/code.webp">
+            <a href="#" className="max-w-sm">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {title}<br/>
+                    {}<br/>
+                </h2>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                    {desc}
+                </p>
+            </a>
+            {renderRatingStars(stars)}
+            <div className="flex items-center justify-between">
+                <span className="text-3xl font-bold text-gray-900 dark:text-white">{money}</span>
+                <a
+                    href="#"
+                    className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+                >
+                    {none}
+                </a>
+            </div>
+        </Card>
+    );
+}
 
-function renderRatingStars(starsCount: string) {
+
+function renderRatingStars(starsCount: number) {
     return (
         <div className="mb-5 mt-2.5 flex items-center">
-            {Array.from({length: Math.floor(Number(starsCount))}, (_, index) => (
+            {Array.from({length: starsCount}, (_, index) => (
                 <svg key={index} className="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
             ))}
-            <span
-                className="ml-3 mr-2 rounded bg-cyan-100 px-2.5 py-0.5 text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
-                {starsCount}
-            </span>
         </div>
     );
 }
