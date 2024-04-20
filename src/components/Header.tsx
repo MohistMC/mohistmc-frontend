@@ -3,6 +3,7 @@ import LanguageDropElement from "@/components/header/LanguageDropElement";
 import {ReactElement, useEffect, useState} from "react";
 import LanguageDropButtonElement from "@/components/header/LanguageDropButtonElement";
 import {locales} from "@/i18n/Language";
+import {isCN} from "@/util/LocaleHelper";
 import {LocaleState, selectTranslations, setLocale} from "@/features/i18n/TranslatorSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
@@ -171,12 +172,14 @@ export default function Header() {
                                 {strings['button.downloads']}
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/shop"
+                        {isCN(locales.current) && (
+                            <li>
+                                <Link href="/shop"
                                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>
                                 {strings['button.shop']}
                             </Link>
-                        </li>
+                            </li>
+                        )}
                         <li>
                             <Link href="/contribute"
                                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}>

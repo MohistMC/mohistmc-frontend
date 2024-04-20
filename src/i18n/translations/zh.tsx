@@ -1,5 +1,4 @@
 import {PartialLocaleState} from "@/features/i18n/TranslatorSlice";
-import COMMUNITY_TEAM from "@/util/content/CommunityTeam";
 
 const zhTranslation: PartialLocaleState = {
     name: "简体中文",
