@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import {HiDocumentReport, HiLogout, HiUserRemove, HiViewGrid} from "react-icons/hi";
 import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {logout, selectUser} from "@/features/user/UserSlice";
 import {customTheme} from "@/util/Theme";
 
@@ -14,6 +15,7 @@ const UserDropdown = () => {
     const mode = useSelector(selectTheme)
     const user = useAppSelector(selectUser)
     const dispatch = useDispatch()
+    const strings = useAppSelector(selectTranslations);
 
     const signOut = () => {
         dispatch(logout())
@@ -31,28 +33,28 @@ const UserDropdown = () => {
         <span className="block text-sm">
           {user.username}
         </span>
-                    <span className="block truncate text-sm font-medium">
-          Logged-in via {user.loggedVia === 'github' ? 'GitHub' : 'Discord'}
+        <span className="block truncate text-sm font-medium">
+          {strings['loginmodal.logged.via'] } + {user.loggedVia === 'github' ? 'GitHub' : 'Discord'}
         </span>
                 </Dropdown.Header>
                 <Dropdown.Item>
                     <HiDocumentReport className="mr-2"/>
-                    Report an issue
+                    {strings['report.issue.title']}
                 </Dropdown.Item>
                 <Dropdown.Item>
                     <HiViewGrid className="mr-2"/>
-                    Manage issues
+                    {strings['report.issue.manage']}
                 </Dropdown.Item>
                 <Dropdown.Divider/>
                 <Dropdown.Item onClick={signOut}>
                     <HiLogout className="mr-2"/>
-                    Sign out
+                    {strings['loginmodal.logged.signout']}
                 </Dropdown.Item>
                 <Dropdown.Divider/>
                 <Dropdown.Item>
                     <HiUserRemove className="mr-2"/>
                     <span className="font-medium text-red-600 dark:text-red-400">
-                    Delete my account
+                    {strings['loginmodal.user.delete']}
                     </span>
                 </Dropdown.Item>
             </Dropdown>

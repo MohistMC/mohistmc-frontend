@@ -7,11 +7,13 @@ import {selectTheme} from "@/features/theme/ThemeSlice";
 import {getAPIEndpoint} from "@/util/Environment";
 import {Build} from "@/interfaces/Build";
 import {customTheme} from "@/util/Theme";
+import {useAppSelector} from "@/util/redux/Hooks";
+import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 
 const IssueForm = () => {
     const mode = useSelector(selectTheme)
     const router = useRouter();
-
+    const strings = useAppSelector(selectTranslations);
     const {product, issueType} = router.query as { product: string, issueType: string };
 
     const selectedVersionRef = useRef<HTMLSelectElement>(null);
@@ -60,8 +62,8 @@ const IssueForm = () => {
     return (
         <div>
             <div className={`dark:text-gray-300 mb-2 mt-2`}>
-                <p><span className={`font-bold`}>Product</span> - {capitalizeFirstLetter(product)}</p>
-                <p><span className={`font-bold`}>Issue type</span> - {capitalizeFirstLetter(issueType)}</p>
+                <p><span className={`font-bold`}>{strings['report.issue.product']}</span> - {capitalizeFirstLetter(product)}</p>
+                <p><span className={`font-bold`}>{strings['report.issue.type']}</span> - {capitalizeFirstLetter(issueType)}</p>
             </div>
             <Flowbite theme={{theme: customTheme, mode}}>
                 <form className="flex max-w-md flex-col gap-4">
@@ -72,7 +74,7 @@ const IssueForm = () => {
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="minecraftversions"
-                                value="Select your Minecraft version"
+                                value={strings['report.issue.form.minecraftversions']}
                             />
                         </div>
                         <Select
@@ -94,7 +96,7 @@ const IssueForm = () => {
                                 htmlFor="mohistversion"
                                 value={`Mohist version (between ${buildsMinState} and ${buildsMaxState})`}
                             />
-                            <p className={`text-orange-500 text-sm`}>Any build outside this range is not supported</p>
+                            <p className={`text-orange-500 text-sm`}>{strings['report.issue.form.mohistversion']}</p>
                         </div>
                         <TextInput
                             id="mohistversion"
@@ -109,7 +111,7 @@ const IssueForm = () => {
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="operatingsystem"
-                                value="Operating system"
+                                value={strings['report.issue.form.operatingsystem']}
                             />
                         </div>
                         <TextInput
@@ -124,7 +126,7 @@ const IssueForm = () => {
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="modplugin"
-                                value="Concerned mod / plugin"
+                                value={strings['report.issue.form.modplugin']}
                             />
                         </div>
                         <TextInput
@@ -132,7 +134,7 @@ const IssueForm = () => {
                             required
                             shadow
                             type="text"
-                            placeholder={"Name of the mod / plugin"}
+                            placeholder={strings['report.issue.form.modplugin']}
                         />
                     </div>
                     <div
@@ -142,11 +144,11 @@ const IssueForm = () => {
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="file"
-                                value="Upload logs or screenshots"
+                                value={strings['report.issue.form.file']}
                             />
                         </div>
                         <FileInput
-                            helperText="latest.log, crash-reports, screenshots, or whatever that can help..."
+                            helperText={strings['report.issue.form.file.helper']}
                             id="file"
                             required
                             multiple={true}
@@ -159,18 +161,18 @@ const IssueForm = () => {
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="comment"
-                                value="Your message"
+                                value={strings['report.issue.form.comment']}
                             />
                         </div>
                         <Textarea
                             id="comment"
-                            placeholder="Describe your issue there..."
+                            placeholder={strings['report.issue.form.comment.placeholder']}
                             required
                             rows={10}
                         />
                     </div>
                     <Button type="submit">
-                        Submit
+                        {strings['report.issue.form.submit']}
                     </Button>
                 </form>
             </Flowbite>
