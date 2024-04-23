@@ -10,7 +10,6 @@ import axios from "axios";
 import {useRouter} from "next/router";
 import {setCookie} from "cookies-next";
 import {customTheme} from "@/util/Theme";
-import {getAPIEndpoint, isDev} from "@/util/Environment";
 
 interface LoginModalProps {
     openModal: string | undefined
@@ -50,14 +49,14 @@ const LoginModal = ({openModal, setOpenModal, mustLogin}: LoginModalProps) => {
                         </Button>
                         <Button>
                             <Link onClick={() => setCookie('redirect', router.pathname, {path: '/'})}
-                                  href={`https://github.com/login/oauth/authorize?client_id=${isDev() ? '7772518e5a9dde7cd42f' : '38c3c24f71ee7aaff398'}`}>
+                                  href={`https://github.com/login/oauth/authorize?client_id=${process.env.NODE_ENV === 'production' ? '38c3c24f71ee7aaff398' : '7772518e5a9dde7cd42f'}`}>
                                 {strings['loginmodal.githublogin']}
                                 <HiExternalLink className={`inline-block ml-1`}/>
                             </Link>
                         </Button>
                         <Button>
                             <Link onClick={() => setCookie('redirect', router.pathname, {path: '/'})}
-                                  href={`https://discord.com/oauth2/authorize?client_id=1145110402313756692&scope=identify&permissions=0&response_type=code&redirect_uri=${getAPIEndpoint()}/oauth/discord/callback`}>
+                                  href={`https://discord.com/oauth2/authorize?client_id=1145110402313756692&scope=identify&permissions=0&response_type=code&redirect_uri=${process.env.NODE_ENV === 'production' ? 'https://mohistmc.com' : 'http://localhost:2024'}/api/v2/oauth/discord/callback`}>
                                 {strings['loginmodal.discordlogin']}
                                 <HiExternalLink className={`inline-block ml-1`}/>
                             </Link>
