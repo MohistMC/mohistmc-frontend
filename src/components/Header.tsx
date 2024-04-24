@@ -163,6 +163,10 @@ export default function Header() {
                                         <Link href="/software/banner"
                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">Banner</Link>
                                     </li>
+                                    <li>
+                                        <Link href="/software/mohistneo"
+                                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">MohistNeo</Link>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
