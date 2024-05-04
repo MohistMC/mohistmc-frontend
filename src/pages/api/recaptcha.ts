@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { NextApiRequest, NextApiResponse } from "next";
+import type {NextApiRequest, NextApiResponse} from "next";
 
 const verifyRecaptcha = async (token: string) => {
     const secretKey = process.env.RECAPTHA_SECRET_KEY;
@@ -23,7 +23,7 @@ export default async function handler(
         if (response.data.success && response.data.score >= 0.5) {
             return res
                 .status(200)
-                .json({ status: "Success", message: "Thank you for contacting me." });
+                .json({status: "Success", message: "Thank you for contacting me."});
         } else {
             return res.json({
                 status: "Failed",

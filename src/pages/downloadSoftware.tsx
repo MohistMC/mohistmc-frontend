@@ -143,9 +143,12 @@ export default function DownloadSoftware() {
                         <HiInformationCircle className="h-5 w-5"/>
                     </div>
                     <div className="ml-3 text-sm font-normal">
-                        <span className={'font-bold'}>Do NOT ask for help in Spigot, PaperMC or Forge forums.</span> They are not related to Mohist and will
+                        <span
+                            className={'font-bold'}>Do NOT ask for help in Spigot, PaperMC or Forge forums.</span> They
+                        are not related to Mohist and will
                         not help you. If you have any issue, please use our <a href="https://discord.gg/mohistmc"
-                                                                               className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500">Discord server</a>.
+                                                                               className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500">Discord
+                        server</a>.
                     </div>
                     <Toast.Toggle/>
                 </Toast>

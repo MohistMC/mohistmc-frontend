@@ -30,9 +30,9 @@ export default function Sponsor() {
                 });
 
                 const uniqueDonors = donors.filter((donor: Donor, index: number, self: any) =>
-                    index === self.findIndex((t: Donor) => (
-                        t.name === donor.name
-                    ))
+                        index === self.findIndex((t: Donor) => (
+                            t.name === donor.name
+                        ))
                 );
 
                 setDonors(uniqueDonors);
@@ -43,31 +43,35 @@ export default function Sponsor() {
         <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
             <Head>
                 <title>{strings['sponsor.page.title']}</title>
-                <meta name="title" content="MohistMC - Sponsor" />
-                <meta name="description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
+                <meta name="title" content="MohistMC - Sponsor"/>
+                <meta name="description"
+                      content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!"/>
 
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://mohistmc.com/sponsor" />
-                <meta property="og:title" content="MohistMC - Sponsor" />
-                <meta property="og:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
-                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://mohistmc.com/sponsor"/>
+                <meta property="og:title" content="MohistMC - Sponsor"/>
+                <meta property="og:description"
+                      content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!"/>
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png"/>
                 <meta property="og:image:type" content="image/png"/>
-                <meta property="og:image:width" content="100" />
-                <meta property="og:image:height" content="100" />
+                <meta property="og:image:width" content="100"/>
+                <meta property="og:image:height" content="100"/>
 
-                <meta property="twitter:url" content="https://mohistmc.com/sponsor" />
-                <meta property="twitter:title" content="MohistMC - Sponsor" />
-                <meta property="twitter:description" content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!" />
+                <meta property="twitter:url" content="https://mohistmc.com/sponsor"/>
+                <meta property="twitter:title" content="MohistMC - Sponsor"/>
+                <meta property="twitter:description"
+                      content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!"/>
             </Head>
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                 <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">{getLocaleStringAsArgs(strings['sponsor.title'])[0]}
-                         <span className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['sponsor.title'])[1]}</span>
+                        <span
+                            className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['sponsor.title'])[1]}</span>
                         {getLocaleStringAsArgs(strings['sponsor.title'])[2]}</h1>
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">{strings['sponsor.subtitle']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link href="https://opencollective.com/mohist"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                             {strings['social.opencollective']}
                             <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -78,11 +82,11 @@ export default function Sponsor() {
                             </svg>
                         </Link>
                         <Link href="https://github.com/sponsors/MohistMC"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['social.ghsponsors']}
                         </Link>
                         <Link href="https://mohistmc.com/alipay.jpg"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['social.alipay']}
                         </Link>
                     </div>
@@ -99,7 +103,10 @@ export default function Sponsor() {
             </div>
             <section className={`dark:bg-dark-50 bg-gray-100 pb-20`}>
                 <div className="pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
-                    <h2 className="text-center mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white">{getLocaleStringAsArgs(strings['sponsor.section.title'])[0]} <span className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['sponsor.section.title'])[1]}</span>{getLocaleStringAsArgs(strings['sponsor.section.title'])[2]}</h2>
+                    <h2 className="text-center mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white">{getLocaleStringAsArgs(strings['sponsor.section.title'])[0]}
+                        <span
+                            className="text-blue-600 dark:text-blue-500">{getLocaleStringAsArgs(strings['sponsor.section.title'])[1]}</span>{getLocaleStringAsArgs(strings['sponsor.section.title'])[2]}
+                    </h2>
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-100">{strings['sponsor.section.subtitle']}</p>
                 </div>
                 <div className={`flex flex-row gap-3 flex-wrap justify-center items-center`}>

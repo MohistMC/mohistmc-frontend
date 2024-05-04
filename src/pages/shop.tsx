@@ -7,7 +7,7 @@ import {Card, Flowbite, Toast} from "flowbite-react";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import {customTheme} from "@/util/Theme";
-import {HiExclamation } from "react-icons/hi";
+import {HiExclamation} from "react-icons/hi";
 
 const Shop = () => {
     const strings = useAppSelector(selectTranslations);

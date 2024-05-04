@@ -12,21 +12,24 @@ export default function MohistSoftware() {
         <div className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>{strings['software.mohist.page.title']}</title>
-                <meta name="title" content="MohistMC - Mohist" />
-                <meta name="description" content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`} />
+                <meta name="title" content="MohistMC - Mohist"/>
+                <meta name="description"
+                      content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`}/>
 
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://mohistmc.com/software/mohist" />
-                <meta property="og:title" content="MohistMC - Mohist" />
-                <meta property="og:description" content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://mohistmc.com/software/mohist"/>
+                <meta property="og:title" content="MohistMC - Mohist"/>
+                <meta property="og:description"
+                      content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`}/>
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png"/>
                 <meta property="og:image:type" content="image/png"/>
-                <meta property="og:image:width" content="100" />
-                <meta property="og:image:height" content="100" />
+                <meta property="og:image:width" content="100"/>
+                <meta property="og:image:height" content="100"/>
 
-                <meta property="twitter:url" content="https://mohistmc.com/software/mohist" />
-                <meta property="twitter:title" content="MohistMC - Mohist" />
-                <meta property="twitter:description" content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`} />
+                <meta property="twitter:url" content="https://mohistmc.com/software/mohist"/>
+                <meta property="twitter:title" content="MohistMC - Mohist"/>
+                <meta property="twitter:description"
+                      content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`}/>
             </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
@@ -34,7 +37,7 @@ export default function MohistSoftware() {
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200 md:w-1/2">{strings['software.mohist.subtitle']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                         <Link href="/downloadSoftware?project=mohist"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                             {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20"
@@ -45,11 +48,11 @@ export default function MohistSoftware() {
                             </svg>
                         </Link>
                         <Link href="/mohist/docs"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['button.documentation']}
                         </Link>
                         <Link href="https://github.com/MohistMC/Mohist"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['button.sourcecode']}
                         </Link>
                     </div>
@@ -65,11 +68,13 @@ export default function MohistSoftware() {
                 </svg>
             </div>
             <section className={`bg-gray-100 dark:bg-dark-50`}>
-                <h2 className="pt-10 md:pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['software.mohist.cards.title'])[0]} <span
+                <h2 className="pt-10 md:pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['software.mohist.cards.title'])[0]}
+                    <span
                         className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['software.mohist.cards.title'])[1]}</span> {getLocaleStringAsArgs(strings['software.mohist.cards.title'])[2]}
                 </h2>
 
-                <div className="flex flex-wrap justify-center gap-12 w-full dark:bg-dark-50 pt-10 md:pt-20 md:pb-20 pb-10">
+                <div
+                    className="flex flex-wrap justify-center gap-12 w-full dark:bg-dark-50 pt-10 md:pt-20 md:pb-20 pb-10">
                     <div
                         className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300 mr-5 ml-5">
                         <div className={`orangeGradient rounded-t-lg`}>&nbsp;
@@ -117,7 +122,7 @@ export default function MohistSoftware() {
                     <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['software.mohist.footer.desc']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link href="https://discord.gg/MohistMC" target="_blank"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                             {strings['software.mohist.footer.discord']}
                             <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +133,7 @@ export default function MohistSoftware() {
                             </svg>
                         </Link>
                         <Link href="/downloadSoftware?project=mohist"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20"

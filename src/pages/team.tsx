@@ -44,7 +44,10 @@ export default function Team() {
 
             <div className={`flex flex-wrap md:w-full justify-center pt-12 pb-12 gap-7`}>
                 {
-                    Object.values(MOHISTMC_TEAM).map((teamMember) => <TeamCard key={teamMember.name} name={teamMember.name} role={teamMember.role} pageUrl={teamMember.pageUrl}/>)
+                    Object.values(MOHISTMC_TEAM).map((teamMember) => <TeamCard key={teamMember.name}
+                                                                               name={teamMember.name}
+                                                                               role={teamMember.role}
+                                                                               pageUrl={teamMember.pageUrl}/>)
                 }
             </div>
 
@@ -54,7 +57,9 @@ export default function Team() {
 
             <div className={`flex flex-wrap md:w-full justify-center pt-12 pb-12 gap-1`}>
                 {
-                    Object.values(COMMUNITYTEAM).map((teamMember) => <CommunityTeamCard key={teamMember.name} name={teamMember.name} pageUrl={teamMember.pageUrl}/>)
+                    Object.values(COMMUNITYTEAM).map((teamMember) => <CommunityTeamCard key={teamMember.name}
+                                                                                        name={teamMember.name}
+                                                                                        pageUrl={teamMember.pageUrl}/>)
                 }
             </div>
         </section>

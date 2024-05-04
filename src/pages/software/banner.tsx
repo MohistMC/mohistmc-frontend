@@ -12,32 +12,36 @@ export default function MohistSoftware() {
         <div className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>{strings['software.banner.page.title']}</title>
-                <meta name="title" content="MohistMC - Banner" />
-                <meta name="description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
+                <meta name="title" content="MohistMC - Banner"/>
+                <meta name="description"
+                      content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`}/>
 
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://mohistmc.com/software/mohist" />
-                <meta property="og:title" content="MohistMC - Banner" />
-                <meta property="og:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
-                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png" />
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://mohistmc.com/software/mohist"/>
+                <meta property="og:title" content="MohistMC - Banner"/>
+                <meta property="og:description"
+                      content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`}/>
+                <meta property="og:image" content="https://mohistmc.com/mohistLogo.png"/>
                 <meta property="og:image:type" content="image/png"/>
-                <meta property="og:image:width" content="100" />
-                <meta property="og:image:height" content="100" />
+                <meta property="og:image:width" content="100"/>
+                <meta property="og:image:height" content="100"/>
 
-                <meta property="twitter:url" content="https://mohistmc.com/software/mohist" />
-                <meta property="twitter:title" content="MohistMC - Banner" />
-                <meta property="twitter:description" content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`} />
+                <meta property="twitter:url" content="https://mohistmc.com/software/mohist"/>
+                <meta property="twitter:title" content="MohistMC - Banner"/>
+                <meta property="twitter:description"
+                      content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`}/>
             </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-                    <span className="bg-green-100 text-green-800 text-sm font-medium ml-0.5 h-6 w-16 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Beta</span>
+                    <span
+                        className="bg-green-100 text-green-800 text-sm font-medium ml-0.5 h-6 w-16 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Beta</span>
                     <h1 className="mb-8 mt-1 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                         Banner
                     </h1>
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200 md:w-1/2">{strings['software.banner.subtitle']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                         <Link href="/downloadSoftware?project=banner"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                             {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20"
@@ -48,11 +52,11 @@ export default function MohistSoftware() {
                             </svg>
                         </Link>
                         <Link href="/banner/docs"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['button.documentation']}
                         </Link>
                         <Link href="https://github.com/MohistMC/Banner"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['button.sourcecode']}
                         </Link>
                     </div>
@@ -68,11 +72,13 @@ export default function MohistSoftware() {
                 </svg>
             </div>
             <section className={`bg-gray-100 dark:bg-dark-50`}>
-                <h2 className="pt-10 md:pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['software.banner.cards.title'])[0]} <span
+                <h2 className="pt-10 md:pt-20 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{getLocaleStringAsArgs(strings['software.banner.cards.title'])[0]}
+                    <span
                         className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{getLocaleStringAsArgs(strings['software.banner.cards.title'])[1]}</span> {getLocaleStringAsArgs(strings['software.banner.cards.title'])[2]}
                 </h2>
 
-                <div className="flex flex-wrap justify-center gap-12 w-full dark:bg-dark-50 pt-10 md:pt-20 md:pb-20 pb-10">
+                <div
+                    className="flex flex-wrap justify-center gap-12 w-full dark:bg-dark-50 pt-10 md:pt-20 md:pb-20 pb-10">
                     <div
                         className="max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-300 mr-5 ml-5">
                         <div className={`orangeGradient rounded-t-lg`}>&nbsp;
@@ -120,7 +126,7 @@ export default function MohistSoftware() {
                     <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{strings['software.banner.footer.desc']}</p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link href="https://discord.gg/MohistMC" target="_blank"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                             {strings['software.mohist.footer.discord']}
                             <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +137,7 @@ export default function MohistSoftware() {
                             </svg>
                         </Link>
                         <Link href="/downloadSoftware?project=banner"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                             {strings['button.downloads']}
                             <svg aria-hidden="true" className="ml-2 -mr-1 w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20"

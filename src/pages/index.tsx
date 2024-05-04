@@ -24,7 +24,7 @@ const Home = () => {
     const [openChoiceIssueModal, setOpenChoiceIssueModal] = useState<string | undefined>();
 
     useEffect(() => {
-        if(!router.isReady) return
+        if (!router.isReady) return
 
         const {auth} = router.query as { auth: string }
 
@@ -41,7 +41,7 @@ const Home = () => {
     }, [router]);
 
     useEffect(() => {
-        if(user.isFirstLogin && user.isLogged) {
+        if (user.isFirstLogin && user.isLogged) {
             setOpenChoiceIssueModal('dismissible')
             dispatch(setState({
                 isFirstLogin: false
@@ -64,8 +64,8 @@ const Home = () => {
                       content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}/>
                 <meta property="og:image" content="https://mohistmc.com/mohistLogo.png"/>
                 <meta property="og:image:type" content="image/png"/>
-                <meta property="og:image:width" content="100" />
-                <meta property="og:image:height" content="100" />
+                <meta property="og:image:width" content="100"/>
+                <meta property="og:image:height" content="100"/>
 
                 <meta property="twitter:url" content="https://mohistmc.com/"/>
                 <meta property="twitter:title" content="MohistMC - Home"/>

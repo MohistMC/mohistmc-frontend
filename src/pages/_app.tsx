@@ -16,9 +16,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import {ToastLogger} from "@/util/Logger";
 import {getAPIEndpoint, isDevEnv} from "@/util/Environment";
 import {loginUserAsync} from "@/features/user/UserSlice";
-import {useAppSelector} from "@/util/redux/Hooks";
-import {selectTranslations} from "@/features/i18n/TranslatorSlice";
-import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
 import {EnvironmentLayout} from "@/components/EnvironmentLayout";
 
 const poppins = Poppins({
@@ -65,16 +62,16 @@ export default function App({Component, pageProps}: AppProps) {
                 <title>MohistMC</title>
             </Head>
             <style jsx global>{`
-              html {
-                font-family: ${poppins.style.fontFamily};
-              }
+                html {
+                    font-family: ${poppins.style.fontFamily};
+                }
             `}</style>
             <Provider store={store}>
-                    <ToastContainer/>
-                    <EnvironmentLayout/>
-                    <Header/>
-                    <Component {...pageProps} />
-                    <Footer/>
+                <ToastContainer/>
+                <EnvironmentLayout/>
+                <Header/>
+                <Component {...pageProps} />
+                <Footer/>
             </Provider>
         </>
     );
