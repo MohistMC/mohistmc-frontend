@@ -5,8 +5,7 @@ module.exports = {
         './node_modules/flowbite-react/**/*.js',
         './src/pages/**/*.{js,ts,jsx,tsx,md,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,md,mdx}',
-        './src/app/**/*.{js,ts,jsx,tsx,md,mdx}',
-        './node_modules/tw-elements/dist/js/**/*.js',
+        './src/app/**/*.{js,ts,jsx,tsx,md,mdx}'
     ],
     theme: {
         colors: {
@@ -43,7 +42,6 @@ module.exports = {
     },
     plugins: [
         require("flowbite/plugin"),
-        require('tw-elements/dist/plugin')
     ],
     darkMode: 'class',
 }
