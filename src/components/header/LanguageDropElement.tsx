@@ -6,7 +6,7 @@ interface LanguageDropElementProps {
     handleLocaleChangeCallback: (locale: LocaleState) => void
 }
 
-export default function LanguageDropElement({ locale, handleLocaleChangeCallback }: LanguageDropElementProps) {
+export default function LanguageDropElement({locale, handleLocaleChangeCallback}: LanguageDropElementProps) {
     return (
         <li>
             <button

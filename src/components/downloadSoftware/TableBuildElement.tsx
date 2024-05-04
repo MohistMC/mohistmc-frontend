@@ -14,7 +14,15 @@ interface TableBuildElementProps {
     setModalBuild: (value: Build | undefined) => void;
 }
 
-export default function TableBuildElement({build, isLatest, project, indexOnPage, strings, setOpenModal, setModalBuild}: TableBuildElementProps) {
+export default function TableBuildElement({
+                                              build,
+                                              isLatest,
+                                              project,
+                                              indexOnPage,
+                                              strings,
+                                              setOpenModal,
+                                              setModalBuild
+                                          }: TableBuildElementProps) {
     if (!build || !build.url) return (<></>);
 
     const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`;
@@ -53,7 +61,7 @@ export default function TableBuildElement({build, isLatest, project, indexOnPage
                 <DownloadButton build={build} strings={strings}/>
 
                 <Button onClick={handleModalOpen} aria-label="See more"
-                      className="md:hidden inline-flex justify-center items-center py-2 px-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                        className="md:hidden inline-flex justify-center items-center py-2 px-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                     {strings['downloadSoftware.seemore']}
                 </Button>
             </td>

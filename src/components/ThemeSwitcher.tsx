@@ -2,7 +2,7 @@ import {useEffect, useRef} from "react";
 import {useDispatch} from "react-redux";
 import {setMode} from "@/features/theme/ThemeSlice";
 
-export default function ThemeSwitcher({className}: { className?: string}) {
+export default function ThemeSwitcher({className}: { className?: string }) {
     const themeToggleDarkIconRef = useRef<SVGSVGElement>(null);
     const themeToggleLightIconRef = useRef<SVGSVGElement>(null);
 
@@ -10,7 +10,7 @@ export default function ThemeSwitcher({className}: { className?: string}) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(themeToggleLightIconRef.current === null || themeToggleDarkIconRef.current === null) return;
+        if (themeToggleLightIconRef.current === null || themeToggleDarkIconRef.current === null) return;
 
         // Change the icons inside the button based on previous settings
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -22,8 +22,8 @@ export default function ThemeSwitcher({className}: { className?: string}) {
         }
     })
 
-    const themeButtonClickListener = function() {
-        if(themeToggleLightIconRef.current === null || themeToggleDarkIconRef.current === null) return;
+    const themeButtonClickListener = function () {
+        if (themeToggleLightIconRef.current === null || themeToggleDarkIconRef.current === null) return;
 
         // toggle icons inside button
         themeToggleDarkIconRef.current.classList.toggle('hidden');

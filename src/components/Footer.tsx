@@ -24,8 +24,11 @@ export default function Footer() {
                             mohistmc@gmail.com
                         </Link>
                         <p className={`dark:text-gray-400 text-gray-600 text-sm max-w-sm pt-1`}>
-                            Do not send your bugs to this email, please use our <Link href="/user/report-issue"
-                            className="dark:text-blue-500 text-blue-700">issue tracker</Link> instead.
+                            Do not send your bugs to this email, please use our issue tracker <Link
+                            href="https://github.com/MohistMC/Mohist/issues"
+                            className="dark:text-blue-500 text-blue-700">for Mohist</Link> or <Link
+                            href="https://github.com/MohistMC/Banner/issues"
+                            className="dark:text-blue-500 text-blue-700">for Banner</Link> instead.
                         </p>
                     </div>
                     <div className="flex gap-12 flex-wrap">

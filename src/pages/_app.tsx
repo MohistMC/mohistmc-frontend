@@ -14,11 +14,12 @@ import {hackNextra} from "@/util/Nextra";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastLogger} from "@/util/Logger";
-import {getAPIEndpoint} from "@/util/Environment";
+import {getAPIEndpoint, isDevEnv} from "@/util/Environment";
 import {loginUserAsync} from "@/features/user/UserSlice";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations} from "@/features/i18n/TranslatorSlice";
 import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
+import {EnvironmentLayout} from "@/components/EnvironmentLayout";
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -42,7 +43,7 @@ export default function App({Component, pageProps}: AppProps) {
     useEffect(() => {
         document.documentElement.lang = 'en'
 
-        if (process.env.NODE_ENV === 'development') {
+        if (isDevEnv) {
             ToastLogger.info('You are running MohistMC in development mode.')
 
             fetch(`${getAPIEndpoint()}/ping`).then(res => {
@@ -50,7 +51,7 @@ export default function App({Component, pageProps}: AppProps) {
                     ToastLogger.info('The backend server is running')
                 else
                     ToastLogger.error('The backend server is not responding. If you plan on working with it, make sure to start it. If the port has been changed (default is 2024), make sure to change it in the src/util/Environment.ts file.', 30000)
-            }).catch(err => {
+            }).catch(() => {
                 ToastLogger.error('The backend server is not responding. If you plan on working with it, make sure to start it. If the port has been changed (default is 2024), make sure to change it in the src/util/Environment.ts file.', 30000)
             })
         }
@@ -70,6 +71,7 @@ export default function App({Component, pageProps}: AppProps) {
             `}</style>
             <Provider store={store}>
                     <ToastContainer/>
+                    <EnvironmentLayout/>
                     <Header/>
                     <Component {...pageProps} />
                     <Footer/>

@@ -1,4 +1,4 @@
-import {Button, CustomFlowbiteTheme, Flowbite, Modal} from "flowbite-react";
+import {Button, Flowbite, Modal} from "flowbite-react";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import {useAppSelector} from "@/util/redux/Hooks";

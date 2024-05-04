@@ -5,7 +5,7 @@ interface AvatarProps {
     avatar: string,
 }
 
-export default function SponsorAvatar({ name, avatar }: AvatarProps) {
+export default function SponsorAvatar({name, avatar}: AvatarProps) {
     return (
         avatar ?
             <img className="w-14 h-14 rounded-full" src={avatar} alt="Rounded avatar"></img>

@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Project} from "@/interfaces/Project";
 import {Dropdown} from "flowbite-react";
-import {NextRouter, useRouter} from "next/router";
+import {useRouter} from "next/router";
 import {getAPIEndpoint} from "@/util/Environment";
 
 interface VersionSelectorElementProps {

@@ -7,7 +7,7 @@ import {getAPIEndpoint} from "@/util/Environment";
 export default function StatisticsElement() {
     const strings = useAppSelector(selectTranslations);
 
-    const { ref, inView, entry } = useInView({
+    const {ref, inView, entry} = useInView({
         threshold: 0,
     });
 
@@ -36,7 +36,7 @@ export default function StatisticsElement() {
                 }
             } = await response.json();
 
-            if(data?.bstats && data?.issues) {
+            if (data?.bstats && data?.issues) {
                 animateCounter(data.issues.closed, setResolvedBugs);
                 animateCounter(data.issues.open, setOpenedIssues);
                 animateCounter(data.bstats.players.current, setPlayers);

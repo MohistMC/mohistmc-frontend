@@ -22,7 +22,7 @@ const UserDropdown = () => {
     }
 
     useEffect(() => {
-        if(!user.isLogged)
+        if (!user.isLogged)
             setUserDropdownState(undefined)
     }, [user]);
 
@@ -33,8 +33,8 @@ const UserDropdown = () => {
         <span className="block text-sm">
           {user.username}
         </span>
-        <span className="block truncate text-sm font-medium">
-          {strings['loginmodal.logged.via'] } + {user.loggedVia === 'github' ? 'GitHub' : 'Discord'}
+                    <span className="block truncate text-sm font-medium">
+          {strings['loginmodal.logged.via']} + {user.loggedVia === 'github' ? 'GitHub' : 'Discord'}
         </span>
                 </Dropdown.Header>
                 <Dropdown.Item>

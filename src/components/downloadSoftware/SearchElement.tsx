@@ -2,7 +2,7 @@ import {ChangeEvent, useEffect, useRef, useState} from "react";
 import {Build} from "@/interfaces/Build";
 import {Checkbox, Dropdown, Label} from "flowbite-react";
 import {Project} from "@/interfaces/Project";
-import {NextRouter, useRouter} from "next/router";
+import {useRouter} from "next/router";
 import {ToastLogger} from "@/util/Logger";
 
 interface FilterDropdownProps {
@@ -191,7 +191,7 @@ export default function SearchElement({
             setViewedBuildPages(modifiedPages)
         }
 
-        if(searchInputRef.current) {
+        if (searchInputRef.current) {
             updateTable()
 
             if (search.length > 0)

@@ -1,4 +1,4 @@
-import {Button, CustomFlowbiteTheme, Flowbite, Modal} from "flowbite-react";
+import {Button, Flowbite, Modal} from "flowbite-react";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
 import Link from "next/link";
@@ -64,8 +64,10 @@ const LoginModal = ({openModal, setOpenModal, mustLogin}: LoginModalProps) => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    {!mustLogin && <Button color="gray" onClick={() => setOpenModal(undefined)} aria-label={"Cancel action"}>Cancel</Button>}
-                    {mustLogin && <Button color="blue" onClick={() => router.push('/')} aria-label={"Home"}>{strings['loginmodal.return']}</Button>}
+                    {!mustLogin && <Button color="gray" onClick={() => setOpenModal(undefined)}
+                                           aria-label={"Cancel action"}>Cancel</Button>}
+                    {mustLogin && <Button color="blue" onClick={() => router.push('/')}
+                                          aria-label={"Home"}>{strings['loginmodal.return']}</Button>}
                 </Modal.Footer>
             </Modal>
         </Flowbite>

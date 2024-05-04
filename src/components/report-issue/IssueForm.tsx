@@ -62,8 +62,12 @@ const IssueForm = () => {
     return (
         <div>
             <div className={`dark:text-gray-300 mb-2 mt-2`}>
-                <p><span className={`font-bold`}>{strings['report.issue.product']}</span> - {capitalizeFirstLetter(product)}</p>
-                <p><span className={`font-bold`}>{strings['report.issue.type']}</span> - {capitalizeFirstLetter(issueType)}</p>
+                <p><span
+                    className={`font-bold`}>{strings['report.issue.product']}</span> - {capitalizeFirstLetter(product)}
+                </p>
+                <p><span
+                    className={`font-bold`}>{strings['report.issue.type']}</span> - {capitalizeFirstLetter(issueType)}
+                </p>
             </div>
             <Flowbite theme={{theme: customTheme, mode}}>
                 <form className="flex max-w-md flex-col gap-4">

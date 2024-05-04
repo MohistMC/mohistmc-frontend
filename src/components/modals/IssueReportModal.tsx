@@ -1,4 +1,4 @@
-import {Button, CustomFlowbiteTheme, Dropdown, Flowbite, Modal} from "flowbite-react";
+import {Button, Dropdown, Flowbite, Modal} from "flowbite-react";
 import Link from "next/link";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/features/theme/ThemeSlice";
