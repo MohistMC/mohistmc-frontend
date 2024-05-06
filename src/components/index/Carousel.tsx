@@ -10,6 +10,7 @@ import codemcWhite from "../../../public/codemc_white.webp"
 import yourkit from "../../../public/yourkit.webp"
 import jetbrains from "../../../public/jetbrains.svg"
 import elfidc from "../../../public/elfidc.webp"
+import devicloud from "../../../public/devicloud.webp"
 
 export default function DefaultCarousel() {
     const mode = useSelector(selectTheme)
@@ -26,6 +27,11 @@ export default function DefaultCarousel() {
                     className={`md:w-1/4`}
                     alt="BisectHosting Logo"
                     src={bisecthosting}
+                /></Link>
+                <Link href={`https://www.deviy.cn/`}><Image
+                    className={`md:w-1/4`}
+                    alt="DeviCloud Logo"
+                    src={devicloud}
                 /></Link>
                 <Link href={`https://www.yourkit.com/`}><Image
                     className={`md:w-1/6`}
