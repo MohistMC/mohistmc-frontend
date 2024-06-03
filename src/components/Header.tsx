@@ -164,8 +164,8 @@ export default function Header() {
                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">Banner</Link>
                                     </li>
                                     <li>
-                                        <Link href="/software/mohistneo"
-                                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">MohistNeo</Link>
+                                        <Link href="/software/youer"
+                                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white">Youer</Link>
                                     </li>
                                 </ul>
                             </div>

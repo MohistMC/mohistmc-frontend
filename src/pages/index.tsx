@@ -145,9 +145,9 @@ const Home = () => {
                     </div>
                     <div
                         className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-red-600 dark:text-white">MohistNeo</h2>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.mohistneo.description']}</p>
-                        <Link href="/software/mohistneo"
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-red-600 dark:text-white">Youer</h2>
+                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strings['index.cards.youer.description']}</p>
+                        <Link href="/software/youer"
                               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             {strings['button.readmore']}
                             <svg aria-hidden="true" className="w-4 h-4 ml-2 -mr-1" fill="currentColor"
