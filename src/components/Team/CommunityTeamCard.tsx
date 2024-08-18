@@ -1,11 +1,10 @@
-import {Avatar} from "flowbite-react";
 import {AuthorList} from "@/util/content/CommunityTeam";
 
 export default function CommunityTeamCard({pageUrl}: AuthorList) {
     return (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-4">
             <a href={pageUrl}>
-                <Avatar img={pageUrl + `.png`} rounded/>
+                <img className={`w-20 h-20 rounded-full`} src={pageUrl + `.png`} alt={`Rounded avatar`}/>
             </a>
         </div>
     );
