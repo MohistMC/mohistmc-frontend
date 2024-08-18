@@ -51,9 +51,9 @@ export default function Team() {
                 }
             </div>
 
-            <h1 className="md:mt-10 text-center w-3/4 mb-2 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">
+            <h2 className="md:mt-10 text-center w-3/4 mb-2 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">
                 {strings['team.community.title']}
-            </h1>
+            </h2>
 
             <div className={`flex flex-wrap md:w-full justify-center pt-12 pb-12 gap-1`}>
                 {
