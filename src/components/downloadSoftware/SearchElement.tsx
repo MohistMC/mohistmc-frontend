@@ -225,7 +225,7 @@ export default function SearchElement({
                 </div>
             </div>
 
-            <Dropdown label={strings['downloadSoftware.search.filter.btn']}>
+            <Dropdown label={strings['downloadSoftware.search.filter.btn']} className={`select-none`}>
                 <div
                     className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                     <input checked={filters.buildNumber} id="checkbox-item-4" type="checkbox" value=""
@@ -269,7 +269,7 @@ export default function SearchElement({
                            className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{strings[project === Project.Mohist ? 'downloadSoftware.build.forgever' : 'downloadSoftware.build.fabricver']}</label>
                 </div>
             </Dropdown>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 select-none">
                 <Checkbox id="exactMatch" checked={exactMatchChecked} onChange={handleExactMatch}/>
                 <Label className="flex" htmlFor="exactMatch">
                     <p>

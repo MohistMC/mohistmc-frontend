@@ -7,7 +7,7 @@ export const customTheme: CustomFlowbiteTheme = {
             closed: "opacity-0 ease-out"
         },
         toggle: {
-            base: "-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg bg-white p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-gray-300 dark:bg-dark-200 dark:text-gray-500 dark:hover:bg-dark-300 dark:hover:text-white",
+            base: "-mx-1.5 -my-1.5 ml-auto flex justify-center items-center h-8 w-8 rounded-lg bg-white p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-gray-300 dark:bg-dark-200 dark:text-gray-500 dark:hover:bg-dark-300 dark:hover:text-white",
             icon: "h-5 w-5 shrink-0"
         }
     },
@@ -143,13 +143,13 @@ export const customTheme: CustomFlowbiteTheme = {
             header: "block py-2 px-4 text-sm text-gray-700 dark:text-gray-200",
             hidden: "invisible opacity-0",
             item: {
-                base: "flex items-center justify-start py-2 px-4 text-sm text-gray-700 cursor-pointer w-full hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:hover:bg-dark-300 focus:outline-none dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white",
+                base: "flex items-center justify-start py-2 px-4 text-sm text-gray-700 cursor-pointer w-full hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 focus:outline-none dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white dark:hover:bg-gray-600",
                 icon: "mr-2 h-4 w-4"
             },
             style: {
-                dark: "bg-gray-900 text-white dark:bg-dark-200",
+                dark: "border border-gray-600 bg-gray-900 text-white dark:bg-dark-200",
                 light: "border border-gray-200 bg-white text-gray-900",
-                auto: "border border-gray-200 bg-white text-gray-900 dark:border-none dark:bg-dark-200 dark:text-white"
+                auto: "border border-gray-200 bg-white text-gray-900 dark:border-gray-600 dark:bg-dark-200 dark:text-white"
             },
             target: "w-fit"
         },
