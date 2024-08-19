@@ -1,22 +1,33 @@
-import {useRouter} from "next/router";
-import {capitalizeFirstLetter} from "@/util/String";
-import {Button, FileInput, Flowbite, Label, Select, Textarea, TextInput} from 'flowbite-react';
-import React, {useEffect, useRef, useState} from "react";
-import {useSelector} from "react-redux";
-import {selectTheme} from "@/features/theme/ThemeSlice";
-import {getAPIEndpoint} from "@/util/Environment";
-import {Build} from "@/interfaces/Build";
-import {customTheme} from "@/util/Theme";
-import {useAppSelector} from "@/util/redux/Hooks";
-import {selectTranslations} from "@/features/i18n/TranslatorSlice";
+import { useRouter } from 'next/router'
+import { capitalizeFirstLetter } from '@/util/String'
+import {
+    Button,
+    FileInput,
+    Flowbite,
+    Label,
+    Select,
+    Textarea,
+    TextInput,
+} from 'flowbite-react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { selectTheme } from '@/features/theme/ThemeSlice'
+import { getAPIEndpoint } from '@/util/Environment'
+import { Build } from '@/interfaces/Build'
+import { customTheme } from '@/util/Theme'
+import { useAppSelector } from '@/util/redux/Hooks'
+import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 
 const IssueForm = () => {
     const mode = useSelector(selectTheme)
-    const router = useRouter();
-    const strings = useAppSelector(selectTranslations);
-    const {product, issueType} = router.query as { product: string, issueType: string };
+    const router = useRouter()
+    const strings = useAppSelector(selectTranslations)
+    const { product, issueType } = router.query as {
+        product: string
+        issueType: string
+    }
 
-    const selectedVersionRef = useRef<HTMLSelectElement>(null);
+    const selectedVersionRef = useRef<HTMLSelectElement>(null)
 
     const [availableVersions, setAvailableVersions] = useState<string[]>([])
     const [availableBuilds, setAvailableBuilds] = useState<Build[]>([])
@@ -25,60 +36,85 @@ const IssueForm = () => {
 
     useEffect(() => {
         fetch(`${getAPIEndpoint()}/projects/${product}`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    if (result?.versions && result?.versions.length !== 0)
-                        setAvailableVersions(result.versions)
-                }).catch((error) => {
-            console.error(error)
-        })
-    }, [product]);
-
-    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        if (event.target.value && event.target.value.length !== 0)
-            fetch(`${getAPIEndpoint()}/projects/${product}/${event.target.value}/builds`)
-                .then(res => res.json())
-                .then(
-                    (result) => {
-                        if (result?.builds && result?.builds.length !== 0)
-                            setAvailableBuilds(result.builds)
-                    }).catch((error) => {
+            .then((res) => res.json())
+            .then((result) => {
+                if (result?.versions && result?.versions.length !== 0)
+                    setAvailableVersions(result.versions)
+            })
+            .catch((error) => {
                 console.error(error)
             })
+    }, [product])
+
+    const handleSelectChange = (
+        event: React.ChangeEvent<HTMLSelectElement>,
+    ) => {
+        if (event.target.value && event.target.value.length !== 0)
+            fetch(
+                `${getAPIEndpoint()}/projects/${product}/${event.target.value}/builds`,
+            )
+                .then((res) => res.json())
+                .then((result) => {
+                    if (result?.builds && result?.builds.length !== 0)
+                        setAvailableBuilds(result.builds)
+                })
+                .catch((error) => {
+                    console.error(error)
+                })
     }
 
     useEffect(() => {
-        handleSelectChange({target: {value: selectedVersionRef.current?.value}} as unknown as React.ChangeEvent<HTMLSelectElement>)
-    }, [availableVersions]);
+        handleSelectChange({
+            target: { value: selectedVersionRef.current?.value },
+        } as unknown as React.ChangeEvent<HTMLSelectElement>)
+    }, [availableVersions])
 
     useEffect(() => {
         if (availableBuilds.length !== 0) {
-            setBuildsMinState(availableBuilds.length ? availableBuilds.map((build: Build) => build.number).reduce((a, b) => Math.min(a, b)) : 0)
-            setBuildsMaxState(availableBuilds.length ? availableBuilds.map((build: Build) => build.number).reduce((a, b) => Math.max(a, b)) : 2000)
+            setBuildsMinState(
+                availableBuilds.length
+                    ? availableBuilds
+                          .map((build: Build) => build.number)
+                          .reduce((a, b) => Math.min(a, b))
+                    : 0,
+            )
+            setBuildsMaxState(
+                availableBuilds.length
+                    ? availableBuilds
+                          .map((build: Build) => build.number)
+                          .reduce((a, b) => Math.max(a, b))
+                    : 2000,
+            )
         }
     }, [availableBuilds])
 
     return (
         <div>
             <div className={`dark:text-gray-300 mb-2 mt-2`}>
-                <p><span
-                    className={`font-bold`}>{strings['report.issue.product']}</span> - {capitalizeFirstLetter(product)}
+                <p>
+                    <span className={`font-bold`}>
+                        {strings['report.issue.product']}
+                    </span>{' '}
+                    - {capitalizeFirstLetter(product)}
                 </p>
-                <p><span
-                    className={`font-bold`}>{strings['report.issue.type']}</span> - {capitalizeFirstLetter(issueType)}
+                <p>
+                    <span className={`font-bold`}>
+                        {strings['report.issue.type']}
+                    </span>{' '}
+                    - {capitalizeFirstLetter(issueType)}
                 </p>
             </div>
-            <Flowbite theme={{theme: customTheme, mode}}>
+            <Flowbite theme={{ theme: customTheme, mode }}>
                 <form className="flex max-w-md flex-col gap-4">
-                    <div
-                        className="max-w-md"
-                        id="select"
-                    >
+                    <div className="max-w-md" id="select">
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="minecraftversions"
-                                value={strings['report.issue.form.minecraftversions']}
+                                value={
+                                    strings[
+                                        'report.issue.form.minecraftversions'
+                                    ]
+                                }
                             />
                         </div>
                         <Select
@@ -88,9 +124,7 @@ const IssueForm = () => {
                             onChange={handleSelectChange}
                         >
                             {availableVersions.map((version) => (
-                                <option key={version}>
-                                    {version}
-                                </option>
+                                <option key={version}>{version}</option>
                             ))}
                         </Select>
                     </div>
@@ -100,7 +134,9 @@ const IssueForm = () => {
                                 htmlFor="mohistversion"
                                 value={`Mohist version (between ${buildsMinState} and ${buildsMaxState})`}
                             />
-                            <p className={`text-orange-500 text-sm`}>{strings['report.issue.form.mohistversion']}</p>
+                            <p className={`text-orange-500 text-sm`}>
+                                {strings['report.issue.form.mohistversion']}
+                            </p>
                         </div>
                         <TextInput
                             id="mohistversion"
@@ -115,7 +151,9 @@ const IssueForm = () => {
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="operatingsystem"
-                                value={strings['report.issue.form.operatingsystem']}
+                                value={
+                                    strings['report.issue.form.operatingsystem']
+                                }
                             />
                         </div>
                         <TextInput
@@ -123,7 +161,7 @@ const IssueForm = () => {
                             required
                             shadow
                             type="text"
-                            placeholder={"Windows 10, Ubuntu 20.04, ..."}
+                            placeholder={'Windows 10, Ubuntu 20.04, ...'}
                         />
                     </div>
                     <div>
@@ -141,10 +179,7 @@ const IssueForm = () => {
                             placeholder={strings['report.issue.form.modplugin']}
                         />
                     </div>
-                    <div
-                        className="max-w-md"
-                        id="fileUpload"
-                    >
+                    <div className="max-w-md" id="fileUpload">
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="file"
@@ -152,16 +187,15 @@ const IssueForm = () => {
                             />
                         </div>
                         <FileInput
-                            helperText={strings['report.issue.form.file.helper']}
+                            helperText={
+                                strings['report.issue.form.file.helper']
+                            }
                             id="file"
                             required
                             multiple={true}
                         />
                     </div>
-                    <div
-                        className="max-w-md"
-                        id="textarea"
-                    >
+                    <div className="max-w-md" id="textarea">
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="comment"
@@ -170,7 +204,9 @@ const IssueForm = () => {
                         </div>
                         <Textarea
                             id="comment"
-                            placeholder={strings['report.issue.form.comment.placeholder']}
+                            placeholder={
+                                strings['report.issue.form.comment.placeholder']
+                            }
                             required
                             rows={10}
                         />

@@ -1,9 +1,9 @@
-import {AuthorDetails} from "@/util/content/Team";
-import ProfileImage from "@/components/ProfileImage";
+import { AuthorDetails } from '@/util/content/Team'
+import ProfileImage from '@/components/ProfileImage'
 
-export const BlogAvatar = ({name, role, pageUrl}: AuthorDetails) => (
+export const BlogAvatar = ({ name, role, pageUrl }: AuthorDetails) => (
     <div className="flex items-center flex-shrink-0 md:justify-start">
-        <ProfileImage name={name} githubUrl={pageUrl} size={12}/>
+        <ProfileImage name={name} githubUrl={pageUrl} size={12} />
         <dl className="ml-2 text-sm font-medium leading-4 text-left whitespace-no-wrap">
             <dt className="sr-only">Name</dt>
             <dd className="text-gray-900 dark:text-white">{name}</dd>
@@ -24,4 +24,4 @@ export const BlogAvatar = ({name, role, pageUrl}: AuthorDetails) => (
             )}
         </dl>
     </div>
-);
+)

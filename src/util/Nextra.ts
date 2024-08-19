@@ -3,7 +3,8 @@ export const hackNextra = () => {
         const searchBar = document.getElementsByClassName('nextra-search')[0]
         const searchBarParent = searchBar?.parentElement
 
-        const hamburgerMenu = document.getElementsByClassName('nextra-hamburger')[0]
+        const hamburgerMenu =
+            document.getElementsByClassName('nextra-hamburger')[0]
         const paragraphElement = document.createElement('p')
         paragraphElement.classList.add('mr-3')
         paragraphElement.innerHTML = 'Docs menu'
@@ -14,7 +15,10 @@ export const hackNextra = () => {
 
         const removeNavBarElements = () => {
             for (const element of searchBarParent?.children || []) {
-                if (!element.classList.contains('nextra-search') && !element.classList.contains('nextra-hamburger'))
+                if (
+                    !element.classList.contains('nextra-search') &&
+                    !element.classList.contains('nextra-hamburger')
+                )
                     element.remove()
             }
         }

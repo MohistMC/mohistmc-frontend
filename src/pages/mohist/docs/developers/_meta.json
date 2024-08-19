@@ -1,6 +1,6 @@
 {
-  "modsandplugins": "Mods and Plugins",
-  "setup": "Setup",
-  "build": "Build",
-  "patches": "Generate patches"
+    "modsandplugins": "Mods and Plugins",
+    "setup": "Setup",
+    "build": "Build",
+    "patches": "Generate patches"
 }

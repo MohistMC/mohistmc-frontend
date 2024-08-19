@@ -1,4 +1,4 @@
 export enum Project {
-    Mohist = "mohist",
-    Banner = "banner",
+    Mohist = 'mohist',
+    Banner = 'banner',
 }
