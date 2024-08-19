@@ -121,7 +121,22 @@ const frTranslation: PartialLocaleState = {
         "contribute.cards.4.desc": "Nous mettons nos projets à disposition dans plusieurs langues afin que chacun puisse les utiliser. Si vous parlez couramment une langue autre que l'anglais, vous pouvez nous aider à traduire nos projets !",
         "contribute.cards.4.button": "Page Crowdin",
         "contribute.footer.title": "Rejoignez notre communauté et aidez-nous à créer de meilleurs projets !",
-        "contribute.footer.desc": "MohistMC est une organisation animée par la communauté. Les contributions de la communautés nous aident à évoluer. Rejoignez notre communauté et aidez-nous à créer de meilleurs projets !"
+        "contribute.footer.desc": "MohistMC est une organisation animée par la communauté. Les contributions de la communautés nous aident à évoluer. Rejoignez notre communauté et aidez-nous à créer de meilleurs projets !",
+        "second.ago": "il y a 1 seconde",
+        "seconds.ago": "il y a {} secondes",
+        "minute.ago": "il y a 1 minute",
+        "minutes.ago": "il y a {} minutes",
+        "hour.ago": "il y a 1 heure",
+        "hours.ago": "il y a {} heures",
+        "day.ago": "il y a 1 jour",
+        "days.ago": "il y a {} jours",
+        "week.ago": "il y a 1 semaine",
+        "weeks.ago": "il y a {} semaines",
+        "month.ago": "il y a 1 mois",
+        "months.ago": "il y a {} mois",
+        "year.ago": "il y a 1 an",
+        "years.ago": "il y a {} ans",
+        "just.now": "à l'instant",
     }
 }
 

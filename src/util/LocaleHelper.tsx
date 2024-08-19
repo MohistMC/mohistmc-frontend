@@ -32,6 +32,18 @@ export function getLocaleStringAsArgs(str: string): string[] {
 }
 
 /**
+ * Returns a string with the provided arguments
+ * Example: formatString("Hello {}, you have {} years old", "John", 12) will return "Hello John, you have 12 years old"
+ *
+ * @param str The string to translate
+ * @param args The arguments to replace in the string
+ * @returns The formatted string
+ */
+export function formatString(str: string, ...args: unknown[]): string {
+    return str.replace(/{}/g, () => args.shift() as string);
+}
+
+/**
  * Returns whether the current language is Chinese for some special function settings
  * @param locale
  */

@@ -53,7 +53,7 @@ const zhTranslation: PartialLocaleState = {
         "downloads.mohist.desc": "一个实现了Bukkit、Spigot API的Minecraft Forge服务器软件。使用此软件，您可以创建一个带有模组和插件的Minecraft服务器！",
         "downloads.banner.desc": "一个实现了Bukkit和Spigot API的Minecraft Fabric服务器软件。这个软件允许您创建一个使用Fabric模组和插件的Minecraft服务器，就像Mohist一样，但是适用于Fabric。",
         "downloads.endtext": "目前就这些了",
-        "downloadSoftware.page.title": "MohistMC - 下载 % %",
+        "downloadSoftware.page.title": "MohistMC - 下载 {}",
         "downloadSoftware.title": "下载% %",
         "downloadSoftware.mohist.desc": "下载 Mohist，我们的 Minecraft 混合 Forge + Bukkit/Spigot 服务器软件。",
         "downloadSoftware.banner.desc": "下载 Banner，我们的 Minecraft 混合 Fabric + Bukkit/Spigot 服务器软件。",

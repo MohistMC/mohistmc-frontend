@@ -3,6 +3,7 @@ import {Build} from "@/interfaces/Build";
 import {Project} from "@/interfaces/Project";
 import DownloadButton from "@/components/downloadSoftware/DownloadButton";
 import {Button} from "flowbite-react";
+import {getTimeAgoInText} from "@/util/DateUtil";
 
 interface TableBuildElementProps {
     build: Build;
@@ -47,7 +48,7 @@ export default function TableBuildElement({
                 {build.fileMd5}
             </td>
             <td className="px-6 py-4 hidden md:table-cell">
-                {new Date(build.createdAt).toLocaleString()}
+                {getTimeAgoInText(new Date(build.createdAt), strings)}
             </td>
             <td className="px-6 py-4 hidden md:table-cell">
                 {project === Project.Banner && (build.fabricLoaderVersion || 'Unknown')}

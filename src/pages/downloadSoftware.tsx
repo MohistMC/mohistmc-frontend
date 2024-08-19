@@ -9,7 +9,7 @@ import LoadingParagraph from "@/components/downloadSoftware/LoadingParagraph";
 import {capitalizeFirstLetter} from "@/util/String";
 import {useAppSelector} from "@/util/redux/Hooks";
 import {selectTranslations, StringKey} from "@/features/i18n/TranslatorSlice";
-import {getLocaleStringAsArgs} from "@/util/LocaleHelper";
+import {formatString, getLocaleStringAsArgs} from "@/util/LocaleHelper";
 import SearchElement from "@/components/downloadSoftware/SearchElement";
 import BuildDetailsModal from "@/components/downloadSoftware/BuildDetailsModal";
 import {Flowbite, Toast} from "flowbite-react";
@@ -125,7 +125,7 @@ export default function DownloadSoftware() {
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">
             <Head>
-                <title>{getLocaleStringAsArgs(strings['downloadSoftware.page.title'])[0]}{capitalizeFirstLetter(project)}{getLocaleStringAsArgs(strings['downloadSoftware.page.title'])[1]}</title>
+                <title>{formatString(strings['downloadSoftware.page.title'], capitalizeFirstLetter(project))}</title>
             </Head>
             <div className={`flex items-center justify-center pt-10 md:pt-0`}>
                 <h1 className="text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white md:mt-10 text-center">{getLocaleStringAsArgs(strings['downloadSoftware.title'])[0]}
