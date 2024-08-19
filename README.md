@@ -5,16 +5,18 @@
   <h1 align="center">Mohist website</h1>
 
 ### The front-end website for MohistMC
+
 ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Typescript](https://img.shields.io/badge/typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![nextra](https://img.shields.io/badge/nextra-FF6A6A?style=for-the-badge&logo=nextra&logoColor=white)
 ![Github stars](https://img.shields.io/github/stars/MohistMC/Website?style=for-the-badge)
 ![License](https://img.shields.io/github/license/MohistMC/Website?style=for-the-badge)
+
 </div>
 
 ## About
 
-This is the new front-end website for MohistMC, built with Next.js and Typescript.    
+This is the new front-end website for MohistMC, built with Next.js and Typescript.  
 It's still under development, feel free to contribute!
 
 ## Getting Started

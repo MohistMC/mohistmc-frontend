@@ -1,12 +1,12 @@
 {
-  "*": {
-    "display": "hidden",
-    "theme": {
-      "toc": false,
-      "sidebar": false,
-      "pagination": false,
-      "typesetting": "article"
-    }
-  },
-  "test": "Test article MohistMC"
+    "*": {
+        "display": "hidden",
+        "theme": {
+            "toc": false,
+            "sidebar": false,
+            "pagination": false,
+            "typesetting": "article"
+        }
+    },
+    "test": "Test article MohistMC"
 }

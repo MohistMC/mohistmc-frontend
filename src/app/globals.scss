@@ -14,13 +14,21 @@
 }
 
 .orangeGradient {
-    background: rgb(255,39,9);
-    background: linear-gradient(23deg, rgba(255,39,9,1) 19%, rgba(255,130,24,1) 100%);
+    background: rgb(255, 39, 9);
+    background: linear-gradient(
+        23deg,
+        rgba(255, 39, 9, 1) 19%,
+        rgba(255, 130, 24, 1) 100%
+    );
 }
 
 .blueGradient {
-    background: rgb(0,212,255);
-    background: linear-gradient(135deg,#289bff 20%,rgba(27,15,255,0.88) 100%);
+    background: rgb(0, 212, 255);
+    background: linear-gradient(
+        135deg,
+        #289bff 20%,
+        rgba(27, 15, 255, 0.88) 100%
+    );
 }
 
 .greenGradient {

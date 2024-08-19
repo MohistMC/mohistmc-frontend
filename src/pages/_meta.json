@@ -1,25 +1,25 @@
 {
-  "*": {
-    "type": "page"
-  },
-  "index": {
-    "display": "hidden",
-    "theme": {
-      "layout": "raw",
-      "sidebar": false,
-      "toc": true
+    "*": {
+        "type": "page"
+    },
+    "index": {
+        "display": "hidden",
+        "theme": {
+            "layout": "raw",
+            "sidebar": false,
+            "toc": true
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "theme": {
+            "typesetting": "article"
+        }
+    },
+    "mohist": {
+        "title": "Mohist"
+    },
+    "banner": {
+        "title": "Banner"
     }
-  },
-  "blog": {
-    "title": "Blog",
-    "theme": {
-      "typesetting": "article"
-    }
-  },
-  "mohist": {
-    "title": "Mohist"
-  },
-  "banner": {
-    "title": "Banner"
-  }
 }

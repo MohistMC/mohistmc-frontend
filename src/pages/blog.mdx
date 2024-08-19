@@ -1,26 +1,26 @@
-import Head from "next/head";
-import {getPagesUnderRoute} from "nextra/context";
-import Link from "next/link";
-import {selectTranslations} from "@/features/i18n/TranslatorSlice";
-import {useSelector} from "react-redux";
+import Head from 'next/head'
+import { getPagesUnderRoute } from 'nextra/context'
+import Link from 'next/link'
+import { selectTranslations } from '@/features/i18n/TranslatorSlice'
+import { useSelector } from 'react-redux'
 
 export function BlogHeader() {
 
     const strings = useSelector(selectTranslations);
 
-  return (
-    <div className="max-w-screen-lg mx-auto pt-4 pb-8 mb-16 border-b border-gray-400 border-opacity-20">
-        <Head>
-            <title>MohistMC - Blog</title>
-        </Head>
-      <h1>
-        <span className="font-bold leading-tight lg:text-5xl">{strings['blog.title']}</span>
-      </h1>
-      <p className="text-center text-gray-500 dark:text-gray-400 font-space-grotesk">
-          {strings['blog.subtitle']}
-      </p>
-    </div>
-  );
+return (
+<div className="max-w-screen-lg mx-auto pt-4 pb-8 mb-16 border-b border-gray-400 border-opacity-20">
+<Head>
+<title>MohistMC - Blog</title>
+</Head>
+<h1>
+<span className="font-bold leading-tight lg:text-5xl">{strings['blog.title']}</span>
+</h1>
+<p className="text-center text-gray-500 dark:text-gray-400 font-space-grotesk">
+{strings['blog.subtitle']}
+</p>
+</div>
+);
 }
 
 export function BlogIndex() {
@@ -46,6 +46,7 @@ export function BlogIndex() {
             </div>
         );
     });
+
 }
 
 <BlogHeader />

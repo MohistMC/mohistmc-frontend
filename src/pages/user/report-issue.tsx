@@ -1,96 +1,129 @@
-import {useAppSelector} from "@/util/redux/Hooks";
-import {selectTranslations} from "@/features/i18n/TranslatorSlice";
-import React, {useEffect, useState} from "react";
-import ProductCards from "@/components/report-issue/ProductCards";
-import IssueTypesCards from "@/components/report-issue/IssueTypesCards";
-import {selectUser} from "@/features/user/UserSlice";
-import {useRouter} from "next/router";
-import LoginModal from "@/components/modals/LoginModal";
-import {ToastLogger} from "@/util/Logger";
-import IssueForm from "@/components/report-issue/IssueForm";
+import { useAppSelector } from '@/util/redux/Hooks'
+import { selectTranslations } from '@/features/i18n/TranslatorSlice'
+import React, { useEffect, useState } from 'react'
+import ProductCards from '@/components/report-issue/ProductCards'
+import IssueTypesCards from '@/components/report-issue/IssueTypesCards'
+import { selectUser } from '@/features/user/UserSlice'
+import { useRouter } from 'next/router'
+import LoginModal from '@/components/modals/LoginModal'
+import { ToastLogger } from '@/util/Logger'
+import IssueForm from '@/components/report-issue/IssueForm'
 
 enum Product {
     Mohist = 'mohist',
     Banner = 'banner',
     Website = 'website',
-    Other = 'other'
+    Other = 'other',
 }
 
 enum IssueType {
     Bug = 'bug',
     Feature = 'feature',
     Question = 'question',
-    Other = 'other'
+    Other = 'other',
 }
 
 export default function ReportIssue() {
     const router = useRouter()
 
-    const strings = useAppSelector(selectTranslations);
+    const strings = useAppSelector(selectTranslations)
     const user = useAppSelector(selectUser)
 
-    const [openLoginModal, setOpenLoginModal] = useState<string | undefined>();
+    const [openLoginModal, setOpenLoginModal] = useState<string | undefined>()
 
-    const {product, issueType} = router.query as { product: Product, issueType: IssueType };
+    const { product, issueType } = router.query as {
+        product: Product
+        issueType: IssueType
+    }
 
     // Force the modal to open if the user is not logged in
     useEffect(() => {
         if (!user.isBeingLogged && !user.isLogged && !openLoginModal) {
-            ToastLogger.error(`You need to be logged in to access ${router.pathname} page.`, 5000)
+            ToastLogger.error(
+                `You need to be logged in to access ${router.pathname} page.`,
+                5000,
+            )
             setOpenLoginModal('dismissible')
         }
-    }, [openLoginModal, user.isBeingLogged, user.isLogged, router.pathname]);
+    }, [openLoginModal, user.isBeingLogged, user.isLogged, router.pathname])
 
     const setSelectedProduct = (product: string) => {
-        router.push({
-            pathname: router.pathname,
-            query: {
-                ...router.query,
-                product: product
+        router.push(
+            {
+                pathname: router.pathname,
+                query: {
+                    ...router.query,
+                    product: product,
+                },
             },
-        }, undefined, {shallow: true})
+            undefined,
+            { shallow: true },
+        )
     }
 
     const setSelectedIssueType = (issueType: string) => {
-        router.push({
-            pathname: router.pathname,
-            query: {
-                ...router.query,
-                issueType: issueType
+        router.push(
+            {
+                pathname: router.pathname,
+                query: {
+                    ...router.query,
+                    issueType: issueType,
+                },
             },
-        }, undefined, {shallow: true})
+            undefined,
+            { shallow: true },
+        )
     }
 
     useEffect(() => {
         if (product && !Object.values(Product).includes(product as Product)) {
             ToastLogger.error(`The product ${product} doesn't exist.`, 5000)
-            router.push({
-                pathname: router.pathname,
-                query: {
-                    ...router.query,
-                    product: undefined
+            router.push(
+                {
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        product: undefined,
+                    },
                 },
-            }, undefined, {shallow: true})
+                undefined,
+                { shallow: true },
+            )
         }
-    }, [product, router]);
+    }, [product, router])
 
     useEffect(() => {
-        if (issueType && !Object.values(IssueType).includes(issueType as IssueType)) {
-            ToastLogger.error(`The issue type ${issueType} doesn't exist.`, 5000)
-            router.push({
-                pathname: router.pathname,
-                query: {
-                    ...router.query,
-                    issueType: undefined
+        if (
+            issueType &&
+            !Object.values(IssueType).includes(issueType as IssueType)
+        ) {
+            ToastLogger.error(
+                `The issue type ${issueType} doesn't exist.`,
+                5000,
+            )
+            router.push(
+                {
+                    pathname: router.pathname,
+                    query: {
+                        ...router.query,
+                        issueType: undefined,
+                    },
                 },
-            }, undefined, {shallow: true})
+                undefined,
+                { shallow: true },
+            )
         }
-    }, [issueType, router]);
+    }, [issueType, router])
 
     return (
         <>
-            {openLoginModal &&
-                <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal} mustLogin={true}/>}
+            {openLoginModal && (
+                <LoginModal
+                    openModal={openLoginModal}
+                    setOpenModal={setOpenLoginModal}
+                    mustLogin={true}
+                />
+            )}
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
                 <div className="px-4 mx-auto max-w-screen-xl text-center">
                     <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
@@ -101,9 +134,15 @@ export default function ReportIssue() {
                     </p>
                 </div>
 
-                {!product && <ProductCards setSelectedProduct={setSelectedProduct}/>}
-                {product && !issueType && <IssueTypesCards setSelectedIssueType={setSelectedIssueType}/>}
-                {product && issueType && <IssueForm/>}
+                {!product && (
+                    <ProductCards setSelectedProduct={setSelectedProduct} />
+                )}
+                {product && !issueType && (
+                    <IssueTypesCards
+                        setSelectedIssueType={setSelectedIssueType}
+                    />
+                )}
+                {product && issueType && <IssueForm />}
             </section>
         </>
     )

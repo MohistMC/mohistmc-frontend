@@ -1,8 +1,11 @@
-import {Callout, Tabs} from "nextra/components";
+import { Callout, Tabs } from 'nextra/components'
 
 # Build Mohist with Gradle
 
-<Callout type="warning">Don't forget to [generate patches](patches.mdx) if you modified Minecraft source code.</Callout>
+<Callout type="warning">
+    Don't forget to [generate patches](patches.mdx) if you modified Minecraft
+    source code.
+</Callout>
 
 <Tabs items={['1.7.10', '1.12.2', '1.16.5+']}>
     <Tabs.Tab>
@@ -38,8 +41,12 @@ import {Callout, Tabs} from "nextra/components";
         gradlew.bat setup mohistJar
         ```
     </Tabs.Tab>
+
 </Tabs>
 
-<Callout type="info">The Mohist server jar file is located at ./projects/mohist/build/libs/mohist-xxxxx-server.jar</Callout>
+<Callout type="info">
+    The Mohist server jar file is located at
+    ./projects/mohist/build/libs/mohist-xxxxx-server.jar
+</Callout>
 
 This is the **jar file** that you will need to run your server.

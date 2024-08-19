@@ -1,12 +1,15 @@
-import {LocaleState} from "@/features/i18n/TranslatorSlice";
-import getLocaleIconSVG from "@/util/LocaleHelper";
+import { LocaleState } from '@/features/i18n/TranslatorSlice'
+import getLocaleIconSVG from '@/util/LocaleHelper'
 
 interface LanguageDropElementProps {
-    locale: LocaleState;
+    locale: LocaleState
     handleLocaleChangeCallback: (locale: LocaleState) => void
 }
 
-export default function LanguageDropElement({locale, handleLocaleChangeCallback}: LanguageDropElementProps) {
+export default function LanguageDropElement({
+    locale,
+    handleLocaleChangeCallback,
+}: LanguageDropElementProps) {
     return (
         <li>
             <button
@@ -20,5 +23,5 @@ export default function LanguageDropElement({locale, handleLocaleChangeCallback}
                 </div>
             </button>
         </li>
-    );
+    )
 }

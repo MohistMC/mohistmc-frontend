@@ -8,21 +8,18 @@ ogImage:
 
 # Hi there!
 
+import MOHISTMC_TEAM from '../../util/content/Team'
+import { Authors } from '../../components/blog/Authors'
+import Date from '../../components/blog/Date'
+import { ExperimentalBadge } from '../../components/blog/ExperimentalBadge'
 
-import MOHISTMC_TEAM from "../../util/content/Team";
-import {Authors} from "../../components/blog/Authors";
-import Date from "../../components/blog/Date";
-import {ExperimentalBadge} from "../../components/blog/ExperimentalBadge";
-
-<Date>
-    Monday, June 29th, 2023
-</Date>
+<Date>Monday, June 29th, 2023</Date>
 
 <Authors authors={[MOHISTMC_TEAM.shawiizz, MOHISTMC_TEAM.mgazul]} />
 
 This is our first blog post!
 
-- [**Experimental badge** <ExperimentalBadge isLink={false} />](#section): Desc.
+-   [**Experimental badge** <ExperimentalBadge isLink={false} />](#section): Desc.
 
 ```bash
 npm install
