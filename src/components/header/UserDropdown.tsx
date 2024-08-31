@@ -2,7 +2,12 @@ import { Avatar, Dropdown, Flowbite } from 'flowbite-react'
 import React, { ReactElement, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
-import { HiDocumentReport, HiLogout, HiUserRemove, HiViewGrid } from 'react-icons/hi'
+import {
+    HiDocumentReport,
+    HiLogout,
+    HiUserRemove,
+    HiViewGrid,
+} from 'react-icons/hi'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { logout, selectUser } from '@/features/user/UserSlice'

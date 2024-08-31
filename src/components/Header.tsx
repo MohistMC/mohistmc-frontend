@@ -3,7 +3,11 @@ import LanguageDropElement from '@/components/header/LanguageDropElement'
 import { ReactElement, useEffect, useState } from 'react'
 import LanguageDropButtonElement from '@/components/header/LanguageDropButtonElement'
 import { locales } from '@/i18n/Language'
-import { LocaleState, selectTranslations, setLocale } from '@/features/i18n/TranslatorSlice'
+import {
+    LocaleState,
+    selectTranslations,
+    setLocale,
+} from '@/features/i18n/TranslatorSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -15,7 +19,7 @@ import { selectUser } from '@/features/user/UserSlice'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
 import { isDevEnv } from '@/util/Environment'
-import { FaGithub, FaDiscord, FaQq } from "react-icons/fa";
+import { FaGithub, FaDiscord, FaQq } from 'react-icons/fa'
 
 export default function Header() {
     const dispatch = useDispatch()
@@ -89,7 +93,7 @@ export default function Header() {
             )
             dispatch(setLocale({ ...locale, strings: mergedStrings }))
             saveToStorage &&
-            localStorage.setItem('locale', locales.current.initials)
+                localStorage.setItem('locale', locales.current.initials)
         }
 
         handleLanguageChange(
@@ -148,21 +152,21 @@ export default function Header() {
                         aria-label="Github"
                         className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
                     >
-                        <FaGithub className="w-6 h-6"/>
+                        <FaGithub className="w-6 h-6" />
                     </Link>
                     <Link
                         href="https://discord.gg/mohistmc"
                         aria-label={'Discord'}
                         className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
                     >
-                        <FaDiscord className="w-6 h-6"/>
+                        <FaDiscord className="w-6 h-6" />
                     </Link>
                     <Link
                         href="https://qm.qq.com/q/7onbAp4PUQ"
                         aria-label="QQ"
                         className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
                     >
-                        <FaQq className="w-5 h-5"/>
+                        <FaQq className="w-5 h-5" />
                     </Link>
                     <button
                         data-collapse-toggle="mobile-menu-language-select"

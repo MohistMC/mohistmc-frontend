@@ -42,7 +42,10 @@ const Shop = () => {
                         property="twitter:url"
                         content="https://mohistmc.com/subscription"
                     />
-                    <meta property="twitter:title" content="MohistMC - Subscription" />
+                    <meta
+                        property="twitter:title"
+                        content="MohistMC - Subscription"
+                    />
                     <meta
                         property="twitter:description"
                         content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Shop now!"
@@ -61,10 +64,10 @@ const Shop = () => {
                     </div>
                 </section>
                 <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
-                    <PricingCard/>
-                    <PricingCard/>
-                    <PricingCard/>
-                    <PricingCard/>
+                    <PricingCard />
+                    <PricingCard />
+                    <PricingCard />
+                    <PricingCard />
                 </section>
             </section>
         </Flowbite>

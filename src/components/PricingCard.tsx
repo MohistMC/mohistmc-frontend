@@ -3,11 +3,17 @@ import { Card, Button } from 'flowbite-react'
 export default function PricingCard() {
     return (
         <Card className="max-w-sm">
-            <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+            <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
+                Standard plan
+            </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
                 <span className="text-3xl font-semibold">$</span>
-                <span className="text-5xl font-extrabold tracking-tight">49</span>
-                <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+                <span className="text-5xl font-extrabold tracking-tight">
+                    49
+                </span>
+                <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">
+                    /month
+                </span>
             </div>
             <ul className="my-7 space-y-5">
                 <li className="flex space-x-3">
@@ -23,7 +29,9 @@ export default function PricingCard() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
+                    <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+                        2 team members
+                    </span>
                 </li>
                 <li className="flex space-x-3">
                     <svg
@@ -39,8 +47,8 @@ export default function PricingCard() {
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-            20GB Cloud storage
-          </span>
+                        20GB Cloud storage
+                    </span>
                 </li>
                 <li className="flex space-x-3">
                     <svg
@@ -55,7 +63,9 @@ export default function PricingCard() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
+                    <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+                        Integration help
+                    </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
                     <svg
@@ -70,7 +80,9 @@ export default function PricingCard() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
+                    <span className="text-base font-normal leading-tight text-gray-500">
+                        Sketch Files
+                    </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
                     <svg
@@ -85,7 +97,9 @@ export default function PricingCard() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">API Access</span>
+                    <span className="text-base font-normal leading-tight text-gray-500">
+                        API Access
+                    </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
                     <svg
@@ -100,7 +114,9 @@ export default function PricingCard() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
+                    <span className="text-base font-normal leading-tight text-gray-500">
+                        Complete documentation
+                    </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
                     <svg
@@ -115,11 +131,15 @@ export default function PricingCard() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <span
-                        className="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
+                    <span className="text-base font-normal leading-tight text-gray-500">
+                        24×7 phone & email support
+                    </span>
                 </li>
             </ul>
-            <Button outline gradientDuoTone="purpleToPink"> Choose plan </Button>
+            <Button outline gradientDuoTone="purpleToPink">
+                {' '}
+                Choose plan{' '}
+            </Button>
         </Card>
     )
 }

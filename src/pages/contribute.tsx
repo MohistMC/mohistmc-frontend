@@ -62,19 +62,19 @@ const Contribute = () => {
                         <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
                             {
                                 getLocaleStringAsArgs(
-                                    strings['contribute.title']
+                                    strings['contribute.title'],
                                 )[0]
                             }
                             <span className="text-blue-600 dark:text-blue-500">
                                 {
                                     getLocaleStringAsArgs(
-                                        strings['contribute.title']
+                                        strings['contribute.title'],
                                     )[1]
                                 }
                             </span>
                             {
                                 getLocaleStringAsArgs(
-                                    strings['contribute.title']
+                                    strings['contribute.title'],
                                 )[2]
                             }
                         </h1>
@@ -97,8 +97,7 @@ const Contribute = () => {
                         ></path>
                     </svg>
                 </div>
-                <section
-                    className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
+                <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
                     {Object.values(CONTRIBUTES).map((c) => (
                         <CardComponent
                             key={c.name}
@@ -131,8 +130,7 @@ const Contribute = () => {
                         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
                             {strings['contribute.footer.desc']}
                         </p>
-                        <div
-                            className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                             <Link
                                 href="https://discord.gg/MohistMC"
                                 target="_blank"
@@ -145,10 +143,8 @@ const Contribute = () => {
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
-                                    <path
-                                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                                    <path
-                                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
                                 </svg>
                             </Link>
                         </div>

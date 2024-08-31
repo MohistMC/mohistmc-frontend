@@ -1,11 +1,15 @@
-import { Button, Card } from "flowbite-react";
+import { Button, Card } from 'flowbite-react'
 import React from 'react'
 import { useAppSelector } from '@/util/redux/Hooks'
-import {selectTranslationsByString } from '@/features/i18n/TranslatorSlice'
+import { selectTranslationsByString } from '@/features/i18n/TranslatorSlice'
 import { Contributes } from '@/util/content/Contributes'
 
-export default function ContributeCard({imgSrc, name, button_href, button} : Contributes) {
-
+export default function ContributeCard({
+    imgSrc,
+    name,
+    button_href,
+    button,
+}: Contributes) {
     const translations = useAppSelector(selectTranslationsByString)
 
     return (
@@ -16,9 +20,7 @@ export default function ContributeCard({imgSrc, name, button_href, button} : Con
             <p className="font-normal text-gray-700 dark:text-gray-400">
                 {translations[`contribute.cards.${name}.desc`]}
             </p>
-            <Button href={button_href}>
-                {translations[button]}
-            </Button>
+            <Button href={button_href}>{translations[button]}</Button>
         </Card>
-    );
+    )
 }

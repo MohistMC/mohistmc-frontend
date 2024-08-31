@@ -46,7 +46,10 @@ export default function Downloads() {
                         property="twitter:url"
                         content="https://mohistmc.com/downloads"
                     />
-                    <meta property="twitter:title" content="MohistMC - Downloads" />
+                    <meta
+                        property="twitter:title"
+                        content="MohistMC - Downloads"
+                    />
                     <meta
                         property="twitter:description"
                         content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
@@ -55,14 +58,13 @@ export default function Downloads() {
                 <h1 className="md:mt-20 mt-10 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                     {getLocaleStringAsArgs(strings['downloads.title'])[0]}
                     <span className="text-blue-600 dark:text-blue-500">
-                    {getLocaleStringAsArgs(strings['downloads.title'])[1]}
-                </span>
+                        {getLocaleStringAsArgs(strings['downloads.title'])[1]}
+                    </span>
                     {getLocaleStringAsArgs(strings['downloads.title'])[2]}
                 </h1>
 
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-                    <div
-                        className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12 mb-8">
+                    <div className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12 mb-8">
                         <div className={`flex flex-row gap-1`}>
                             <Link
                                 href="https://minecraftforge.net"
@@ -105,8 +107,7 @@ export default function Downloads() {
                             </Link>
                         </div>
                     </div>
-                    <div
-                        className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
+                    <div className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
                         <Link
                             href="https://fabricmc.net/"
                             className="bg-green-100 text-green-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2"
@@ -149,8 +150,7 @@ export default function Downloads() {
                     </div>
 
                     <div className="grid md:grid-cols-2 py-8">
-                        <div
-                            className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
+                        <div className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
                             <Link
                                 href="https://neoforged.net/"
                                 className="bg-red-200 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-red-400"
@@ -195,19 +195,19 @@ export default function Downloads() {
                             <h2 className="text-5xl text-center font-extrabold text-dark-25 dark:text-white">
                                 {
                                     getLocaleStringAsArgs(
-                                        strings['downloads.endtext']
+                                        strings['downloads.endtext'],
                                     )[0]
                                 }
                                 <small className="ml-2 font-semibold text-gray-500 dark:text-gray-400">
                                     {
                                         getLocaleStringAsArgs(
-                                            strings['downloads.endtext']
+                                            strings['downloads.endtext'],
                                         )[1]
                                     }
                                 </small>
                                 {
                                     getLocaleStringAsArgs(
-                                        strings['downloads.endtext']
+                                        strings['downloads.endtext'],
                                     )[2]
                                 }
                             </h2>

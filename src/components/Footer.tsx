@@ -4,7 +4,7 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { getCopyrightText } from '@/util/String'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
-import { FaGithub, FaDiscord, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaDiscord, FaTwitter } from 'react-icons/fa'
 
 export default function Footer() {
     const strings = useAppSelector(selectTranslations)
@@ -179,21 +179,21 @@ export default function Footer() {
                             href="https://twitter.com/mohistmc"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                         >
-                            <FaTwitter  className="w-5 h-5"/>
+                            <FaTwitter className="w-5 h-5" />
                             <span className="sr-only">Twitter page</span>
                         </Link>
                         <Link
                             href="https://github.com/MohistMC/"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                         >
-                            <FaGithub  className="w-5 h-5"/>
+                            <FaGithub className="w-5 h-5" />
                             <span className="sr-only">GitHub account</span>
                         </Link>
                         <Link
                             href="https://discord.gg/mohistmc"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                         >
-                            <FaDiscord  className="w-5 h-5"/>
+                            <FaDiscord className="w-5 h-5" />
                             <span className="sr-only">Discord</span>
                         </Link>
                     </div>

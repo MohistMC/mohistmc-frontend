@@ -23,12 +23,10 @@ export default async function handler(
 
         console.log(response.data)
         if (response.data.success && response.data.score >= 0.5) {
-            return res
-                .status(200)
-                .json({
-                    status: 'Success',
-                    message: 'Thank you for contacting me.',
-                })
+            return res.status(200).json({
+                status: 'Success',
+                message: 'Thank you for contacting me.',
+            })
         } else {
             return res.json({
                 status: 'Failed',

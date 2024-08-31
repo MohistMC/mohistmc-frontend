@@ -1,6 +1,14 @@
 import { useRouter } from 'next/router'
 import { capitalizeFirstLetter } from '@/util/String'
-import { Button, FileInput, Flowbite, Label, Select, Textarea, TextInput } from 'flowbite-react'
+import {
+    Button,
+    FileInput,
+    Flowbite,
+    Label,
+    Select,
+    Textarea,
+    TextInput,
+} from 'flowbite-react'
 import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
