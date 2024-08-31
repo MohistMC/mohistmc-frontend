@@ -15,6 +15,7 @@ import { useAppSelector } from '@/util/redux/Hooks'
 import { selectUser } from '@/features/user/UserSlice'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
+import { isDevEnv } from '@/util/Environment'
 
 export default function Header() {
     const dispatch = useDispatch()
@@ -306,16 +307,6 @@ export default function Header() {
                                 {strings['button.downloads']}
                             </Link>
                         </li>
-                        {isCN(locales.current) && (
-                            <li>
-                                <Link
-                                    href="/shop"
-                                    className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
-                                >
-                                    {strings['button.shop']}
-                                </Link>
-                            </li>
-                        )}
                         <li>
                             <Link
                                 href="/contribute"
@@ -340,6 +331,16 @@ export default function Header() {
                                 {strings['button.api']}
                             </Link>
                         </li>
+                        {isDevEnv && (
+                        <li>
+                            <Link
+                                href="/subscription"
+                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
+                            >
+                                {strings['button.subscription']}
+                            </Link>
+                        </li>
+                        )}
                         {AccountButtons('md:hidden', 'ml-2 mt-1 mb-2')}
                         {languageButtonState}
                         <div

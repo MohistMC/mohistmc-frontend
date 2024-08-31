@@ -1,0 +1,88 @@
+import Head from 'next/head'
+import React from 'react'
+import { Flowbite } from 'flowbite-react'
+import { useSelector } from 'react-redux'
+import { selectTheme } from '@/features/theme/ThemeSlice'
+import { customTheme } from '@/util/Theme'
+import PricingCard from '@/components/PricingCard'
+
+const Shop = () => {
+    const mode = useSelector(selectTheme)
+
+    return (
+        <Flowbite theme={{ theme: customTheme, mode }}>
+            <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
+                <Head>
+                    <title>MohistMC - Subscription</title>
+                    <meta name="title" content="MohistMC - Subscription" />
+                    <meta
+                        name="description"
+                        content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Shop now!"
+                    />
+
+                    <meta property="og:type" content="website" />
+                    <meta
+                        property="og:url"
+                        content="https://mohistmc.com/subscription"
+                    />
+                    <meta property="og:title" content="MohistMC - Shop" />
+                    <meta
+                        property="og:description"
+                        content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Shop now!"
+                    />
+                    <meta
+                        property="og:image"
+                        content="https://mohistmc.com/mohistLogo.png"
+                    />
+                    <meta property="og:image:type" content="image/png" />
+                    <meta property="og:image:width" content="100" />
+                    <meta property="og:image:height" content="100" />
+
+                    <meta
+                        property="twitter:url"
+                        content="https://mohistmc.com/subscription"
+                    />
+                    <meta property="twitter:title" content="MohistMC - Subscription" />
+                    <meta
+                        property="twitter:description"
+                        content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Shop now!"
+                    />
+                </Head>
+                <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
+                    <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">
+                        <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
+                            <span className="text-blue-600 dark:text-blue-500">
+                                Pricing Plans
+                            </span>
+                        </h1>
+                        <p className="mb-5 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">
+                            Account plans unlock additional features
+                        </p>
+                    </div>
+                </section>
+                <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
+                    <PricingCard/>
+                    <PricingCard/>
+                    <PricingCard/>
+                    <PricingCard/>
+                </section>
+                <div className="top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+                    <svg
+                        className={`h-20 w-full`}
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1200 120"
+                        preserveAspectRatio="none"
+                    >
+                        <path
+                            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                            className="shadow fill-gray-100 dark:fill-dark-50"
+                        ></path>
+                    </svg>
+                </div>
+            </div>
+        </Flowbite>
+    )
+}
+
+export default Shop

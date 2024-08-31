@@ -44,6 +44,7 @@ const enTranslation = {
         'button.close': 'Close',
         'button.contribute': 'Contribute',
         'button.shop': 'Shop',
+        'button.subscription': 'Subscription',
         'footer.heading.gettingstarted': 'Getting started',
         'footer.heading.discover': 'Discover us',
         'footer.heading.community': 'Community',
@@ -216,31 +217,6 @@ const enTranslation = {
         'blog.title': 'Blog',
         'blog.subtitle': 'The latest updates and releases from MohistMC.',
         'blog.lastupdated': 'Last updated on',
-        'shop.page.title': 'MohistMC - Shop',
-        'shop.title': '%MohistMC% Some of the value-added services offered!',
-        'shop.subtitle':
-            'We need some extra income for our daily expenses. So that we can work full-time to make more community products. And 5% of it will be used for public donations.',
-        'shop.cart': 'Detail',
-        'shop.none': 'None yet',
-        'shop.alert':
-            'The current page is experimental and does not represent the final result',
-        'shop.alert.2': 'Some services are only available in China.',
-        'shop.cards.1.title': 'Speed Torch',
-        'shop.cards.1.desc':
-            'We are not perfect and have a lot of published issues. When you need to solve a problem urgently, you need an acceleration torch!',
-        'shop.cards.2.title': 'Customization',
-        'shop.cards.2.desc':
-            'Involving a wide range of fields, plugins mods servers maps materials modeling skins, etc.',
-        'shop.cards.3.title': 'Instruction & Teaching',
-        'shop.cards.3.desc':
-            'Still worried about expensive customizations and developers running away? Do it yourself, learn how to write plugins from scratch, and how to make the features you want. ',
-        'shop.cards.4.title': 'Peripherals',
-        'shop.cards.4.desc': 'Some team-related souvenirs and merchandise!',
-        'shop.cards.5.title': 'Hardware for sale',
-        'shop.cards.5.desc':
-            'Computer hardware retail, assembly, commissioning!',
-        'shop.cards.6.title': 'Cloud server',
-        'shop.cards.6.desc': 'Game Cloud Server!',
         'report.issue.title': 'Report an issue',
         'report.issue.desc':
             'Wants to report an issue, ask a question or making suggestions / feature requests? You&apos;re in the right place.',
