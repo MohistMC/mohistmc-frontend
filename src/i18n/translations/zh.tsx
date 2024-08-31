@@ -61,6 +61,8 @@ const zhTranslation: PartialLocaleState = {
             '一个实现了Bukkit、Spigot API的Minecraft Forge服务器软件。使用此软件，您可以创建一个带有模组和插件的Minecraft服务器！',
         'downloads.banner.desc':
             '一个实现了Bukkit和Spigot API的Minecraft Fabric服务器软件。这个软件允许您创建一个使用Fabric模组和插件的Minecraft服务器，就像Mohist一样，但是适用于Fabric。',
+        'downloads.your.desc':
+            '一个实现了Bukkit和Spigot API的Minecraft NeoForge服务器软件。这个软件允许您创建一个使用NeoForge模组和插件的Minecraft服务器，就像Mohist一样，但是适用于NeoForge。',
         'downloads.endtext': '目前就这些了',
         'downloadSoftware.page.title': 'MohistMC - 下载 {}',
         'downloadSoftware.title': '下载% %',
