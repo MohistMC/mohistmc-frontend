@@ -17,7 +17,7 @@ const Contribute = () => {
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
-            <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
+            <section className={`bg-white dark:bg-dark-25 flex flex-col`}>
                 <Head>
                     <title>{strings['contribute.page.title']}</title>
                     <meta name="title" content="MohistMC - Contribute" />
@@ -154,7 +154,7 @@ const Contribute = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+            </section>
         </Flowbite>
     )
 }

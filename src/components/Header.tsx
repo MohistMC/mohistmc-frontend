@@ -3,7 +3,6 @@ import LanguageDropElement from '@/components/header/LanguageDropElement'
 import { ReactElement, useEffect, useState } from 'react'
 import LanguageDropButtonElement from '@/components/header/LanguageDropButtonElement'
 import { locales } from '@/i18n/Language'
-import { isCN } from '@/util/LocaleHelper'
 import { LocaleState, selectTranslations, setLocale } from '@/features/i18n/TranslatorSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
@@ -89,7 +88,7 @@ export default function Header() {
             )
             dispatch(setLocale({ ...locale, strings: mergedStrings }))
             saveToStorage &&
-                localStorage.setItem('locale', locales.current.initials)
+            localStorage.setItem('locale', locales.current.initials)
         }
 
         handleLanguageChange(
@@ -310,7 +309,7 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/contribute"
-                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
+                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'contribute' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
                             >
                                 {strings['button.contribute']}
                             </Link>
@@ -332,14 +331,14 @@ export default function Header() {
                             </Link>
                         </li>
                         {isDevEnv && (
-                        <li>
-                            <Link
-                                href="/subscription"
-                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
-                            >
-                                {strings['button.subscription']}
-                            </Link>
-                        </li>
+                            <li>
+                                <Link
+                                    href="/subscription"
+                                    className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'subscription' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
+                                >
+                                    {strings['button.subscription']}
+                                </Link>
+                            </li>
                         )}
                         {AccountButtons('md:hidden', 'ml-2 mt-1 mb-2')}
                         {languageButtonState}
