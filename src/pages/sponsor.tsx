@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import SponsorAvatar from '@/components/sponsor/SponsorAvatar'
 import Head from 'next/head'
 import { customTheme } from '@/util/Theme'
-import { Flowbite } from 'flowbite-react'
+import { Flowbite, Button, Popover } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 
@@ -43,6 +43,12 @@ const Sponsor = () => {
                 setDonors(uniqueDonors)
             })
     }, [])
+
+    const content = (
+        <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
+            <img height="1680" alt="alipay" src="/alipay.jpg" />
+        </div>
+    )
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
@@ -103,9 +109,9 @@ const Sponsor = () => {
                             {strings['sponsor.subtitle']}
                         </p>
                         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                            <Link
+                            <Button
                                 href="https://opencollective.com/mohist"
-                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                             >
                                 {strings['social.opencollective']}
                                 <svg
@@ -117,19 +123,18 @@ const Sponsor = () => {
                                     <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
                                     <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
                                 </svg>
-                            </Link>
-                            <Link
+                            </Button>
+                            <Button
                                 href="https://github.com/sponsors/MohistMC"
                                 className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                             >
                                 {strings['social.ghsponsors']}
-                            </Link>
-                            <Link
-                                href="https://mohistmc.com/alipay.jpg"
-                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                            >
-                                {strings['social.alipay']}
-                            </Link>
+                            </Button>
+                            <Popover content={content} trigger="click">
+                                <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                                    {strings['social.alipay']}
+                                </Button>
+                            </Popover>
                         </div>
                     </div>
                 </section>

@@ -64,10 +64,46 @@ const Shop = () => {
                     </div>
                 </section>
                 <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
-                    <PricingCard />
-                    <PricingCard />
-                    <PricingCard />
-                    <PricingCard />
+                    <PricingCard
+                        vault={5}
+                        bool1={true}
+                        bool2={true}
+                        bool3={true}
+                        bool4={false}
+                        bool5={false}
+                        bool6={false}
+                        bool7={false}
+                    />
+                    <PricingCard
+                        vault={10}
+                        bool1={true}
+                        bool2={true}
+                        bool3={true}
+                        bool4={true}
+                        bool5={false}
+                        bool6={false}
+                        bool7={false}
+                    />
+                    <PricingCard
+                        vault={50}
+                        bool1={true}
+                        bool2={true}
+                        bool3={true}
+                        bool4={true}
+                        bool5={true}
+                        bool6={false}
+                        bool7={false}
+                    />
+                    <PricingCard
+                        vault={648}
+                        bool1={true}
+                        bool2={true}
+                        bool3={true}
+                        bool4={true}
+                        bool5={true}
+                        bool6={true}
+                        bool7={true}
+                    />
                 </section>
             </section>
         </Flowbite>
