@@ -46,7 +46,7 @@ const Sponsor = () => {
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
-            <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
+            <section className={`bg-white dark:bg-dark-25 flex flex-col`}>
                 <Head>
                     <title>{strings['sponsor.page.title']}</title>
                     <meta name="title" content="MohistMC - Sponsor" />
@@ -180,7 +180,7 @@ const Sponsor = () => {
                         ))}
                     </div>
                 </section>
-            </div>
+            </section>
         </Flowbite>
     )
 }
