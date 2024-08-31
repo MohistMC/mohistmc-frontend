@@ -185,19 +185,19 @@ const zhTranslation: PartialLocaleState = {
         'contribute.title': '为%MohistMC%做出贡献，帮助我们改进软件！',
         'contribute.subtitle':
             'MohistMC制作开源项目，由社区贡献推动。您可以通过多种方式参与塑造这些项目。',
-        'contribute.cards.1.title': '财务贡献',
-        'contribute.cards.1.desc':
+        'contribute.cards.finance.title': '财务贡献',
+        'contribute.cards.finance.desc':
             'MohistMC是一个非营利组织。我们依靠捐款来资助我们的运营，继续开发我们的项目并维护我们的基础设施。您的贡献将帮助我们继续为社区提供服务。',
-        'contribute.cards.2.title': '贡献代码',
-        'contribute.cards.2.desc':
+        'contribute.cards.github.title': '贡献代码',
+        'contribute.cards.github.desc':
             'MohistMC制作开源项目！我们欢迎社区的贡献。您可以通过在GitHub上提交拉取请求或报告问题来为我们的项目做出贡献。',
-        'contribute.cards.3.title': '贡献文档',
-        'contribute.cards.3.desc':
+        'contribute.cards.docs.title': '贡献文档',
+        'contribute.cards.docs.desc':
             'MohistMC为我们的软件提供了各种文档，许多用户需要它们。您可以通过在GitHub上为文档做出贡献来帮助我们改进文档。',
-        'contribute.cards.4.title': '成为翻译者',
-        'contribute.cards.4.desc':
+        'contribute.cards.translation.title': '成为翻译者',
+        'contribute.cards.translation.desc':
             '我们将我们的项目提供给多种语言，以便每个人都可以使用它们。如果您精通英语以外的其他语言，您可以帮助我们翻译我们的项目！',
-        'contribute.cards.4.button': 'Crowdin页面',
+        'contribute.cards.translation.button': 'Crowdin页面',
         'contribute.footer.title': '加入我们的社区，共同创建更好的项目！',
         'contribute.footer.desc':
             'MohistMC是一个社区驱动的组织。我们欢迎社区的贡献。加入我们的社区，帮助我们创建更好的项目！',

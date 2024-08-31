@@ -3,11 +3,13 @@ import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
 import React from 'react'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
-import { Button, Card, Flowbite } from 'flowbite-react'
+import { Flowbite } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import Link from 'next/link'
 import { customTheme } from '@/util/Theme'
+import CardComponent from '@/components/contribute/ContributeCard'
+import CONTRIBUTES from '@/util/content/Contributes'
 
 const Contribute = () => {
     const strings = useAppSelector(selectTranslations)
@@ -60,19 +62,19 @@ const Contribute = () => {
                         <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
                             {
                                 getLocaleStringAsArgs(
-                                    strings['contribute.title'],
+                                    strings['contribute.title']
                                 )[0]
                             }
                             <span className="text-blue-600 dark:text-blue-500">
                                 {
                                     getLocaleStringAsArgs(
-                                        strings['contribute.title'],
+                                        strings['contribute.title']
                                     )[1]
                                 }
                             </span>
                             {
                                 getLocaleStringAsArgs(
-                                    strings['contribute.title'],
+                                    strings['contribute.title']
                                 )[2]
                             }
                         </h1>
@@ -95,60 +97,17 @@ const Contribute = () => {
                         ></path>
                     </svg>
                 </div>
-                <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
-                    <Card
-                        imgAlt="Contribute financially"
-                        imgSrc="/finance.webp"
-                    >
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.1.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.1.desc']}
-                        </p>
-                        <Button href={`/sponsor`} aria-label={'Sponsor button'}>
-                            {strings['button.learnmore']}
-                        </Button>
-                    </Card>
-                    <Card imgAlt="Contribute to the code" imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.2.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.2.desc']}
-                        </p>
-                        <Button href={'https://github.com/MohistMC'}>
-                            GitHub
-                        </Button>
-                    </Card>
-                    <Card imgAlt="Contribute to the docs" imgSrc="/docs.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.3.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.3.desc']}
-                        </p>
-                        <Button
-                            href={'/docs/website'}
-                            aria-label={'Learn more button'}
-                        >
-                            {strings['button.learnmore']}
-                        </Button>
-                    </Card>
-                    <Card
-                        imgAlt="Contribute to the translation"
-                        imgSrc="/translate.webp"
-                    >
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.4.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.4.desc']}
-                        </p>
-                        <Button href={'https://crowdin.com/project/mohist'}>
-                            {strings['contribute.cards.4.button']}
-                        </Button>
-                    </Card>
+                <section
+                    className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
+                    {Object.values(CONTRIBUTES).map((c) => (
+                        <CardComponent
+                            key={c.name}
+                            name={c.name}
+                            imgSrc={c.imgSrc}
+                            button_href={c.button_href}
+                            button={c.button}
+                        />
+                    ))}
                 </section>
                 <div className="top-0 left-0 w-full overflow-hidden leading-none rotate-180">
                     <svg
@@ -172,7 +131,8 @@ const Contribute = () => {
                         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
                             {strings['contribute.footer.desc']}
                         </p>
-                        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                        <div
+                            className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                             <Link
                                 href="https://discord.gg/MohistMC"
                                 target="_blank"
@@ -185,8 +145,10 @@ const Contribute = () => {
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
-                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                                    <path
+                                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                                    <path
+                                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
                                 </svg>
                             </Link>
                         </div>

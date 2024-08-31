@@ -196,19 +196,19 @@ const enTranslation = {
             'Contribute to %MohistMC%, help us making better softwares!',
         'contribute.subtitle':
             'MohistMC makes open-source projects, powered by community contributions. There are diverse ways for you to participate in shaping these projects.',
-        'contribute.cards.1.title': 'Contribute financially',
-        'contribute.cards.1.desc':
+        'contribute.cards.finance.title': 'Contribute financially',
+        'contribute.cards.finance.desc':
             'MohistMC is a non-profit organization. We rely on donations to fund our operations and continue to develop our projects and maintain our infrastructure. Your contribution will help us to continue to provide our services to the community.',
-        'contribute.cards.2.title': 'Contribute to the code',
-        'contribute.cards.2.desc':
+        'contribute.cards.github.title': 'Contribute to the code',
+        'contribute.cards.github.desc':
             'MohistMC makes open-source projects! We welcome contributions from the community. You can contribute to our projects by submitting pull requests or reporting issues on GitHub.',
-        'contribute.cards.3.title': 'Contribute to the documentation',
-        'contribute.cards.3.desc':
+        'contribute.cards.docs.title': 'Contribute to the documentation',
+        'contribute.cards.docs.desc':
             'MohistMC provides various documentations for our softwares, and a lot of users needs them. You can help us to improve the documentation by contributing to it on GitHub.',
-        'contribute.cards.4.title': 'Become a translator',
-        'contribute.cards.4.desc':
+        'contribute.cards.translation.title': 'Become a translator',
+        'contribute.cards.translation.desc':
             'We make our projects available in multiple languages so that everyone can use them. If you are fluent in a language other than English, you can help us to translate our projects!',
-        'contribute.cards.4.button': 'Crowdin page',
+        'contribute.cards.translation.button': 'Crowdin page',
         'contribute.footer.title':
             'Join our community and help us to create better projects!',
         'contribute.footer.desc':

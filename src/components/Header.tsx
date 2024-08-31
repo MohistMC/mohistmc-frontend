@@ -4,11 +4,7 @@ import { ReactElement, useEffect, useState } from 'react'
 import LanguageDropButtonElement from '@/components/header/LanguageDropButtonElement'
 import { locales } from '@/i18n/Language'
 import { isCN } from '@/util/LocaleHelper'
-import {
-    LocaleState,
-    selectTranslations,
-    setLocale,
-} from '@/features/i18n/TranslatorSlice'
+import { LocaleState, selectTranslations, setLocale } from '@/features/i18n/TranslatorSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
