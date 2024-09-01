@@ -25,7 +25,7 @@
         "sass": "^1.77.8",
         "sharp": "^0.33.5",
         "swagger-ui-react": "^5.17.14",
-        "flowbite-react": "^0.10.1",
+        "flowbite-react": "^0.8.0",
         "next": "14.2.7",
         "react": "^18",
         "react-dom": "^18"
