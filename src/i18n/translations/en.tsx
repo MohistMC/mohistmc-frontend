@@ -263,6 +263,22 @@ const enTranslation = {
         'year.ago': '1 year ago',
         'years.ago': '{} years ago',
         'just.now': 'just now',
+        'time.format.mohth': 'month',
+        'vault.format.mohth': '$',
+        'subscription.page.title': 'MohistMC - Subscription',
+        'subscription.title': 'Pricing Plans',
+        'subscription.subtitle': 'Account plans unlock additional features',
+        'subscription.items.free': 'Shovel',
+        'subscription.items.vip': 'Draft',
+        'subscription.items.svip': 'Axe',
+        'subscription.items.ssvip': 'Sword',
+        'subscription.items.1': 'Free to download and use',
+        'subscription.items.2': 'GitHub feedback',
+        'subscription.items.3': 'Well-documented',
+        'subscription.items.4': 'Prioritize feedback',
+        'subscription.items.5': 'Technical Support & Services',
+        'subscription.items.6': 'One-to-one prioritization',
+        'subscription.items.7': 'Occasional giveaways'
     },
 }
 

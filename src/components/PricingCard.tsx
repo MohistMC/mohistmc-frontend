@@ -1,6 +1,9 @@
 import { Card, Button } from 'flowbite-react'
+import { useAppSelector } from '@/util/redux/Hooks'
+import { selectTranslations, selectTranslationsByString } from '@/features/i18n/TranslatorSlice'
 
 interface PricingCardProps {
+    title: string
     vault: number
     bool1: boolean
     bool2: boolean
@@ -12,6 +15,7 @@ interface PricingCardProps {
 }
 
 export default function PricingCard({
+    title,
     vault,
     bool1,
     bool2,
@@ -42,18 +46,29 @@ export default function PricingCard({
     const colorClass7 = bool7
         ? 'text-green-600 dark:text-green-500'
         : 'text-gray-400 dark:text-gray-500'
+
+    const i18n = useAppSelector(selectTranslations)
+    const i18nStirng = useAppSelector(selectTranslationsByString)
+
     return (
         <Card className="max-w-sm">
+            <div style={{ display: 'grid', placeItems: 'center' }}>
+                <img
+                    className={`w-20 h-20`}
+                    src={`../pricingcard/${title}.png`}
+                    alt={`items name`}
+                />
+            </div>
             <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
-                Standard plan
+                {i18nStirng['subscription.items.' + title]}
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
-                <span className="text-3xl font-semibold">$</span>
+                <span className="text-3xl font-semibold">{i18n['vault.format.mohth']}</span>
                 <span className="text-5xl font-extrabold tracking-tight">
                     {vault}
                 </span>
                 <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">
-                    /month
+                    /{i18n['time.format.mohth']}
                 </span>
             </div>
             <ul className="my-7 space-y-5">
@@ -71,7 +86,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-                        2 team members
+                        {i18n['subscription.items.1']}
                     </span>
                 </li>
                 <li className="flex space-x-3">
@@ -88,7 +103,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-                        20GB Cloud storage
+                       {i18n['subscription.items.2']}
                     </span>
                 </li>
                 <li className="flex space-x-3">
@@ -105,7 +120,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-                        Integration help
+                        {i18n['subscription.items.3']}
                     </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
@@ -122,7 +137,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500">
-                        Sketch Files
+                        {i18n['subscription.items.4']}
                     </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
@@ -139,7 +154,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500">
-                        API Access
+                        {i18n['subscription.items.5']}
                     </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
@@ -156,7 +171,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500">
-                        Complete documentation
+                         {i18n['subscription.items.6']}
                     </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
@@ -173,7 +188,12 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500">
-                        24×7 phone & email support
+                         {i18n['subscription.items.7']}
+                    </span>
+                </li>
+                <li className="flex space-x-3 line-through decoration-gray-500">
+                    <span className="text-base font-normal leading-tight text-gray-500">
+                         -----------------------------------
                     </span>
                 </li>
             </ul>

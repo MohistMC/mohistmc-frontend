@@ -235,6 +235,22 @@ const zhTranslation: PartialLocaleState = {
         'report.issue.form.comment': '描述',
         'report.issue.form.comment.placeholder': '在这里描述您的问题...',
         'report.issue.form.submit': '提交',
+        'time.format.mohth': '月',
+        'vault.format.mohth': '￥',
+        'subscription.page.title': 'MohistMC - 订阅',
+        'subscription.title': '定价计划',
+        'subscription.subtitle': '帐户计划可解锁其他功能',
+        'subscription.items.free': '铲',
+        'subscription.items.vip': '稿',
+        'subscription.items.svip': '斧',
+        'subscription.items.ssvip': '剑',
+        'subscription.items.1': '自由下载和使用',
+        'subscription.items.2': 'GitHub 反馈',
+        'subscription.items.3': '完善的文档',
+        'subscription.items.4': '优先处理反馈',
+        'subscription.items.5': '技术支持与服务',
+        'subscription.items.6': '一对一优先处理',
+        'subscription.items.7': '偶尔收到周边赠品'
     },
 }
 
