@@ -44,6 +44,7 @@ const enTranslation = {
         'button.close': 'Close',
         'button.contribute': 'Contribute',
         'button.shop': 'Shop',
+        'button.subscription': 'Subscription',
         'footer.heading.gettingstarted': 'Getting started',
         'footer.heading.discover': 'Discover us',
         'footer.heading.community': 'Community',
@@ -59,6 +60,8 @@ const enTranslation = {
             'A Minecraft Forge server software implementing Bukkit, Spigot APIs. With this software, you can create a Minecraft server with mods and plugins together!',
         'downloads.banner.desc':
             'A Minecraft Fabric server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with Fabric mods and plugins, just like Mohist, but for Fabric.',
+        'downloads.your.desc':
+            'A Minecraft NeoForge server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with Fabric mods and plugins, just like Mohist, but for NeoForge.',
         'downloads.endtext': "That's all %for now%",
         'downloadSoftware.page.title': 'MohistMC - Download {}',
         'downloadSoftware.title': 'Download% %',
@@ -196,19 +199,19 @@ const enTranslation = {
             'Contribute to %MohistMC%, help us making better softwares!',
         'contribute.subtitle':
             'MohistMC makes open-source projects, powered by community contributions. There are diverse ways for you to participate in shaping these projects.',
-        'contribute.cards.1.title': 'Contribute financially',
-        'contribute.cards.1.desc':
+        'contribute.cards.finance.title': 'Contribute financially',
+        'contribute.cards.finance.desc':
             'MohistMC is a non-profit organization. We rely on donations to fund our operations and continue to develop our projects and maintain our infrastructure. Your contribution will help us to continue to provide our services to the community.',
-        'contribute.cards.2.title': 'Contribute to the code',
-        'contribute.cards.2.desc':
+        'contribute.cards.github.title': 'Contribute to the code',
+        'contribute.cards.github.desc':
             'MohistMC makes open-source projects! We welcome contributions from the community. You can contribute to our projects by submitting pull requests or reporting issues on GitHub.',
-        'contribute.cards.3.title': 'Contribute to the documentation',
-        'contribute.cards.3.desc':
+        'contribute.cards.docs.title': 'Contribute to the documentation',
+        'contribute.cards.docs.desc':
             'MohistMC provides various documentations for our softwares, and a lot of users needs them. You can help us to improve the documentation by contributing to it on GitHub.',
-        'contribute.cards.4.title': 'Become a translator',
-        'contribute.cards.4.desc':
+        'contribute.cards.translation.title': 'Become a translator',
+        'contribute.cards.translation.desc':
             'We make our projects available in multiple languages so that everyone can use them. If you are fluent in a language other than English, you can help us to translate our projects!',
-        'contribute.cards.4.button': 'Crowdin page',
+        'contribute.cards.translation.button': 'Crowdin page',
         'contribute.footer.title':
             'Join our community and help us to create better projects!',
         'contribute.footer.desc':
@@ -216,31 +219,6 @@ const enTranslation = {
         'blog.title': 'Blog',
         'blog.subtitle': 'The latest updates and releases from MohistMC.',
         'blog.lastupdated': 'Last updated on',
-        'shop.page.title': 'MohistMC - Shop',
-        'shop.title': '%MohistMC% Some of the value-added services offered!',
-        'shop.subtitle':
-            'We need some extra income for our daily expenses. So that we can work full-time to make more community products. And 5% of it will be used for public donations.',
-        'shop.cart': 'Detail',
-        'shop.none': 'None yet',
-        'shop.alert':
-            'The current page is experimental and does not represent the final result',
-        'shop.alert.2': 'Some services are only available in China.',
-        'shop.cards.1.title': 'Speed Torch',
-        'shop.cards.1.desc':
-            'We are not perfect and have a lot of published issues. When you need to solve a problem urgently, you need an acceleration torch!',
-        'shop.cards.2.title': 'Customization',
-        'shop.cards.2.desc':
-            'Involving a wide range of fields, plugins mods servers maps materials modeling skins, etc.',
-        'shop.cards.3.title': 'Instruction & Teaching',
-        'shop.cards.3.desc':
-            'Still worried about expensive customizations and developers running away? Do it yourself, learn how to write plugins from scratch, and how to make the features you want. ',
-        'shop.cards.4.title': 'Peripherals',
-        'shop.cards.4.desc': 'Some team-related souvenirs and merchandise!',
-        'shop.cards.5.title': 'Hardware for sale',
-        'shop.cards.5.desc':
-            'Computer hardware retail, assembly, commissioning!',
-        'shop.cards.6.title': 'Cloud server',
-        'shop.cards.6.desc': 'Game Cloud Server!',
         'report.issue.title': 'Report an issue',
         'report.issue.desc':
             'Wants to report an issue, ask a question or making suggestions / feature requests? You&apos;re in the right place.',
@@ -285,6 +263,22 @@ const enTranslation = {
         'year.ago': '1 year ago',
         'years.ago': '{} years ago',
         'just.now': 'just now',
+        'time.format.mohth': 'month',
+        'vault.format.mohth': '$',
+        'subscription.page.title': 'MohistMC - Subscription',
+        'subscription.title': 'Pricing Plans',
+        'subscription.subtitle': 'Account plans unlock additional features',
+        'subscription.items.free': 'Shovel',
+        'subscription.items.vip': 'Draft',
+        'subscription.items.svip': 'Axe',
+        'subscription.items.ssvip': 'Sword',
+        'subscription.items.1': 'Free to download and use',
+        'subscription.items.2': 'GitHub feedback',
+        'subscription.items.3': 'Well-documented',
+        'subscription.items.4': 'Prioritize feedback',
+        'subscription.items.5': 'Technical Support & Services',
+        'subscription.items.6': 'One-to-one prioritization',
+        'subscription.items.7': 'Occasional giveaways'
     },
 }
 

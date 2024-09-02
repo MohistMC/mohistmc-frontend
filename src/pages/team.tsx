@@ -1,5 +1,5 @@
-import TeamCard from '@/components/Team/TeamCard'
-import CommunityTeamCard from '@/components/Team/CommunityTeamCard'
+import TeamCard from '@/components/team/TeamCard'
+import CommunityTeamCard from '@/components/team/CommunityTeamCard'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { getLocaleStringAsArgs } from '@/util/LocaleHelper'

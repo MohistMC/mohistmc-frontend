@@ -3,11 +3,13 @@ import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
 import React from 'react'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
-import { Button, Card, Flowbite } from 'flowbite-react'
+import { Flowbite } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import Link from 'next/link'
 import { customTheme } from '@/util/Theme'
+import CardComponent from '@/components/contribute/ContributeCard'
+import CONTRIBUTES from '@/util/content/Contributes'
 
 const Contribute = () => {
     const strings = useAppSelector(selectTranslations)
@@ -15,7 +17,7 @@ const Contribute = () => {
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
-            <div className={`bg-white dark:bg-dark-25 flex flex-col`}>
+            <section className={`bg-white dark:bg-dark-25 flex flex-col`}>
                 <Head>
                     <title>{strings['contribute.page.title']}</title>
                     <meta name="title" content="MohistMC - Contribute" />
@@ -96,59 +98,15 @@ const Contribute = () => {
                     </svg>
                 </div>
                 <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
-                    <Card
-                        imgAlt="Contribute financially"
-                        imgSrc="/finance.webp"
-                    >
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.1.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.1.desc']}
-                        </p>
-                        <Button href={`/sponsor`} aria-label={'Sponsor button'}>
-                            {strings['button.learnmore']}
-                        </Button>
-                    </Card>
-                    <Card imgAlt="Contribute to the code" imgSrc="/code.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.2.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.2.desc']}
-                        </p>
-                        <Button href={'https://github.com/MohistMC'}>
-                            GitHub
-                        </Button>
-                    </Card>
-                    <Card imgAlt="Contribute to the docs" imgSrc="/docs.webp">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.3.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.3.desc']}
-                        </p>
-                        <Button
-                            href={'/docs/website'}
-                            aria-label={'Learn more button'}
-                        >
-                            {strings['button.learnmore']}
-                        </Button>
-                    </Card>
-                    <Card
-                        imgAlt="Contribute to the translation"
-                        imgSrc="/translate.webp"
-                    >
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {strings['contribute.cards.4.title']}
-                        </h2>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {strings['contribute.cards.4.desc']}
-                        </p>
-                        <Button href={'https://crowdin.com/project/mohist'}>
-                            {strings['contribute.cards.4.button']}
-                        </Button>
-                    </Card>
+                    {Object.values(CONTRIBUTES).map((c) => (
+                        <CardComponent
+                            key={c.name}
+                            name={c.name}
+                            imgSrc={c.imgSrc}
+                            button_href={c.button_href}
+                            button={c.button}
+                        />
+                    ))}
                 </section>
                 <div className="top-0 left-0 w-full overflow-hidden leading-none rotate-180">
                     <svg
@@ -192,7 +150,7 @@ const Contribute = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+            </section>
         </Flowbite>
     )
 }

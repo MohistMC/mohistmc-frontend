@@ -9,19 +9,21 @@ export function BlogHeader() {
     const strings = useSelector(selectTranslations);
 
 return (
+
 <div className="max-w-screen-lg mx-auto pt-4 pb-8 mb-16 border-b border-gray-400 border-opacity-20">
-<Head>
-<title>MohistMC - Blog</title>
-</Head>
-<h1>
-<span className="font-bold leading-tight lg:text-5xl">{strings['blog.title']}</span>
-</h1>
-<p className="text-center text-gray-500 dark:text-gray-400 font-space-grotesk">
-{strings['blog.subtitle']}
-</p>
+    <Head>
+        <title>MohistMC - Blog</title>
+    </Head>
+    <h1>
+        <span className="font-bold leading-tight lg:text-5xl">
+            {strings['blog.title']}
+        </span>
+    </h1>
+    <p className="text-center text-gray-500 dark:text-gray-400 font-space-grotesk">
+        {strings['blog.subtitle']}
+    </p>
 </div>
-);
-}
+); }
 
 export function BlogIndex() {
 

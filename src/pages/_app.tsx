@@ -7,7 +7,7 @@ import 'flowbite'
 import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import FooterComponent from '@/components/Footer'
 import { Provider } from 'react-redux'
 import { wrapper } from '@/util/redux/Store'
 import { hackNextra } from '@/util/Nextra'
@@ -85,7 +85,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <EnvironmentLayout />
                 <Header />
                 <Component {...pageProps} />
-                <Footer />
+                <FooterComponent />
             </Provider>
         </>
     )

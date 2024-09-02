@@ -154,19 +154,19 @@ const frTranslation: PartialLocaleState = {
             'Contribuez à %MohistMC%, aidez-nous à créer de meilleurs logiciels !',
         'contribute.subtitle':
             'MohistMC développe des projets open source, alimentés par les contributions de la communauté. Il existe différentes façons pour vous de participer à ces projets.',
-        'contribute.cards.1.title': 'Contribuer financièrement',
-        'contribute.cards.1.desc':
+        'contribute.cards.finance.title': 'Contribuer financièrement',
+        'contribute.cards.finance.desc':
             'MohistMC est une organisation à but non lucratif. Nous dépendons des dons pour financer nos opérations, développer nos projets et maintenir notre infrastructure. Votre contribution nous aidera à continuer à fournir nos services à la communauté.',
-        'contribute.cards.2.title': 'Contribuer au code',
-        'contribute.cards.2.desc':
+        'contribute.cards.github.title': 'Contribuer au code',
+        'contribute.cards.github.desc':
             'MohistMC réalise des projets open source ! Les contributeurs sont les bienvenus. Vous pouvez contribuer à nos projets en soumettant des pull requests ou en ouvrant des issues sur GitHub.',
-        'contribute.cards.3.title': 'Contribuer à la documentation',
-        'contribute.cards.3.desc':
+        'contribute.cards.docs.title': 'Contribuer à la documentation',
+        'contribute.cards.docs.desc':
             'MohistMC propose diverses documentations pour nos logiciels, et de nombreux utilisateurs en ont besoin. Vous pouvez nous aider à améliorer la documentation en y contribuant sur GitHub.',
-        'contribute.cards.4.title': 'Devenir traducteur',
-        'contribute.cards.4.desc':
+        'contribute.cards.translation.title': 'Devenir traducteur',
+        'contribute.cards.translation.desc':
             "Nous mettons nos projets à disposition dans plusieurs langues afin que chacun puisse les utiliser. Si vous parlez couramment une langue autre que l'anglais, vous pouvez nous aider à traduire nos projets !",
-        'contribute.cards.4.button': 'Page Crowdin',
+        'contribute.cards.translation.button': 'Page Crowdin',
         'contribute.footer.title':
             'Rejoignez notre communauté et aidez-nous à créer de meilleurs projets !',
         'contribute.footer.desc':

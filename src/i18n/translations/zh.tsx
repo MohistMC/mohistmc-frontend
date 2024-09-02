@@ -45,6 +45,7 @@ const zhTranslation: PartialLocaleState = {
         'button.close': '关闭',
         'button.contribute': '贡献',
         'button.shop': '小卖铺',
+        'button.subscription': '订阅',
         'footer.heading.gettingstarted': '入门指南',
         'footer.heading.discover': '发现我们',
         'footer.heading.community': '社区',
@@ -60,6 +61,8 @@ const zhTranslation: PartialLocaleState = {
             '一个实现了Bukkit、Spigot API的Minecraft Forge服务器软件。使用此软件，您可以创建一个带有模组和插件的Minecraft服务器！',
         'downloads.banner.desc':
             '一个实现了Bukkit和Spigot API的Minecraft Fabric服务器软件。这个软件允许您创建一个使用Fabric模组和插件的Minecraft服务器，就像Mohist一样，但是适用于Fabric。',
+        'downloads.your.desc':
+            '一个实现了Bukkit和Spigot API的Minecraft NeoForge服务器软件。这个软件允许您创建一个使用NeoForge模组和插件的Minecraft服务器，就像Mohist一样，但是适用于NeoForge。',
         'downloads.endtext': '目前就这些了',
         'downloadSoftware.page.title': 'MohistMC - 下载 {}',
         'downloadSoftware.title': '下载% %',
@@ -185,48 +188,25 @@ const zhTranslation: PartialLocaleState = {
         'contribute.title': '为%MohistMC%做出贡献，帮助我们改进软件！',
         'contribute.subtitle':
             'MohistMC制作开源项目，由社区贡献推动。您可以通过多种方式参与塑造这些项目。',
-        'contribute.cards.1.title': '财务贡献',
-        'contribute.cards.1.desc':
+        'contribute.cards.finance.title': '财务贡献',
+        'contribute.cards.finance.desc':
             'MohistMC是一个非营利组织。我们依靠捐款来资助我们的运营，继续开发我们的项目并维护我们的基础设施。您的贡献将帮助我们继续为社区提供服务。',
-        'contribute.cards.2.title': '贡献代码',
-        'contribute.cards.2.desc':
+        'contribute.cards.github.title': '贡献代码',
+        'contribute.cards.github.desc':
             'MohistMC制作开源项目！我们欢迎社区的贡献。您可以通过在GitHub上提交拉取请求或报告问题来为我们的项目做出贡献。',
-        'contribute.cards.3.title': '贡献文档',
-        'contribute.cards.3.desc':
+        'contribute.cards.docs.title': '贡献文档',
+        'contribute.cards.docs.desc':
             'MohistMC为我们的软件提供了各种文档，许多用户需要它们。您可以通过在GitHub上为文档做出贡献来帮助我们改进文档。',
-        'contribute.cards.4.title': '成为翻译者',
-        'contribute.cards.4.desc':
+        'contribute.cards.translation.title': '成为翻译者',
+        'contribute.cards.translation.desc':
             '我们将我们的项目提供给多种语言，以便每个人都可以使用它们。如果您精通英语以外的其他语言，您可以帮助我们翻译我们的项目！',
-        'contribute.cards.4.button': 'Crowdin页面',
+        'contribute.cards.translation.button': 'Crowdin页面',
         'contribute.footer.title': '加入我们的社区，共同创建更好的项目！',
         'contribute.footer.desc':
             'MohistMC是一个社区驱动的组织。我们欢迎社区的贡献。加入我们的社区，帮助我们创建更好的项目！',
         'blog.title': '博客',
         'blog.subtitle': 'MohistMC 的最新更新和发布.',
         'blog.lastupdated': '最后编辑于',
-        'shop.page.title': 'MohistMC - Shop',
-        'shop.title': '%MohistMC% 提供的一些增值服务!',
-        'shop.subtitle':
-            '我们需要一些额外的收入，用于日常的开销。以便我们可以全职状态去制作更多社区产品。并将其中5%的部分用于公益捐赠。',
-        'shop.cart': '详情',
-        'shop.none': '缺货',
-        'shop.alert': '当前页面是实验性的，不代表最终结果',
-        'shop.alert.2': '部分服务仅在中国提供.',
-        'shop.cards.1.title': '加速火把',
-        'shop.cards.1.desc':
-            '我们并不是完美的，并且存在很多已发布的issues. 当你急需解决某个问题时，就需要一根加速火把！',
-        'shop.cards.2.title': '定制与魔改',
-        'shop.cards.2.desc':
-            '涉及领域广阔， 插件/模组/服务端/地图/材质/建模/皮肤等等， 只有你想不到，没有我们做不到！',
-        'shop.cards.3.title': '指导与教学',
-        'shop.cards.3.desc':
-            '还在为昂贵的定制费用和开发者容易跑路发愁? 自己动手丰衣足食，从零学习如何编写插件，如何魔改出你想要的功能。',
-        'shop.cards.4.title': '周边',
-        'shop.cards.4.desc': '一些团队相关的纪念品和周边!',
-        'shop.cards.5.title': '硬件出售',
-        'shop.cards.5.desc': '电脑硬件零售，组装，调试!',
-        'shop.cards.6.title': '云服务器',
-        'shop.cards.6.desc': '游戏云服务器!',
         'report.issue.title': '问题反馈',
         'report.issue.desc':
             '想要报告问题、提出问题或提出建议/功能请求？你来对地方了.',
@@ -255,6 +235,22 @@ const zhTranslation: PartialLocaleState = {
         'report.issue.form.comment': '描述',
         'report.issue.form.comment.placeholder': '在这里描述您的问题...',
         'report.issue.form.submit': '提交',
+        'time.format.mohth': '月',
+        'vault.format.mohth': '￥',
+        'subscription.page.title': 'MohistMC - 订阅',
+        'subscription.title': '定价计划',
+        'subscription.subtitle': '帐户计划可解锁其他功能',
+        'subscription.items.free': '铲',
+        'subscription.items.vip': '稿',
+        'subscription.items.svip': '斧',
+        'subscription.items.ssvip': '剑',
+        'subscription.items.1': '自由下载和使用',
+        'subscription.items.2': 'GitHub 反馈',
+        'subscription.items.3': '完善的文档',
+        'subscription.items.4': '优先处理反馈',
+        'subscription.items.5': '技术支持与服务',
+        'subscription.items.6': '一对一优先处理',
+        'subscription.items.7': '偶尔收到周边赠品'
     },
 }
 
