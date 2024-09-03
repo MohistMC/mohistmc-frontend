@@ -1,0 +1,67 @@
+import { Callout, Steps, Tabs } from 'nextra/components'
+
+# Install Mohist on Linux
+
+<Steps>
+    ### Download
+
+    To create a Mohist server, you have to download the version you want from the [downloads
+    page](https://mohistmc.com/downloadSoftware?project=mohist).
+
+    You can also download via CLI:
+    <Tabs items={['wget', 'curl']}>
+        <Tabs.Tab>
+            ```sh
+            wget https://mohistmc.com/api/v2/projects/mohist/[minecraftVersion]/builds/latest/download
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ```sh
+            curl -O https://mohistmc.com/api/v2/projects/mohist/[minecraftVersion]/builds/latest/download
+            ```
+        </Tabs.Tab>
+    </Tabs>
+
+    Make sure to replace `[minecraftVersion]` by the right version you want to download. See [available
+    versions](https://mohistmc.com/downloadSoftware?project=mohist) for more information.
+
+    ### Create a folder
+
+    Create a folder with the name of your choice for your server. When it's done, move the downloaded file to this new
+    folder.
+
+    <Callout>
+        If you already have a Spigot / Forge server and want to switch to Mohist, it's better to create a fresh new
+        server and then add your map, mods and plugins.
+    </Callout>
+
+    ### Run the server
+
+    It's almost done! To run your server, **do not double click the jar file!**.
+
+    <Tabs items={['Using script', 'Using terminal']}>
+        <Tabs.Tab>
+            You have to create a file called
+            `start.sh` where you dropped the Mohist jar file.
+
+            Write this to the `start.sh` file:
+            ```bash
+            java -jar -Xmx4G downloaded-jar-file.jar
+            ```
+
+            Replace `downloaded-jar-file.jar` by the real name of the jar file you dropped to your server folder.
+
+            When it's done, double click `start.sh`.
+        </Tabs.Tab>
+        <Tabs.Tab>
+            Open a terminal and go to the folder where you dropped the Mohist jar file.
+
+            Then, run this command:
+            ```bash
+            java -jar -Xmx4G downloaded-jar-file.jar
+            ```
+            Replace `downloaded-jar-file.jar` by the real name of the jar file you dropped to your server folder.
+        </Tabs.Tab>
+    </Tabs>
+
+</Steps>

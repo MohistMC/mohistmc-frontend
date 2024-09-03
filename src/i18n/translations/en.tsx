@@ -1,6 +1,6 @@
 const enTranslation = {
     name: 'English (US)',
-    initials: 'en',
+    initials: 'en-us',
     strings: {
         'index.page.title': 'MohistMC - Home',
         'index.head.title':

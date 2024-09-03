@@ -1,0 +1,40 @@
+import { Callout, Card, Cards } from 'nextra/components'
+import { HiCode, HiDesktopComputer } from 'react-icons/hi'
+
+# Write mods and plugins for Mohist
+
+Mohist is built to support Forge mods and Bukkit/Spigot plugins. Even though it implements some Paper patches,
+Mohist 1.12.2 is the only version that can run Paper plugins properly. Other versions are still in development and
+doesn't fully implement Paper, which means any Paper plugin could not work properly.
+
+## How to write mods and plugins for Mohist?
+
+Since Mohist is based on Forge and implements Bukkit/Paper API, you can write mods and plugins for Mohist just like you
+write mods and plugins for Forge and Bukkit/Spigot, no extra steps needed.
+
+<Callout>
+    Remember that Mohist is still in development, and some features of some
+    plugins may not work properly.
+</Callout>
+
+### Mohist API
+
+Mohist provides some APIs for mods and plugins that you can use. You can find them in the [API Reference](dependencies.mdx).
+
+<Cards>
+    <Card
+        icon={<HiDesktopComputer className={`mt-0.5 h-5 w-5`} />}
+        title="API Reference"
+        href="/mohist/docs/developers/modsandplugins/dependencies"
+    />
+    <Card
+        icon={<HiCode className={`mt-0.5 h-5 w-5`} />}
+        title="Call Forge from Bukkit"
+        href="/mohist/docs"
+    />
+    <Card
+        icon={<HiCode className={`mt-0.5 h-5 w-5`} />}
+        title="Call Bukkit from Forge"
+        href="/mohist/docs"
+    />
+</Cards>

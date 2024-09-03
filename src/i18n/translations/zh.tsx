@@ -2,7 +2,7 @@ import { PartialLocaleState } from '@/features/i18n/TranslatorSlice'
 
 const zhTranslation: PartialLocaleState = {
     name: '简体中文',
-    initials: 'zh',
+    initials: 'zh-cn',
     strings: {
         'index.page.title': 'MohistMC - 主页',
         'index.head.title': '体验由社区驱动的Minecraft软件的力量。',
