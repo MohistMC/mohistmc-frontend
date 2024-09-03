@@ -123,7 +123,6 @@ const zhTranslation: PartialLocaleState = {
             '通过模组和插件的集成，以及优化的性能，体验无与伦比的稳定性。加入Mohist社区，为您的服务器解锁无限可能性。立即升级到Mohist，革新您的Minecraft体验。',
         'software.mohist.footer.discord': '加入我们的Discord',
         'software.mohist.footer.shop': '前往我们的商城',
-        '404.title': '未找到',
         '404.subtitle': '很抱歉，您所寻找的资源在本网站上找不到。',
         'docs.title': 'MohistMC的文档',
         'docs.subtitle':

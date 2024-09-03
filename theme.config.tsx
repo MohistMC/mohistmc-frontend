@@ -96,6 +96,10 @@ const config: DocsThemeConfig = {
             </>
         )
     },
+    i18n: [
+        { locale: 'en-US', text: 'English' },
+        { locale: 'zh-CN', text: '简体中文' },
+    ]
 }
 
 export default config

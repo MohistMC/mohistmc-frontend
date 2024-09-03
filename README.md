@@ -9,7 +9,7 @@
 ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Typescript](https://img.shields.io/badge/typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![nextra](https://img.shields.io/badge/nextra-FF6A6A?style=for-the-badge&logo=nextra&logoColor=white)
-![Github stars](https://img.shields.io/github/stars/MohistMC/Website?style=for-the-badge)
+![flowbite](https://img.shields.io/badge/flowbite-FFFA5A?style=for-the-badge&logo=flowbite&logoColor=white)
 ![License](https://img.shields.io/github/license/MohistMC/Website?style=for-the-badge)
 
 </div>
