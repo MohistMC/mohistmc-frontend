@@ -1,6 +1,9 @@
 import { Card, Button } from 'flowbite-react'
 import { useAppSelector } from '@/util/redux/Hooks'
-import { selectTranslations, selectTranslationsByString } from '@/features/i18n/TranslatorSlice'
+import {
+    selectTranslations,
+    selectTranslationsByString,
+} from '@/features/i18n/TranslatorSlice'
 
 interface PricingCardProps {
     title: string
@@ -63,7 +66,9 @@ export default function PricingCard({
                 {i18nStirng['subscription.items.' + title]}
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
-                <span className="text-3xl font-semibold">{i18n['vault.format.mohth']}</span>
+                <span className="text-3xl font-semibold">
+                    {i18n['vault.format.mohth']}
+                </span>
                 <span className="text-5xl font-extrabold tracking-tight">
                     {vault}
                 </span>
@@ -103,7 +108,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-                       {i18n['subscription.items.2']}
+                        {i18n['subscription.items.2']}
                     </span>
                 </li>
                 <li className="flex space-x-3">
@@ -171,7 +176,7 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500">
-                         {i18n['subscription.items.6']}
+                        {i18n['subscription.items.6']}
                     </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
@@ -188,12 +193,12 @@ export default function PricingCard({
                         />
                     </svg>
                     <span className="text-base font-normal leading-tight text-gray-500">
-                         {i18n['subscription.items.7']}
+                        {i18n['subscription.items.7']}
                     </span>
                 </li>
                 <li className="flex space-x-3 line-through decoration-gray-500">
                     <span className="text-base font-normal leading-tight text-gray-500">
-                         -----------------------------------
+                        -----------------------------------
                     </span>
                 </li>
             </ul>

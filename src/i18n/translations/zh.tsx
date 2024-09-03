@@ -250,7 +250,7 @@ const zhTranslation: PartialLocaleState = {
         'subscription.items.4': '优先处理反馈',
         'subscription.items.5': '技术支持与服务',
         'subscription.items.6': '一对一优先处理',
-        'subscription.items.7': '偶尔收到周边赠品'
+        'subscription.items.7': '偶尔收到周边赠品',
     },
 }
 

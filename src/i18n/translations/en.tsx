@@ -278,7 +278,7 @@ const enTranslation = {
         'subscription.items.4': 'Prioritize feedback',
         'subscription.items.5': 'Technical Support & Services',
         'subscription.items.6': 'One-to-one prioritization',
-        'subscription.items.7': 'Occasional giveaways'
+        'subscription.items.7': 'Occasional giveaways',
     },
 }
 
