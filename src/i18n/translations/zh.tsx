@@ -219,9 +219,8 @@ const zhTranslation: PartialLocaleState = {
         'report.issue.type.feature': '功能 / 建议',
         'report.issue.type.feature.desc':
             'You want to make our software better? Click on this card.',
-        'report.issue.type.question': 'Question',
-        'report.issue.type.question.desc':
-            'Any question about? Click on this card.',
+        'report.issue.type.question': '问题',
+        'report.issue.type.question.desc': '有问题吗？点击此卡片.',
         'report.issue.type.other': '其他',
         'report.issue.type.other.desc':
             "If you don't see what you want to do above, click on this card.",
@@ -235,6 +234,21 @@ const zhTranslation: PartialLocaleState = {
         'report.issue.form.comment': '描述',
         'report.issue.form.comment.placeholder': '在这里描述您的问题...',
         'report.issue.form.submit': '提交',
+        'second.ago': '1秒前',
+        'seconds.ago': '{} 秒前',
+        'minute.ago': '1分钟前',
+        'minutes.ago': '{}分钟前',
+        'hour.ago': '1小时前',
+        'hours.ago': '{}小时前',
+        'day.ago': '1天前',
+        'days.ago': '{}天前',
+        'week.ago': '1周前',
+        'weeks.ago': '{}周前',
+        'month.ago': '1个月前',
+        'months.ago': '{}个月前',
+        'year.ago': '1年前',
+        'years.ago': '{}年前',
+        'just.now': '刚才',
         'time.format.mohth': '月',
         'vault.format.mohth': '￥',
         'subscription.page.title': 'MohistMC - 订阅',
@@ -251,6 +265,8 @@ const zhTranslation: PartialLocaleState = {
         'subscription.items.5': '技术支持与服务',
         'subscription.items.6': '一对一优先处理',
         'subscription.items.7': '偶尔收到周边赠品',
+        'table.page.1': '显示',
+        'table.page.2': '共',
     },
 }
 

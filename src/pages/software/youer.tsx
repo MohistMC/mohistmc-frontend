@@ -9,7 +9,7 @@ export default function MohistSoftware() {
     const strings = useAppSelector(selectTranslations)
 
     return (
-        <div className="bg-white dark:bg-dark-25 pt-12">
+        <section className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>{strings['software.youer.page.title']}</title>
                 <meta name="title" content="MohistMC - Youer" />
@@ -177,6 +177,6 @@ export default function MohistSoftware() {
                     </div>
                 </div>
             </section>
-        </div>
+        </section>
     )
 }

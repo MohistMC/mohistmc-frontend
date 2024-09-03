@@ -279,6 +279,8 @@ const enTranslation = {
         'subscription.items.5': 'Technical Support & Services',
         'subscription.items.6': 'One-to-one prioritization',
         'subscription.items.7': 'Occasional giveaways',
+        'table.page.1': 'Showing',
+        'table.page.2': 'of',
     },
 }
 

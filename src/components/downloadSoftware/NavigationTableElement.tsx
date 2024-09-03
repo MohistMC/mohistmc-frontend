@@ -1,5 +1,7 @@
 import { Build } from '@/interfaces/Build'
 import React from 'react'
+import { useAppSelector } from '@/util/redux/Hooks'
+import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 
 interface NavigationTableElementProps {
     buildPages: Build[][]
@@ -24,17 +26,19 @@ export default function NavigationTableElement({
         setCustomPage('')
     }
 
+    const i18n = useAppSelector(selectTranslations)
+
     return (
         <nav
             className="flex items-center md:justify-between justify-center md:gap-0 gap-2 pt-4 flex-wrap"
             aria-label="Table navigation"
         >
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                Showing{' '}
+                {i18n['table.page.1']}{' '}
                 <span className="font-semibold text-gray-900 dark:text-white">
                     {buildPages.length ? 1 : 0}-{buildPages.length}
                 </span>{' '}
-                of{' '}
+                {i18n['table.page.2']}{' '}
                 <span className="font-semibold text-gray-900 dark:text-white">
                     {buildPages.reduce((acc, val) => acc + val.length, 0)}
                 </span>

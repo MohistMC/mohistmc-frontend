@@ -58,7 +58,7 @@ const Home = () => {
     }, [user, dispatch])
 
     return (
-        <div className="bg-white dark:bg-dark-25 pt-12">
+        <section className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>{strings['index.page.title']}</title>
                 <meta name="title" content="MohistMC - Home" />
@@ -255,7 +255,7 @@ const Home = () => {
                 </h2>
                 <DefaultCarousel />
             </section>
-        </div>
+        </section>
     )
 }
 
