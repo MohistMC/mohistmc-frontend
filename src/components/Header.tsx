@@ -6,7 +6,7 @@ import { locales } from '@/i18n/Language'
 import {
     LocaleState,
     selectTranslations,
-    setLocale,
+    setLocale
 } from '@/features/i18n/TranslatorSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
@@ -20,14 +20,16 @@ import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
 import { isDevEnv } from '@/util/Environment'
 import { FaGithub, FaDiscord, FaQq } from 'react-icons/fa'
+import { getPagesUnderRoute } from 'nextra/context'
 
 export default function Header() {
     const dispatch = useDispatch()
+    const router = useRouter()
 
     // React state
     const [languageButtonState, setLanguageButtonState] =
         useState<ReactElement>(
-            <LanguageDropButtonElement locale={locales.current} />,
+            <LanguageDropButtonElement locale={locales.current} />
         )
     const [localesElementState, setLocalesElementState] = useState<
         ReactElement[]
@@ -49,10 +51,10 @@ export default function Header() {
                 .map((locale) => (
                     <LanguageDropElement
                         locale={locale}
-                        key={locale.initials}
+                        key={locale.locale}
                         handleLocaleChangeCallback={handleLanguageChange}
                     />
-                )),
+                ))
         )
 
         const getBrowserLanguage = () => {
@@ -66,12 +68,12 @@ export default function Header() {
 
         function handleLanguageChange(
             locale: LocaleState,
-            saveToStorage: boolean = true,
+            saveToStorage: boolean = true
         ) {
             locales.current = locale
 
             setLanguageButtonState(
-                <LanguageDropButtonElement locale={locale} />,
+                <LanguageDropButtonElement locale={locale} />
             )
             setLocalesElementState(
                 locales.available
@@ -79,32 +81,65 @@ export default function Header() {
                     .map((locale) => (
                         <LanguageDropElement
                             locale={locale}
-                            key={locale.initials}
+                            key={locale.locale}
                             handleLocaleChangeCallback={handleLanguageChange}
                         />
-                    )),
+                    ))
             )
 
             // Merge strings from default locale with the selected locale
             const mergedStrings = Object.assign(
                 {},
                 locales.default.strings,
-                locale.strings,
+                locale.strings
             )
             dispatch(setLocale({ ...locale, strings: mergedStrings }))
             saveToStorage &&
-                localStorage.setItem('locale', locales.current.initials)
+            localStorage.setItem('locale', locales.current.locale)
         }
 
         handleLanguageChange(
             locales.available.find(
-                (locale) => locale.initials === getBrowserLanguage(),
+                (locale) => locale.locale === getBrowserLanguage()
             ) || locales.current,
-            false,
+            false
         )
     }, [dispatch])
 
-    const router = useRouter()
+    const [hasDocsRouteChanged, setHasDocsRouteChanged] = useState(false)
+    const handleDocsRouting = () => {
+        if (router.pathname.includes('mohist/docs') || router.pathname.includes('banner/docs')) {
+            // Prevent infinite loop
+            if (hasDocsRouteChanged) {
+                setHasDocsRouteChanged(false)
+                return
+            }
+
+            // Redirect to the correct locale only if the locale is not right
+            if (!router.pathname.includes(locales.current.locale.toLowerCase())) {
+                const otherLanguagesLocaleNames = locales.available
+                    .filter(locale => locale.locale !== locales.current.locale)
+                    .map(locale => locale.locale.toLowerCase())
+
+                // Check if the selected locale has docs, if not, redirect to the default locale
+                const pages = getPagesUnderRoute(`/mohist/docs/${locales.current.locale.toLowerCase()}`)
+                const availableDocLocaleToLowerCase = pages.length > 0 ? locales.current.locale.toLowerCase() : locales.default.locale.toLowerCase()
+
+                // Check if the current pathname has a locale, if so, replace it with the new locale, if not, add the new locale
+                const newPathname = otherLanguagesLocaleNames.some(locale => router.pathname.includes(locale))
+                    ? router.pathname.replace(otherLanguagesLocaleNames.find(locale => router.pathname.includes(locale))!, availableDocLocaleToLowerCase)
+                    : router.pathname.replace('/docs', `/docs/${availableDocLocaleToLowerCase}`)
+
+                setHasDocsRouteChanged(true)
+                router.push(newPathname).catch()
+            }
+        }
+    }
+
+    useEffect(() => {
+        handleDocsRouting()
+    }, [router, router.pathname, locales.current])
+
     const pageName = router.pathname.split('/')[1]
 
     // On route change

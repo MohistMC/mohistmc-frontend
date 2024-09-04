@@ -2,7 +2,7 @@ import { PartialLocaleState } from '@/features/i18n/TranslatorSlice'
 
 const frTranslation: PartialLocaleState = {
     name: 'Français',
-    initials: 'fr',
+    locale: 'fr-FR',
     strings: {
         'index.head.title':
             'Découvrez la puissance du logiciel communautaire Minecraft.',

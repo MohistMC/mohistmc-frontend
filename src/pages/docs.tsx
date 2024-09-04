@@ -3,12 +3,10 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import Link from 'next/link'
 import Head from 'next/head'
 import { getCopyrightText } from '@/util/String'
-import { locale } from '@/util/LocaleHelper'
 import { locales } from '@/i18n/Language'
 
 export default function Downloads() {
     const strings = useAppSelector(selectTranslations)
-    const href_docs = `/mohist/docs/${locale(locales.current) || ''}`;
 
     return (
         <section className="flex flex-col justify-center items-center pt-20 pb-10 bg-white dark:bg-dark-25">
@@ -54,7 +52,7 @@ export default function Downloads() {
 
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 flex flex-row gap-4 flex-wrap">
                 <Link
-                    href={href_docs}
+                    href={`/mohist/docs/`}
                     className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150"
                 >
                     <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
