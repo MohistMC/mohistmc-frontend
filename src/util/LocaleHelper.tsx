@@ -9,12 +9,12 @@ import ChineseLogoSVG from '@/components/svgs/ChineseLogoSVG'
  * @param locale The locale to get the SVG for
  */
 export default function getLocaleIconSVG(locale: LocaleState) {
-    switch (locale.initials) {
-        case 'en':
+    switch (locale.locale) {
+        case 'en-US':
             return EnglishLogoSVG
-        case 'fr':
+        case 'fr-FR':
             return FrenchLogoSVG
-        case 'zh':
+        case 'zh-CN':
             return ChineseLogoSVG
         default:
             return EnglishLogoSVG
@@ -43,17 +43,9 @@ export function formatString(str: string, ...args: unknown[]): string {
     return str.replace(/{}/g, () => args.shift() as string)
 }
 
-/**
- * Returns whether the current language is Chinese for some special function settings
- * @param locale
- */
-export function isCN(locale: LocaleState): boolean {
-    return locale.initials == 'zh'
-}
-
 export function locale(locale: LocaleState): string {
-    if (locale.initials === "en-us" || locale.initials === "zh-cn") {
-        return locale.initials;
+    if (locale.locale === "en-us" || locale.locale === "zh-cn") {
+        return locale.locale;
     }
     return "en-us";
 }

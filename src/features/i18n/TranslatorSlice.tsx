@@ -10,7 +10,7 @@ export type PartialLocaleState = Omit<LocaleState, 'strings'> & {
 
 export interface LocaleState {
     name: string
-    initials: string
+    locale: string
     strings: Record<StringKey, string>
 }
 
