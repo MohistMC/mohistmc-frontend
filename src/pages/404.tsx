@@ -1,15 +1,17 @@
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
+import Image from 'next/image'
+import image404 from '../../public/404.png'
 
 export default function Custom404() {
     const translations = useAppSelector(selectTranslations)
 
     return (
-        <section className="flex flex-col justify-center items-center bg-white dark:bg-dark-50 h-full">
-            <img
+        <section className="flex flex-col justify-center items-center bg-white dark:bg-dark-50 h-full py-20">
+            <Image
                 height="432"
                 alt="Mohist Project Status"
-                src="/404.png"
+                src={image404}
             />
             <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 404{' '}
