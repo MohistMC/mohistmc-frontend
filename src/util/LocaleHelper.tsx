@@ -50,3 +50,11 @@ export function formatString(str: string, ...args: unknown[]): string {
 export function isCN(locale: LocaleState): boolean {
     return locale.initials == 'zh'
 }
+
+export function locale(locale: LocaleState): string {
+    if (locale.initials === "en-us" || locale.initials === "zh-cn") {
+        return locale.initials;
+    }
+    return "en-us";
+}
+

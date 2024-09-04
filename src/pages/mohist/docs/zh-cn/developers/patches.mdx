@@ -1,0 +1,12 @@
+import { Tabs } from 'nextra/components'
+
+# 生成补丁
+
+如果您修改了 Minecraft 源代码，您可以使用以下命令生成补丁：
+
+<Tabs items={['Windows', 'Linux']}>
+    <Tabs.Tab>```bash gradlew.bat genPatches ```</Tabs.Tab>
+    <Tabs.Tab>```bash ./gradlew genPatches ```</Tabs.Tab>
+</Tabs>
+
+输入命令后，您可以去喝杯茶，这可能需要很长时间（最多允许 5 分钟）。

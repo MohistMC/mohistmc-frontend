@@ -1,9 +1,10 @@
 {
-    "index": "Introduction",
-    "requirements": "Requirements",
-    "installation": "Installation",
-    "configuration": "Configuration",
-    "commands": "Commands",
-    "versions": "Versions",
-    "developers": "Developers"
+    "en-us": {
+        "title": "English",
+        "type": "page"
+    },
+    "zh-cn": {
+        "title": "简体中文",
+        "type": "page"
+    }
 }

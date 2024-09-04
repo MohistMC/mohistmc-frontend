@@ -1,0 +1,51 @@
+import { Callout, Tabs } from 'nextra/components'
+
+# 使用 Gradle 构建 Mohist
+
+<Callout type="warning">
+    如果您修改了 Minecraft， 请 [生成补丁](patches.mdx) 源代码
+</Callout>
+
+<Tabs items={['1.7.10', '1.12.2', '1.16.5+']}>
+    <Tabs.Tab>
+        使用 Linux 构建：
+        ```bash
+        bash gradlew setupCauldron launch4j
+        ```
+
+        使用 Windows 构建:
+        ```bash
+        gradlew.bat setupCauldron launch4j
+        ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+        使用 Linux 构建：
+        ```bash
+        bash gradlew setup installerJar
+        ```
+
+        使用 Windows 构建:
+        ```bash
+        gradlew.bat setup installerJar
+        ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+        使用 Linux 构建：
+        ```bash
+        bash gradlew setup mohistJar
+        ```
+
+        使用 Windows 构建:
+        ```bash
+        gradlew.bat setup mohistJar
+        ```
+    </Tabs.Tab>
+
+</Tabs>
+
+<Callout type="info">
+    Mohist 服务器 jar 文件位于
+    ./projects/mohist/build/libs/mohist-xxxxx-server.jar
+</Callout>
+
+这是运行服务器所需的 **jar 文件** 
