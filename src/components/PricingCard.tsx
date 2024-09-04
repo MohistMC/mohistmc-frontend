@@ -128,7 +128,7 @@ export default function PricingCard({
                         {i18n['subscription.items.3']}
                     </span>
                 </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
+                <li className="flex space-x-3 decoration-gray-500">
                     <svg
                         className={`h-5 w-5 shrink-0 ${colorClass4}`}
                         fill="currentColor"
@@ -145,7 +145,7 @@ export default function PricingCard({
                         {i18n['subscription.items.4']}
                     </span>
                 </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
+                <li className="flex space-x-3 decoration-gray-500">
                     <svg
                         className={`h-5 w-5 shrink-0 ${colorClass5}`}
                         fill="currentColor"
@@ -162,7 +162,7 @@ export default function PricingCard({
                         {i18n['subscription.items.5']}
                     </span>
                 </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
+                <li className="flex space-x-3 decoration-gray-500">
                     <svg
                         className={`h-5 w-5 shrink-0 ${colorClass6}`}
                         fill="currentColor"
@@ -179,7 +179,7 @@ export default function PricingCard({
                         {i18n['subscription.items.6']}
                     </span>
                 </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
+                <li className="flex space-x-3 decoration-gray-500">
                     <svg
                         className={`h-5 w-5 shrink-0 ${colorClass7}`}
                         fill="currentColor"
@@ -196,7 +196,7 @@ export default function PricingCard({
                         {i18n['subscription.items.7']}
                     </span>
                 </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
+                <li className="flex space-x-3 decoration-gray-500">
                     <span className="text-base font-normal leading-tight text-gray-500">
                         -----------------------------------
                     </span>

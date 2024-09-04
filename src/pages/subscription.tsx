@@ -44,7 +44,7 @@ const Shop = () => {
                     />
                     <PricingCard
                         title={'vip'}
-                        vault={5}
+                        vault={35}
                         bool1={true}
                         bool2={true}
                         bool3={true}
@@ -55,7 +55,7 @@ const Shop = () => {
                     />
                     <PricingCard
                         title={'svip'}
-                        vault={35}
+                        vault={65}
                         bool1={true}
                         bool2={true}
                         bool3={true}
@@ -66,7 +66,7 @@ const Shop = () => {
                     />
                     <PricingCard
                         title={'ssvip'}
-                        vault={648}
+                        vault={98}
                         bool1={true}
                         bool2={true}
                         bool3={true}
