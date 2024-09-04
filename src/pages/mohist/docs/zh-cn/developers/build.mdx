@@ -1,42 +1,41 @@
 import { Callout, Tabs } from 'nextra/components'
 
-# Build Mohist with Gradle
+# 使用 Gradle 构建 Mohist
 
 <Callout type="warning">
-    Don't forget to [generate patches](patches.mdx) if you modified Minecraft
-    source code.
+    如果您修改了 Minecraft， 请 [生成补丁](patches.mdx) 源代码
 </Callout>
 
 <Tabs items={['1.7.10', '1.12.2', '1.16.5+']}>
     <Tabs.Tab>
-        Build with Linux:
+        使用 Linux 构建：
         ```bash
         bash gradlew setupCauldron launch4j
         ```
 
-        Build with Windows:
+        使用 Windows 构建:
         ```bash
         gradlew.bat setupCauldron launch4j
         ```
     </Tabs.Tab>
     <Tabs.Tab>
-        Build with Linux:
+        使用 Linux 构建：
         ```bash
         bash gradlew setup installerJar
         ```
 
-        Build with Windows:
+        使用 Windows 构建:
         ```bash
         gradlew.bat setup installerJar
         ```
     </Tabs.Tab>
     <Tabs.Tab>
-        Build with Linux:
+        使用 Linux 构建：
         ```bash
         bash gradlew setup mohistJar
         ```
 
-        Build with Windows:
+        使用 Windows 构建:
         ```bash
         gradlew.bat setup mohistJar
         ```
@@ -45,8 +44,8 @@ import { Callout, Tabs } from 'nextra/components'
 </Tabs>
 
 <Callout type="info">
-    The Mohist server jar file is located at
+    Mohist 服务器 jar 文件位于
     ./projects/mohist/build/libs/mohist-xxxxx-server.jar
 </Callout>
 
-This is the **jar file** that you will need to run your server.
+这是运行服务器所需的 **jar 文件** 

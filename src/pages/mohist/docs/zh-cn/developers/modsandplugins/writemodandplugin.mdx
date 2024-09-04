@@ -1,40 +1,37 @@
 import { Callout, Card, Cards } from 'nextra/components'
 import { HiCode, HiDesktopComputer } from 'react-icons/hi'
 
-# Write mods and plugins for Mohist
+# 为 Mohist 编写 Mod 和插件
 
-Mohist is built to support Forge mods and Bukkit/Spigot plugins. Even though it implements some Paper patches,
-Mohist 1.12.2 is the only version that can run Paper plugins properly. Other versions are still in development and
-doesn't fully implement Paper, which means any Paper plugin could not work properly.
+Mohist 旨在支持 Forge mod 和 Bukkit/Spigot 插件。
+尽管它实现了一些 Paper 补丁， Mohist 1.12.2 是唯一可以正常运行 Paper 插件的版本。
+其他版本仍在开发中，并且 没有完全实现 Paper，这意味着任何 Paper 插件都无法正常工作。
 
-## How to write mods and plugins for Mohist?
+## 如何为 Mohist 编写 Mod 和插件?
 
-Since Mohist is based on Forge and implements Bukkit/Paper API, you can write mods and plugins for Mohist just like you
-write mods and plugins for Forge and Bukkit/Spigot, no extra steps needed.
+由于 Mohist 基于 Forge 并实现了 Bukkit/Paper API，因此您可以像您一样为 Mohist 编写 Mod 和插件 为 Forge 和 Bukkit/Spigot 编写 Mod 和插件，无需额外步骤。
 
 <Callout>
-    Remember that Mohist is still in development, and some features of some
-    plugins may not work properly.
+    请记住，Mohist 仍在开发中，一些插件可能无法正常工作。
 </Callout>
 
 ### Mohist API
 
-Mohist provides some APIs for mods and plugins that you can use. You can find them in the [API Reference](dependencies.mdx).
-
+Mohist 提供了一些 Mod 和插件的 API 供你使用。您可以在 API 参考中找到它们。
 <Cards>
     <Card
         icon={<HiDesktopComputer className={`mt-0.5 h-5 w-5`} />}
-        title="API Reference"
+        title="API 参考"
         href="/mohist/docs/developers/modsandplugins/dependencies"
     />
     <Card
         icon={<HiCode className={`mt-0.5 h-5 w-5`} />}
-        title="Call Forge from Bukkit"
+        title="从Bukkit调用到Forge"
         href="/mohist/docs"
     />
     <Card
         icon={<HiCode className={`mt-0.5 h-5 w-5`} />}
-        title="Call Bukkit from Forge"
+        title="从Forge调用到Bukkit"
         href="/mohist/docs"
     />
 </Cards>
