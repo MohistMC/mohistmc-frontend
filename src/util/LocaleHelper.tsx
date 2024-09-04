@@ -42,11 +42,3 @@ export function getLocaleStringAsArgs(str: string): string[] {
 export function formatString(str: string, ...args: unknown[]): string {
     return str.replace(/{}/g, () => args.shift() as string)
 }
-
-export function locale(locale: LocaleState): string {
-    if (locale.locale === "en-us" || locale.locale === "zh-cn") {
-        return locale.locale;
-    }
-    return "en-us";
-}
-
