@@ -21,6 +21,7 @@ import mohistLogo from '../../public/mohistLogo.webp'
 import { isDevEnv } from '@/util/Environment'
 import { FaGithub, FaDiscord, FaQq } from 'react-icons/fa'
 import { getPagesUnderRoute } from 'nextra/context'
+import { ToastLogger } from '@/util/Logger'
 
 export default function Header() {
     const dispatch = useDispatch()
@@ -124,6 +125,9 @@ export default function Header() {
                 // Check if the selected locale has docs, if not, redirect to the default locale
                 const pages = getPagesUnderRoute(`/mohist/docs/${locales.current.locale.toLowerCase()}`)
                 const availableDocLocaleToLowerCase = pages.length > 0 ? locales.current.locale.toLowerCase() : locales.default.locale.toLowerCase()
+                if(pages.length === 0) {
+                    ToastLogger.warn(strings['toast.docsNotAvailableInSelectedLocale'], 15000)
+                }
 
                 // Check if the current pathname has a locale, if so, replace it with the new locale, if not, add the new locale
                 const newPathname = otherLanguagesLocaleNames.some(locale => router.pathname.includes(locale))
