@@ -61,7 +61,7 @@ const enTranslation = {
         'downloads.banner.desc':
             'A Minecraft Fabric server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with Fabric mods and plugins, just like Mohist, but for Fabric.',
         'downloads.your.desc':
-            'A Minecraft NeoForge server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with Fabric mods and plugins, just like Mohist, but for NeoForge.',
+            'A Minecraft NeoForge server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with NeoForge mods and plugins, just like Mohist, but for NeoForge.',
         'downloads.endtext': "That's all %for now%",
         'downloadSoftware.page.title': 'MohistMC - Download {}',
         'downloadSoftware.title': 'Download% %',
