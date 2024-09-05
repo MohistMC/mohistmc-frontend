@@ -1,3 +1,6 @@
 {
-    "index": "Quickstart"
+    "en-us": {
+        "title": "English",
+        "display": "page"
+    }
 }
