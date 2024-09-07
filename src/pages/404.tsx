@@ -2,9 +2,30 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
 import Image from 'next/image'
 import image404 from '../../public/404.png'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { locales } from '@/i18n/Language'
 
 export default function Custom404() {
     const translations = useAppSelector(selectTranslations)
+    const router = useRouter()
+
+    // Redirect to the default locale if the user tries to access the docs that does not exist in the specified language
+    useEffect(() => {
+        const previousPath = router.asPath
+        if (previousPath.startsWith('/mohist/docs') || previousPath.startsWith('/banner/docs')) {
+            const localeRegex = /\/[a-z]{2}-[a-z]{2}/;
+
+            // If language is specified in the path, redirect to the default locale
+            if(previousPath.match(localeRegex)) {
+                router.push(previousPath.replace(localeRegex, `/${locales.default.locale.toLowerCase()}`)).catch();
+                return;
+            }
+
+            // If language is not specified in the path, redirect to the default locale with the same path
+            router.push(previousPath.replace('/docs/', `/docs/${locales.default.locale.toLowerCase()}/`)).catch();
+        }
+    }, [])
 
     return (
         <section className="flex flex-col justify-center items-center bg-white dark:bg-dark-50 h-full py-20">

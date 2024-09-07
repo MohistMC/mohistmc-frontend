@@ -107,8 +107,9 @@ export default function Header() {
         )
     }, [dispatch])
 
+    // Start region - Handle docs routing
     const [hasDocsRouteChanged, setHasDocsRouteChanged] = useState(false)
-    const handleDocsRouting = () => {
+    const handleDocsRouting = (hasLanguageSwitched: boolean = false) => {
         if (router.pathname.includes('mohist/docs') || router.pathname.includes('banner/docs')) {
             // Prevent infinite loop
             if (hasDocsRouteChanged) {
@@ -123,9 +124,12 @@ export default function Header() {
                     .map(locale => locale.locale.toLowerCase())
 
                 // Check if the selected locale has docs, if not, redirect to the default locale
-                const pages = getPagesUnderRoute(`/mohist/docs/${locales.current.locale.toLowerCase()}`)
+                const pages = [
+                    ...getPagesUnderRoute(`/mohist/docs/${locales.current.locale.toLowerCase()}`),
+                    ...getPagesUnderRoute(`/banner/docs/${locales.current.locale.toLowerCase()}`)
+                ]
                 const availableDocLocaleToLowerCase = pages.length > 0 ? locales.current.locale.toLowerCase() : locales.default.locale.toLowerCase()
-                if(pages.length === 0) {
+                if(pages.length === 0 && hasLanguageSwitched) {
                     ToastLogger.warn(strings['toast.docsNotAvailableInSelectedLocale'], 15000)
                 }
 
@@ -140,9 +144,16 @@ export default function Header() {
         }
     }
 
+    // Handle route change between docs pages
     useEffect(() => {
         handleDocsRouting()
-    }, [router, router.pathname, locales.current])
+    }, [router, router.pathname])
+
+    // Switch the docs page to the correct locale when the language is changed
+    useEffect(() => {
+        handleDocsRouting(true)
+    }, [locales.current])
+    // End region - Handle docs routing
 
     const pageName = router.pathname.split('/')[1]
 
