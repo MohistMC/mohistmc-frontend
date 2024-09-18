@@ -101,6 +101,10 @@ const Home = () => {
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
                         {strings['index.head.subtitle']}
                     </p>
+                    <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
+                        昔日东瀛狂侵略，烧杀掠抢妇孺屠。瞬间领土居狼犬，顷刻黎民变仆奴。血漉山河濒绝境，尸填坑壑失前途。八年抗战驱倭寇，国耻铭心罪待诛。九一八纪念日，铭记历史，警钟长鸣，努力奋发，强我中华！
+                    </p>
+
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link
                             href="/downloads"
