@@ -78,7 +78,6 @@ export default function App({ Component, pageProps }: AppProps) {
             <style jsx global>{`
                 html {
                     font-family: ${poppins.style.fontFamily};
-                    filter: grayscale(100%);
                 }
             `}</style>
             <Provider store={store}>
