@@ -42,4 +42,5 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Remarks
-- With the current configuration and because Nextra needs pages folder, the 404 page does not work in a development environment.
+
+-   With the current configuration and because Nextra needs pages folder, the 404 page does not work in a development environment.

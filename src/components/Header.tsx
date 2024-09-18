@@ -6,7 +6,7 @@ import { locales } from '@/i18n/Language'
 import {
     LocaleState,
     selectTranslations,
-    setLocale
+    setLocale,
 } from '@/features/i18n/TranslatorSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
@@ -30,7 +30,7 @@ export default function Header() {
     // React state
     const [languageButtonState, setLanguageButtonState] =
         useState<ReactElement>(
-            <LanguageDropButtonElement locale={locales.current} />
+            <LanguageDropButtonElement locale={locales.current} />,
         )
     const [localesElementState, setLocalesElementState] = useState<
         ReactElement[]
@@ -55,7 +55,7 @@ export default function Header() {
                         key={locale.locale}
                         handleLocaleChangeCallback={handleLanguageChange}
                     />
-                ))
+                )),
         )
 
         const getBrowserLanguage = () => {
@@ -69,12 +69,12 @@ export default function Header() {
 
         function handleLanguageChange(
             locale: LocaleState,
-            saveToStorage: boolean = true
+            saveToStorage: boolean = true,
         ) {
             locales.current = locale
 
             setLanguageButtonState(
-                <LanguageDropButtonElement locale={locale} />
+                <LanguageDropButtonElement locale={locale} />,
             )
             setLocalesElementState(
                 locales.available
@@ -85,32 +85,35 @@ export default function Header() {
                             key={locale.locale}
                             handleLocaleChangeCallback={handleLanguageChange}
                         />
-                    ))
+                    )),
             )
 
             // Merge strings from default locale with the selected locale
             const mergedStrings = Object.assign(
                 {},
                 locales.default.strings,
-                locale.strings
+                locale.strings,
             )
             dispatch(setLocale({ ...locale, strings: mergedStrings }))
             saveToStorage &&
-            localStorage.setItem('locale', locales.current.locale)
+                localStorage.setItem('locale', locales.current.locale)
         }
 
         handleLanguageChange(
             locales.available.find(
-                (locale) => locale.locale === getBrowserLanguage()
+                (locale) => locale.locale === getBrowserLanguage(),
             ) || locales.current,
-            false
+            false,
         )
     }, [dispatch])
 
     // Start region - Handle docs routing
     const [hasDocsRouteChanged, setHasDocsRouteChanged] = useState(false)
     const handleDocsRouting = (hasLanguageSwitched: boolean = false) => {
-        if (router.pathname.includes('mohist/docs') || router.pathname.includes('banner/docs')) {
+        if (
+            router.pathname.includes('mohist/docs') ||
+            router.pathname.includes('banner/docs')
+        ) {
             // Prevent infinite loop
             if (hasDocsRouteChanged) {
                 setHasDocsRouteChanged(false)
@@ -118,25 +121,49 @@ export default function Header() {
             }
 
             // Redirect to the correct locale only if the locale is not right
-            if (!router.pathname.includes(locales.current.locale.toLowerCase())) {
+            if (
+                !router.pathname.includes(locales.current.locale.toLowerCase())
+            ) {
                 const otherLanguagesLocaleNames = locales.available
-                    .filter(locale => locale.locale !== locales.current.locale)
-                    .map(locale => locale.locale.toLowerCase())
+                    .filter(
+                        (locale) => locale.locale !== locales.current.locale,
+                    )
+                    .map((locale) => locale.locale.toLowerCase())
 
                 // Check if the selected locale has docs, if not, redirect to the default locale
                 const pages = [
-                    ...getPagesUnderRoute(`/mohist/docs/${locales.current.locale.toLowerCase()}`),
-                    ...getPagesUnderRoute(`/banner/docs/${locales.current.locale.toLowerCase()}`)
+                    ...getPagesUnderRoute(
+                        `/mohist/docs/${locales.current.locale.toLowerCase()}`,
+                    ),
+                    ...getPagesUnderRoute(
+                        `/banner/docs/${locales.current.locale.toLowerCase()}`,
+                    ),
                 ]
-                const availableDocLocaleToLowerCase = pages.length > 0 ? locales.current.locale.toLowerCase() : locales.default.locale.toLowerCase()
-                if(pages.length === 0 && hasLanguageSwitched) {
-                    ToastLogger.warn(strings['toast.docsNotAvailableInSelectedLocale'], 15000)
+                const availableDocLocaleToLowerCase =
+                    pages.length > 0
+                        ? locales.current.locale.toLowerCase()
+                        : locales.default.locale.toLowerCase()
+                if (pages.length === 0 && hasLanguageSwitched) {
+                    ToastLogger.warn(
+                        strings['toast.docsNotAvailableInSelectedLocale'],
+                        15000,
+                    )
                 }
 
                 // Check if the current pathname has a locale, if so, replace it with the new locale, if not, add the new locale
-                const newPathname = otherLanguagesLocaleNames.some(locale => router.pathname.includes(locale))
-                    ? router.pathname.replace(otherLanguagesLocaleNames.find(locale => router.pathname.includes(locale))!, availableDocLocaleToLowerCase)
-                    : router.pathname.replace('/docs', `/docs/${availableDocLocaleToLowerCase}`)
+                const newPathname = otherLanguagesLocaleNames.some((locale) =>
+                    router.pathname.includes(locale),
+                )
+                    ? router.pathname.replace(
+                          otherLanguagesLocaleNames.find((locale) =>
+                              router.pathname.includes(locale),
+                          )!,
+                          availableDocLocaleToLowerCase,
+                      )
+                    : router.pathname.replace(
+                          '/docs',
+                          `/docs/${availableDocLocaleToLowerCase}`,
+                      )
 
                 setHasDocsRouteChanged(true)
                 router.push(newPathname).catch()

@@ -186,7 +186,8 @@ const frTranslation: PartialLocaleState = {
         'year.ago': 'il y a 1 an',
         'years.ago': 'il y a {} ans',
         'just.now': "à l'instant",
-        'toast.docsNotAvailableInSelectedLocale': 'La documentation n\'est pas disponible dans la langue sélectionnée. Vous serez redirigés vers la documentation en anglais.',
+        'toast.docsNotAvailableInSelectedLocale':
+            "La documentation n'est pas disponible dans la langue sélectionnée. Vous serez redirigés vers la documentation en anglais.",
     },
 }
 

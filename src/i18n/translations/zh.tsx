@@ -266,7 +266,8 @@ const zhTranslation: PartialLocaleState = {
         'subscription.items.7': '偶尔收到周边赠品',
         'table.page.1': '显示',
         'table.page.2': '共',
-        'toast.docsNotAvailableInSelectedLocale': '抱歉，此文档不支持您选择的语言。',
+        'toast.docsNotAvailableInSelectedLocale':
+            '抱歉，此文档不支持您选择的语言。',
     },
 }
 

@@ -108,8 +108,7 @@ export default function Downloads() {
                         </div>
                     </div>
                     <div className="flex gap-10">
-                        <div
-                            className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
+                        <div className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
                             <Link
                                 href="https://fabricmc.net/"
                                 className="bg-green-100 text-green-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2"
@@ -150,8 +149,7 @@ export default function Downloads() {
                                 </Link>
                             </div>
                         </div>
-                        <div
-                            className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
+                        <div className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
                             <Link
                                 href="https://neoforged.net/"
                                 className="bg-red-200 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-red-400"

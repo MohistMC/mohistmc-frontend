@@ -281,7 +281,8 @@ const enTranslation = {
         'subscription.items.7': 'Occasional giveaways',
         'table.page.1': 'Showing',
         'table.page.2': 'of',
-        'toast.docsNotAvailableInSelectedLocale': 'Documentation not available in selected locale, fallback to English.',
+        'toast.docsNotAvailableInSelectedLocale':
+            'Documentation not available in selected locale, fallback to English.',
     },
 }
 

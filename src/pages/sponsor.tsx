@@ -9,9 +9,9 @@ import { customTheme } from '@/util/Theme'
 import { Flowbite, Button, Popover } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
-import { FaAlipay } from "react-icons/fa";
-import { SiGithubsponsors } from "react-icons/si";
-import { BsOpencollective } from "react-icons/bs";
+import { FaAlipay } from 'react-icons/fa'
+import { SiGithubsponsors } from 'react-icons/si'
+import { BsOpencollective } from 'react-icons/bs'
 
 interface Donor {
     name: string
@@ -116,10 +116,9 @@ const Sponsor = () => {
                                 href="https://opencollective.com/mohist"
                                 className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                             >
-                                <BsOpencollective className="w-5 h-5"/>
-                                <span className="ml-2"/>
+                                <BsOpencollective className="w-5 h-5" />
+                                <span className="ml-2" />
                                 {strings['social.opencollective']}
-
                             </Button>
                             <Button
                                 href="https://github.com/sponsors/MohistMC"
@@ -130,8 +129,7 @@ const Sponsor = () => {
                                 {strings['social.ghsponsors']}
                             </Button>
                             <Popover content={content} trigger="click">
-                                <Button
-                                    className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                                <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                                     <FaAlipay className="w-5 h-5" />
                                     <span className="ml-2" />
                                     {strings['social.alipay']}

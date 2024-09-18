@@ -49,11 +49,12 @@ const NoteToHostsModal = ({
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-200 text-center mb-3">
                         For those seeking stability, we suggest integrating
-                        Mohist 1.12.2 Mohist 1.16.5 and Mohist 1.20.1, as they are the most
-                        stable versions available. If desired, you can also
-                        incorporate other versions; however, please be aware
-                        that they may exhibit lower stability and potentially
-                        generate a higher number of support requests.
+                        Mohist 1.12.2 Mohist 1.16.5 and Mohist 1.20.1, as they
+                        are the most stable versions available. If desired, you
+                        can also incorporate other versions; however, please be
+                        aware that they may exhibit lower stability and
+                        potentially generate a higher number of support
+                        requests.
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-200 text-center mb-3">
                         For any inquiries or further assistance, please do not
