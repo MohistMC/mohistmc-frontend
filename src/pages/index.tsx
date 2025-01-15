@@ -1,6 +1,6 @@
-import { LocaleState, selectTranslations } from '@/features/i18n/TranslatorSlice'
+import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
-import { isCN, getLocaleStringAsArgs } from '@/util/LocaleHelper'
+import {getLocaleStringAsArgs } from '@/util/LocaleHelper'
 import Link from 'next/link'
 import StatisticsElement from '@/components/index/StatisticsElement'
 import DefaultCarousel from '@/components/index/Carousel'
