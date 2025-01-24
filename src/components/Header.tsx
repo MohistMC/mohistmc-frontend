@@ -239,7 +239,7 @@ export default function Header() {
                         <FaDiscord className="w-6 h-6" />
                     </Link>
                     <Link
-                        href="https://qm.qq.com/q/7onbAp4PUQ"
+                        href="https://qm.qq.com/q/N4IqFA1rag"
                         aria-label="QQ"
                         className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
                     >
@@ -348,10 +348,10 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                href="/contribute"
+                                href="/sponsor"
                                 className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'contribute' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
                             >
-                                {strings['button.contribute']}
+                                {strings['button.sponsor']}
                             </Link>
                         </li>
                         <li>
@@ -370,16 +370,6 @@ export default function Header() {
                                 {strings['button.api']}
                             </Link>
                         </li>
-                        {isDevEnv && (
-                            <li>
-                                <Link
-                                    href="/subscription"
-                                    className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'subscription' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
-                                >
-                                    {strings['button.subscription']}
-                                </Link>
-                            </li>
-                        )}
                         {AccountButtons('md:hidden', 'ml-2 mt-1 mb-2')}
                         {languageButtonState}
                         <div

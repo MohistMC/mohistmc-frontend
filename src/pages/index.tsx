@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import ChoiceIssueModal from '@/components/modals/ChoiceIssueModal'
 import { useDispatch } from 'react-redux'
 import { loginUserAsync, selectUser, setState } from '@/features/user/UserSlice'
+import Image from 'next/image'
 
 const Home = () => {
     // React redux
@@ -175,9 +176,23 @@ const Home = () => {
                     className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}
                 >
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Mohist
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/mohist.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Mohist
+                                </h2>
+                            </div>
+                        </div>
+
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.mohist.description']}
                         </p>
@@ -202,9 +217,22 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Banner
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/banner.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Banner
+                                </h2>
+                            </div>
+                        </div>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.banner.description']}
                         </p>
@@ -229,9 +257,22 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-red-600 dark:text-white">
-                            Youer
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/youer.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Youer
+                                </h2>
+                            </div>
+                        </div>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.youer.description']}
                         </p>
