@@ -6,7 +6,7 @@ import { Callout, Tabs } from 'nextra/components'
     如果您修改了 Minecraft， 请 [生成补丁](patches.mdx) 源代码
 </Callout>
 
-<Tabs items={['1.7.10', '1.12.2', '1.16.5+']}>
+<Tabs items={['1.7.10', '1.12.2', '1.16.5-1.19.4', '1.20.1+']}>
     <Tabs.Tab>
         使用 Linux 构建：
         ```bash
@@ -38,6 +38,21 @@ import { Callout, Tabs } from 'nextra/components'
         使用 Windows 构建:
         ```bash
         gradlew.bat setup mohistJar
+        ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+        使用 Linux 构建：
+        ```bash
+        bash gradlew setup
+        bash gradlew packageLibraries
+        bash gradlew mohistJar
+        ```
+
+        使用 Windows 构建:
+        ```bash
+        gradlew.bat setup
+        gradlew.bat packageLibraries
+        gradlew.bat mohistJar
         ```
     </Tabs.Tab>
 
