@@ -117,7 +117,7 @@ export default function DownloadSoftware() {
             const builds = buildsJson.builds.reverse().map((build) => {
                 return {
                     ...build,
-                    fileName: `${project}-${selectedVersion}-${build.number}-server.jar`,
+                    fileName: `${project}-${selectedVersion}-${build.number ?? build?.id?.substring(0, 8)}-server.jar`,
                 }
             })
 

@@ -47,7 +47,7 @@ export default function TableBuildElement({
                     onClick={handleModalOpen}
                     className={`bg-green-100 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 mr-2 ${isLatest ? 'text-green-800 dark:text-green-400' : 'text-blue-800 dark:text-blue-400'}`}
                 >
-                    #{build.number}
+                    #{build?.number ?? build?.id?.substring(0, 8)}
                 </Link>
                 {build.fileName}
             </th>

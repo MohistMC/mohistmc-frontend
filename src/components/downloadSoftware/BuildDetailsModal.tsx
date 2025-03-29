@@ -56,7 +56,7 @@ export default function BuildDetailsModal({
                 show={openModal === 'dismissible'}
                 onClose={() => setOpenModal(undefined)}
             >
-                <Modal.Header>Build #{build?.number}</Modal.Header>
+                <Modal.Header>Build #{build?.number ?? build?.id?.substring(0, 8)}</Modal.Header>
                 <Modal.Body>
                     <div className="space-y-6">
                         <section className={`flex flex-col`}>
@@ -64,11 +64,11 @@ export default function BuildDetailsModal({
                                 Build information
                             </h2>
                             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                Build number:{' '}
+                                Build number / id:{' '}
                                 <span
                                     className={`font-bold dark:text-gray-300`}
                                 >
-                                    {build?.number}
+                                    {build?.number ?? build?.id?.substring(0, 8)}
                                 </span>
                             </p>
                             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
