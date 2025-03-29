@@ -14,8 +14,6 @@ export default function getLocaleIconSVG(locale: LocaleState) {
             return EnglishLogoSVG
         case 'fr-FR':
             return FrenchLogoSVG
-        case 'zh-CN':
-            return ChineseLogoSVG
         default:
             return EnglishLogoSVG
     }

@@ -1,9 +1,8 @@
 import frTranslation from '@/i18n/translations/fr'
 import enTranslation from '@/i18n/translations/en'
-import zhTranslation from '@/i18n/translations/zh'
 import { LocaleState } from '@/features/i18n/TranslatorSlice'
 
-const availableLocales = [frTranslation, enTranslation, zhTranslation]
+const availableLocales = [frTranslation, enTranslation]
 
 interface LocalesInterface {
     default: LocaleState
