@@ -1,6 +1,6 @@
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
-import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
+import {getLocaleStringAsArgs } from '@/util/LocaleHelper'
 import Link from 'next/link'
 import StatisticsElement from '@/components/index/StatisticsElement'
 import DefaultCarousel from '@/components/index/Carousel'
@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import ChoiceIssueModal from '@/components/modals/ChoiceIssueModal'
 import { useDispatch } from 'react-redux'
 import { loginUserAsync, selectUser, setState } from '@/features/user/UserSlice'
+import Image from 'next/image'
 
 const Home = () => {
     // React redux
@@ -127,6 +128,25 @@ const Home = () => {
                         >
                             {strings['button.documentations']}
                         </Link>
+                        <Link
+                            href="https://www.rainyun.com/MohistMC_"
+                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
+                        >
+                            一键开服
+                            <svg
+                                aria-hidden="true"
+                                className="ml-2 -mr-1 w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                ></path>
+                            </svg>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -156,9 +176,23 @@ const Home = () => {
                     className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}
                 >
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Mohist
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/mohist.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Mohist
+                                </h2>
+                            </div>
+                        </div>
+
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.mohist.description']}
                         </p>
@@ -183,9 +217,22 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Banner
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/banner.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Banner
+                                </h2>
+                            </div>
+                        </div>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.banner.description']}
                         </p>
@@ -210,9 +257,22 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-red-600 dark:text-white">
-                            Youer
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/youer.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Youer
+                                </h2>
+                            </div>
+                        </div>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.youer.description']}
                         </p>

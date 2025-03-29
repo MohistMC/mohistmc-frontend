@@ -1,4 +1,4 @@
-import { Callout, Card, Cards } from 'nextra/components'
+import { Callout, Cards } from 'nextra/components'
 import { HiCode, HiDesktopComputer } from 'react-icons/hi'
 
 # 为 Mohist 编写 Mod 和插件
@@ -18,19 +18,19 @@ Mohist 旨在支持 Forge mod 和 Bukkit/Spigot 插件。
 Mohist 提供了一些 Mod 和插件的 API 供你使用。您可以在 API 参考中找到它们。
 
 <Cards>
-    <Card
+    <Cards.Card
         icon={<HiDesktopComputer className={`mt-0.5 h-5 w-5`} />}
         title="API 参考"
-        href="/mohist/docs/zh-cn/developers/modsandplugins/dependencies"
+        href="/mohist/docs/developers/modsandplugins/dependencies"
     />
-    <Card
+    <Cards.Card
         icon={<HiCode className={`mt-0.5 h-5 w-5`} />}
         title="从Bukkit调用到Forge"
-        href="/mohist/docs/zh-cn"
+        href="/mohist/docs/developers/modsandplugins/callforgefrombukkit"
     />
-    <Card
+    <Cards.Card
         icon={<HiCode className={`mt-0.5 h-5 w-5`} />}
         title="从Forge调用到Bukkit"
-        href="/mohist/docs/zh-cn"
+        href="/mohist/docs/developers/modsandplugins/callbukkitfromforge"
     />
 </Cards>

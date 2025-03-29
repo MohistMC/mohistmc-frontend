@@ -18,13 +18,6 @@ export default function DefaultCarousel() {
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
             <Carousel>
-                <Link href={`https://ci.codemc.io/`}>
-                    <Image
-                        className={`md:w-1/6`}
-                        alt="CodeMC Logo"
-                        src={mode === 'dark' ? codemcWhite : codemcDark}
-                    />
-                </Link>
                 <Link href={`https://www.bisecthosting.com/mohistmc`}>
                     <Image
                         className={`md:w-1/4`}

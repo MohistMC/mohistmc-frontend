@@ -82,6 +82,10 @@ export default function SearchElement({
                 setFilters({ ...filters, buildNumber: !filters.buildNumber })
                 updateUrl('bNumF', !filters.buildNumber)
                 break
+            case 'buildId':
+                setFilters({ ...filters, buildId: !filters.buildId })
+                updateUrl('bIdF', !filters.buildId)
+                break
             case 'buildName':
                 setFilters({ ...filters, buildName: !filters.buildName })
                 updateUrl('bNameF', !filters.buildName)
@@ -114,9 +118,10 @@ export default function SearchElement({
      */
     useEffect(() => {
         if (router.isReady) {
-            const { bNumF, bNameF, md5F, bDateF, loaderVerF, eM, search } =
+            const { bNumF, bIdF, bNameF, md5F, bDateF, loaderVerF, eM, search } =
                 router.query as unknown as {
                     bNumF: string
+                    bIdF: string
                     bNameF: string
                     md5F: string
                     bDateF: string
@@ -127,6 +132,7 @@ export default function SearchElement({
 
             setFilters({
                 buildNumber: bNumF !== 'false',
+                buildId: bIdF !== 'false',
                 buildName: bNameF !== 'false',
                 buildMd5: md5F !== 'false',
                 buildDate: bDateF !== 'false',

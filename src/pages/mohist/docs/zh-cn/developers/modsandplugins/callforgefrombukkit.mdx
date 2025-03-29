@@ -1,0 +1,42 @@
+import { Steps } from 'nextra/components'
+
+# 演示如何在Bukkit插件中调用forge或mod的事件
+
+<Steps>
+    ### Bukkit插件中注册和注销Forge事件监听器
+    ```java
+    @Override
+    public void onEnable() {
+        // 使用自定义IEventBus注册事件监听器 (这里使用Pixelmon的EVENT_BUS作为示例)
+        registerForgeEvent(Pixelmon.EVENT_BUS, this);
+
+        // 以下原理和bukkit事件注册相同
+        // 使用默认IEventBus注册事件监听器 (当前类)
+        registerForgeEvent(this);
+        // 使用默认IEventBus注册事件监听器 (外部类)
+        registerForgeEvent(this, new TestListener());
+    }
+
+    @Override
+    public void onDisable() {
+        // 注销指定IEventBus中的指定事件监听器
+        unregisterForgeEvents(IEventBus bus, Object target);
+        // 注销指定IEventBus中的所有事件监听器
+        unregisterForgeEvents(IEventBus bus);
+        // 注销当前插件所有的Forge事件监听器
+        unregisterAllForgeEvents();
+    }
+    ```
+
+    ### 事件监听示例
+    ```java
+
+    import com.pixelmonmod.pixelmon.api.events.spawning.SpawnLocationEvent;
+
+    @SubscribeEvent
+    public void onEnable(SpawnLocationEvent event) {
+        ......
+    }
+    ```
+
+</Steps>
