@@ -51,7 +51,7 @@ export default function TableBuildElement({
                 </Link>
                 {build.fileName}
             </th>
-            <td className="px-6 py-4 hidden md:table-cell">{build.fileMd5}</td>
+            <td className="px-6 py-4 hidden md:table-cell">{build.fileSha256}</td>
             <td className="px-6 py-4 hidden md:table-cell">
                 {getTimeAgoInText(new Date(build.createdAt), strings)}
             </td>

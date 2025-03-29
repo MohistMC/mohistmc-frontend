@@ -7,6 +7,7 @@ export interface Build {
     fabricLoaderVersion?: string
     neoForgeVersion?: string
     fileMd5: string
+    fileSha256: string
     originUrl: string
     url: string
     createdAt: number

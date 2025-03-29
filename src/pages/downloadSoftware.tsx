@@ -245,7 +245,7 @@ export default function DownloadSoftware() {
                                 className="px-6 py-3 hidden md:table-cell"
                             >
                                 <div className="flex items-center">
-                                    {strings['downloadSoftware.build.md5']}
+                                    {strings['downloadSoftware.build.sha256']}
                                 </div>
                             </th>
                             <th

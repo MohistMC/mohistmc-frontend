@@ -32,6 +32,7 @@ export default function SearchElement({
         buildId: boolean
         buildName: boolean
         buildMd5: boolean
+        buildSha256: boolean
         buildDate: boolean
         loaderVersion: boolean
     }>({
@@ -39,6 +40,7 @@ export default function SearchElement({
         buildId: true,
         buildName: true,
         buildMd5: true,
+        buildSha256: true,
         buildDate: true,
         loaderVersion: true,
     })
@@ -94,6 +96,10 @@ export default function SearchElement({
                 setFilters({ ...filters, buildMd5: !filters.buildMd5 })
                 updateUrl('md5F', !filters.buildMd5)
                 break
+            case 'buildSha256':
+                setFilters({ ...filters, buildSha256: !filters.buildSha256 })
+                updateUrl('sha256F', !filters.buildSha256)
+                break
             case 'buildDate':
                 setFilters({ ...filters, buildDate: !filters.buildDate })
                 updateUrl('bDateF', !filters.buildDate)
@@ -118,12 +124,13 @@ export default function SearchElement({
      */
     useEffect(() => {
         if (router.isReady) {
-            const { bNumF, bIdF, bNameF, md5F, bDateF, loaderVerF, eM, search } =
+            const { bNumF, bIdF, bNameF, md5F, sha256F, bDateF, loaderVerF, eM, search } =
                 router.query as unknown as {
                     bNumF: string
                     bIdF: string
                     bNameF: string
                     md5F: string
+                    sha256F: string,
                     bDateF: string
                     loaderVerF: string
                     eM: string
@@ -135,6 +142,7 @@ export default function SearchElement({
                 buildId: bIdF !== 'false',
                 buildName: bNameF !== 'false',
                 buildMd5: md5F !== 'false',
+                buildSha256: sha256F !== 'false',
                 buildDate: bDateF !== 'false',
                 loaderVersion: loaderVerF !== 'false',
             })
@@ -188,6 +196,9 @@ export default function SearchElement({
                               (filters.buildMd5 &&
                                   build.fileMd5.toLowerCase() ===
                                       search.toLowerCase()) ||
+                              (filters.buildSha256 &&
+                                  build.fileSha256.toLowerCase() ===
+                                  search.toLowerCase()) ||
                               (filters.buildName &&
                                   build.fileName?.toLowerCase() ===
                                       search.toLowerCase()) ||
@@ -218,6 +229,10 @@ export default function SearchElement({
                                         .includes(search.toLowerCase())) ||
                               (filters.buildMd5 &&
                                   build.fileMd5
+                                      .toLowerCase()
+                                      .includes(search.toLowerCase())) ||
+                              (filters.buildSha256 &&
+                                  build.fileSha256
                                       .toLowerCase()
                                       .includes(search.toLowerCase())) ||
                               (filters.buildName &&
@@ -369,6 +384,40 @@ export default function SearchElement({
                 </div>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                     <input
+                        checked={filters.buildMd5}
+                        id="checkbox-item-6"
+                        type="checkbox"
+                        value=""
+                        name={`buildMd5`}
+                        onChange={handleFilter}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                    ></input>
+                    <label
+                        htmlFor="checkbox-item-6"
+                        className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
+                    >
+                        {strings['downloadSoftware.build.md5']}
+                    </label>
+                </div>
+                <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input
+                        checked={filters.buildSha256}
+                        id="checkbox-item-9"
+                        type="checkbox"
+                        value=""
+                        name={`buildSha256`}
+                        onChange={handleFilter}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                    ></input>
+                    <label
+                        htmlFor="checkbox-item-9"
+                        className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
+                    >
+                        {strings['downloadSoftware.build.sha256']}
+                    </label>
+                </div>
+                <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input
                         checked={filters.buildDate}
                         id="checkbox-item-7"
                         type="checkbox"
@@ -403,7 +452,7 @@ export default function SearchElement({
                                 project === Project.Mohist
                                     ? 'downloadSoftware.build.forgever'
                                     : 'downloadSoftware.build.fabricver'
-                            ]
+                                ]
                         }
                     </label>
                 </div>

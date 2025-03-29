@@ -80,11 +80,11 @@ export default function BuildDetailsModal({
                                 </span>
                             </p>
                             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                MD5 Checksum:{' '}
+                                SHA256 Checksum:{' '}
                                 <span
                                     className={`font-bold dark:text-gray-300`}
                                 >
-                                    {build?.fileMd5}
+                                    {build?.fileSha256}
                                 </span>
                             </p>
                             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
