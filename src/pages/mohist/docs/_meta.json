@@ -2,9 +2,5 @@
     "en-us": {
         "title": "English",
         "type": "page"
-    },
-    "zh-cn": {
-        "title": "简体中文",
-        "type": "page"
     }
 }
