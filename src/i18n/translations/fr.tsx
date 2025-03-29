@@ -65,6 +65,7 @@ const frTranslation: PartialLocaleState = {
         'downloadSoftware.build.number': 'Numéro de build',
         'downloadSoftware.build.name': 'Nom du build',
         'downloadSoftware.build.md5': 'Hash MD5',
+        'downloadSoftware.build.sha256': 'Hash SHA256',
         'downloadSoftware.build.date': 'Date du build',
         'downloadSoftware.build.forgever': 'Version de Forge / NeoForge',
         'downloadSoftware.build.fabricver': 'Version de Fabric',

@@ -77,6 +77,7 @@ const enTranslation = {
         'downloadSoftware.build.number': 'Build number',
         'downloadSoftware.build.name': 'Build name',
         'downloadSoftware.build.md5': 'MD5 Checksum',
+        'downloadSoftware.build.sha256': 'SHA256 Checksum',
         'downloadSoftware.build.date': 'Build date',
         'downloadSoftware.build.forgever': 'Forge/NeoForge version',
         'downloadSoftware.build.fabricver': 'Fabric loader version',
