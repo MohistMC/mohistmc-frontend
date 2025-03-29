@@ -33,6 +33,11 @@ export default function TableBuildElement({
         setOpenModal('dismissible')
     }
 
+    const handleSha256ModalOpen = () => {
+        setModalBuild(build)
+        setOpenModal('sha256')
+    }
+
     return (
         <tr
             key={build.fileName}
@@ -51,7 +56,15 @@ export default function TableBuildElement({
                 </Link>
                 {build.fileName}
             </th>
-            <td className="px-6 py-4 hidden md:table-cell">{build.fileSha256}</td>
+            <td className="px-6 py-4 hidden md:table-cell">
+                <Button
+                    onClick={handleSha256ModalOpen}
+                    aria-label="Reveal sha256"
+                    className="inline-flex justify-center items-center py-.5 px-2 text-sm font-medium text-center text-white rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-900"
+                >
+                    {strings['downloadSoftware.see.sha256']}
+                </Button>
+            </td>
             <td className="px-6 py-4 hidden md:table-cell">
                 {getTimeAgoInText(new Date(build.createdAt), strings)}
             </td>

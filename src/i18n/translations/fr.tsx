@@ -70,6 +70,7 @@ const frTranslation: PartialLocaleState = {
         'downloadSoftware.build.forgever': 'Version de Forge / NeoForge',
         'downloadSoftware.build.fabricver': 'Version de Fabric',
         'downloadSoftware.seemore': 'Voir plus',
+        'downloadSoftware.see.sha256': 'Voir le SHA256',
         'downloadSoftware.mohist.1.7.10.toast':
             "Mohist 1.7.10 a été interrompu, son utilisation n'est pas recommandée. Nous NE fournissons PAS de support pour Mohist 1.7.10. Vous pouvez utiliser CrucibleMC comme alternative.",
         'downloadSoftware.mohist.1.18.2.toast':
@@ -189,6 +190,7 @@ const frTranslation: PartialLocaleState = {
         'just.now': "à l'instant",
         'toast.docsNotAvailableInSelectedLocale':
             "La documentation n'est pas disponible dans la langue sélectionnée. Vous serez redirigés vers la documentation en anglais.",
+        'toast.sha256.copied': 'Le hash SHA256 a été copié dans le presse-papiers.',
     },
 }
 
