@@ -19,6 +19,7 @@ import { selectTheme } from '@/features/theme/ThemeSlice'
 import { getAPIEndpoint } from '@/util/Environment'
 import Head from 'next/head'
 import { customTheme } from '@/util/Theme'
+import BuildSha256Modal from "@/components/downloadSoftware/BuildSha256Modal";
 
 export default function DownloadSoftware() {
     const router = useRouter()
@@ -171,6 +172,11 @@ export default function DownloadSoftware() {
             <BuildDetailsModal
                 build={modalBuild}
                 project={project}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+            />
+            <BuildSha256Modal
+                build={modalBuild}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
             />

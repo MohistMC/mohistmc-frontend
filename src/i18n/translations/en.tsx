@@ -78,10 +78,11 @@ const enTranslation = {
         'downloadSoftware.build.name': 'Build name',
         'downloadSoftware.build.md5': 'MD5 Checksum',
         'downloadSoftware.build.sha256': 'SHA256 Checksum',
-        'downloadSoftware.build.date': 'Build date',
+        'downloadSoftware.build.date': 'Built on',
         'downloadSoftware.build.forgever': 'Forge/NeoForge version',
         'downloadSoftware.build.fabricver': 'Fabric loader version',
         'downloadSoftware.seemore': 'See more',
+        'downloadSoftware.see.sha256': 'Reveal SHA256',
         'downloadSoftware.mohist.1.7.10.toast':
             'Mohist 1.7.10 has been discontinued, its usage is not recommended. We DO NOT provide support for Mohist 1.7.10. Alternatively, you can use CrucibleMC.',
         'downloadSoftware.mohist.1.18.2.toast':
@@ -284,6 +285,7 @@ const enTranslation = {
         'table.page.2': 'of',
         'toast.docsNotAvailableInSelectedLocale':
             'Documentation not available in selected locale, fallback to English.',
+        'toast.sha256.copied': 'SHA256 checksum copied to clipboard.',
     },
 }
 
