@@ -29,12 +29,14 @@ export default function SearchElement({
     // React states
     const [filters, setFilters] = useState<{
         buildNumber: boolean
+        buildId: boolean
         buildName: boolean
         buildMd5: boolean
         buildDate: boolean
         loaderVersion: boolean
     }>({
         buildNumber: true,
+        buildId: true,
         buildName: true,
         buildMd5: true,
         buildDate: true,
@@ -172,8 +174,11 @@ export default function SearchElement({
                     ? page.filter(
                           (build) =>
                               (filters.buildNumber &&
-                                  String(build.number).toLowerCase() ===
+                                  build?.number && String(build.number).toLowerCase() ===
                                       search.toLowerCase()) ||
+                              (filters.buildId &&
+                                  build?.id?.toLowerCase() ===
+                                    search.toLowerCase()) ||
                               (filters.buildMd5 &&
                                   build.fileMd5.toLowerCase() ===
                                       search.toLowerCase()) ||
@@ -198,9 +203,13 @@ export default function SearchElement({
                     : page.filter(
                           (build) =>
                               (filters.buildNumber &&
-                                  String(build.number)
+                                  build?.number && String(build.number)
                                       .toLowerCase()
                                       .includes(search.toLowerCase())) ||
+                                (filters.buildId &&
+                                    build?.id
+                                        ?.toLowerCase()
+                                        .includes(search.toLowerCase())) ||
                               (filters.buildMd5 &&
                                   build.fileMd5
                                       .toLowerCase()
