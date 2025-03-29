@@ -71,20 +71,20 @@ const IssueForm = () => {
 
     useEffect(() => {
         if (availableBuilds.length !== 0) {
-            setBuildsMinState(
-                availableBuilds.length
-                    ? availableBuilds
-                          .map((build: Build) => build.number)
-                          .reduce((a, b) => Math.min(a, b))
-                    : 0,
-            )
-            setBuildsMaxState(
-                availableBuilds.length
-                    ? availableBuilds
-                          .map((build: Build) => build.number)
-                          .reduce((a, b) => Math.max(a, b))
-                    : 2000,
-            )
+            // setBuildsMinState(
+            //     availableBuilds.length
+            //         ? availableBuilds
+            //               .map((build: Build) => build.number)
+            //               .reduce((a, b) => Math.min(a, b))
+            //         : 0,
+            // )
+            // setBuildsMaxState(
+            //     availableBuilds.length
+            //         ? availableBuilds
+            //               .map((build: Build) => build.number)
+            //               .reduce((a, b) => Math.max(a, b))
+            //         : 2000,
+            // )
         }
     }, [availableBuilds])
 
