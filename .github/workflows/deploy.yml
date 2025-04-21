@@ -126,7 +126,7 @@ jobs:
           # Run Ansible
           cd deployment
           export ANSIBLE_HOST_KEY_CHECKING=False
-          export ANSIBLE_BECOME_PASSWORD="${{ secrets.SUDO_PASSWORD }}"
+          export ANSIBLE_BECOME_PASSWORD=${{ secrets.ANSIBLE_BECOME_PASSWORD }}
 
           npm i -g shawiizz-decomposerize
           ansible-galaxy role install geerlingguy.docker
