@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount SSHFS /var/mohistmc
+After=network-online.target
+Wants=network-online.target
+
+[Mount]
+What=ubuntu@141.145.204.203:/var/mohistmc
+Where=/var/mohistmc
+Type=fuse.sshfs
+Options=IdentityFile=/home/ansible/.ssh/SSH_PRIVATE_KEY_VM_ORACLE,allow_other,StrictHostKeyChecking=no,reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,PasswordAuth>
+
+[Install]
+WantedBy=multi-user.target
