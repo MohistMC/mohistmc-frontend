@@ -54,6 +54,40 @@ export default function MohistSoftware() {
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200 md:w-1/2">
                         {strings['software.youer.subtitle']}
                     </p>
+                    <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                        <Link
+                            href="https://discord.gg/MohistMC"
+                            target="_blank"
+                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-red-400 rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                        >
+                            Join the beta test
+                            <svg
+                                aria-hidden="true"
+                                className="ml-2 -mr-1 w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                ></path>
+                            </svg>
+                        </Link>
+                        <Link
+                            href="/youer/docs"
+                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                        >
+                            {strings['button.documentation']}
+                        </Link>
+                        <Link
+                            href="https://github.com/MohistMC/Youer"
+                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                        >
+                            {strings['button.sourcecode']}
+                        </Link>
+                    </div>
                 </div>
             </section>
             <div className="mt-10 top-0 left-0 w-full overflow-hidden leading-none rotate-180">

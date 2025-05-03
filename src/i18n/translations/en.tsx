@@ -13,7 +13,7 @@ const enTranslation = {
         'index.cards.banner.description':
             'A powerful Mohist Fabric hybrid server software implementing Bukkit and Spigot APIs.',
         'index.cards.youer.description':
-            'A powerful Mohist NeoForge hybrid server software implementing Bukkit, Spigot APIs.',
+            'A revolutionary NeoForge hybrid server software that implements Bukkit, Spigot, and Paper API.',
         'index.cards.website.description':
             'Our website is there to allow any user to discover our software and download them easily and for free!',
         'index.cards.other.description':
@@ -153,17 +153,17 @@ const enTranslation = {
         'software.banner.footer.desc':
             'Experience unparalleled stability with mod & plugin integration. Join the Banner community and unlock limitless possibilities for your server. Upgrade to Banner today and revolutionize your Minecraft experience.',
         'software.youer.page.title': 'MohistMC - Youer',
-        'software.youer.title': 'Youer - Coming soon',
+        'software.youer.title': 'Youer - Hot internal testing',
         'software.youer.subtitle':
-            'Youer is an exceptional server software for NeoForge that implements Bukkit, Spigot APIs. By leveraging this powerful combination, you can create a high-performing Minecraft server with the ability to integrate mods and plugins, ensuring stability and optimal performance.',
+            'Youer is a revolutionary Minecraft server core based on NeoForge and fully compatible with Bukkit/Spigot/Paper API. It breaks the barriers between the module and plugin ecosystem, allowing server administrators to take advantage of the powerful functions of NeoForge modules and the efficient ecosystem of Bukkit plugins without compromise.',
         'software.youer.cards.title': 'What makes %Youer% so special?',
-        'software.youer.cards.1.title': 'Enhanced Performance',
+        'software.youer.cards.1.title': '✨ Youer Advantages',
         'software.youer.cards.1.desc':
-            'With the integration of Bukkit & Spigot for plugin support and performance, enjoy a smooth and seamless gaming experience, even with a multitude of mods and plugins.',
-        'software.youer.cards.2.title': 'Compatibility',
+            'Unlock unlimited possibilities of module and plugin compatibility through Youer\'s integration with Bukkit, Spigot, and PaperAPI. Break technical barriers and easily customize your server.',
+        'software.youer.cards.2.title': '🚀 Applicable scenarios',
         'software.youer.cards.2.desc':
-            'Unlock endless possibilities with Youer extensive mod and plugin compatibility. Customize your server effortlessly using Youer integration with Bukkit, Spigot APIs.',
-        'software.youer.cards.3.title': 'Community Support and Regular Updates',
+            'For servers that want to run both NeoForge mods and Paper plugins, allowing modders, plugin developers, and integration pack authors to seamlessly experience the advantages of both ecosystems!',
+        'software.youer.cards.3.title': '🌟 Community Support and Regular Updates',
         'software.youer.cards.3.desc':
             'Join the MohistMC community for support and regular updates! Stay up-to-date with the latest Minecraft versions and access new features and improvements.',
         'software.youer.footer.title':

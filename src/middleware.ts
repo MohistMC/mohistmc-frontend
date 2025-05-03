@@ -9,7 +9,9 @@ export function middleware(request: NextRequest) {
         pathname.endsWith('/mohist/docs') ||
         pathname.endsWith('/mohist/docs/') ||
         pathname.endsWith('/banner/docs') ||
-        pathname.endsWith('/banner/docs/')
+        pathname.endsWith('/banner/docs/') ||
+        pathname.endsWith('/youer/docs') ||
+        pathname.endsWith('/youer/docs/')
     ) {
         return NextResponse.redirect(
             `${origin}${pathname.endsWith('/') ? pathname : pathname + '/'}${locales.current.locale.toLowerCase()}`,
