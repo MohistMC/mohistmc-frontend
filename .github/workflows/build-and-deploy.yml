@@ -9,9 +9,7 @@ on:
 
 jobs:
   build-and-deploy:
-    uses: Shawiizz/devops/.github/workflows/build-and-deploy.yml@main
+    uses: MohistMC/devops/.github/workflows/build-and-deploy.yml@main
     with:
       tag: ${{ github.ref_name }}
-    secrets:
-      ANSIBLE_BECOME_PASSWORD: ${{ secrets.ANSIBLE_BECOME_PASSWORD }}
-      PRODUCTION_SSH_PRIVATE_KEY: ${{ secrets.PRODUCTION_SSH_PRIVATE_KEY }}
+    secrets: inherit
