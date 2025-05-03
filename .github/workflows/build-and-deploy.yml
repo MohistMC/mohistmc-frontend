@@ -1,0 +1,15 @@
+name: Build and deploy
+
+on:
+  push:
+    tags:
+      - '*'
+    branches-ignore:
+      - '**'
+
+jobs:
+  deploy:
+    uses: Shawiizz/devops/.github/workflows/build-and-deploy.yml@main
+    with:
+      tag: ${{ github.ref_name }}
+    secrets: inherit
