@@ -1,4 +1,4 @@
-name: Build and deploy
+name: Build and Deploy
 
 on:
   push:
@@ -12,4 +12,6 @@ jobs:
     uses: Shawiizz/devops/.github/workflows/build-and-deploy.yml@main
     with:
       tag: ${{ github.ref_name }}
-    secrets: inherit
+    secrets:
+      ANSIBLE_BECOME_PASSWORD: ${{ secrets.ANSIBLE_BECOME_PASSWORD }}
+      PRODUCTION_SSH_PRIVATE_KEY: ${{ secrets.PRODUCTION_SSH_PRIVATE_KEY }}
