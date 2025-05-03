@@ -216,7 +216,7 @@ export default function Header() {
                 <Link href="/" className="flex items-center">
                     <Image
                         src={mohistLogo}
-                        className="h-8 w-auto mr-3"
+                        className="h-12 w-auto mr-3"
                         alt="MohistMC Logo"
                     />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">
