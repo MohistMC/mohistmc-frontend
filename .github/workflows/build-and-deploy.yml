@@ -1,15 +1,20 @@
-name: Build and Deploy
+name: GitHub CI/CD
 
 on:
   push:
+    branches:
+      - '*'
     tags:
       - '*'
-    branches-ignore:
-      - '**'
 
 jobs:
-  build-and-deploy:
-    uses: MohistMC/devops/.github/workflows/build-and-deploy.yml@main
+  build:
+    if: github.ref_type == 'branch'
+    uses: MohistMC/devops/.github/workflows/build.yml@main
+
+  deploy:
+    if: github.ref_type == 'tag'
+    uses: MohistMC/devops/.github/workflows/deploy.yml@main
     with:
       tag: ${{ github.ref_name }}
     secrets: inherit
