@@ -2,8 +2,13 @@
     .swagger-ui {
         p,
         h4,
-        h5 {
-            color: white;
+        h5,
+        .servers-title {
+            color: white !important;
+        }
+
+        .json-schema-2020-12__title {
+            color: #d9d9d9 !important;
         }
 
         .title {

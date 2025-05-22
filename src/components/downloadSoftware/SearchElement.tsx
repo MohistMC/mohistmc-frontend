@@ -1,13 +1,13 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
-import { Build } from '@/interfaces/Build'
 import { Checkbox, Dropdown, Label } from 'flowbite-react'
-import { Project } from '@/interfaces/Project'
+import { Project } from '@/dto/Project'
 import { useRouter } from 'next/router'
 import { ToastLogger } from '@/util/Logger'
+import { BuildDto } from '@/dto/Build'
 
 interface FilterDropdownProps {
-    originalBuildPages: Build[][]
-    setViewedBuildPages: (builds: Build[][]) => void
+    originalBuildPages: BuildDto[][]
+    setViewedBuildPages: (builds: BuildDto[][]) => void
     setCurrentPage: (page: number) => void
     setNoResult: (noResult: boolean) => void
     perPage: number
@@ -30,16 +30,12 @@ export default function SearchElement({
     const [filters, setFilters] = useState<{
         buildNumber: boolean
         buildId: boolean
-        buildName: boolean
-        buildMd5: boolean
         buildSha256: boolean
         buildDate: boolean
         loaderVersion: boolean
     }>({
         buildNumber: true,
         buildId: true,
-        buildName: true,
-        buildMd5: true,
         buildSha256: true,
         buildDate: true,
         loaderVersion: true,
@@ -88,14 +84,6 @@ export default function SearchElement({
                 setFilters({ ...filters, buildId: !filters.buildId })
                 updateUrl('bIdF', !filters.buildId)
                 break
-            case 'buildName':
-                setFilters({ ...filters, buildName: !filters.buildName })
-                updateUrl('bNameF', !filters.buildName)
-                break
-            case 'buildMd5':
-                setFilters({ ...filters, buildMd5: !filters.buildMd5 })
-                updateUrl('md5F', !filters.buildMd5)
-                break
             case 'buildSha256':
                 setFilters({ ...filters, buildSha256: !filters.buildSha256 })
                 updateUrl('sha256F', !filters.buildSha256)
@@ -124,13 +112,11 @@ export default function SearchElement({
      */
     useEffect(() => {
         if (router.isReady) {
-            const { bNumF, bIdF, bNameF, md5F, sha256F, bDateF, loaderVerF, eM, search } =
+            const { bNumF, bIdF, sha256F, bDateF, loaderVerF, eM, search } =
                 router.query as unknown as {
                     bNumF: string
                     bIdF: string
-                    bNameF: string
-                    md5F: string
-                    sha256F: string,
+                    sha256F: string
                     bDateF: string
                     loaderVerF: string
                     eM: string
@@ -140,8 +126,6 @@ export default function SearchElement({
             setFilters({
                 buildNumber: bNumF !== 'false',
                 buildId: bIdF !== 'false',
-                buildName: bNameF !== 'false',
-                buildMd5: md5F !== 'false',
                 buildSha256: sha256F !== 'false',
                 buildDate: bDateF !== 'false',
                 loaderVersion: loaderVerF !== 'false',
@@ -181,79 +165,61 @@ export default function SearchElement({
             }
 
             // Filter the builds
-            const modifiedBuildPages: Build[] = []
+            const modifiedBuildPages: BuildDto[] = []
 
             for (const page of originalBuildPages) {
                 const filteredPage = exactMatchChecked
                     ? page.filter(
                           (build) =>
                               (filters.buildNumber &&
-                                  build?.number && String(build.number).toLowerCase() ===
+                                  build?.commit?.hash &&
+                                  build?.commit?.hash.toLowerCase() ===
                                       search.toLowerCase()) ||
                               (filters.buildId &&
-                                  build?.id?.toLowerCase() ===
-                                    search.toLowerCase()) ||
-                              (filters.buildMd5 &&
-                                  build.fileMd5.toLowerCase() ===
-                                      search.toLowerCase()) ||
+                                  String(build?.id) === search.toLowerCase()) ||
                               (filters.buildSha256 &&
-                                  build.fileSha256.toLowerCase() ===
-                                  search.toLowerCase()) ||
-                              (filters.buildName &&
-                                  build.fileName?.toLowerCase() ===
+                                  build.file_sha256.toLowerCase() ===
                                       search.toLowerCase()) ||
                               (filters.buildDate &&
-                                  new Date(build.createdAt)
+                                  new Date(build.build_date)
                                       .toDateString()
                                       .toLowerCase() ===
                                       search.toLowerCase()) ||
                               (filters.loaderVersion &&
-                                  build.forgeVersion?.toLowerCase() ===
+                                  build.loader?.forge_version?.toLowerCase() ===
                                       search.toLowerCase()) ||
                               (filters.loaderVersion &&
-                                  build.neoForgeVersion?.toLowerCase() ===
+                                  build.loader?.neoforge_version?.toLowerCase() ===
                                       search.toLowerCase()) ||
                               (filters.loaderVersion &&
-                                  build.fabricLoaderVersion?.toLowerCase() ===
+                                  build.loader?.fabric_version?.toLowerCase() ===
                                       search.toLowerCase()),
                       )
                     : page.filter(
                           (build) =>
-                              (filters.buildNumber &&
-                                  build?.number && String(build.number)
-                                      .toLowerCase()
-                                      .includes(search.toLowerCase())) ||
-                                (filters.buildId &&
-                                    build?.id
-                                        ?.toLowerCase()
-                                        .includes(search.toLowerCase())) ||
-                              (filters.buildMd5 &&
-                                  build.fileMd5
-                                      .toLowerCase()
-                                      .includes(search.toLowerCase())) ||
+                              (filters.buildId &&
+                                  String(build?.id)?.includes(
+                                      search.toLowerCase(),
+                                  )) ||
                               (filters.buildSha256 &&
-                                  build.fileSha256
+                                  build.file_sha256
                                       .toLowerCase()
-                                      .includes(search.toLowerCase())) ||
-                              (filters.buildName &&
-                                  build.fileName
-                                      ?.toLowerCase()
                                       .includes(search.toLowerCase())) ||
                               (filters.buildDate &&
-                                  new Date(build.createdAt)
+                                  new Date(build.build_date)
                                       .toDateString()
                                       .toLowerCase()
                                       .includes(search.toLowerCase())) ||
                               (filters.loaderVersion &&
-                                  build.forgeVersion
+                                  build.loader?.forge_version
                                       ?.toLowerCase()
                                       .includes(search.toLowerCase())) ||
                               (filters.loaderVersion &&
-                                  build.neoForgeVersion
+                                  build.loader?.neoforge_version
                                       ?.toLowerCase()
                                       .includes(search.toLowerCase())) ||
                               (filters.loaderVersion &&
-                                  build.fabricLoaderVersion
+                                  build.loader?.fabric_version
                                       ?.toLowerCase()
                                       .includes(search.toLowerCase())),
                       )
@@ -265,7 +231,7 @@ export default function SearchElement({
             if (modifiedBuildPages.length === 0) setNoResult(true)
 
             // Split the builds into pages
-            const modifiedPages: Build[][] = []
+            const modifiedPages: BuildDto[][] = []
             for (let i = 0; i < modifiedBuildPages.length; i += perPage)
                 modifiedPages.push(modifiedBuildPages.slice(i, i + perPage))
 
@@ -350,57 +316,6 @@ export default function SearchElement({
                 </div>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                     <input
-                        checked={filters.buildName}
-                        id="checkbox-item-5"
-                        type="checkbox"
-                        value=""
-                        name={`buildName`}
-                        onChange={handleFilter}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                    ></input>
-                    <label
-                        htmlFor="checkbox-item-5"
-                        className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
-                    >
-                        {strings['downloadSoftware.build.name']}
-                    </label>
-                </div>
-                <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input
-                        checked={filters.buildMd5}
-                        id="checkbox-item-6"
-                        type="checkbox"
-                        value=""
-                        name={`buildMd5`}
-                        onChange={handleFilter}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                    ></input>
-                    <label
-                        htmlFor="checkbox-item-6"
-                        className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
-                    >
-                        {strings['downloadSoftware.build.md5']}
-                    </label>
-                </div>
-                <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input
-                        checked={filters.buildMd5}
-                        id="checkbox-item-6"
-                        type="checkbox"
-                        value=""
-                        name={`buildMd5`}
-                        onChange={handleFilter}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                    ></input>
-                    <label
-                        htmlFor="checkbox-item-6"
-                        className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
-                    >
-                        {strings['downloadSoftware.build.md5']}
-                    </label>
-                </div>
-                <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input
                         checked={filters.buildSha256}
                         id="checkbox-item-9"
                         type="checkbox"
@@ -452,7 +367,7 @@ export default function SearchElement({
                                 project === Project.Mohist
                                     ? 'downloadSoftware.build.forgever'
                                     : 'downloadSoftware.build.fabricver'
-                                ]
+                            ]
                         }
                     </label>
                 </div>

@@ -1,7 +1,5 @@
 import { Button, Flowbite, Modal } from 'flowbite-react'
-import { useEffect, useState } from 'react'
-import { Build } from '@/interfaces/Build'
-import { Project } from '@/interfaces/Project'
+import { Project } from '@/dto/Project'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
@@ -9,10 +7,12 @@ import ProfileImage from '@/components/ProfileImage'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { customTheme } from '@/util/Theme'
+import { BuildDto } from '@/dto/Build'
 
 interface BuildDetailsModalProps {
-    build: Build | undefined
+    build: BuildDto | undefined
     project: Project | undefined
+    projectVersion: string | undefined
     openModal: string | undefined
     setOpenModal: (modal: string | undefined) => void
 }
@@ -20,34 +20,12 @@ interface BuildDetailsModalProps {
 export default function BuildDetailsModal({
     build,
     project,
+    projectVersion,
     openModal,
     setOpenModal,
 }: BuildDetailsModalProps) {
     const mode = useSelector(selectTheme)
     const strings = useAppSelector(selectTranslations)
-
-    const [commitMessage, setCommitMessage] = useState<string | undefined>(
-        undefined,
-    )
-    const [commitAuthor, setCommitAuthor] = useState<string | undefined>(
-        undefined,
-    )
-    const [commitDate, setCommitDate] = useState<string | undefined>(undefined)
-
-    useEffect(() => {
-        if (build?.gitSha) {
-            fetch(
-                `https://api.github.com/repos/MohistMC/${project}/commits/${build?.gitSha}`,
-            )
-                .then((res) => res.json())
-                .then((res) => {
-                    setCommitMessage(res?.commit?.message)
-                    setCommitAuthor(res?.commit?.author?.name)
-                    setCommitDate(res?.commit?.author?.date)
-                })
-                .catch(console.error)
-        }
-    }, [build, project])
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
@@ -57,7 +35,7 @@ export default function BuildDetailsModal({
                 onClose={() => setOpenModal(undefined)}
             >
                 <Modal.Header>
-                    Build #{build?.number ?? build?.id?.substring(0, 8)}
+                    Build {build?.commit.hash.substring(0, 8)}
                 </Modal.Header>
                 <Modal.Body>
                     <div className="space-y-6">
@@ -70,16 +48,7 @@ export default function BuildDetailsModal({
                                 <span
                                     className={`font-bold dark:text-gray-300`}
                                 >
-                                    {build?.number ??
-                                        build?.id?.substring(0, 8)}
-                                </span>
-                            </p>
-                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                Build name:{' '}
-                                <span
-                                    className={`font-bold dark:text-gray-300`}
-                                >
-                                    {build?.fileName}
+                                    {build?.commit.hash.substring(0, 8)}
                                 </span>
                             </p>
                             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -87,7 +56,7 @@ export default function BuildDetailsModal({
                                 <span
                                     className={`font-bold dark:text-gray-300`}
                                 >
-                                    {build?.fileSha256}
+                                    {build?.file_sha256}
                                 </span>
                             </p>
                             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -96,37 +65,37 @@ export default function BuildDetailsModal({
                                     className={`font-bold dark:text-gray-300`}
                                 >
                                     {new Date(
-                                        build?.createdAt || 0,
+                                        build?.build_date || 0,
                                     ).toLocaleString()}
                                 </span>
                             </p>
-                            {build?.forgeVersion && (
+                            {build?.loader?.forge_version && (
                                 <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     Forge version:{' '}
                                     <span
                                         className={`font-bold dark:text-gray-300`}
                                     >
-                                        {build?.forgeVersion}
+                                        {build?.loader.forge_version}
                                     </span>
                                 </p>
                             )}
-                            {build?.neoForgeVersion && (
+                            {build?.loader?.neoforge_version && (
                                 <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     NeoForge version:{' '}
                                     <span
                                         className={`font-bold dark:text-gray-300`}
                                     >
-                                        {build?.neoForgeVersion}
+                                        {build?.loader.neoforge_version}
                                     </span>
                                 </p>
                             )}
-                            {build?.fabricLoaderVersion && (
+                            {build?.loader?.fabric_version && (
                                 <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     Fabric version:{' '}
                                     <span
                                         className={`font-bold dark:text-gray-300`}
                                     >
-                                        {build?.fabricLoaderVersion}
+                                        {build?.loader.fabric_version}
                                     </span>
                                 </p>
                             )}
@@ -136,24 +105,24 @@ export default function BuildDetailsModal({
                                 GitHub information
                             </h2>
                             <div className="flex items-center space-x-4">
-                                {commitAuthor && (
+                                {build?.commit.author && (
                                     <ProfileImage
-                                        name={commitAuthor}
-                                        githubUrl={`https://github.com/${commitAuthor}`}
+                                        name={build?.commit.author}
+                                        githubUrl={`https://github.com/${build?.commit.author}`}
                                         size={14}
                                     />
                                 )}
                                 <div className="font-medium dark:text-white">
-                                    <div>{commitAuthor}</div>
+                                    <div>{build?.commit.author}</div>
                                     <div className="text-sm text-gray-500 dark:text-gray-400">
                                         {new Date(
-                                            commitDate ?? 0,
+                                            build?.commit.commit_date ?? 0,
                                         ).toLocaleString()}
                                     </div>
                                     <div
                                         className={`text-xs md:text-sm text-gray-500 dark:text-gray-400`}
                                     >
-                                        {build?.gitSha}
+                                        {build?.commit.hash}
                                     </div>
                                 </div>
                             </div>
@@ -162,14 +131,16 @@ export default function BuildDetailsModal({
                                 <span
                                     className={`font-bold dark:text-gray-300`}
                                 >
-                                    {commitMessage}
+                                    {build?.commit.changelog}
                                 </span>
                             </p>
                         </section>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Link href={build?.url || '#'}>
+                    <Link
+                        href={`https://api.mohistmc.com/project/${project}/${projectVersion}/builds/${build?.id}/download`}
+                    >
                         <Button>Download</Button>
                     </Link>
                     <Button

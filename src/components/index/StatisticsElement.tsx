@@ -18,7 +18,7 @@ export default function StatisticsElement() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${getAPIEndpoint()}/stats`)
+            const response = await fetch(`${getAPIEndpoint()}/stats/all`)
             const data: {
                 bstats: {
                     servers: {
@@ -30,15 +30,16 @@ export default function StatisticsElement() {
                         current: number
                     }
                 }
-                issues: {
-                    open: number
-                    closed: number
+                github: {
+                    open_issues_count: number
+                    closed_issues_count: number
                 }
+                downloads: number
             } = await response.json()
 
-            if (data?.bstats && data?.issues) {
-                animateCounter(data.issues.closed, setResolvedBugs)
-                animateCounter(data.issues.open, setOpenedIssues)
+            if (data?.bstats && data?.github) {
+                animateCounter(data.github.closed_issues_count, setResolvedBugs)
+                animateCounter(data.github.open_issues_count, setOpenedIssues)
                 animateCounter(data.bstats.players.current, setPlayers)
                 animateCounter(data.bstats.servers.current, setServers)
             }

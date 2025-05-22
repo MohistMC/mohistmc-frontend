@@ -108,7 +108,7 @@ export default function MohistMCApi() {
                             <HiExclamation className="h-5 w-5" />
                         </div>
                         <div className="ml-3 text-sm font-normal text-gray-600 dark:text-gray-300">
-                            Are you a developer/manager of a hosting service and
+                            You are a developer/manager of a hosting service and
                             wish to add one of our products to make it available
                             to your users?{' '}
                             <a

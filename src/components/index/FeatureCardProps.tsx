@@ -53,7 +53,8 @@ const FeatureCard = ({
 
             <Link
                 href={buttonLink}
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-dark-100 transition-colors duration-300"
+                className={`inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-dark-100 transition-colors duration-300
+                ${buttonLink === '#' ? 'cursor-not-allowed bg-gray-400 hover:bg-gray-400' : ''}`}
                 aria-label={`Read more about ${title}`}
             >
                 {buttonText}

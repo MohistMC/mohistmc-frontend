@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Project } from '@/interfaces/Project'
+import { Project } from '@/dto/Project'
 import { Dropdown } from 'flowbite-react'
 import { useRouter } from 'next/router'
 import { getAPIEndpoint } from '@/util/Environment'
@@ -10,8 +10,8 @@ interface VersionSelectorElementProps {
     software: Project | undefined
 }
 
-export interface ProjectVersions {
-    versions: string[]
+export interface ProjectVersion {
+    name: string
 }
 
 export default function VersionSelectorElement({
@@ -26,13 +26,14 @@ export default function VersionSelectorElement({
 
     // React effect
     useEffect(() => {
-        const fetchSources = async () => {
-            const buildSources = await fetch(
-                `${getAPIEndpoint()}/projects/${software}`,
+        const fetchVersions = async () => {
+            const versionsRequest = await fetch(
+                `${getAPIEndpoint()}/project/${software}/versions`,
             )
-            const buildSourcesJson: ProjectVersions = await buildSources.json()
+            const versionsJson: ProjectVersion[] = await versionsRequest.json()
+            const versions = versionsJson.map((version => version.name))
 
-            setAvailableVersions(buildSourcesJson?.versions || [])
+            setAvailableVersions(versions || [])
             const { projectVersion } = router.query as {
                 projectVersion: string | undefined
             }
@@ -43,23 +44,23 @@ export default function VersionSelectorElement({
                     software === Project.Banner
                 ) {
                     setSelectedVersion(
-                        buildSourcesJson?.versions.find(
+                        versions.find(
                             (version) => version === projectVersion,
                         ) ||
-                            buildSourcesJson?.versions.find(
+                        versions.find(
                                 (version) => version === '1.20.1',
                             ),
                     )
                 } else {
-                    if (buildSourcesJson?.versions.length > 0)
-                        setSelectedVersion(buildSourcesJson?.versions[0])
+                    if (versions?.length > 0)
+                        setSelectedVersion(versions[0])
                     // TODO: Else toast error
                 }
             }
         }
 
         software &&
-            fetchSources().catch((e) => {
+            fetchVersions().catch((e) => {
                 // TODO: Toast error
             })
     }, [software])

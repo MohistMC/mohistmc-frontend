@@ -1,8 +1,8 @@
 import VersionSelectorElement from '@/components/downloadSoftware/VersionSelectorElement'
 import { useRouter } from 'next/router'
-import { Project } from '@/interfaces/Project'
+import { Project } from '@/dto/Project'
 import React, { useEffect, useState } from 'react'
-import { Build, ProjectBuilds } from '@/interfaces/Build'
+import {BuildDto} from '@/dto/Build'
 import NavigationTableElement from '@/components/downloadSoftware/NavigationTableElement'
 import TableBuildElement from '@/components/downloadSoftware/TableBuildElement'
 import LoadingParagraph from '@/components/downloadSoftware/LoadingParagraph'
@@ -29,14 +29,14 @@ export default function DownloadSoftware() {
 
     // React states
     const [project, setProject] = useState<Project | undefined>()
-    const [originalBuildPages, setOriginalBuildPages] = useState<Build[][]>([])
-    const [viewedBuildPages, setViewedBuildPages] = useState<Build[][]>([])
+    const [originalBuildPages, setOriginalBuildPages] = useState<BuildDto[][]>([])
+    const [viewedBuildPages, setViewedBuildPages] = useState<BuildDto[][]>([])
     const [currentPage, setCurrentPage] = useState<number>(0)
     const [selectedVersion, setSelectedVersion] = useState<string | undefined>()
     const [noResult, setNoResult] = useState<boolean>(false)
     const [noBuild, setNoBuild] = useState<boolean>(false)
     const [openModal, setOpenModal] = useState<string | undefined>()
-    const [modalBuild, setModalBuild] = useState<Build | undefined>()
+    const [modalBuild, setModalBuild] = useState<BuildDto | undefined>()
     const [toastMessageKey, setToastMessageKey] = useState<
         StringKey | undefined
     >()
@@ -105,29 +105,19 @@ export default function DownloadSoftware() {
             }
 
             const projectBuildsReq = await fetch(
-                `${getAPIEndpoint()}/projects/${project}/${selectedVersion}/builds`,
+                `${getAPIEndpoint()}/project/${project}/${selectedVersion}/builds`,
             )
-            const buildsJson: ProjectBuilds = await projectBuildsReq.json()
+            const builds: BuildDto[] = await projectBuildsReq.json()
 
-            if (!buildsJson?.builds || buildsJson?.builds?.length === 0) {
+            if (builds?.length === 0) {
                 setNoBuild(true)
                 // TODO: Toast error
                 return
             }
 
-            const builds = buildsJson.builds.reverse().map((build) => {
-                return {
-                    ...build,
-                    fileName: `${project}-${selectedVersion}-${build.number ?? build?.id?.substring(0, 8)}-server.jar`,
-                }
-            })
-
-            const pages: Build[][] = []
+            const pages: BuildDto[][] = []
             for (let i = 0; i < builds.length; i += perPage)
                 pages.push(builds.slice(i, i + perPage))
-
-            // Check if the user have changed the version while the builds were loading
-            if (selectedVersion !== buildsJson.projectVersion) return
 
             setOriginalBuildPages(pages)
             setViewedBuildPages(pages)
@@ -172,6 +162,7 @@ export default function DownloadSoftware() {
             <BuildDetailsModal
                 build={modalBuild}
                 project={project}
+                projectVersion={selectedVersion}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
             />
@@ -301,6 +292,7 @@ export default function DownloadSoftware() {
                                     isLatest:
                                         build === originalBuildPages[0][0],
                                     project: project as Project,
+                                    projectVersion: selectedVersion as string,
                                     indexOnPage: index,
                                     strings,
                                     setOpenModal,

@@ -5,10 +5,10 @@ import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { customTheme } from '@/util/Theme'
 import { ToastLogger } from '@/util/Logger'
-import { Build } from '@/interfaces/Build'
+import { BuildDto } from '@/dto/Build'
 
 interface BuildSha256ModalProps {
-    build: Build | undefined
+    build: BuildDto | undefined
     openModal: string | undefined
     setOpenModal: (modal: string | undefined) => void
 }
@@ -22,8 +22,8 @@ export default function BuildSha256Modal({
     const strings = useAppSelector(selectTranslations)
 
     const copySha256ToClipboard = () => {
-        if (build?.fileSha256) {
-            navigator.clipboard.writeText(build.fileSha256)
+        if (build?.file_sha256) {
+            navigator.clipboard.writeText(build.file_sha256)
             ToastLogger.info(strings['toast.sha256.copied'])
             setOpenModal(undefined)
         }
@@ -36,9 +36,7 @@ export default function BuildSha256Modal({
                 show={openModal === 'sha256'}
                 onClose={() => setOpenModal(undefined)}
             >
-                <Modal.Header>
-                    Build #{build?.number ?? build?.id?.substring(0, 8)}
-                </Modal.Header>
+                <Modal.Header>Build {build?.commit.hash.substring(0, 8)}</Modal.Header>
                 <Modal.Body>
                     <div className="space-y-6">
                         <section className={`flex flex-col`}>
@@ -46,7 +44,7 @@ export default function BuildSha256Modal({
                                 File SHA256 Hash
                             </h2>
                             <p className="text-sm leading-relaxed text-gray-500 dark:text-white">
-                                {build?.fileSha256}
+                                {build?.file_sha256}
                             </p>
                         </section>
                     </div>

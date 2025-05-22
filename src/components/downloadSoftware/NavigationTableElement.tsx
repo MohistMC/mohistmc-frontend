@@ -1,10 +1,10 @@
-import { Build } from '@/interfaces/Build'
 import React from 'react'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
+import { BuildDto } from '@/dto/Build'
 
 interface NavigationTableElementProps {
-    buildPages: Build[][]
+    buildPages: BuildDto[][]
     currentPage: number
     setCurrentPage: (page: number) => void
 }

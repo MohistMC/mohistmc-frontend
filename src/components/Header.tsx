@@ -18,8 +18,7 @@ import { useAppSelector } from '@/util/redux/Hooks'
 import { selectUser } from '@/features/user/UserSlice'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
-import { isDevEnv } from '@/util/Environment'
-import { FaGithub, FaDiscord, FaQq } from 'react-icons/fa'
+import { FaDiscord, FaGithub, FaQq } from 'react-icons/fa'
 import { getPagesUnderRoute } from 'nextra/context'
 import { ToastLogger } from '@/util/Logger'
 
@@ -282,7 +281,6 @@ export default function Header() {
                     <ul className="flex flex-col md:items-center font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
                         <li>
                             <button
-                                id="dropdownNavbarLink"
                                 data-dropdown-toggle="dropdownNavbar"
                                 aria-label="Toggle software menu"
                                 data-dropdown-trigger="hover"
@@ -340,11 +338,61 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                href="/downloads"
-                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'downloads' || pageName === 'downloadSoftware' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
+                                data-dropdown-toggle="dropdownNavbarDownloads"
+                                aria-label="Toggle downloads menu"
+                                data-dropdown-trigger="hover"
+                                href={`/downloads`}
+                                className={`flex items-center py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'downloads' || pageName === 'downloadSoftware' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
                             >
                                 {strings['button.downloads']}
+                                <svg
+                                    className="w-5 h-5 ml-1"
+                                    aria-hidden="true"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clipRule="evenodd"
+                                    ></path>
+                                </svg>
                             </Link>
+                            <div
+                                id="dropdownNavbarDownloads"
+                                className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-dark-100 dark:divide-gray-600"
+                            >
+                                <ul
+                                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                    aria-labelledby="dropdownLargeButton"
+                                >
+                                    <li>
+                                        <Link
+                                            href="/downloadSoftware?project=mohist"
+                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
+                                        >
+                                            Mohist
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/downloadSoftware?project=banner"
+                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
+                                        >
+                                            Banner
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/downloads"
+                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
+                                        >
+                                            Youer
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li>
                             <Link

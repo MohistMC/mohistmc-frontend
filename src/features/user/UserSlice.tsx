@@ -3,7 +3,7 @@ import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
 import { deleteCookie, getCookie, hasCookie } from 'cookies-next'
 import { getAPIEndpoint } from '@/util/Environment'
 import { ToastLogger } from '@/util/Logger'
-import { User } from '@/interfaces/User'
+import { User } from '@/dto/User'
 import { getCurrentLocale } from '@/i18n/Language'
 
 export interface UserState extends User {

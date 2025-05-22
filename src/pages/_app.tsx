@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
         if (isDevEnv) {
             ToastLogger.info('You are running MohistMC in development mode.')
 
-            fetch(`${getAPIEndpoint()}/ping`)
+            fetch(`${getAPIEndpoint()}/health`)
                 .then((res) => {
                     if (res.status === 200)
                         ToastLogger.info('The backend server is running')

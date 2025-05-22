@@ -1,32 +1,34 @@
 import Link from 'next/link'
-import { Build } from '@/interfaces/Build'
-import { Project } from '@/interfaces/Project'
+import { BuildDto } from '@/dto/Build'
+import { Project } from '@/dto/Project'
 import DownloadButton from '@/components/downloadSoftware/DownloadButton'
 import { Button } from 'flowbite-react'
 import { getTimeAgoInText } from '@/util/DateUtil'
 
 interface TableBuildElementProps {
-    build: Build
+    build: BuildDto
     isLatest: boolean
     project: Project
+    projectVersion: string
     indexOnPage: number
     strings: Record<any, any>
     setOpenModal: (value: string | undefined) => void
-    setModalBuild: (value: Build | undefined) => void
+    setModalBuild: (value: BuildDto | undefined) => void
 }
 
 export default function TableBuildElement({
     build,
     isLatest,
     project,
+    projectVersion,
     indexOnPage,
     strings,
     setOpenModal,
     setModalBuild,
 }: TableBuildElementProps) {
-    if (!build || !build.url) return <></>
+    if (!build) return <></>
 
-    const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.gitSha}`
+    const buildGithubCommitUrl = `https://github.com/MohistMC/${project}/commit/${build.commit.hash}`
 
     const handleModalOpen = () => {
         setModalBuild(build)
@@ -40,7 +42,7 @@ export default function TableBuildElement({
 
     return (
         <tr
-            key={build.fileName}
+            key={build.commit.hash}
             className={`border-b ${indexOnPage % 2 === 0 ? 'dark:bg-dark-100 bg-white' : 'dark:bg-dark-150 bg-gray-50'} dark:border-gray-700`}
         >
             <th
@@ -52,9 +54,8 @@ export default function TableBuildElement({
                     onClick={handleModalOpen}
                     className={`bg-green-100 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 mr-2 ${isLatest ? 'text-green-800 dark:text-green-400' : 'text-blue-800 dark:text-blue-400'}`}
                 >
-                    #{build?.number ?? build?.id?.substring(0, 8)}
+                    {build?.commit?.hash?.substring(0, 8)}
                 </Link>
-                {build.fileName}
             </th>
             <td className="px-6 py-4 hidden md:table-cell">
                 <Button
@@ -66,27 +67,31 @@ export default function TableBuildElement({
                 </Button>
             </td>
             <td className="px-6 py-4 hidden md:table-cell">
-                {getTimeAgoInText(new Date(build.createdAt), strings)}
+                {getTimeAgoInText(new Date(build.build_date), strings)}
             </td>
             <td className="px-6 py-4 hidden md:table-cell">
                 {project === Project.Banner &&
-                    (build.fabricLoaderVersion || 'Unknown')}
+                    (build.loader?.fabric_version || 'Unknown')}
                 {project === Project.Mohist && (
                     <div className={`flex flex-col`}>
-                        {build.forgeVersion && (
-                            <p>Forge: {build.forgeVersion}</p>
+                        {build.loader?.forge_version && (
+                            <p>Forge: {build.loader?.forge_version}</p>
                         )}
-                        {build.neoForgeVersion && (
-                            <p>NeoForge: {build.neoForgeVersion}</p>
+                        {build.loader?.neoforge_version && (
+                            <p>NeoForge: {build.loader?.neoforge_version}</p>
                         )}
-                        {!build.forgeVersion && !build.neoForgeVersion && (
-                            <p>Unknown</p>
-                        )}
+                        {!build.loader?.forge_version &&
+                            !build.loader?.neoforge_version && <p>Unknown</p>}
                     </div>
                 )}
             </td>
             <td className="md:px-6 px-3 py-4 text-right">
-                <DownloadButton build={build} strings={strings} />
+                <DownloadButton
+                    build={build}
+                    strings={strings}
+                    project={project}
+                    projectVersion={projectVersion}
+                />
 
                 <Button
                     onClick={handleModalOpen}
