@@ -13,7 +13,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import { getAPIEndpoint } from '@/util/Environment'
-import { Build } from '@/dto/Build'
+import { BuildDto } from '@/dto/Build'
 import { customTheme } from '@/util/Theme'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
@@ -30,7 +30,7 @@ const IssueForm = () => {
     const selectedVersionRef = useRef<HTMLSelectElement>(null)
 
     const [availableVersions, setAvailableVersions] = useState<string[]>([])
-    const [availableBuilds, setAvailableBuilds] = useState<Build[]>([])
+    const [availableBuilds, setAvailableBuilds] = useState<BuildDto[]>([])
     const [buildsMinState, setBuildsMinState] = useState<number>(0)
     const [buildsMaxState, setBuildsMaxState] = useState<number>(2000)
 
