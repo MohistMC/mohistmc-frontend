@@ -35,4 +35,11 @@ server {
         proxy_set_header Host $host;
         proxy_pass http://127.0.0.1:2024;
     }
+
+    location /builds-raw {
+        alias /var/mohistmc/builds/archived/;
+        autoindex on;
+        autoindex_exact_size off;
+    }
+
 }
