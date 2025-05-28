@@ -86,9 +86,9 @@ export default function Downloads() {
                     <FeatureCard
                         imageSrc="/img/res/youer.png"
                         title="Youer"
-                        subtitle="Progress 80%"
+                        subtitle="Beta"
                         description={strings['index.cards.youer.description']}
-                        buttonLink="#"
+                        buttonLink="/downloadSoftware?project=youer"
                         buttonText={`Download`}
                     />
                 </div>

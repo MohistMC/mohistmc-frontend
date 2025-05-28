@@ -46,11 +46,11 @@ export default function DownloadSoftware() {
         if (router.isReady) {
             const { project } = router.query as { project: Project }
 
-            if (project === Project.Mohist || project === Project.Banner)
+            if (project === Project.Mohist || project === Project.Banner || project === Project.Youer)
                 setProject(project)
             else router.push('/404').catch()
         }
-    }, [router.isReady, router.query])
+    }, [router, router.isReady, router.query])
 
     useEffect(() => {
         const handleVersionChanged = async () => {
@@ -125,7 +125,7 @@ export default function DownloadSoftware() {
         }
 
         selectedVersion && handleVersionChanged().catch()
-    }, [selectedVersion])
+    }, [project, router, selectedVersion])
 
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">
@@ -157,7 +157,9 @@ export default function DownloadSoftware() {
             <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-3">
                 {project === Project.Mohist
                     ? strings['downloadSoftware.mohist.desc']
-                    : strings[`downloadSoftware.banner.desc`]}
+                    : project === Project.Banner
+                        ? strings['downloadSoftware.banner.desc']
+                        : strings[`downloadSoftware.youer.desc`]}
             </p>
             <BuildDetailsModal
                 build={modalBuild}

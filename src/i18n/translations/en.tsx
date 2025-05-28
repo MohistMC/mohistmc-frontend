@@ -69,6 +69,8 @@ const enTranslation = {
             'Download Mohist, our Minecraft hybrid Forge + Bukkit/Spigot server software.',
         'downloadSoftware.banner.desc':
             'Download Banner, our Minecraft hybrid Fabric + Bukkit/Spigot server software.',
+        'downloadSoftware.youer.desc':
+            'Download Youer, our Minecraft hybrid NeoForge + Bukkit/Spigot server software.',
         'downloadSoftware.search.placeholder': 'Search for builds...',
         'downloadSoftware.search.noresults': 'No results found.',
         'downloadSoftware.search.nobuilds': 'No builds found.',
