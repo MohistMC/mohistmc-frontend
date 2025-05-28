@@ -14,11 +14,11 @@ const Shop = () => {
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
-            <section className={`bg-white dark:bg-dark-25 flex flex-col`}>
+            <section className={`bg-white dark:bg-dark-50 flex flex-col`}>
                 <Head>
                     <title>{strings['subscription.page.title']}</title>
                 </Head>
-                <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
+                <section className="flex flex-col justify-center items-center pt-20">
                     <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">
                         <h1 className="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
                             <span className="text-blue-600 dark:text-blue-500">
@@ -30,7 +30,7 @@ const Shop = () => {
                         </p>
                     </div>
                 </section>
-                <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 bg-gray-100 dark:bg-dark-50 gap-10 flex-wrap">
+                <section className="relative flex flex-row justify-center items-stretch pt-20 pb-20 gap-10 flex-wrap">
                     <PricingCard
                         title={'free'}
                         vault={0}
@@ -44,18 +44,7 @@ const Shop = () => {
                     />
                     <PricingCard
                         title={'vip'}
-                        vault={35}
-                        bool1={true}
-                        bool2={true}
-                        bool3={true}
-                        bool4={true}
-                        bool5={false}
-                        bool6={false}
-                        bool7={false}
-                    />
-                    <PricingCard
-                        title={'svip'}
-                        vault={65}
+                        vault={15}
                         bool1={true}
                         bool2={true}
                         bool3={true}
@@ -63,17 +52,6 @@ const Shop = () => {
                         bool5={true}
                         bool6={false}
                         bool7={false}
-                    />
-                    <PricingCard
-                        title={'ssvip'}
-                        vault={98}
-                        bool1={true}
-                        bool2={true}
-                        bool3={true}
-                        bool4={true}
-                        bool5={true}
-                        bool6={true}
-                        bool7={true}
                     />
                 </section>
             </section>

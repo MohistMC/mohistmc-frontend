@@ -1,9 +1,11 @@
-import { Card, Button } from 'flowbite-react'
+import { Card, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'flowbite-react'
 import { useAppSelector } from '@/util/redux/Hooks'
 import {
     selectTranslations,
     selectTranslationsByString,
 } from '@/features/i18n/TranslatorSlice'
+import Link from 'next/link'
+import { useState } from 'react'
 
 interface PricingCardProps {
     title: string
@@ -53,6 +55,8 @@ export default function PricingCard({
     const i18n = useAppSelector(selectTranslations)
     const i18nStirng = useAppSelector(selectTranslationsByString)
 
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <Card className="max-w-sm">
             <div style={{ display: 'grid', placeItems: 'center' }}>
@@ -66,14 +70,14 @@ export default function PricingCard({
                 {i18nStirng['subscription.items.' + title]}
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
-                <span className="text-3xl font-semibold">
-                    {i18n['vault.format.mohth']}
-                </span>
                 <span className="text-5xl font-extrabold tracking-tight">
                     {vault}
                 </span>
+                <span className="text-3xl font-semibold">
+                    {i18n['vault.format.mohth']}
+                </span>
                 <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">
-                    /{i18n['time.format.mohth']}
+                    /{i18n['time.format.forever']}
                 </span>
             </div>
             <ul className="my-7 space-y-5">
@@ -202,10 +206,34 @@ export default function PricingCard({
                     </span>
                 </li>
             </ul>
-            <Button outline gradientDuoTone="purpleToPink">
-                {' '}
-                Choose plan{' '}
-            </Button>
+            {title === 'free' && (
+                <Button outline gradientDuoTone="purpleToPink" as={Link} href="/">
+                    Choose plan
+                </Button>
+            )}
+            {title === 'vip' && (
+                <Button outline gradientDuoTone="purpleToPink" onClick={() => setOpenModal(true)}>Choose plan{' '}</Button>
+            )}
+            <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+                <ModalHeader>Terms of Service</ModalHeader>
+                <ModalBody>
+                    <div className="space-y-6">
+                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                            Make sure you&apos;re in our Discord channel and that your Discord and Patreon accounts are linked,
+                            Easy to automatically get Discord characters (Donator).
+                        </p>
+                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                            The subscription service is a one-time fee, so make sure you don&apos;t give up your Patreon subscription anytime soon, or you&apos;ll lose your Discord role.
+                        </p>
+                    </div>
+                </ModalBody>
+                <ModalFooter>
+                    <Button as={Link} href='https://www.patreon.com/checkout/mohistmc?rid=24779321' onClick={() => setOpenModal(false)}>I accept</Button>
+                    <Button color="gray" onClick={() => setOpenModal(false)}>
+                        Decline
+                    </Button>
+                </ModalFooter>
+            </Modal>
         </Card>
     )
 }
