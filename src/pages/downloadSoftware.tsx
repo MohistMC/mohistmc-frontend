@@ -50,7 +50,7 @@ export default function DownloadSoftware() {
                 setProject(project)
             else router.push('/404').catch()
         }
-    }, [router, router.isReady, router.query])
+    }, [router.isReady, router.query])
 
     useEffect(() => {
         const handleVersionChanged = async () => {
@@ -125,7 +125,7 @@ export default function DownloadSoftware() {
         }
 
         selectedVersion && handleVersionChanged().catch()
-    }, [project, router, selectedVersion])
+    }, [selectedVersion])
 
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">
