@@ -92,7 +92,7 @@ export default function Downloads() {
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                         {strings['index.cards.youer.description']}
                     </p>
-                    <Button className={`mt-5 max-w-[60%]`} color="blue" href={`/banner/docs/`}>
+                    <Button className={`mt-5 max-w-[60%]`} color="blue" href={`/youer/docs/`}>
                         Access docs
                     </Button>
                 </Link>
