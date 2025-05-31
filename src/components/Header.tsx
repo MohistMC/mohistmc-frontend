@@ -385,7 +385,7 @@ export default function Header() {
                                     </li>
                                     <li>
                                         <Link
-                                            href="/downloads"
+                                            href="/downloadSoftware?project=youer"
                                             className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
                                         >
                                             Youer
