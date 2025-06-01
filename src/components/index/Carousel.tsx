@@ -5,8 +5,7 @@ import { selectTheme } from '@/features/theme/ThemeSlice'
 import { customTheme } from '@/util/Theme'
 import Image from 'next/image'
 import bisecthosting from '../../../public/bisecthosting.webp'
-import codemcDark from '../../../public/codemc_dark.webp'
-import codemcWhite from '../../../public/codemc_white.webp'
+import namehero from '../../../public/namehero.webp'
 import yourkit from '../../../public/yourkit.webp'
 import jetbrains from '../../../public/jetbrains.svg'
 import elfidc from '../../../public/elfidc.webp'
@@ -18,6 +17,13 @@ export default function DefaultCarousel() {
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
             <Carousel>
+                <Link href={`https://www.namehero.com/minecraft-server-hosting`}>
+                    <Image
+                        className={`md:w-1/4`}
+                        alt="ELFIDC Logo"
+                        src={namehero}
+                    />
+                </Link>
                 <Link href={`https://www.bisecthosting.com/mohistmc`}>
                     <Image
                         className={`md:w-1/4`}

@@ -83,6 +83,22 @@ export default function Downloads() {
                 </Link>
 
                 <Link
+                    href="/youer/docs"
+                    className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150"
+                >
+                    <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Youer
+                    </h2>
+                    <p className="font-normal text-gray-700 dark:text-gray-400">
+                        {strings['index.cards.youer.description']}
+                    </p>
+                    <Button className={`mt-5 max-w-[60%]`} color="blue" href={`/youer/docs/`}>
+                        Access docs
+                    </Button>
+                </Link>
+
+
+                <Link
                     href="/mohistmc-api"
                     className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150"
                 >

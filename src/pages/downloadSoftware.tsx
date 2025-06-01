@@ -144,7 +144,7 @@ export default function DownloadSoftware() {
                             strings['downloadSoftware.title'],
                         )[0]
                     }
-                    <span className="text-blue-600 dark:text-blue-500">
+                    <span className="text-red-600 dark:text-red-500">
                         &nbsp;{capitalizeFirstLetter(project)}
                     </span>
                     {
@@ -182,7 +182,7 @@ export default function DownloadSoftware() {
                     </div>
                     <div className="ml-3 text-sm font-normal">
                         <span className={'font-bold'}>
-                            Do NOT ask for help in Spigot, PaperMC or Forge
+                            Do NOT ask for help in Spigot, PaperMC, Forge or NeoForge
                             forums.
                         </span>{' '}
                         They are not related to Mohist and will not help you. If
