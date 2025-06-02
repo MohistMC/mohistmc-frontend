@@ -5,6 +5,12 @@ import { getCopyrightText } from '@/util/String'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useSelector } from 'react-redux'
 
+const PATH_SECTION_MAP = {
+    '/mohist': 'Mohist',
+    '/blog': 'Blog',
+    '/youer': 'Youer'
+} as const
+
 const config: DocsThemeConfig = {
     docsRepositoryBase: 'https://github.com/MohistMC/website/tree/frontend',
     footer: {
@@ -16,11 +22,9 @@ const config: DocsThemeConfig = {
         const router = useRouter()
         const { frontMatter } = useConfig()
 
-        const section = router?.pathname.startsWith('/mohist')
-            ? 'Mohist'
-            : router?.pathname.startsWith('/blog')
-              ? 'Blog'
-              : 'Banner'
+        const section = Object.entries(PATH_SECTION_MAP).find(([path]) =>
+            router?.pathname.startsWith(path)
+        )?.[1] || 'Banner'
         const defaultTitle = frontMatter.overrideTitle || section
 
         return {
@@ -31,11 +35,9 @@ const config: DocsThemeConfig = {
     head: function useHead() {
         const router = useRouter()
 
-        const section = router?.pathname.startsWith('/mohist')
-            ? 'Mohist'
-            : router?.pathname.startsWith('/blog')
-              ? 'Blog'
-              : 'Banner'
+        const section = Object.entries(PATH_SECTION_MAP).find(([path]) =>
+            router?.pathname.startsWith(path)
+        )?.[1] || 'Banner'
         const description =
             section === 'Blog'
                 ? `Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. ${getCopyrightText()} MohistMC.`
