@@ -57,14 +57,6 @@ const IssueReportModal = ({
                             </Dropdown.Item>
                             <Dropdown.Item>
                                 <Link
-                                    href={`https://github.com/MohistMC/Banner/issues`}
-                                >
-                                    Banner
-                                </Link>
-                                <HiExternalLink className="ml-2 h-5 w-5" />
-                            </Dropdown.Item>
-                            <Dropdown.Item>
-                                <Link
                                     href={`https://github.com/MohistMC/Website/issues`}
                                 >
                                     {

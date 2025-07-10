@@ -39,10 +39,6 @@ const COMMUNITY_TEAM: Record<string, AuthorList> = {
         name: 'SparkGNRK',
         pageUrl: 'https://github.com/SparkGNRK',
     },
-    glowingstone124: {
-        name: 'glowingstone124',
-        pageUrl: 'https://github.com/glowingstone124',
-    },
     TonimatasDEV: {
         name: 'TonimatasDEV',
         pageUrl: 'https://github.com/TonimatasDEV',

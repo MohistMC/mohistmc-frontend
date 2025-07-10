@@ -11,7 +11,6 @@ import IssueForm from '@/components/report-issue/IssueForm'
 
 enum Product {
     Mohist = 'mohist',
-    Banner = 'banner',
     Website = 'website',
     Other = 'other',
 }

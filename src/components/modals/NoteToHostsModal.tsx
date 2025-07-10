@@ -35,7 +35,7 @@ const NoteToHostsModal = ({
                         into consideration to enhance the support experience.
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-200 text-center mb-3">
-                        Both Mohist and Banner are actively developed by our
+                        Both Mohist are actively developed by our
                         team, but it&apos;s important to note that these
                         software products are still in development.
                         Consequently, you may encounter an increased volume of

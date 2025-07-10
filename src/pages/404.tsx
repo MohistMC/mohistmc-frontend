@@ -14,8 +14,7 @@ export default function Custom404() {
     useEffect(() => {
         const previousPath = router.asPath
         if (
-            previousPath.startsWith('/mohist/docs') ||
-            previousPath.startsWith('/banner/docs')
+            previousPath.startsWith('/mohist/docs')
         ) {
             const localeRegex = /\/[a-z]{2}-[a-z]{2}/
 

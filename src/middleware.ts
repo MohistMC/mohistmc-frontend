@@ -8,8 +8,6 @@ export function middleware(request: NextRequest) {
     if (
         pathname.endsWith('/mohist/docs') ||
         pathname.endsWith('/mohist/docs/') ||
-        pathname.endsWith('/banner/docs') ||
-        pathname.endsWith('/banner/docs/') ||
         pathname.endsWith('/youer/docs') ||
         pathname.endsWith('/youer/docs/')
     ) {

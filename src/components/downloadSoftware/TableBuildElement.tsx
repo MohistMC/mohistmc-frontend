@@ -70,8 +70,6 @@ export default function TableBuildElement({
                 {getTimeAgoInText(new Date(build.build_date), strings)}
             </td>
             <td className="px-6 py-4 hidden md:table-cell">
-                {project === Project.Banner &&
-                    (build.loader?.fabric_version || 'Unknown')}
                 {project === Project.Mohist && (
                     <div className={`flex flex-col`}>
                         {build.loader?.forge_version && (

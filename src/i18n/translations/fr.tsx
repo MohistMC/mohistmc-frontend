@@ -11,8 +11,6 @@ const frTranslation: PartialLocaleState = {
         'index.cards.title': 'Passez votre serveur au niveau %supérieur%',
         'index.cards.mohist.description':
             'Un puissant logiciel de serveur hybride Mohist Forge implémentant les API Bukkit, Spigot.',
-        'index.cards.banner.description':
-            'Un puissant logiciel de serveur hybride Mohist Fabric implémentant les API Bukkit et Spigot.',
         'index.stats.title': 'Statistiques de MohistMC',
         'index.stats.resolvedbugs': 'Bugs résolus',
         'index.stats.openedissues': 'Nouveaux bugs trouvés',
@@ -50,14 +48,10 @@ const frTranslation: PartialLocaleState = {
             "Téléchargez n'importe lequel de nos logiciels %gratuitement !%",
         'downloads.mohist.desc':
             'Un logiciel de serveur Minecraft Forge implémentant les API Bukkit, Spigot. Avec ce logiciel, vous pouvez créer un serveur Minecraft avec des mods et des plugins ensemble !',
-        'downloads.banner.desc':
-            'Un logiciel de serveur Minecraft Fabric implémentant les API Bukkit et Spigot. Ce logiciel vous permet de créer un serveur Minecraft avec des mods et des plugins Fabric, tout comme Mohist, mais pour Fabric.',
         'downloads.endtext': "C'est tout %pour le moment%",
         'downloadSoftware.title': 'Télécharger% %',
         'downloadSoftware.mohist.desc':
             'Téléchargez Mohist, notre logiciel de serveur Minecraft Forge implémentant les API Bukkit, Spigot.',
-        'downloadSoftware.banner.desc':
-            'Téléchargez Banner, notre logiciel de serveur Minecraft Fabric implémentant les API Bukkit et Spigot.',
         'downloadSoftware.search.placeholder': 'Rechercher un build...',
         'downloadSoftware.search.noresults': 'Aucun résultat trouvé.',
         'downloadSoftware.search.nobuilds': 'Aucun build trouvé.',
@@ -68,7 +62,7 @@ const frTranslation: PartialLocaleState = {
         'downloadSoftware.build.sha256': 'Hash SHA256',
         'downloadSoftware.build.date': 'Date du build',
         'downloadSoftware.build.forgever': 'Version de Forge / NeoForge',
-        'downloadSoftware.build.fabricver': 'Version de Fabric',
+        'downloadSoftware.build.neoforgever': 'Version de NeoForge',
         'downloadSoftware.seemore': 'Voir plus',
         'downloadSoftware.see.sha256': 'Voir le SHA256',
         'downloadSoftware.mohist.1.7.10.toast':
@@ -120,22 +114,6 @@ const frTranslation: PartialLocaleState = {
         'docs.cards.websiteapi.title': 'API JSON de MohistMC',
         'docs.cards.websiteapi.desc':
             "L'API JSON de MohistMC permet aux développeurs d'obtenir des informations sur nos projets et les builds.",
-        'software.banner.subtitle':
-            "Banner est un projet qui combine Fabric et Bukkit pour Minecraft. Agissant comme un mod Fabric, il vous permet de créer un serveur Minecraft avec la possibilité d'intégrer des mods et des plugins, assurant ainsi stabilité et expérience de jeu améliorée. En tirant parti des avantages de Fabric et Bukkit, Banner ouvre un monde de possibilités pour la personnalisation du serveur et l'amélioration du gameplay.",
-        'software.banner.cards.title':
-            "Qu'est ce qui rend %Banner% si spécial ?",
-        'software.banner.cards.1.title': "Facilité d'utilisation",
-        'software.banner.cards.1.desc':
-            "Banner est facile à utiliser et à installer. Téléchargez simplement le fichier jar Banner et placez-le dans le dossier mods de votre serveur. Banner créera automatiquement un dossier de plugins dans lequel vous pourrez placer vos plugins. C'est aussi simple que cela !",
-        'software.banner.cards.2.title': 'Compatibilité',
-        'software.banner.cards.2.desc':
-            "Déverrouillez des possibilités infinies grâce à la compatibilité étendue des mods et des plugins avec Banner. Personnalisez votre serveur facilement en utilisant l'intégration de Banner avec les API Bukkit et Spigot.",
-        'software.banner.cards.3.title':
-            'Support de la communauté et mises à jour régulières',
-        'software.banner.cards.3.desc':
-            'Rejoignez la communauté Banner pour obtenir du support et des mises à jour régulières ! Restez à jour avec les dernières versions de Minecraft et accédez aux nouvelles fonctionnalités et améliorations.',
-        'software.banner.footer.desc':
-            "Découvrez une stabilité inégalée avec l'intégration de mods Fabric et de plugins Bukkit/Spigot. Rejoignez la communauté de Banner et débloquez des possibilités illimitées pour votre serveur. Passez à Banner dès aujourd'hui et révolutionnez votre expérience Minecraft.",
         'toast.filters.enabled':
             'Vous avez toujours des filtres activés, si vous ne voyez rien, vous devrez peut-être les supprimer.',
         'loginmodal.title': 'Connexion pour signaler un problème',

@@ -110,8 +110,7 @@ export default function Header() {
     const [hasDocsRouteChanged, setHasDocsRouteChanged] = useState(false)
     const handleDocsRouting = (hasLanguageSwitched: boolean = false) => {
         if (
-            router.pathname.includes('mohist/docs') ||
-            router.pathname.includes('banner/docs')
+            router.pathname.includes('mohist/docs')
         ) {
             // Prevent infinite loop
             if (hasDocsRouteChanged) {
@@ -133,10 +132,7 @@ export default function Header() {
                 const pages = [
                     ...getPagesUnderRoute(
                         `/mohist/docs/${locales.current.locale.toLowerCase()}`,
-                    ),
-                    ...getPagesUnderRoute(
-                        `/banner/docs/${locales.current.locale.toLowerCase()}`,
-                    ),
+                    )
                 ]
                 const availableDocLocaleToLowerCase =
                     pages.length > 0
@@ -319,14 +315,6 @@ export default function Header() {
                                     </li>
                                     <li>
                                         <Link
-                                            href="/software/banner"
-                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
-                                        >
-                                            Banner
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
                                             href="/software/youer"
                                             className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
                                         >
@@ -373,14 +361,6 @@ export default function Header() {
                                             className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
                                         >
                                             Mohist
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href="/downloadSoftware?project=banner"
-                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
-                                        >
-                                            Banner
                                         </Link>
                                     </li>
                                     <li>

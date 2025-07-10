@@ -25,19 +25,6 @@ export const ProductCards = ({ setSelectedProduct }: ProductCardsProps) => {
             </button>
 
             <button
-                onClick={() => setSelectedProduct('banner')}
-                aria-label="Choose Banner"
-                className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150"
-            >
-                <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Banner
-                </h2>
-                <p className="font-normal text-gray-700 dark:text-gray-300">
-                    {strings['index.cards.banner.description']}
-                </p>
-            </button>
-
-            <button
                 onClick={() => setSelectedProduct('website')}
                 aria-label="Choose Website"
                 className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150"

@@ -41,13 +41,6 @@ export default function Footer() {
                             >
                                 for Mohist
                             </Link>{' '}
-                            or{' '}
-                            <Link
-                                href="https://github.com/MohistMC/Banner/issues"
-                                className="dark:text-blue-500 text-blue-700"
-                            >
-                                for Banner
-                            </Link>{' '}
                             instead.
                         </p>
                     </div>

@@ -10,8 +10,6 @@ const enTranslation = {
         'index.cards.title': 'Take your server to the %next level%',
         'index.cards.mohist.description':
             'A powerful Mohist Forge hybrid server software implementing Bukkit, Spigot APIs.',
-        'index.cards.banner.description':
-            'A powerful Mohist Fabric hybrid server software implementing Bukkit and Spigot APIs.',
         'index.cards.youer.description':
             'A revolutionary NeoForge hybrid server software that implements Bukkit, Spigot, and Paper API.',
         'index.cards.website.description':
@@ -58,8 +56,6 @@ const enTranslation = {
         'downloads.title': 'Download any of our software %for free!%',
         'downloads.mohist.desc':
             'A Minecraft Forge server software implementing Bukkit, Spigot APIs. With this software, you can create a Minecraft server with mods and plugins together!',
-        'downloads.banner.desc':
-            'A Minecraft Fabric server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with Fabric mods and plugins, just like Mohist, but for Fabric.',
         'downloads.your.desc':
             'A Minecraft NeoForge server software implementing Bukkit and Spigot APIs. This software allows you to create a Minecraft server with NeoForge mods and plugins, just like Mohist, but for NeoForge.',
         'downloads.endtext': "That's all %for now%",
@@ -67,8 +63,6 @@ const enTranslation = {
         'downloadSoftware.title': 'Download% %',
         'downloadSoftware.mohist.desc':
             'Download Mohist, our Minecraft hybrid Forge + Bukkit/Spigot server software.',
-        'downloadSoftware.banner.desc':
-            'Download Banner, our Minecraft hybrid Fabric + Bukkit/Spigot server software.',
         'downloadSoftware.youer.desc':
             'Download Youer, our Minecraft hybrid NeoForge + Bukkit/Spigot server software.',
         'downloadSoftware.search.placeholder': 'Search for builds...',
@@ -82,7 +76,7 @@ const enTranslation = {
         'downloadSoftware.build.sha256': 'SHA256 Checksum',
         'downloadSoftware.build.date': 'Built on',
         'downloadSoftware.build.forgever': 'Forge/NeoForge version',
-        'downloadSoftware.build.fabricver': 'Fabric loader version',
+        'downloadSoftware.build.neoforgever': 'NeoForge version',
         'downloadSoftware.seemore': 'See more',
         'downloadSoftware.see.sha256': 'Reveal SHA256',
         'downloadSoftware.mohist.1.7.10.toast':
@@ -138,22 +132,6 @@ const enTranslation = {
         'docs.cards.websiteapi.title': 'Website API',
         'docs.cards.websiteapi.desc':
             "MohistMC provides a JSON API for developers to get information about MohistMC's projects and builds.",
-        'software.banner.page.title': 'MohistMC - Banner',
-        'software.banner.subtitle':
-            'Banner is a unique project that seamlessly combines Fabric and Bukkit for Minecraft. Acting as a Fabric mod, it allows you to create a feature-rich Minecraft server with the ability to integrate mods and plugins, ensuring stability and an enhanced gaming experience. By leveraging the strengths of both Fabric and Bukkit, Banner opens up a world of possibilities for server customization and gameplay enhancements.',
-        'software.banner.cards.title': 'What makes %Banner% so special?',
-        'software.banner.cards.1.title': 'Easy to Use',
-        'software.banner.cards.1.desc':
-            "Banner is easy to use and install. Simply download the Banner jar file and place it in your server's mods folder. Banner will automatically create a plugins folder for you to place your plugins in.",
-        'software.banner.cards.2.title': 'Compatibility',
-        'software.banner.cards.2.desc':
-            "Unlock endless possibilities with Banner's extensive mod and plugin compatibility. Customize your server effortlessly using Banner's integration with Bukkit and Spigot APIs.",
-        'software.banner.cards.3.title':
-            'Community Support and Regular Updates',
-        'software.banner.cards.3.desc':
-            'Join the Banner community for support and regular updates! Stay up-to-date with the latest Minecraft versions and access new features and improvements.',
-        'software.banner.footer.desc':
-            'Experience unparalleled stability with mod & plugin integration. Join the Banner community and unlock limitless possibilities for your server. Upgrade to Banner today and revolutionize your Minecraft experience.',
         'software.youer.page.title': 'MohistMC - Youer',
         'software.youer.title': 'Youer - Hot internal testing',
         'software.youer.subtitle':

@@ -154,16 +154,9 @@ const Home = () => {
                         buttonLink="/software/mohist"
                     />
                     <FeatureCard
-                        imageSrc="/img/res/banner.png"
-                        title="Banner"
-                        subtitle=""
-                        description={strings['index.cards.banner.description']}
-                        buttonLink="/software/banner"
-                    />
-                    <FeatureCard
                         imageSrc="/img/res/youer.png"
                         title="Youer"
-                        subtitle="Beta"
+                        subtitle=""
                         description={strings['index.cards.youer.description']}
                         buttonLink="/software/youer"
                     />

@@ -8,12 +8,7 @@ const MOHISTMC_TEAM: Record<string, AuthorDetails> = {
         name: 'Shawiiz_z',
         role: 'Admin & Developer',
         pageUrl: 'https://github.com/Shawiizz',
-    },
-    wdog5: {
-        name: 'Wdog5',
-        role: 'Banner Developer',
-        pageUrl: 'https://github.com/wdog5',
-    },
+    }
 }
 
 export type AuthorDetails = {

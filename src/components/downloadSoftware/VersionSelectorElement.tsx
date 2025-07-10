@@ -40,8 +40,7 @@ export default function VersionSelectorElement({
 
             if (!selectedVersion) {
                 if (
-                    software === Project.Mohist ||
-                    software === Project.Banner
+                    software === Project.Mohist
                 ) {
                     setSelectedVersion(
                         versions.find(

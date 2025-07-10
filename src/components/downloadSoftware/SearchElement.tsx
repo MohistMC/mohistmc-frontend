@@ -190,10 +190,7 @@ export default function SearchElement({
                                       search.toLowerCase()) ||
                               (filters.loaderVersion &&
                                   build.loader?.neoforge_version?.toLowerCase() ===
-                                      search.toLowerCase()) ||
-                              (filters.loaderVersion &&
-                                  build.loader?.fabric_version?.toLowerCase() ===
-                                      search.toLowerCase()),
+                                      search.toLowerCase())
                       )
                     : page.filter(
                           (build) =>
@@ -216,10 +213,6 @@ export default function SearchElement({
                                       .includes(search.toLowerCase())) ||
                               (filters.loaderVersion &&
                                   build.loader?.neoforge_version
-                                      ?.toLowerCase()
-                                      .includes(search.toLowerCase())) ||
-                              (filters.loaderVersion &&
-                                  build.loader?.fabric_version
                                       ?.toLowerCase()
                                       .includes(search.toLowerCase())),
                       )
@@ -366,7 +359,7 @@ export default function SearchElement({
                             strings[
                                 project === Project.Mohist
                                     ? 'downloadSoftware.build.forgever'
-                                    : 'downloadSoftware.build.fabricver'
+                                    : 'downloadSoftware.build.neoforgever'
                             ]
                         }
                     </label>

@@ -46,7 +46,7 @@ export default function DownloadSoftware() {
         if (router.isReady) {
             const { project } = router.query as { project: Project }
 
-            if (project === Project.Mohist || project === Project.Banner || project === Project.Youer)
+            if (project === Project.Mohist || project === Project.Youer)
                 setProject(project)
             else router.push('/404').catch()
         }
@@ -157,9 +157,7 @@ export default function DownloadSoftware() {
             <p className="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-3">
                 {project === Project.Mohist
                     ? strings['downloadSoftware.mohist.desc']
-                    : project === Project.Banner
-                        ? strings['downloadSoftware.banner.desc']
-                        : strings[`downloadSoftware.youer.desc`]}
+                    : strings[`downloadSoftware.youer.desc`]}
             </p>
             <BuildDetailsModal
                 build={modalBuild}
@@ -284,9 +282,9 @@ export default function DownloadSoftware() {
                                         ? strings[
                                               'downloadSoftware.build.forgever'
                                           ]
-                                        : project === Project.Banner
+                                        : project === Project.Youer
                                           ? strings[
-                                                'downloadSoftware.build.fabricver'
+                                                'downloadSoftware.build.neoforgever'
                                             ]
                                           : 'N/A'}
                                 </div>

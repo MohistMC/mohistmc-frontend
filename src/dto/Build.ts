@@ -11,6 +11,5 @@ export interface BuildDto {
     loader?: {
         forge_version?: string;
         neoforge_version?: string;
-        fabric_version?: string;
     };
 }

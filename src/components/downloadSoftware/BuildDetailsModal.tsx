@@ -89,16 +89,6 @@ export default function BuildDetailsModal({
                                     </span>
                                 </p>
                             )}
-                            {build?.loader?.fabric_version && (
-                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                    Fabric version:{' '}
-                                    <span
-                                        className={`font-bold dark:text-gray-300`}
-                                    >
-                                        {build?.loader.fabric_version}
-                                    </span>
-                                </p>
-                            )}
                         </section>
                         <section className={`flex flex-col gap-1`}>
                             <h2 className="text-xl font-extrabold leading-none text-dark-25 dark:text-white mb-2">

@@ -22,7 +22,7 @@ export default function Downloads() {
                     <meta name="title" content="MohistMC - Downloads" />
                     <meta
                         name="description"
-                        content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
+                        content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forgeor NeoForge, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
                     />
 
                     <meta property="og:type" content="website" />
@@ -33,7 +33,7 @@ export default function Downloads() {
                     <meta property="og:title" content="MohistMC - Downloads" />
                     <meta
                         property="og:description"
-                        content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
+                        content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forgeor NeoForge, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
                     />
                     <meta
                         property="og:image"
@@ -53,7 +53,7 @@ export default function Downloads() {
                     />
                     <meta
                         property="twitter:description"
-                        content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
+                        content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forgeor NeoForge, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
                     />
                 </Head>
                 <h1 className="md:mt-20 mt-10 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
@@ -73,14 +73,6 @@ export default function Downloads() {
                         subtitle=""
                         description={strings['index.cards.mohist.description']}
                         buttonLink="/downloadSoftware?project=mohist"
-                        buttonText={`Download`}
-                    />
-                    <FeatureCard
-                        imageSrc="/img/res/banner.png"
-                        title="Banner"
-                        subtitle=""
-                        description={strings['index.cards.banner.description']}
-                        buttonLink="/downloadSoftware?project=banner"
                         buttonText={`Download`}
                     />
                     <FeatureCard
