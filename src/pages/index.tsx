@@ -1,6 +1,6 @@
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
-import {getLocaleStringAsArgs } from '@/util/LocaleHelper'
+import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
 import Link from 'next/link'
 import StatisticsElement from '@/components/index/StatisticsElement'
 import DefaultCarousel from '@/components/index/Carousel'
@@ -104,6 +104,23 @@ const Home = () => {
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
                         {strings['index.head.subtitle']}
                     </p>
+
+                    <div className="pt-5 mb-12 text-lg font-normal lg:text-xl sm:px-16 lg:px-48 space-y-2">
+                        <p>About Mohist:</p>
+                        <p>Ownership and copyright were sold in January 2025 (Buyer: @TT)</p>
+                        <p>
+                            The code repository has been transferred to{' '}
+                            <Link
+                                href="https://github.com/Rz-C/Mohist"
+                                target="_blank"
+                                className="text-blue-500 hover:underline"
+                            >
+                                https://github.com/Rz-C/Mohist
+                            </Link>
+                        </p>
+                        <p>Updates have been paused, but downloads remain available on the official website.</p>
+                        <p>We currently do not accept or process any feedback regarding the Mohist core</p>
+                    </div>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link
                             href="/downloads"
