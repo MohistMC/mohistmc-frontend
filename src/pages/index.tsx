@@ -105,7 +105,7 @@ const Home = () => {
                         {strings['index.head.subtitle']}
                     </p>
 
-                    <div className="pt-5 mb-12 text-lg font-normal lg:text-xl sm:px-16 lg:px-48 space-y-2">
+                    <div className="pt-5 mb-12 text-lg font-normal lg:text-xl sm:px-16 lg:px-48 space-y-2 dark:text-gray-400">
                         <p>About Mohist:</p>
                         <p>Ownership and copyright were sold in January 2025 (Buyer: @TT)</p>
                         <p>
