@@ -1,0 +1,9 @@
+### -> Using ProtocolLib plugin in Youer:
+Install the [patched version]("https://github.com/Mgazul/ProtocolLib-1/releases/tag/neoforge") of the plugin.
+
+#### Fix process:
+
+NeoForge [modified the constructor of RegistryFriendlyByteBuf]("https://github.com/neoforged/NeoForge/blob/f423d0efe865584100f36adf86ed7539455e7d4f/patches/net/minecraft/network/RegistryFriendlyByteBuf.java.patch#L19"), causing ProtocolLib to fail to inject properly.
+
+The following is the modification method in ProtocolLib
+<img src="/img/docs/ProtocolLibFix.png" alt="ProtocolLib Fix Method" />
