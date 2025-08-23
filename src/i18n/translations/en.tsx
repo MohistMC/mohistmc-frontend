@@ -133,7 +133,7 @@ const enTranslation = {
         'docs.cards.websiteapi.desc':
             "MohistMC provides a JSON API for developers to get information about MohistMC's projects and builds.",
         'software.youer.page.title': 'MohistMC - Youer',
-        'software.youer.title': 'Youer - Hot internal testing',
+        'software.youer.title': 'Youer',
         'software.youer.subtitle':
             'Youer is a revolutionary Minecraft server core based on NeoForge and fully compatible with Bukkit/Spigot/Paper API. It breaks the barriers between the module and plugin ecosystem, allowing server administrators to take advantage of the powerful functions of NeoForge modules and the efficient ecosystem of Bukkit plugins without compromise.',
         'software.youer.cards.title': 'What makes %Youer% so special?',

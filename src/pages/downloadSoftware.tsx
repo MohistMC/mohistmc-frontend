@@ -144,7 +144,7 @@ export default function DownloadSoftware() {
                             strings['downloadSoftware.title'],
                         )[0]
                     }
-                    <span className="text-red-600 dark:text-red-500">
+                    <span className="text-blue-600 dark:text-blue-500">
                         &nbsp;{capitalizeFirstLetter(project)}
                     </span>
                     {
@@ -195,26 +195,30 @@ export default function DownloadSoftware() {
                     </div>
                     <Toast.Toggle />
                 </Toast>
-                <Toast>
-                    <div
-                        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-orange-500 dark:bg-orange-600 dark:text-white`}
-                    >
-                        <HiExclamation className="h-5 w-5" />
-                    </div>
-                    <div className="ml-3 text-sm font-normal">
-                        <span className={'font-bold'}>
-                            Older builds are available at
-                        </span>{' '}
-                        <a
-                            href="https://mohistmc.com/builds-raw"
-                            className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
-                        >
-                            https://mohistmc.com/builds-raw
-                        </a>
-                        .
-                    </div>
-                    <Toast.Toggle />
-                </Toast>
+                {project === Project.Mohist && (
+                    <Flowbite theme={{ theme: customTheme, mode }}>
+                        <Toast>
+                            <div
+                                className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-orange-500 dark:bg-orange-600 dark:text-white`}
+                            >
+                                <HiExclamation className="h-5 w-5" />
+                            </div>
+                            <div className="ml-3 text-sm font-normal">
+                                <span className={'font-bold'}>
+                                  Older builds are available at
+                                </span>{' '}
+                                <a
+                                    href="https://mohistmc.com/builds-raw"
+                                    className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
+                                >
+                                    https://mohistmc.com/builds-raw
+                                </a>
+                                .
+                            </div>
+                            <Toast.Toggle />
+                        </Toast>
+                    </Flowbite>
+                )}
             </Flowbite>
             {toastMessageKey?.length && (
                 <Flowbite theme={{ theme: customTheme, mode }}>

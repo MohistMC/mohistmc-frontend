@@ -14,7 +14,7 @@ const Shop = () => {
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
-            <section className={`bg-white dark:bg-dark-50 flex flex-col`}>
+            <section className={`bg-white dark:bg-dark-50 flex flex-col `}>
                 <Head>
                     <title>{strings['subscription.page.title']}</title>
                 </Head>
@@ -50,8 +50,8 @@ const Shop = () => {
                         bool3={true}
                         bool4={true}
                         bool5={true}
-                        bool6={false}
-                        bool7={false}
+                        bool6={true}
+                        bool7={true}
                     />
                 </section>
             </section>
