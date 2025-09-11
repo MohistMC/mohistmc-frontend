@@ -1,0 +1,47 @@
+---
+title: "菜单"
+description: "「方寸之间，万象俱现」"
+---
+
+#### 基本用法:
+`/menus open 菜单文件名` 可Tab自动补全
+
+[配套菜单编辑器](/tools/menu-edit)
+
+## 菜单基础设置
+
+`menu-settings` 部分定义了菜单的基本属性：
+
+- `name`: 菜单标题显示文本（支持颜色代码）
+- `rows`: 菜单行数（1-6行）
+- `open-actions`: 打开菜单时执行的动作
+
+## 图标配置说明
+
+每个图标项包含以下可选属性：
+
+### 基础属性
+- `MATERIAL`: 物品材质（支持 Minecraft 物品ID）
+- `POSITION-X`: X坐标位置（1-9）
+- `POSITION-Y`: Y坐标位置（1-6）
+- `NAME`: 显示名称（支持颜色代码）
+- `LORE`: 描述文本列表（支持颜色代码）
+
+### 功能属性
+- `ACTIONS`: 点击执行的动作列表
+- `DURABILITY`: 耐久度（用于显示损坏效果）
+- `ENCHANTMENTS`: 附魔效果列表
+- `ITEMFLAG`: 物品标签（如 HIDE_ENCHANTS）
+- `AMOUNT`: 物品数量
+- `PERMISSION`: 所需权限节点
+- `PERMISSION-MESSAGE`: 无权限时的提示信息
+- `CUSTOMMODELDATA`: 自定义模型数据
+- `HIDE-TOOLTIP`: 是否隐藏提示信息
+- `KEEP-OPEN`: 点击后是否保持菜单开启
+- `BASE64`: 玩家头颅的自定义皮肤Base64
+
+### 动作类型
+- `tell: <message>`: 向玩家发送消息
+- `console: <command>`: 以控制台身份执行命令
+- `op: <command>`: 以OP身份执行命令
+- `player: <command>`: 以普通玩家身份执行命令

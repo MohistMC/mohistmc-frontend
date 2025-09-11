@@ -1,0 +1,46 @@
+---
+title: "Velocity 跨服"
+description: ""
+---
+
+### 如何将 Velocity 与 Youer 一起使用？
+
+-> **paper-config/paper-global.yml**
+```yaml
+proxies:
+  velocity:
+    enabled: true
+    online-mode: false
+    secret: ''
+```
+
+-> **server.properties**
+
+```properties
+online-mode=false //如果您仍然想要仅限正版的服务器，您可以稍后在 Velocity 的配置文件中设置它
+```
+
+- 现在，为您的 Velocity 代理创建一个新文件夹，并使用以下 java 命令启动它：
+
+```bash
+java -jar [velocity jar name].jar
+```
+
+- 然后在代理完全启动后，键入"**end**" 以关闭您的代理。
+- 现在，您需要更改 **velocity.toml** 在 Velocity 文件夹中：
+
+-> **velocity.toml**
+
+```toml
+player-info-forwarding-mode = "modern"
+```
+
+更详细的教程请阅读 <a className="link link-info" href="https://docs.papermc.io/paper/" target="_blank">Paper文档</a> 和 <a className="link link-info" href="https://docs.papermc.io/velocity" target="_blank">Velocity文档</a>
+
+- 现在您可以启动您的代理和所有 Youer 服务器了！
+
+### ❓ 常见问题
+- **Q：** 无法进入使用Paper等原版制作的大厅？
+- **A：** 客户端安装 <a className="link link-info" href="https://modrinth.com/mod/be-quiet-negotiator" target="_blank">Be Quiet Negotiator</a> 模组 + Paper服务器安装 <a className="link link-info" href="https://github.com/MohistMC/ModPacketFix" target="_blank">ModPacketFix</a> 插件 即可解决。
+- **Q：** 客户端出现 `网络协议错误`？
+- **A：** 添加参数 ```-Dvelocity.max-known-packs=512``` 到 Velocity 的启动参数中, 根据自己需求将 ```512``` 替换为需要的数字(>64)。

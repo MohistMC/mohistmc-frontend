@@ -1,0 +1,10 @@
+{
+  "title": "Youer文档",
+  "description": "1111111111111",
+  "pages": [
+    "index"
+  ],
+  "folders": ["installation", "tutorials", "commands", "developers"],
+  "root": true,
+  "defaultOpen": true
+}

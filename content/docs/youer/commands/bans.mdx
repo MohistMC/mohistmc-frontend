@@ -1,0 +1,79 @@
+---
+title: "多对象封禁"
+description: "「封禁无界，管理有序」"
+---
+
+默认功能为关闭状态，需自行开启
+```yaml
+# youer-config/youer.yml
+bans:
+  recipe: false
+  item: false
+  entity:
+    enable: false
+    vanilla_entity:
+      enable: false
+      whitelist: []
+  enchantment: false
+```
+
+#### 基本用法:
+`/bans [add|show|setmessage] [item|item-moshou|entity|enchantment|recipe]`
+该功能处于超前禁用，禁用后拒绝一切后续判断，NeoForge事件和Bukkit事件均无法触发
+
+#### 额外用法:
+`vanilla_entity` 开启该选择后，将一键无差别的禁用所有原版实体
+可自行添加白名单 (默认排除了掉落物|盔甲架|插件的NPC)
+
+
+#### 权限:
+`youer.command.bans`
+
+### -> 添加物品禁止
+`/bans add item`
+* 打开GUI后放入物品关闭后即可添加成功
+
+### -> 添加物品禁止-没收
+`/bans add item-moshou`
+无视没收权限 `"youer.ban.item.moshou.<物品的枚举名称>"`
+* 打开GUI后放入物品关闭后即可添加成功
+
+### -> 添加实体禁止
+`/bans add entity`
+* 打开GUI后放入实体对应的刷怪蛋关闭后即可添加成功
+
+### -> 添加附魔禁止
+`/bans add enchantment`
+* 打开GUI后放入对应的附魔书关闭后即可添加成功
+
+### -> 添加配方禁止
+`/bans add recipe <recipe_name>`
+* 无GUI操作，自动补全Tab，输入配方名称即可添加成功
+
+### -> 查看禁止物品
+`/bans show item`
+* 右键可直接删除该项的禁止
+
+### -> 查看禁止物品-没收
+`/bans show item-moshou`
+* 右键可直接删除该项的禁止
+
+### -> 查看禁止实体
+`/bans show entity`
+* 右键可直接删除该项的禁止
+
+### -> 查看禁止附魔
+`/bans show enchantment`
+* 右键可直接删除该项的禁止
+
+### -> 查看禁止配方
+`/bans show recipe`
+* 右键可直接删除该项的禁止
+
+### -> 设置物品禁止消息 (可选)
+`/bans setmessage item <message>`
+`/bans setmessage item-moshou <message>`
+
+### ❓ 常见问题
+- **Q：** 为什么封禁了物品还是可以使用？
+- **A：** 部分物品的处理逻辑位于客户端，服务器是无法干预的，比如右键一个方块或者物品打开一个 GUI。

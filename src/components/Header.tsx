@@ -1,416 +1,174 @@
-import ThemeSwitcher from '@/components/ThemeSwitcher'
-import LanguageDropElement from '@/components/header/LanguageDropElement'
-import { ReactElement, useEffect, useState } from 'react'
-import LanguageDropButtonElement from '@/components/header/LanguageDropButtonElement'
-import { locales } from '@/i18n/Language'
-import {
-    LocaleState,
-    selectTranslations,
-    setLocale,
-} from '@/features/i18n/TranslatorSlice'
-import { useDispatch, useSelector } from 'react-redux'
-import { useRouter } from 'next/router'
+"use client"
+
 import Link from 'next/link'
-import UserDropdown from '@/components/header/UserDropdown'
-import IssueReportModal from '@/components/modals/IssueReportModal'
-import LoginModal from '@/components/modals/LoginModal'
-import { useAppSelector } from '@/util/redux/Hooks'
-import { selectUser } from '@/features/user/UserSlice'
 import Image from 'next/image'
-import mohistLogo from '../../public/mohistLogo.webp'
-import { FaDiscord, FaGithub, FaQq } from 'react-icons/fa'
-import { getPagesUnderRoute } from 'nextra/context'
-import { ToastLogger } from '@/util/Logger'
+import mohistLogo from '../../public/img/mohistLogo.webp'
+import {FaBilibili, FaGithub, FaQq} from 'react-icons/fa6'
+
+import * as React from "react"
+import {useState} from "react"
+import useMode from "@/utils/themeMode";
+import {IoIosColorPalette} from "react-icons/io";
+import {headerData} from "@/utils/headerData";
+import MobileNav from "@/components/MobileNav";
+import {FaDiscord} from "react-icons/fa";
+import {usePathname} from 'next/navigation';
+
+interface HeaderItem {
+    link: string;
+    name: string;
+}
 
 export default function Header() {
-    const dispatch = useDispatch()
-    const router = useRouter()
 
-    // React state
-    const [languageButtonState, setLanguageButtonState] =
-        useState<ReactElement>(
-            <LanguageDropButtonElement locale={locales.current} />,
-        )
-    const [localesElementState, setLocalesElementState] = useState<
-        ReactElement[]
-    >([])
-    const [menuVisibilityState, setMenuVisibilityState] =
-        useState<boolean>(false)
-    const [openIssueModal, setOpenIssueModal] = useState<string | undefined>()
-    const [openLoginModal, setOpenLoginModal] = useState<string | undefined>()
-
-    // React redux
-    const strings = useSelector(selectTranslations)
-    const user = useAppSelector(selectUser)
-
-    // React effect
-    useEffect(() => {
-        setLocalesElementState(
-            locales.available
-                .filter((locale) => locale !== locales.current)
-                .map((locale) => (
-                    <LanguageDropElement
-                        locale={locale}
-                        key={locale.locale}
-                        handleLocaleChangeCallback={handleLanguageChange}
-                    />
-                )),
-        )
-
-        const getBrowserLanguage = () => {
-            return (
-                localStorage.getItem('locale') ||
-                (navigator.language.includes('-')
-                    ? navigator.language.split('-')[0]
-                    : navigator.language)
-            )
-        }
-
-        function handleLanguageChange(
-            locale: LocaleState,
-            saveToStorage: boolean = true,
-        ) {
-            locales.current = locale
-
-            setLanguageButtonState(
-                <LanguageDropButtonElement locale={locale} />,
-            )
-            setLocalesElementState(
-                locales.available
-                    .filter((locale) => locale !== locales.current)
-                    .map((locale) => (
-                        <LanguageDropElement
-                            locale={locale}
-                            key={locale.locale}
-                            handleLocaleChangeCallback={handleLanguageChange}
-                        />
-                    )),
-            )
-
-            // Merge strings from default locale with the selected locale
-            const mergedStrings = Object.assign(
-                {},
-                locales.default.strings,
-                locale.strings,
-            )
-            dispatch(setLocale({ ...locale, strings: mergedStrings }))
-            saveToStorage &&
-                localStorage.setItem('locale', locales.current.locale)
-        }
-
-        handleLanguageChange(
-            locales.available.find(
-                (locale) => locale.locale === getBrowserLanguage(),
-            ) || locales.current,
-            false,
-        )
-    }, [dispatch])
-
-    // Start region - Handle docs routing
-    const [hasDocsRouteChanged, setHasDocsRouteChanged] = useState(false)
-    const handleDocsRouting = (hasLanguageSwitched: boolean = false) => {
-        if (
-            router.pathname.includes('mohist/docs')
-        ) {
-            // Prevent infinite loop
-            if (hasDocsRouteChanged) {
-                setHasDocsRouteChanged(false)
-                return
-            }
-
-            // Redirect to the correct locale only if the locale is not right
-            if (
-                !router.pathname.includes(locales.current.locale.toLowerCase())
-            ) {
-                const otherLanguagesLocaleNames = locales.available
-                    .filter(
-                        (locale) => locale.locale !== locales.current.locale,
-                    )
-                    .map((locale) => locale.locale.toLowerCase())
-
-                // Check if the selected locale has docs, if not, redirect to the default locale
-                const pages = [
-                    ...getPagesUnderRoute(
-                        `/mohist/docs/${locales.current.locale.toLowerCase()}`,
-                    )
-                ]
-                const availableDocLocaleToLowerCase =
-                    pages.length > 0
-                        ? locales.current.locale.toLowerCase()
-                        : locales.default.locale.toLowerCase()
-                if (pages.length === 0 && hasLanguageSwitched) {
-                    ToastLogger.warn(
-                        strings['toast.docsNotAvailableInSelectedLocale'],
-                        15000,
-                    )
-                }
-
-                // Check if the current pathname has a locale, if so, replace it with the new locale, if not, add the new locale
-                const newPathname = otherLanguagesLocaleNames.some((locale) =>
-                    router.pathname.includes(locale),
-                )
-                    ? router.pathname.replace(
-                          otherLanguagesLocaleNames.find((locale) =>
-                              router.pathname.includes(locale),
-                          )!,
-                          availableDocLocaleToLowerCase,
-                      )
-                    : router.pathname.replace(
-                          '/docs',
-                          `/docs/${availableDocLocaleToLowerCase}`,
-                      )
-
-                setHasDocsRouteChanged(true)
-                router.push(newPathname).catch()
-            }
-        }
-    }
-
-    // Handle route change between docs pages
-    useEffect(() => {
-        handleDocsRouting()
-    }, [router, router.pathname])
-
-    // Switch the docs page to the correct locale when the language is changed
-    useEffect(() => {
-        handleDocsRouting(true)
-    }, [locales.current])
-    // End region - Handle docs routing
-
-    const pageName = router.pathname.split('/')[1]
-
-    // On route change
-    useEffect(() => {
-        setMenuVisibilityState(false)
-    }, [router.pathname])
-
-    const AccountButtons = (rootCss: string, buttonCss: string = '') => {
-        return (
-            <div className={rootCss}>
-                {user.isLogged && <UserDropdown />}
-                {/*!user.isLogged && <Button className={buttonCss} onClick={() => setOpenIssueModal('dismissible')}>
-                    Report an issue
-                </Button>*/}
-            </div>
-        )
-    }
+    const {theme, setTheme, themes, hydrationError} = useMode()
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
+    const pathname = usePathname()
 
     return (
-        <nav className="bg-white border-gray-200 dark:bg-dark-50 fixed top-0 w-full z-30 drop-shadow-md">
-            <IssueReportModal
-                openIssueModal={openIssueModal}
-                setOpenIssueModal={setOpenIssueModal}
-                openLoginModal={openLoginModal}
-                setOpenLoginModal={setOpenLoginModal}
-            />
-            <LoginModal
-                openModal={openLoginModal}
-                setOpenModal={setOpenLoginModal}
-            />
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <Link href="/" className="flex items-center">
-                    <Image
-                        src={mohistLogo}
-                        className="h-12 w-auto mr-3"
-                        alt="MohistMC Logo"
-                    />
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-dark-50 dark:text-white">
-                        MohistMC
-                    </span>
-                </Link>
-                <div className="flex items-center md:order-2">
+        <header
+            className="sticky top-0 z-40 shadow-md bg-base-100/95 backdrop-blur-lg supports-backdrop-filter:bg-base-100/60 border-b border-base-200">
+            <div className="max-w-screen-xl flex items-center mx-auto p-4">
+                <div className="flex items-center">
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src={mohistLogo}
+                            className="h-12 w-auto mr-3"
+                            alt="MohistMC Logo"
+                        />
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-base-content">
+                    MohistMC
+                </span>
+                    </Link>
+                </div>
+
+                <nav className="hidden lg:flex lg:items-center lg:justify-center lg:gap-10 lg:flex-1">
+                    {headerData.map((item: HeaderItem, index: number) => (
+                        <div key={index}>
+                            <Link
+                                href={item.link}
+                                className={`link link-hover font-medium transition hover:duration-300 ${
+                                    pathname === item.link
+                                        ? 'text-primary font-semibold'
+                                        : 'text-base-content/80 hover:text-primary'
+                                }`}
+                            >
+                                {item.name}
+                            </Link>
+                        </div>
+                    ))}
+                </nav>
+
+                <div className="flex items-center space-x-1 ml-auto mr-5">
+                    <Link
+                        href="https://discord.gg/mohistmc"
+                        aria-label="Discord"
+                        className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
+                    >
+                        <FaDiscord className="w-7 h-7" />
+                    </Link>
                     <Link
                         href="https://github.com/MohistMC"
                         aria-label="Github"
-                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
+                        className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
                     >
-                        <FaGithub className="w-6 h-6" />
-                    </Link>
-                    <Link
-                        href="https://discord.gg/mohistmc"
-                        aria-label={'Discord'}
-                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
-                    >
-                        <FaDiscord className="w-6 h-6" />
+                        <FaGithub className="w-6 h-6"/>
                     </Link>
                     <Link
                         href="https://qm.qq.com/q/N4IqFA1rag"
                         aria-label="QQ"
-                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+                        className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
                     >
-                        <FaQq className="w-5 h-5" />
+                        <FaQq className="w-5 h-5"/>
                     </Link>
-                    <button
-                        data-collapse-toggle="mobile-menu-language-select"
-                        type="button"
-                        aria-label="Toggle menu"
-                        className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-dark-200 dark:focus:ring-gray-600"
-                        aria-controls="mobile-menu-language-select"
-                        aria-expanded="false"
-                        onClick={() => {
-                            // Override the default behavior of the button
-                            setMenuVisibilityState(!menuVisibilityState)
-                        }}
+                    <Link
+                        href="https://space.bilibili.com/15859660"
+                        className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
                     >
-                        <span className="sr-only">Open main menu</span>
+                        <FaBilibili className="w-6 h-6"/>
+                    </Link>
+                    {/*Multi themes switcher */}
+                    <div className="flex-none mr-2">
+                        <div className="dropdown dropdown-end">
+                            <label
+                                tabIndex={0}
+                                className="btn btn-ghost btn-circle avatar"
+                            >
+                                <div className="w-7 rounded-full">
+                                    <IoIosColorPalette className="w-7 h-7 text-base-content"/>
+                                </div>
+                            </label>
+                            <ul
+                                tabIndex={0}
+                                className="grid dropdown-content p-3 shadow-lg mt-5 bg-base-200 rounded-box w-52 max-h-80 overflow-x-auto"
+                            >
+                                {themes.map((item) => (
+                                    <li
+                                        data-theme={item}
+                                        key={item}
+                                        className={`capitalize w-full flex mb-2 rounded-box last-of-type:mb-0 justify-between items-center px-2 py-2 hover:bg-base-300 transition-all duration-300 cursor-pointer`}
+                                        onClick={() => {
+                                            setTheme(item)
+                                        }}
+                                    >
+                        <span className="text-base-content flex items-center gap-2">
+                            {hydrationError && theme === item && (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    className="w-3 h-3 text-primary"
+                                >
+                                    <path
+                                        d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
+                                </svg>
+                            )}
+                            {item}
+                        </span>
+                                        <div className="flex flex-shrink-0 flex-wrap gap-1 h-full">
+                                            <div className="bg-primary w-2 rounded"></div>
+                                            {' '}
+                                            <div className="bg-secondary w-2 rounded"></div>
+                                            {' '}
+                                            <div className="bg-accent w-2 rounded"></div>
+                                            {' '}
+                                            <div className="bg-neutral w-2 rounded"></div>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    {/* Responsive Sidebar Menu - shown only on mobile screens */}
+                    <div className="flex-none ml-2 lg:hidden">
                         <svg
-                            className="w-6 h-6"
-                            fill="currentColor"
-                            aria-hidden="true"
+                            onClick={() => setSidebarOpen(!sidebarOpen)}
+                            className="cursor-pointer w-8 h-8 text-base-content"
+                            width="20"
+                            height="20"
                             viewBox="0 0 20 20"
+                            fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <path
-                                fillRule="evenodd"
-                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                clipRule="evenodd"
-                            ></path>
+                                d="M3.33301 5H16.6663M3.33301 10H16.6663M3.33301 15H16.6663"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
                         </svg>
-                    </button>
-                    <ThemeSwitcher className={`ml-2`} />
-                    {AccountButtons('hidden md:block', 'ml-3')}
+                    </div>
                 </div>
-                <div
-                    className={`${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}
-                    id="mobile-menu-language-select"
-                >
-                    <ul className="flex flex-col md:items-center font-medium p-4 md:p-0 mt-4 border border-dark-200 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-dark-50">
-                        <li>
-                            <button
-                                data-dropdown-toggle="dropdownNavbar"
-                                aria-label="Toggle software menu"
-                                data-dropdown-trigger="hover"
-                                className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 md:dark:bg-transparent md:dark:hover:bg-transparent md:bg-transparent ${pageName === 'software' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'dark:hover:bg-dark-200 hover:bg-gray-100'}`}
-                            >
-                                {strings['button.software']}
-                                <svg
-                                    className="w-5 h-5 ml-1"
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clipRule="evenodd"
-                                    ></path>
-                                </svg>
-                            </button>
-                            <div
-                                id="dropdownNavbar"
-                                className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-dark-100 dark:divide-gray-600"
-                            >
-                                <ul
-                                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                    aria-labelledby="dropdownLargeButton"
-                                >
-                                    <li>
-                                        <Link
-                                            href="/software/mohist"
-                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
-                                        >
-                                            Mohist
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href="/software/youer"
-                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
-                                        >
-                                            Youer
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <Link
-                                data-dropdown-toggle="dropdownNavbarDownloads"
-                                aria-label="Toggle downloads menu"
-                                data-dropdown-trigger="hover"
-                                href={`/downloads`}
-                                className={`flex items-center py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'downloads' || pageName === 'downloadSoftware' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
-                            >
-                                {strings['button.downloads']}
-                                <svg
-                                    className="w-5 h-5 ml-1"
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clipRule="evenodd"
-                                    ></path>
-                                </svg>
-                            </Link>
-                            <div
-                                id="dropdownNavbarDownloads"
-                                className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-dark-100 dark:divide-gray-600"
-                            >
-                                <ul
-                                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                    aria-labelledby="dropdownLargeButton"
-                                >
-                                    <li>
-                                        <Link
-                                            href="/downloadSoftware?project=mohist"
-                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
-                                        >
-                                            Mohist
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href="/downloadSoftware?project=youer"
-                                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:text-white"
-                                        >
-                                            Youer
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <Link
-                                href="/sponsor"
-                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'sponsor' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
-                            >
-                                {strings['button.sponsor']}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/subscription"
-                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'subscription' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
-                            >
-                                {strings['button.subscription']}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/mohistmc-api"
-                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'mohistmc-api' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
-                            >
-                                {strings['button.api']}
-                            </Link>
-                        </li>
-                        {AccountButtons('md:hidden', 'ml-2 mt-1 mb-2')}
-                        {languageButtonState}
-                        <div
-                            className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-dark-100"
-                            id="language-dropdown-menu"
-                        >
-                            <ul className="py-2 font-medium" role="none">
-                                {localesElementState}
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
+                {/* Responsive Sidebar Layout */}
+                <MobileNav
+                    sidebarOpen={sidebarOpen}
+                    setSidebarOpen={setSidebarOpen}
+                />
             </div>
-        </nav>
+        </header>
+
     )
 }

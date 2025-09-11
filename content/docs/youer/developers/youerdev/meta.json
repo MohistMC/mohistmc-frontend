@@ -1,0 +1,6 @@
+{
+  "title": "Youer开发",
+  "description": "",
+  "pages": ["setup", "patches", "build"],
+  "defaultOpen": true
+}

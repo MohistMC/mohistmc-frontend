@@ -1,0 +1,26 @@
+---
+title: "worlds.yml"
+description: "内置多世界配置文件"
+---
+
+适用于 Mohist 1.20.1 的配置示例：
+
+
+        ```yaml
+        worlds:
+          world:
+            worldborder: 5.9999968E7
+            difficulty: EASY
+            seed: 3439160391972197135
+            environment: NORMAL
+            # 世界的别称 支持变量 %mohist_world_name%
+            name: world
+            info: -/-
+            # 仅作为内部标识，为true是代表是使用内置管理器生成的世界
+            mohist: false
+            # 仅作为内部标识，为true是代表是使用由模组生成的世界
+            ismods: false
+            keepspawninmemory: true
+            # 当存在该选项的时候，世界将自动生成为虚空世界
+            void: true
+        ```

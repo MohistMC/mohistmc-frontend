@@ -1,0 +1,10 @@
+{
+  "title": "Mohist文档",
+  "description": "1111111111111",
+  "pages": [
+    "index"
+  ],
+  "folders": ["installation", "tutorials", "configuration", "developers"],
+  "root": true,
+  "defaultOpen": true
+}

@@ -1,0 +1,45 @@
+---
+title: "初始化开发环境"
+description: ""
+---
+
+### 克隆项目
+
+```bash
+git clone https://github.com/MohistMC/Mohist.git -b mc-version
+cd Mohist
+```
+
+或者手动将其克隆到空文件夹。
+
+### 设置工作区
+
+<div role="tablist" className="tabs tabs-lifted my-6">
+    <input type="radio" name="osTabs" role="tab" className="tab" aria-label="Windows" defaultChecked />
+    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
+            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
+                <div className="flex space-x-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                </div>
+            </div>
+            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">gradlew.bat setup</pre>
+        </pre>
+    </div>
+
+    <input type="radio" name="osTabs" role="tab" className="tab" aria-label="Linux" />
+    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
+            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
+                <div className="flex space-x-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                </div>
+            </div>
+            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">./gradlew setup</pre>
+        </pre>
+    </div>
+</div>

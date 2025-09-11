@@ -1,0 +1,99 @@
+
+{
+  "project": {
+    "name": "WuKong",
+    "author": 1,
+    "logo": "/img/res/wukong.webp",
+    "banner": "/img/wukong/3.webp",
+    "introduction": "A powerful client engine, similar to DragonCore, Germ Engine, and YSM, giving your server 72 transformations.",
+    "description": "A powerful client engine, similar to DragonCore, Germ Engine, and YSM, giving your server 72 transformations.",
+    "slogan": "\"Body like a mystical ape, versatile in changes; heart as a bright mirror, perceiving all phenomena.\"",
+    "tags": ["Mod", "Client", "NeoForge", "1.55"],
+    "status": "In Development",
+    "license": "MIT",
+    "openSource": true,
+    "currentVersion": "v0.1.0 Alpha",
+    "warning": "WuKong is still in development phase and will not be publicly released for now."
+  },
+  "features": [
+    {
+      "icon": "FaDownload",
+      "title": "High Compatibility",
+      "description": "Compatible with multiple Minecraft versions and clients"
+    },
+    {
+      "icon": "FaArrowRight",
+      "title": "Easy to Use",
+      "description": "Simple configuration and deployment method"
+    },
+    {
+      "icon": "FaBook",
+      "title": "Complete Documentation",
+      "description": "Provide detailed usage documentation and technical support"
+    },
+    {
+      "icon": "FaGithub",
+      "title": "Open Source Support",
+      "description": "Community-driven development and maintenance"
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/img/wukong/gonggao.webp",
+      "alt": "Announcement Interface"
+    },
+    {
+      "src": "/img/wukong/1.webp",
+      "alt": "Feature Showcase 1"
+    },
+    {
+      "src": "/img/wukong/2.webp",
+      "alt": "Feature Showcase 2"
+    },
+    {
+      "src": "/img/wukong/3.webp",
+      "alt": "Feature Showcase 3"
+    },
+    {
+      "src": "/img/wukong/4.webp",
+      "alt": "Feature Showcase 4"
+    },
+    {
+      "src": "/img/wukong/gugugu.webp",
+      "alt": "Fun Image"
+    }
+  ],
+  "changelog": [
+    {
+      "version": "v0.1.0 Alpha",
+      "date": "2024-01-15",
+      "status": "completed",
+      "changes": [
+        "Initial version release",
+        "Basic client engine functionality",
+        "Support for Minecraft 1.12.2"
+      ],
+      "type": "completed"
+    },
+    {
+      "version": "v0.2.0 Alpha",
+      "date": "In Development",
+      "status": "in-progress",
+      "changes": [
+        "Added mod compatibility layer",
+        "Performance optimization",
+        "Support for more Minecraft versions"
+      ],
+      "type": "in-progress"
+    }
+  ],
+  "versions": [
+    {
+      "version": "v0.1.0 Alpha",
+      "status": "Alpha",
+      "compatibility": "Minecraft 1.55",
+      "releaseDate": "2035-01-15",
+      "buttonText": "Coming Soon"
+    }
+  ]
+}

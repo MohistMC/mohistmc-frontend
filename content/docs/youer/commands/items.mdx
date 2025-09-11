@@ -1,0 +1,60 @@
+---
+title: "物品编辑器"
+description: "「虚空搓万物，一念百宝生」"
+---
+
+#### 基本用法:
+`/items [name|save|list|get|remove|modeldata|lore]`
+
+#### 权限:
+`youer.command.items`
+
+### -> name
+`/items name <string>`
+设置手中物品的显示名称
+
+### -> save
+`/items save <name>`
+将手中物品保存到配置文件中，以便以后使用
+
+### -> list
+`/items list`
+打开GUI界面，显示所有已保存的物品
+
+### -> get
+`/items get <name>`
+从配置文件中获取物品，并放入手中
+
+### -> remove
+`/items remove <name>`
+从配置文件中删除物品
+
+### -> modeldata
+`/items modeldata <int>`
+设置物品的模型数据
+
+### -> lore add
+`/items lore add <line> <text...>    # 在指定行后插入`
+
+添加lore到物品上，支持颜色代码(&)和换行符(\n)
+* 不指定line时，在末尾添加
+* 指定line时，在指定行后插入
+
+### -> lore set
+`/items lore set <line> <text...>`
+设置指定行的lore内容
+
+### -> lore remove
+`/items lore remove <line>`
+删除指定行lore
+
+### -> attribute
+`/items attribute <attribute> <value> [slot]`
+为物品添加属性修饰符
+* attribute: 属性名称(如GENERIC_MAX_HEALTH或MAX_HEALTH)
+* value: 属性值(数字)
+* slot: 装备槽位(HAND, OFF_HAND, FEET, LEGS, CHEST, HEAD, ANY)
+
+### -> unattribute
+`/items unattribute <attribute>`
+从物品中移除指定的属性修饰符

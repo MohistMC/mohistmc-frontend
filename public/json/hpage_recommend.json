@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mohist",
+    "imageSrc": "/img/res/mohist.webp",
+    "title": "Mohist",
+    "subtitle": "Stable Performance",
+    "descriptionKey": "A powerful Forge hybrid server software implementing Bukkit and Spigot."
+  },
+  {
+    "id": "youer",
+    "imageSrc": "/img/res/youer.webp",
+    "title": "Youer",
+    "subtitle": "Innovative Integration",
+    "descriptionKey": "A revolutionary NeoForge hybrid server software implementing Paper and PurPur."
+  },
+  {
+    "id": "silkard",
+    "imageSrc": "/img/res/silkard.webp",
+    "title": "Silkard",
+    "subtitle": "Lightweight and Efficient",
+    "descriptionKey": "A newly architected Fabric hybrid server software implementing Bukkit and Spigot."
+  }
+]

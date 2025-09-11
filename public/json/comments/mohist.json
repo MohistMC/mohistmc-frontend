@@ -1,0 +1,57 @@
+
+[
+  {
+    "id": 1,
+    "author": "@MohistVeteran",
+    "content": "Mohist's Forge compatibility is really strong, 1.20.1 mods basically run perfectly! 👍",
+    "date": "2025-05-10"
+  },
+  {
+    "id": 2,
+    "author": "@RedstoneEngineer",
+    "content": "TPS is much more stable after using Mohist to host the server, recommended for server owners to try 💻",
+    "date": "2025-05-10"
+  },
+  {
+    "id": 3,
+    "author": "@ModConflictVictim",
+    "content": "Finally found a solution to run both Thermal series and Ice and Fire simultaneously 😭 Mohist saved my life!",
+    "date": "2025-05-09"
+  },
+  {
+    "id": 4,
+    "author": "@ServerOwnerTony",
+    "content": "Mohist's plugin support is amazing, now I can use Essentials+WorldEdit to manage mod servers ✨",
+    "date": "2025-05-09"
+  },
+  {
+    "id": 5,
+    "author": "@JavaTuningExpert",
+    "content": "Recommend allocating at least 6G RAM to Mohist, significant performance improvement for large modpacks ⚡",
+    "date": "2025-05-08"
+  },
+  {
+    "id": 6,
+    "author": "@1.7.10Nostalgia",
+    "content": "Hope Mohist can support classic 1.7.10 version! So many old mods worth revisiting 🌙",
+    "date": "2025-05-08"
+  },
+  {
+    "id": 7,
+    "author": "@CrashLogAnalyst",
+    "content": "When encountering NullPointerException, remember to update Java version, Mohist has better compatibility with Java17 🐛",
+    "date": "2025-05-07"
+  },
+  {
+    "id": 9,
+    "author": "@CrossVersionMessenger",
+    "content": "When will 1.21.1 support be available? Want to play new versions but can't give up old mods 😫",
+    "date": "2025-05-06"
+  },
+  {
+    "id": 10,
+    "author": "@TechDocContributor",
+    "content": "Issues on GitHub are replied quickly, the developer team is really dedicated ❤️",
+    "date": "2025-05-05"
+  }
+]

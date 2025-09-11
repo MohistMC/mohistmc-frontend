@@ -1,0 +1,96 @@
+
+{
+  "mohist": {
+    "name": "Mohist",
+    "author": 1,
+    "developers": ["Mgazul"],
+    "icon": "/img/res/mohist.webp",
+    "introduction": "A powerful Forge hybrid server software that implements Bukkit and Spigot.",
+    "tags": ["Core", "Forge", "Spigot", "1.7.10+"],
+    "description": "Mohist is an excellent Minecraft Forge server software that implements Bukkit and Spigot API. By leveraging this powerful combination, you can create a high-performance Minecraft server capable of integrating mods and plugins, ensuring stability and optimal performance.",
+    "banner": "/img/mohist/1.webp",
+    "imageAlt": "Banner Preview",
+    "issuesLink": "https://github.com/MohistMC/Mohist/issues",
+    "jsonPath": "/json/comments/mohist.json",
+    "features": [
+      {
+        "title": "Enhanced Performance",
+        "description": "By integrating Bukkit and Spigot to support plugins and improve performance, enjoy a smooth and seamless gaming experience even with a large number of mods and plugins.",
+        "color": "orange"
+      },
+      {
+        "title": "Compatibility",
+        "description": "Through Mohist's integration with Bukkit and Spigot API, unlock unlimited mod and plugin compatibility possibilities. Easily customize your server.",
+        "color": "blue"
+      },
+      {
+        "title": "Community Support and Regular Updates",
+        "description": "Join the Mohist community for support and regular updates! Stay up-to-date with the latest Minecraft versions and get new features and improvements.",
+        "color": "green"
+      }
+    ]
+  },
+  "youer": {
+    "name": "Youer",
+    "author": 1,
+    "icon": "/img/res/youer.webp",
+    "introduction": "A revolutionary NeoForge hybrid server software that implements Bukkit, Spigot, Paper, and PurPur.",
+    "tags": ["Core", "NeoForge", "Paper", "1.21.1+"],
+    "description": "Youer is a revolutionary Minecraft server core based on NeoForge with full compatibility for Bukkit/Spigot/Paper/Purpur API. It breaks down the barriers between mod and plugin ecosystems, allowing server administrators to leverage the powerful features of NeoForge mods and the efficient ecosystem of Bukkit plugins without compromise.",
+    "banner": "/img/youer/1.webp",
+    "imageAlt": "Banner Preview",
+    "issuesLink": "https://github.com/MohistMC/Youer/issues",
+    "jsonPath": "/json/comments/youer.json",
+    "warning": {
+      "text": "Join the Beta Group - Get early access to the latest features!",
+      "linkText": "Go to Patreon",
+      "linkHref": "https://www.patreon.com/c/mohistmc"
+    },
+    "features": [
+      {
+        "title": "✨ Core Advantages",
+        "description": "Through Youer's integration with Bukkit, Spigot, Paper, and Purpur API, unlock unlimited mod and plugin compatibility possibilities. Break through technical barriers and easily customize your server.",
+        "color": "orange"
+      },
+      {
+        "title": "🚀 Application Scenarios",
+        "description": "Suitable for servers that want to run both NeoForge mods and Paper plugins simultaneously, allowing mod players, plugin developers, and modpack authors to seamlessly experience the advantages of both ecosystems!",
+        "color": "blue"
+      },
+      {
+        "title": "🌟 Community Support and Continuous Updates",
+        "description": "Experience unparalleled stability through mod and plugin integration and optimized performance. Join the MohistMC community to unlock unlimited possibilities for your server.",
+        "color": "green"
+      }
+    ]
+  },
+  "silkard": {
+    "name": "Silkard",
+    "author": 1,
+    "icon": "/img/res/silkard.webp",
+    "introduction": "A newly architected Fabric hybrid server software that implements Bukkit and Spigot.",
+    "tags": ["Core", "Fabric", "Spigot", "1.22"],
+    "description": "Silkard is a lightweight Minecraft Fabric server software that implements Bukkit and Spigot. It uses a hybrid mode of NeoForge patches + Mixin to improve extensibility and compatibility.",
+    "banner": "/img/silkard/1.webp",
+    "imageAlt": "Silkard Preview",
+    "issuesLink": "https://github.com/MohistMC/Silkard/issues",
+    "jsonPath": "/json/comments/silkard.json",
+    "features": [
+      {
+        "title": "Easy to Use",
+        "description": "Silkard is easy to use and install. Simply download the Silkard jar file and use a bat file to launch the jar. Silkard will automatically create a plugins folder for you to place plugins.",
+        "color": "orange"
+      },
+      {
+        "title": "Compatibility",
+        "description": "Through Silkard's integration with Bukkit and Spigot API, unlock unlimited mod and plugin compatibility possibilities. Easily customize your server using Silkard.",
+        "color": "blue"
+      },
+      {
+        "title": "Community Support and Regular Updates",
+        "description": "Join the Silkard community for support and regular updates! Stay up-to-date with the latest Minecraft versions and get new features and improvements.",
+        "color": "green"
+      }
+    ]
+  }
+}

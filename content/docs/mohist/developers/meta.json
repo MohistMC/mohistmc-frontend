@@ -1,0 +1,7 @@
+{
+  "title": "开发指导",
+  "description": "在不同的系统中安装",
+  "pages": ["modsandplugins","setup", "patches", "build"],
+  "folders": ["modsandplugins"],
+  "defaultOpen": true
+}

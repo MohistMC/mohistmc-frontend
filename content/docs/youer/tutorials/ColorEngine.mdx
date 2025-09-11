@@ -1,0 +1,86 @@
+---
+title: "全域染色引擎"
+description: "「一染全域，七彩绽放」"
+---
+
+### 🎨 核心功能
+* 全域染色 - 在所有地方自动生效(待完善)
+* 多格式兼容 - 支持 &符号、十六进制、渐变、纯色、混合格式、[中国传统色](/tools/ctc)
+* 智能解析 - 自动识别并转换颜色代码
+* 无缝集成 - 其他插件无需修改即可使用
+
+### ✨ 应用场景
+* 消息染色 - 聊天、广播消息
+* 界面美化 - 菜单、标题、计分板
+* 环境装饰 - 牌子、书本文字
+* 动态效果 - 渐变色彩、特殊格式
+
+### 🛠️ 使用示例
+
+#### 腐竹使用 ↓ 不必顾虑插件是否支持更高级的颜色格式
+```yaml
+## 1. youer-config/menu/example.yml中的设置
+command-as-op:
+  MATERIAL: COMMAND_BLOCK
+  POSITION-X: 6
+  POSITION-Y: 1
+  NAME: '<gradient:#FF0000:#00FF00:#0000FF>红到绿到蓝渐变</gradient>'
+  LORE:
+    - '<朱砂>朱砂色文本</朱砂>'
+    - '<绛紫>绛紫色文本</绛紫>'
+    - '<月白>月白色文本</月白>'
+    - '<gradient:朱砂:靛蓝:#00FF00>从朱砂到靛蓝再到绿色的渐变</gradient>'
+```
+```yaml
+## 1. spigot.yml中的设置
+messages:
+  whitelist: <gradient:#00FF00:#0000FF>你没有白名单！</gradient>
+```
+```properties
+## 1. server.properties中的motd设置
+motd=<gradient\:\#00FF00\:\#0000FF>A Minecraft Server</gradient>
+motd=&#FF0000A Minecraft Server
+motd=&cMinecraft Server
+```
+```txt
+## 1. Essentials/motd.txt 中的内容设置
+&6Welcome, {PLAYER}&6!
+&6Type &c/help&6 for a list of commands.
+&6Type &c/list&6 to see who else is online.
+&6Players online:&c {ONLINE} &6- World time:&c {WORLDTIME12}
+<gradient:#00FF00:#0000FF>Essentials motd.txt测试</gradient> #新增的内容
+```
+
+#### 开发过程中 ↓ 无需自己写额外的格式解析
+```java
+// 1. 渐变格式（支持带#和不带#）
+sender.sendMessage("<gradient:#FF0000:#0000FF>渐变文本</gradient>");
+sender.sendMessage("<gradient:FF0000:0000FF>渐变文本</gradient>");
+sender.sendMessage("<gradient:#00FF00:#0000FF>绿到蓝渐变</gradient>");
+
+// 2. 固定颜色格式（支持带#和不带#）
+sender.sendMessage("<#FF0000>红色文本</#FF0000>");
+sender.sendMessage("<FF0000>红色文本</FF0000>");
+sender.sendMessage("<red>红色文本</red>");
+sender.sendMessage("<bold>粗体文本</bold>");
+sender.sendMessage("<月白>月白色文本</月白>");
+
+// 3. 十六进制格式
+sender.sendMessage("&#FF0000红色文本\n<gradient:#00FF00:#0000FF>绿到蓝渐变</gradient>");
+
+// 4. 传统格式
+sender.sendMessage("&a绿色 &c红色 &l粗体");
+
+// 5. 混合格式
+sender.sendMessage(
+        "<gradient:#FF0000:#00FF00>渐变文本</gradient> " +
+        "<#0000FF>蓝色文本</#0000FF> " +
+        "&#FF0000红色文本 " +
+        "&a绿色文本"
+);
+
+// 6. 其他方法示例
+Bukkit.broadcastMessage("<gradient:#00FF00:#0000FF>这是一条绿到蓝渐变的公告</gradient>");
+player.setDisplayName("<#FF0000>玩家名称</#FF0000>");
+更多玩法请自行探索
+```

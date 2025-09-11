@@ -1,0 +1,72 @@
+---
+title: "主命令"
+description: "「面向Youer服务器的全能管理指令」"
+---
+
+# Youer 命令文档
+
+`/youer` 命令是一个综合性的管理命令，为管理与监控基于 Youer 的 Minecraft 服务器提供了各种实用工具。
+
+## 可用子命令
+
+### `/youer mods`
+显示已加载模组的信息，分类包括：
+- 内部模组（在客户端和服务端都加载的模组）
+- 仅客户端模组
+- 仅服务端模组
+- 所有模组
+
+### `/youer playermods <player>`
+显示指定玩家客户端上安装的模组列表。
+
+### `/youer reload`
+在不重启服务器的情况下重新加载 Youer 配置文件。
+
+### `/youer version`
+显示 Youer、NeoForge、Bukkit、CraftBukkit 和 Spigot 的版本信息。
+
+### `/youer debug`
+显示关于世界预设的调试信息。
+
+### `/youer packetstats <start|stop|status>`
+管理网络数据包统计信息的收集和报告：
+- start：开始收集数据包统计信息
+- stop：停止收集并显示详细报告
+- status：显示当前收集状态
+
+### `/youer heal [player]`
+治疗命令发送者或指定的玩家：
+- 恢复生命值到最大值
+- 设置饥饿值为20
+- 设置饱和度为5.0
+- 移除燃烧状态
+
+### `/youer speed <value>`
+设置玩家的行走或飞行速度：
+- 数值必须在0.0到10.0之间
+- 适用于行走和飞行速度
+- 仅操作员可用
+
+### `/youer cleardropitem <world>`
+清除指定世界中的所有掉落物品。
+
+### `/youer memoryfix`
+优化内存使用（仅限Windows系统）：
+- 尝试减少内存占用
+- 仅在Windows系统上可用
+
+### `/youer channels_incom`
+显示传入的插件通道。
+
+### `/youer channels_outgo`
+显示传出的插件通道。
+
+### `/youer printthreadcost`
+生成线程CPU消耗分析报告，用于性能分析。执行此命令后将在服务器日志目录生成一个JSON格式的线程分析文件，可以将该文件上传到[线程分析页面](/tools/analytics/thread)进行可视化分析。
+
+### `/youer help`
+显示帮助信息，列出所有可用的子命令。
+
+## 权限
+
+所有子命令都需要 `youer.command.youer` 权限才能执行。

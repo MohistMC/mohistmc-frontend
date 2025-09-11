@@ -1,0 +1,24 @@
+[
+  {
+    "Name": "metl_play",
+    "Email": "davidundivan.99@gmail.com",
+    "OneOff": "True",
+    "Monthly": "False",
+    "Commission": "False",
+    "Shop": "False",
+    "LastSupportedDateUTC": "2025-01-24 19:28",
+    "Total": "100.000000",
+    "LastestTransactionId": "d88dc86a-bdc7-41d6-ae91-0639728c85ab"
+  },
+  {
+    "Name": "KnackAtNite",
+    "Email": "flickinger117@gmail.com",
+    "OneOff": "True",
+    "Monthly": "False",
+    "Commission": "False",
+    "Shop": "False",
+    "LastSupportedDateUTC": "2025-01-20 05:37",
+    "Total": "5.000000",
+    "LastestTransactionId": "f8555151-396f-488e-91b4-f58c2e3b5dc2"
+  }
+]

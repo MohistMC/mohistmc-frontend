@@ -1,0 +1,37 @@
+---
+title: "在 Windows 上安装 Youer"
+description: ""
+---
+
+### 下载
+
+<p>要创建 Youer 服务器, 您需要从 <a className="link link-info" href="/download/youer" target="_blank">官方下载</a></p>
+
+### 创建文件夹
+
+<p>使用您选择的服务器名称创建一个文件夹。
+    新建文件夹完成后，将下载的Youer文件移动到这个新的文件夹里面。</p>
+
+<div className="alert alert-info my-4">
+    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    <span>如果您已经有 Spigot / Forge 服务器并想切换到 Youer，最好创建一个新的 服务器，然后添加您的地图、模组和插件。</span>
+</div>
+
+### 运行服务器
+
+<p>快完成了！要运行您的服务器，请不要双击 <strong>jar</strong> 文件！ 您必须创建一个名为 `start.bat` 的文件，您可以在其中放置 Youer jar
+    文件。</p>
+
+<p>将以下内容写入 `start.bat` 文件：</p>
+```text
+java -jar -Xmx4G downloaded-jar-file.jar
+```
+
+<p>将 `downloaded-jar-file.jar` 替换为您拖放到服务器文件夹的 jar 文件的真实名称。</p>
+
+<div className="alert alert-warning my-4">
+    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+    <span>确保 `start.bat` 中的服务器文件名以 `jar` 结尾</span>
+</div>
+
+<p>完成后，双击 `start.bat`</p>

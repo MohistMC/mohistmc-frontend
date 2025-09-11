@@ -1,0 +1,37 @@
+---
+title: "传送点管理"
+description: "「一瞬千里，洞悉万象」"
+---
+
+默认功能为关闭状态，需自行开启
+```yaml
+# youer-config/youer.yml
+warps:
+  enable: true
+```
+
+#### 基本用法:
+`/warps [set|del|tp|gui] [参数...]`
+
+#### 权限:
+`youer.command.warps`
+
+### -> 创建传送点
+`/warps set <warp_name>`
+将当前玩家所在位置保存为传送点。
+
+### -> 删除传送点
+`/warps del <warp_name>`
+删除传送点。
+
+### -> 传送到传送点
+`/warps tp <warp_name>`
+将当前玩家传送到传送点。
+
+### -> 传送指定玩家
+`/warps tp <player> <warp_name>`
+将指定的玩家传送到传送点。
+
+### -> 图形界面管理
+`/warps gui`
+打开图形界面，显示所有传送点。点击传送点图标可以直接传送到对应位置。

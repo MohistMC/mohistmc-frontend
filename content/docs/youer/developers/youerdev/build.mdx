@@ -1,0 +1,54 @@
+---
+title: "构建Youer"
+description: ""
+---
+
+
+<div className="alert alert-warning my-4 text-xs">
+    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+    </svg>
+    <span>如果您修改了 Minecraft， 请 <a href="/docs/youer/developers/youerdev/patches" className="link text-xs text-blue-600 dark:text-blue-400">生成补丁</a> 原代码</span>
+</div>
+
+<div role="tablist" className="tabs tabs-lifted my-6">
+    <input type="radio" name="buildTabs" role="tab" className="tab" aria-label="1.21.1+" defaultChecked />
+    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+        <p>使用 Linux 构建：</p>
+        <div className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-x-auto">
+            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
+                <div className="flex space-x-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                </div>
+            </div>
+            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto">
+                gradlew setup youerJar
+            </pre>
+        </div>
+
+        <p>使用 Windows 构建:</p>
+        <div className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-x-auto">
+            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
+                <div className="flex space-x-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                </div>
+            </div>
+            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto">
+                gradlew.bat setup youerJar
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div className="alert alert-info my-4 text-xs">
+    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    <div className="flex flex-col">
+        <span>Youer 服务器 jar 文件位于: `./projects/youer/build/libs/youer-*-server.jar`</span>
+    </div>
+</div>
+
+<p>这是运行服务器所需的 <strong>jar 文件</strong></p>

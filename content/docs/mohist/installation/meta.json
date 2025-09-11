@@ -1,0 +1,6 @@
+{
+  "title": "安装",
+  "description": "在不同的系统中安装",
+  "pages": ["linux", "windows"],
+  "defaultOpen": true
+}

@@ -1,0 +1,6 @@
+{
+  "title": "命令大全",
+  "description": "",
+  "pages": ["youer","shows", "packetstats", "items", "info"],
+  "defaultOpen": true
+}

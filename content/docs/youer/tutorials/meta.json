@@ -1,0 +1,6 @@
+{
+  "title": "开服指导",
+  "description": "",
+  "pages": ["deepseek", "velocity", "multiverses", "connector", "kubejs", "protocollib"],
+  "defaultOpen": true
+}

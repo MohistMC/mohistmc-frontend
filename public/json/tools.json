@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Minecraft",
+    "text": "Minecraft Official Website",
+    "img": "/img/tools/minecraft.webp",
+    "link": "https://www.minecraft.net/"
+  },
+  {
+    "name": "IntelliJ IDEA",
+    "text": "IntelliJ IDEA Official Website",
+    "img": "/img/tools/IntelliJ_IDEA.webp",
+    "link": "https://www.jetbrains.com/idea/"
+  },
+  {
+    "name": "WebStorm",
+    "text": "WebStorm Official Website",
+    "img": "/img/tools/WebStorm_icon.webp",
+    "link": "https://www.jetbrains.com/webstorm/"
+  },
+  {
+    "name": "Gradle",
+    "text": "Java Build Tool",
+    "img": "/img/tools/GRADLE_RGB.webp",
+    "link": "https://gradle.org/"
+  },
+  {
+    "name": "YourKit",
+    "text": "Java Profiling Tool",
+    "img": "/img/tools/yourkit.webp",
+    "link": "https://www.yourkit.com/"
+  },
+  {
+    "name": "Modrinth",
+    "text": "Overseas Minecraft Resource Site",
+    "img": "/img/tools/modrinth.webp",
+    "link": "https://modrinth.com/"
+  },
+  {
+    "name": "Blockbench",
+    "text": "Popular Minecraft Modeling Software",
+    "img": "/img/tools/blockbench_logo.webp",
+    "link": "https://www.blockbench.net/"
+  },
+  {
+    "name": "daisyUI",
+    "text": "Frontend UI Component Library",
+    "img": "https://img.daisyui.com/images/daisyui/mark-rotating.svg",
+    "link": "https://daisyui.com/"
+  },
+  {
+    "name": "Beyond Compare 4",
+    "text": "Text File Comparison Tool",
+    "img": "/img/tools/bc_icon.webp",
+    "link": "https://www.scootersoftware.com/"
+  },
+  {
+    "name": "GitHub Desktop",
+    "text": "Git Graphical Desktop Application",
+    "img": "/img/tools/github-desktop.webp",
+    "link": "https://github.com/apps/desktop"
+  },
+  {
+    "name": "react-icons",
+    "text": "React Icon Collection",
+    "img": "/img/tools/react-icons.webp",
+    "link": "https://react-icons.github.io/react-icons/"
+  },
+  {
+    "name": "Linkie",
+    "text": "Fabric Series Mapping Table Query",
+    "img": "/img/tools/Linkie.webp",
+    "link": "https://linkie.shedaniel.dev/"
+  },
+  {
+    "name": "Maven Repository",
+    "text": "Maven Central Repository",
+    "img": "/img/tools/mvnrepository.webp",
+    "link": "https://mvnrepository.com/"
+  },
+  {
+    "name": "emoji8",
+    "text": "Emoji Collection with Copy Function",
+    "img": "/img/tools/emoji8.webp",
+    "link": "https://emoji8.com/zh-hans/"
+  },
+  {
+    "name": "Skin Viewer & Download",
+    "text": "Minecraft Official Skins",
+    "img": "/img/tools/skin.webp",
+    "link": "/tools/skin"
+  },
+  {
+    "name": "Color Code Editor",
+    "text": "Minecraft & -> §",
+    "img": "/img/tools/minecraft_color.webp",
+    "link": "/tools/minecraft-color-editor"
+  },
+  {
+    "name": "Analytics Pavilion",
+    "text": "Minecraft Log/Performance Analysis",
+    "img": "/img/tools/analytics.webp",
+    "link": "/tools/analytics"
+  },
+  {
+    "name": "Youer Built-in Menu Editor",
+    "text": "Visual Editing and Exporting Menu Configuration",
+    "img": "/img/tools/menu-edit.webp",
+    "link": "/tools/menu-edit"
+  },
+  {
+    "name": "Traditional Chinese Colors",
+    "text": "Visual Preview Query",
+    "img": "/img/tools/ctc.webp",
+    "link": "/tools/ctc"
+  }
+]

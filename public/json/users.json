@@ -1,0 +1,40 @@
+{
+  "0": {
+      "uid": 0,
+      "email": "admin@mohistmc.cn",
+      "name": "Admin",
+      "position": "admin",
+      "bio": "管理账号",
+      "country": "CN",
+      "avatar": "/img/user/admin.png",
+      "level": 4,
+      "points": 476,
+      "joinDate": "2020-01-15",
+      "posts": 142,
+      "downloads": 86,
+      "social": {
+      },
+      "online": true,
+      "skills": ["React", "Node.js"]
+    },
+  "1": {
+      "uid": 1,
+      "email": "mgazul@163.com",
+      "name": "Mgazul",
+      "position": "admin",
+      "bio": "管理账号",
+      "country": "CN",
+      "avatar": "/img/user/mgazul.png",
+      "level": 20,
+      "points": 2026,
+      "joinDate": "2019-03-22",
+      "posts": 142,
+      "downloads": 999999,
+      "social": {
+        "github": "https://github.com/john",
+        "twitter": "https://twitter.com/john"
+      },
+      "online": true,
+      "skills": ["React", "Node.js"]
+    }
+}
