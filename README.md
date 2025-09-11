@@ -10,8 +10,7 @@
 ![React](https://img.shields.io/badge/react-166666?style=for-the-badge&logo=react&logoColor=white)
 ![Typescript](https://img.shields.io/badge/typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![daisyUI](https://img.shields.io/badge/daisyUI-FFB56A?style=for-the-badge&logo=daisyUI&logoColor=white)
-![fumadocs](https://img.shields.io/badge/fumadocs-FF6A6A?style=for-the-badge&logo=fumadocs&logoColor=white)
-![License](https://img.shields.io/github/license/MohistMC/Website)
+![License](https://img.shields.io/github/license/MohistMC/Website?style=for-the-badge)
 
 </div>
 
@@ -25,8 +24,7 @@ It's still under development, feel free to contribute!
 **Language**: [TypeScript](https://www.typescriptlang.org/)  [React](https://react.dev/)  
 **Styling**: [Tailwind CSS](https://tailwindcss.com/)  
 **UI and Theme**: [daisyUI](https://daisyui.com/)  
-**Icons**: [react-icons](https://react-icons.github.io/react-icons/)   
-**Docs**: [fumadocs](https://fumadocs.dev/)
+**Icons**: [react-icons](https://react-icons.github.io/react-icons/) 
 
 ## Getting Started
 
