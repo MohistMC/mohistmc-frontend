@@ -177,7 +177,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                 icon: product.icon,
                                 banner: product.banner,
                                 link: `/resources/${resource.id}`,
-                                tags: ['Core'],
+                                tags: product.tags,
                                 developers: product.developers
                             } as ResourceWithDetails;
                         }

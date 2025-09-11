@@ -4,7 +4,7 @@
       "email": "admin@mohistmc.cn",
       "name": "Admin",
       "position": "admin",
-      "bio": "管理账号",
+      "bio": "Admin account",
       "country": "CN",
       "avatar": "/img/user/admin.png",
       "level": 4,
@@ -22,7 +22,7 @@
       "email": "mgazul@163.com",
       "name": "Mgazul",
       "position": "admin",
-      "bio": "管理账号",
+      "bio": "Admin account",
       "country": "CN",
       "avatar": "/img/user/mgazul.png",
       "level": 20,
@@ -31,8 +31,7 @@
       "posts": 142,
       "downloads": 999999,
       "social": {
-        "github": "https://github.com/john",
-        "twitter": "https://twitter.com/john"
+        "github": "https://github.com/Mgazul"
       },
       "online": true,
       "skills": ["React", "Node.js"]

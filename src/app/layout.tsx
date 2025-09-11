@@ -9,8 +9,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import {ToastContainer} from "react-toastify";
 
 export const metadata: Metadata = {
-  title: "墨孤蓝网络科技 - MohistMC",
-  description: '使用 MohistMC 探索 Minecraft 创新。发现我们的混合服务器软件、模组、插件和充满活力的社区。释放新的游戏维度.',
+  title: "MohistMC",
+  description: 'Explore Minecraft innovation with MohistMC. Discover our hybrid server software, mods, plugins, and vibrant community. Unleash a new dimension of gameplay.',
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
     return (
-        <html lang="zh-CN" suppressHydrationWarning>
+        <html lang="en_US" suppressHydrationWarning>
         <body>
         <Providers>
             <GlobalProvider>
