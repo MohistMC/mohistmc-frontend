@@ -42,7 +42,7 @@ export default function Footer() {
                             <ul className="space-y-1.5">
                                 <li>
                                     <Link
-                                        href="/docs/mohist"
+                                        href="/docs"
                                         className="text-base-content/70 hover:text-primary transition-colors text-xs"
                                     >
                                         Documentation
