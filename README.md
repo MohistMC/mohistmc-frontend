@@ -28,7 +28,7 @@ It's still under development, feel free to contribute!
 
 ## Getting Started
 
-First, clone the repository and install the dependencies:
+First, clone the repository and install the dependencies:     
 
 ```bash
 git clone -b frontend https://github.com/MohistMC/mohistmc-frontend.git
