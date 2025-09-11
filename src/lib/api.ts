@@ -33,5 +33,5 @@ export function getBaseURL(): string {
     }
 
     // Production environment default domain
-    return API_ENDPOINTS.MOHISTMC_API;
+    return 'https://mohistmc.com';
 }

@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react'
 import {LuClock, LuFilter, LuX, LuList, LuLayoutGrid, LuShield, LuUsers} from 'react-icons/lu';
 import Image from 'next/image'
@@ -156,11 +155,6 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
     useEffect(() => {
         const fetchResourceDetails = async () => {
             const updatedMods = await Promise.all(initialMods.map(async (resource) => {
-                // For external links and placeholders, return resource data directly
-                if (resource.type === 'external' || resource.type === 'placeholder') {
-                    return resource as ResourceWithDetails;
-                }
-
                 // For product type, get details from products.json
                 if (resource.type === 'product') {
                     try {
