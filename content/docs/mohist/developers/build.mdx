@@ -1,17 +1,17 @@
 ---
-title: "构建 Mohist"
+title: "Building Mohist"
 description: ""
 ---
 
 <div className="alert alert-warning my-4">
     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-    <span>如果您修改了 Minecraft， 请 <a href="patches.mdx">生成补丁</a> 源代码</span>
+    <span>If you have modified Minecraft, please <a href="patches.mdx">generate patches</a> for the source code</span>
 </div>
 
 <div role="tablist" className="tabs tabs-lifted my-6">
     <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.7.10" defaultChecked />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>使用 Linux 构建：</p>
+        <p>Build using Linux:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -23,7 +23,7 @@ description: ""
             <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">bash gradlew setupCauldron launch4j</pre>
         </pre>
 
-        <p>使用 Windows 构建:</p>
+        <p>Build using Windows:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -38,7 +38,7 @@ description: ""
 
     <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.12.2" />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>使用 Linux 构建：</p>
+        <p>Build using Linux:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -50,7 +50,7 @@ description: ""
             <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">bash gradlew setup installerJar</pre>
         </pre>
 
-        <p>使用 Windows 构建:</p>
+        <p>Build using Windows:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -65,7 +65,7 @@ description: ""
 
     <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.16.5-1.19.4" />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>使用 Linux 构建：</p>
+        <p>Build using Linux:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -77,7 +77,7 @@ description: ""
             <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">bash gradlew setup mohistJar</pre>
         </pre>
 
-        <p>使用 Windows 构建:</p>
+        <p>Build using Windows:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -92,7 +92,7 @@ description: ""
 
     <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.20.1+" />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>使用 Linux 构建：</p>
+        <p>Build using Linux:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -106,7 +106,7 @@ bash gradlew packageLibraries
 bash gradlew mohistJar</pre>
         </pre>
 
-        <p>使用 Windows 构建:</p>
+        <p>Build using Windows:</p>
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -124,8 +124,8 @@ gradlew.bat mohistJar</pre>
 
 <div className="alert alert-info my-4">
     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-    <span>Mohist 服务器 jar 文件位于<br/>
+    <span>The Mohist server jar file is located at<br/>
     ./projects/mohist/build/libs/mohist-xxxxx-server.jar</span>
 </div>
 
-这是运行服务器所需的 **jar 文件**
+This is the **jar file** needed to run the server

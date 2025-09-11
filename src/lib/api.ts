@@ -1,5 +1,3 @@
-
-// src/lib/api.ts
 export const API_ENDPOINTS = {
     MOHISTMC_API: "https://api.mohistmc.com",
     DISCORD: "https://discord.gg/mohistmc"
@@ -35,5 +33,5 @@ export function getBaseURL(): string {
     }
 
     // Production environment default domain
-    return 'https://www.mohistmc.cn';
+    return API_ENDPOINTS.MOHISTMC_API;
 }

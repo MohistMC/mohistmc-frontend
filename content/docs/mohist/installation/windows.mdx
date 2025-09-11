@@ -1,33 +1,30 @@
 ---
 title: "Windows"
-description: "在 Windows 上安装 Mohist"
+description: "Install Mohist on Windows"
 ---
 
+### Download
 
-    ### 下载
+To create a Mohist server, you must download from the [official download](https://mohistmc.com/download/mohist)
 
-    要创建 Mohist 服务器，您必须从 [官方下载](https://mohistmc.com/download/mohist)
+### Create Folder
 
-    ### 创建文件夹
+Create a folder with the server name of your choice.
+After creating the new folder, move the downloaded Mohist file into this new folder.
 
-    使用您选择的服务器名称创建一个文件夹。
-    新建文件夹完成后，将下载的Mohist文件移动到这个新的文件夹里面。
+`If you already have a Spigot / Forge server and want to switch to Mohist, it's better to create a new server and then add your worlds, mods, and plugins.`
 
-    `如果您已经有 Spigot / Forge 服务器并想切换到 Mohist，最好创建一个新的 服务器，然后添加您的地图、模组和插件。`
+### Run the Server
 
-    ### 运行服务器
+Almost done! To run your server, do not double-click the **jar** file! You must create a file named `start.bat` where you can place your Mohist jar file.
 
-    快完成了！要运行您的服务器，请不要双击 **jar** 文件！ 您必须创建一个名为 `start.bat` 的文件，您可以在其中放置 Mohist jar
-    文件。
-
-    将以下内容写入 `start.bat` 文件：
+Write the following content to the `start.bat` file:
     ```bash
     java -jar -Xmx4G downloaded-jar-file.jar
     pause
     ```
+Replace `downloaded-jar-file.jar` with the actual filename of the jar file you dragged into the server folder.
 
-    将 `downloaded-jar-file.jar` 替换为您拖放到服务器文件夹的 jar 文件的实际文件名。
+Make sure the server filename in `start.bat` ends with `jar`
 
-    确保 `start.bat` 中的服务器文件名以 `jar` 结尾
-
-    完成后，双击 `start.bat`
+When finished, double-click `start.bat`

@@ -1,9 +1,9 @@
 ---
-title: "Velocity 跨服"
+title: "Velocity Proxy"
 description: ""
 ---
 
-### 如何将 Velocity 与 Youer 一起使用？
+### How to use Velocity with Youer?
 
 -> **paper-config/paper-global.yml**
 ```yaml
@@ -17,17 +17,17 @@ proxies:
 -> **server.properties**
 
 ```properties
-online-mode=false //如果您仍然想要仅限正版的服务器，您可以稍后在 Velocity 的配置文件中设置它
+online-mode=false //If you still want a premium-only server, you can set it later in Velocity's configuration file
 ```
 
-- 现在，为您的 Velocity 代理创建一个新文件夹，并使用以下 java 命令启动它：
+- Now, create a new folder for your Velocity proxy and start it with the following java command:
 
 ```bash
 java -jar [velocity jar name].jar
 ```
 
-- 然后在代理完全启动后，键入"**end**" 以关闭您的代理。
-- 现在，您需要更改 **velocity.toml** 在 Velocity 文件夹中：
+- Then after the proxy is fully started, type "**end**" to shut down your proxy.
+- Now, you need to modify **velocity.toml** in the Velocity folder:
 
 -> **velocity.toml**
 
@@ -35,12 +35,12 @@ java -jar [velocity jar name].jar
 player-info-forwarding-mode = "modern"
 ```
 
-更详细的教程请阅读 <a className="link link-info" href="https://docs.papermc.io/paper/" target="_blank">Paper文档</a> 和 <a className="link link-info" href="https://docs.papermc.io/velocity" target="_blank">Velocity文档</a>
+For more detailed tutorials, please read the <a className="link link-info" href="https://docs.papermc.io/paper/" target="_blank">Paper documentation</a> and <a className="link link-info" href="https://docs.papermc.io/velocity" target="_blank">Velocity documentation</a>
 
-- 现在您可以启动您的代理和所有 Youer 服务器了！
+- Now you can start your proxy and all Youer servers!
 
-### ❓ 常见问题
-- **Q：** 无法进入使用Paper等原版制作的大厅？
-- **A：** 客户端安装 <a className="link link-info" href="https://modrinth.com/mod/be-quiet-negotiator" target="_blank">Be Quiet Negotiator</a> 模组 + Paper服务器安装 <a className="link link-info" href="https://github.com/MohistMC/ModPacketFix" target="_blank">ModPacketFix</a> 插件 即可解决。
-- **Q：** 客户端出现 `网络协议错误`？
-- **A：** 添加参数 ```-Dvelocity.max-known-packs=512``` 到 Velocity 的启动参数中, 根据自己需求将 ```512``` 替换为需要的数字(>64)。
+### ❓ FAQ
+- **Q:** Cannot enter lobbies made with Paper and other vanilla servers?
+- **A:** Install the <a className="link link-info" href="https://modrinth.com/mod/be-quiet-negotiator" target="_blank">Be Quiet Negotiator</a> mod on the client + install the <a className="link link-info" href="https://github.com/MohistMC/ModPacketFix" target="_blank">ModPacketFix</a> plugin on the Paper server to resolve.
+- **Q:** Client encounters `Network Protocol Error`?
+- **A:** Add the parameter ```-Dvelocity.max-known-packs=512``` to Velocity's startup parameters, replace ```512``` with the number you need (>64) according to your requirements.

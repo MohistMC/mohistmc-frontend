@@ -1,3 +1,4 @@
+
 import {MDXRemote} from 'next-mdx-remote/rsc';
 import {getDocContent, getProjectDocsTree} from '@/lib/docs';
 import MDXComponents from "@/components/docs/MDXComponents";
@@ -11,30 +12,30 @@ export async function generateMetadata({ params }: { params: Promise<{ project: 
         const content = await getDocContent(project, slug);
         if (!content) {
             return {
-                title: '文档未找到',
-                description: '请求的文档不存在'
+                title: 'Document Not Found', // 文档未找到
+                description: 'The requested document does not exist' // 请求的文档不存在
             };
         }
-        // 解析 frontmatter
+        // Parse frontmatter // 解析 frontmatter
         const { frontmatter } = parseFrontmatter(content);
-        const title = frontmatter.title || '文档';
+        const title = frontmatter.title || 'Document'; // 文档
         const description = frontmatter.description || '';
 
         const formattedTitle = capitalizeFirstLetter(title);
         const formattedProject = capitalizeFirstLetter(project);
         return {
-            title: `${formattedTitle} - ${formattedProject} 文档`,
+            title: `${formattedTitle} - ${formattedProject} Documentation`, // 文档
             description: description,
         };
     } catch {
         return {
-            title: '文档未找到',
-            description: '请求的文档不存在'
+            title: 'Document Not Found', // 文档未找到
+            description: 'The requested document does not exist' // 请求的文档不存在
         };
     }
 }
 
-// 解析 frontmatter 的函数
+// Function to parse frontmatter // 解析 frontmatter 的函数
 function parseFrontmatter(content: string) {
     const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
     const match = content.match(frontmatterRegex);
@@ -51,7 +52,7 @@ function parseFrontmatter(content: string) {
             }
         }
 
-        // 移除 frontmatter 部分，只返回内容
+        // Remove the frontmatter section, return only the content // 移除 frontmatter 部分，只返回内容
         const contentWithoutFrontmatter = content.replace(frontmatterRegex, '');
 
         return {
@@ -77,28 +78,28 @@ export default async function ProjectDocPage({
         const originalContent = await getDocContent(project, slug);
         const docsTree = await getProjectDocsTree(project);
 
-        // 如果内容不存在，显示文档未找到页面
+        // If content doesn't exist, display document not found page // 如果内容不存在，显示文档未找到页面
         if (!originalContent) {
             return (
                 <DocPageLayout
                     docsTree={docsTree}
                     project={project}
-                    breadcrumbs={[{ name: '文档' }, { name: '未找到' }]}
+                    breadcrumbs={[{ name: 'Documentation' }, { name: 'Not Found' }]} // 文档, 未找到
                 >
                     <div className="text-center py-10">
-                        <h1 className="text-2xl font-bold text-gray-800 mb-2">文档未找到</h1>
-                        <p className="text-gray-600">抱歉，您请求的文档不存在。</p>
+                        <h1 className="text-2xl font-bold text-gray-800 mb-2">Document Not Found</h1> // 文档未找到
+                        <p className="text-gray-600">Sorry, the document you requested does not exist.</p> // 抱歉，您请求的文档不存在。
                     </div>
                 </DocPageLayout>
             );
         }
 
-        // 解析 frontmatter 并获取清理后的内容
+        // Parse frontmatter and get cleaned content // 解析 frontmatter 并获取清理后的内容
         const { frontmatter, content } = parseFrontmatter(originalContent);
         const title = frontmatter.title || '';
         const description = frontmatter.description || '';
 
-        // 生成面包屑
+        // Generate breadcrumbs // 生成面包屑
         const breadcrumbs = generateBreadcrumbs(project, slug, title, docsTree);
 
         return (
@@ -117,17 +118,17 @@ export default async function ProjectDocPage({
         );
     } catch (error) {
         console.error('Error loading document:', error);
-        // 显示错误页面而不是调用notFound()
+        // Display error page instead of calling notFound() // 显示错误页面而不是调用notFound()
         const docsTree = await getProjectDocsTree(project);
         return (
             <DocPageLayout
                 docsTree={docsTree}
                 project={project}
-                breadcrumbs={[{ name: '文档' }, { name: '错误' }]}
+                breadcrumbs={[{ name: 'Documentation' }, { name: 'Error' }]} // 文档, 错误
             >
                 <div className="text-center py-10">
-                    <h1 className="text-2xl font-bold text-gray-800 mb-2">加载错误</h1>
-                    <p className="text-gray-600">抱歉，加载文档时发生错误。</p>
+                    <h1 className="text-2xl font-bold text-gray-800 mb-2">Loading Error</h1> // 加载错误
+                    <p className="text-gray-600">Sorry, an error occurred while loading the document.</p> // 抱歉，加载文档时发生错误。
                 </div>
             </DocPageLayout>
         );

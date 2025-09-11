@@ -1,5 +1,5 @@
 {
-  "title": "开服指导",
+  "title": "Tutorial",
   "description": "",
   "pages": ["deepseek", "velocity", "multiverses", "connector", "kubejs", "protocollib"],
   "defaultOpen": true

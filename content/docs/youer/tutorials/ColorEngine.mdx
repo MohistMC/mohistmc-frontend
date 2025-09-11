@@ -1,30 +1,30 @@
 ---
-title: "全域染色引擎"
-description: "「一染全域，七彩绽放」"
+title: "Global Dyeing Engine"
+description: ""One dye the whole area, colorful blooms""
 ---
 
-### 🎨 核心功能
-* 全域染色 - 在所有地方自动生效(待完善)
-* 多格式兼容 - 支持 &符号、十六进制、渐变、纯色、混合格式、[中国传统色](/tools/ctc)
-* 智能解析 - 自动识别并转换颜色代码
-* 无缝集成 - 其他插件无需修改即可使用
+### 🎨 Core features:
+* Global staining - automatically applied everywhere (to be improved)
+* Multi-format compatibility - supports & symbol, hexadecimal, gradient, solid color, mixed formats、[中国传统色](/tools/ctc)
+* Intelligent parsing - automatically recognizes and converts color codes
+* Seamless integration - Other plugins can be used without modifications
 
-### ✨ 应用场景
-* 消息染色 - 聊天、广播消息
-* 界面美化 - 菜单、标题、计分板
-* 环境装饰 - 牌子、书本文字
-* 动态效果 - 渐变色彩、特殊格式
+### ✨ Application Scenarios
+* Message staining - chat, broadcast messages
+* Interface beautification - menus, titles, scoreboard
+* Ambient decoration - signs, book text
+* Dynamic effects - gradient colors, special formats
 
-### 🛠️ 使用示例
+### 🛠️ Usage examples
 
-#### 腐竹使用 ↓ 不必顾虑插件是否支持更高级的颜色格式
+#### Admin uses ↓ Don't worry about whether the plugin supports more advanced color formats
 ```yaml
 ## 1. youer-config/menu/example.yml中的设置
 command-as-op:
   MATERIAL: COMMAND_BLOCK
   POSITION-X: 6
   POSITION-Y: 1
-  NAME: '<gradient:#FF0000:#00FF00:#0000FF>红到绿到蓝渐变</gradient>'
+  NAME: '<gradient:#FF0000:#00FF00:#0000FF>Gradual from red to green to blue</gradient>'
   LORE:
     - '<朱砂>朱砂色文本</朱砂>'
     - '<绛紫>绛紫色文本</绛紫>'
@@ -32,55 +32,55 @@ command-as-op:
     - '<gradient:朱砂:靛蓝:#00FF00>从朱砂到靛蓝再到绿色的渐变</gradient>'
 ```
 ```yaml
-## 1. spigot.yml中的设置
+## 1. spigot.yml settings
 messages:
-  whitelist: <gradient:#00FF00:#0000FF>你没有白名单！</gradient>
+  whitelist: <gradient:#00FF00:#0000FF>You don't have a whitelist！</gradient>
 ```
 ```properties
-## 1. server.properties中的motd设置
+## 1. Motd settings in server.properties
 motd=<gradient\:\#00FF00\:\#0000FF>A Minecraft Server</gradient>
 motd=&#FF0000A Minecraft Server
 motd=&cMinecraft Server
 ```
 ```txt
-## 1. Essentials/motd.txt 中的内容设置
+## 1. Essentials/motd.txt content settings in the
 &6Welcome, {PLAYER}&6!
 &6Type &c/help&6 for a list of commands.
 &6Type &c/list&6 to see who else is online.
 &6Players online:&c {ONLINE} &6- World time:&c {WORLDTIME12}
-<gradient:#00FF00:#0000FF>Essentials motd.txt测试</gradient> #新增的内容
+<gradient:#00FF00:#0000FF>Essentials motd.txt Test</gradient> #New content
 ```
 
-#### 开发过程中 ↓ 无需自己写额外的格式解析
+#### During the development process ↓ There is no need to write additional formatting analysis by yourself
 ```java
-// 1. 渐变格式（支持带#和不带#）
-sender.sendMessage("<gradient:#FF0000:#0000FF>渐变文本</gradient>");
-sender.sendMessage("<gradient:FF0000:0000FF>渐变文本</gradient>");
-sender.sendMessage("<gradient:#00FF00:#0000FF>绿到蓝渐变</gradient>");
+// 1. Gradient format (with and without # supported)
+sender.sendMessage("<gradient:#FF0000:#0000FF>Gradient text</gradient>");
+sender.sendMessage("<gradient:FF0000:0000FF>Gradient text</gradient>");
+sender.sendMessage("<gradient:#00FF00:#0000FF>Green to blue gradient</gradient>");
 
-// 2. 固定颜色格式（支持带#和不带#）
-sender.sendMessage("<#FF0000>红色文本</#FF0000>");
-sender.sendMessage("<FF0000>红色文本</FF0000>");
-sender.sendMessage("<red>红色文本</red>");
-sender.sendMessage("<bold>粗体文本</bold>");
+// 2. Fixed color format (with and without # supported)
+sender.sendMessage("<#FF0000>Red text</#FF0000>");
+sender.sendMessage("<FF0000>Red text</FF0000>");
+sender.sendMessage("<red>Red text</red>");
+sender.sendMessage("<bold>Bold text</bold>");
 sender.sendMessage("<月白>月白色文本</月白>");
 
-// 3. 十六进制格式
-sender.sendMessage("&#FF0000红色文本\n<gradient:#00FF00:#0000FF>绿到蓝渐变</gradient>");
+// 3. Hex format
+sender.sendMessage("&#FF0000Red text\n<gradient:#00FF00:#0000FF>Green to blue gradient</gradient>");
 
-// 4. 传统格式
-sender.sendMessage("&a绿色 &c红色 &l粗体");
+// 4. Traditional format
+sender.sendMessage("&agreen &cred &lbold");
 
-// 5. 混合格式
+// 5. Mixed format
 sender.sendMessage(
-        "<gradient:#FF0000:#00FF00>渐变文本</gradient> " +
-        "<#0000FF>蓝色文本</#0000FF> " +
-        "&#FF0000红色文本 " +
-        "&a绿色文本"
+        "<gradient:#FF0000:#00FF00>Gradient text</gradient> " +
+        "<#0000FF>Blue text</#0000FF> " +
+        "&#FF0000Red text " +
+        "&aGreen text"
 );
 
-// 6. 其他方法示例
-Bukkit.broadcastMessage("<gradient:#00FF00:#0000FF>这是一条绿到蓝渐变的公告</gradient>");
-player.setDisplayName("<#FF0000>玩家名称</#FF0000>");
-更多玩法请自行探索
+// 6. Examples of other methods
+Bukkit.broadcastMessage("<gradient:#00FF00:#0000FF>This is a green-to-blue gradient announcement</gradient>");
+player.setDisplayName("<#FF0000> playername</#FF0000>");
+For more ways to play, please explore by yourself
 ```

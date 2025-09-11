@@ -106,14 +106,6 @@ export default function Footer() {
                                         GitHub
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link
-                                        href="/resources"
-                                        className="text-base-content/70 hover:text-primary transition-colors text-xs"
-                                    >
-                                        Resources
-                                    </Link>
-                                </li>
                             </ul>
                         </div>
                     </div>

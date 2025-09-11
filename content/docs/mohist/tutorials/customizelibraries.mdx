@@ -1,30 +1,30 @@
 ---
-title: "自定义库文件"
+title: "Custom Library Files"
 description: ""
 ---
 
-## 自定义库：
+## Custom Libraries:
 
-> 注意：库主要由 Class-Path 加载
+> Note: Libraries are primarily loaded by Class-Path
 
-### 使用自定义库的示例：
+### Examples of using custom libraries:
 
-#### 默认库：
+#### Default Libraries:
 
-例如 Mohist 具有 `\libraries\org\ow2\asm\asm-debug-all\5.2\asm-debug-all-5.2.jar` 默认情况下。
-如果我们需要将此库更新到 7.0 怎么办？
+For example, Mohist has `\libraries\org\ow2\asm\asm-debug-all\5.2\asm-debug-all-5.2.jar` by default.
+What if we need to update this library to 7.0?
 
-- 首先，获取 `asm-debug-all-7.0.jar`
-- 将文件名更改为 `asm-debug-all-5.2.jar` (因为我们需要与 Class-Path 保持一致)
-- 替换旧的 jar
-- 在 mohist.yml 中修改配置
-    - 查找默认 `libraries_black_list: aaaaa;bbbbbb`
-    - 增加 `asm-debug-all-5.2` 到列表： `libraries_black_list: asm-debug-all-5.2;bbbbbb`
-- 您已完成所有步骤，可以运行 mohist
+- First, obtain `asm-debug-all-7.0.jar`
+- Rename the file to `asm-debug-all-5.2.jar` (because we need to keep consistent with Class-Path)
+- Replace the old jar
+- Modify the configuration in mohist.yml
+  - Find the default `libraries_black_list: aaaaa;bbbbbb`
+  - Add `asm-debug-all-5.2` to the list: `libraries_black_list: asm-debug-all-5.2;bbbbbb`
+- You have completed all steps, you can run mohist
 
-#### 自定义库：
+#### Custom Libraries:
 
-将其他 jar 添加为库
+Add other jars as libraries
 
-- 将你的 jar 文件放入`\libraries\customize_libraries`
-- 您已完成所有步骤，可以运行 mohist
+- Put your jar files into `\libraries\customize_libraries`
+- You have completed all steps, you can run mohist

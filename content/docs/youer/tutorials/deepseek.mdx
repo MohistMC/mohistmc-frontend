@@ -1,25 +1,25 @@
 ---
 title: "DeepSeek"
-description: "让小小墨更智能"
+description: "Make Xiao Xiao Mo smarter"
 ---
 
 `youer-config/youer.yml`
 ```yaml
 deepseek:
-  # 是否启用DeepSeek功能
+  # Whether to enable DeepSeek functionality
   enable: false
-  # DeepSeek API的请求地址
+  # DeepSeek API request address
   baseUrl: "https://api.deepseek.com/chat/completions"
-  # API密钥，用于身份验证。 请自行申请并确保有余额~
+  # API key for authentication. Please apply for your own and ensure there is a balance~
   apikey: "youer"
-  # 使用的模型名称 可用的模型名称：deepseek-chat、deepseek-reasoner
+  # Model name to use. Available model names: deepseek-chat, deepseek-reasoner
   model: "deepseek-chat"
-  # 系统提示词，定义AI助手的人设
-  system: "你的名字叫小小墨，年龄18岁，是个可爱的女孩子!"
-  # 触发AI对话的命令(私聊) 用法: ai [内容]
+  # ystem prompt, defines the AI assistant's persona
+  system: "Your name is Xiao Xiao Mo, you are 18 years old, and you are a cute girl!"
+  # Command to trigger AI conversation (private chat) Usage: ai [content]
   command: "ai"
-  # 触发AI对话的命令(全服可见) 用法: ai-all [内容]
+  # Command to trigger AI conversation (visible to all players) Usage: ai-all [content]
   all_command: "ai-all"
-  # 聊天消息的格式，%s会被替换为实际回复内容
-  chatformat: "<小小墨> %s"
+  # Chat message format, %s will be replaced with the actual response content
+  chatformat: "<Xiao Xiao Mo> %s"
 ```

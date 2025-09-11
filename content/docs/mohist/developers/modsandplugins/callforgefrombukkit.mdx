@@ -1,33 +1,33 @@
 ---
-title: "插件调用Forge事件"
+title: "The plugin calls the Forge event"
 ---
 
 <div className="rounded-box bg-base-200 p-6 my-4">
     <div className="flex items-center mb-4">
         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content font-bold mr-3">1</div>
-        <h3 className="text-xl font-bold">Bukkit插件中注册和注销Forge事件监听器</h3>
+        <h3 className="text-xl font-bold">Register and log out of the Forge event listener in the Bukkit plugin</h3>
     </div>
     
     ```java
     @Override
     public void onEnable() {
-        // 使用自定义IEventBus注册事件监听器 (这里使用Pixelmon的EVENT_BUS作为示例)
+        // Register an event listener with a custom IEventBus (using Pixelmon's EVENT_BUS as an example here)
         registerForgeEvent(Pixelmon.EVENT_BUS, this);
 
-        // 以下原理和bukkit事件注册相同
-        // 使用默认IEventBus注册事件监听器 (当前类)
+        // The following principle is the same as bukkit event registration
+        // Register an event listener with the default IEventBus (current class)
         registerForgeEvent(this);
-        // 使用默认IEventBus注册事件监听器 (外部类)
+        // Registering an event listener with the default IEventBus (external class)
         registerForgeEvent(this, new TestListener());
   }
 
     @Override
     public void onDisable() {
-        // 注销指定IEventBus中的指定事件监听器
+        // Log out of the specified event listener in the specified IEventBus
         unregisterForgeEvents(IEventBus bus, Object target);
-        // 注销指定IEventBus中的所有事件监听器
+        // Log out of all event listeners in the specified IEventBus
         unregisterForgeEvents(IEventBus bus);
-        // 注销当前插件所有的Forge事件监听器
+        // Log out of all Forge event listeners for the current plugin
         unregisterAllForgeEvents();
     }
 ```
@@ -36,7 +36,7 @@ title: "插件调用Forge事件"
 <div className="rounded-box bg-base-200 p-6 my-4">
     <div className="flex items-center mb-4">
         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content font-bold mr-3">2</div>
-        <h3 className="text-xl font-bold">事件监听示例</h3>
+        <h3 className="text-xl font-bold">Example of event listening</h3>
     </div>
     
 ```java

@@ -1,6 +1,6 @@
 {
-  "title": "配置文件",
-  "description": "Mohist的一些配置说明",
+  "title": "Configuration",
+  "description": "Some configuration notes from Mohist",
   "pages": ["deepseek", "mohist.yml", "qq.yml", "worlds.yml"],
   "defaultOpen": true
 }

@@ -8,7 +8,7 @@ function formatDisplayName(name: string): string {
 // 生成面包屑路径
 export function generateBreadcrumbs(project: string, slug: string[] | undefined, title: string, docsTree: any[], isHomePage: boolean = false) {
     const breadcrumbs = [
-        { name: '文档' }
+        { name: 'Docs' }
     ];
 
     // 查找项目在文档树中的实际标题

@@ -1,50 +1,47 @@
 ---
-title: "在 Linux 上安装 Youer"
+title: "Install Youer on Linux"
 description: ""
 ---
 
-### 下载
+### Download
 
-<p>要创建 Youer 服务器, 您需要从 <a className="link link-info" href="/download/youer" target="_blank">官方下载</a></p>
+<p>To create a Youer server, you need to download from the <a className="link link-info" href="/download/youer" target="_blank">official download</a></p>
 
-### 创建文件夹
+### Create Folder
 
-<p>使用您选择的服务器名称创建一个文件夹。
-    新建文件夹完成后，将下载的Youer文件移动到这个新的文件夹里面。</p>
+<p>Create a folder with the server name of your choice.
+    After creating the new folder, move the downloaded Youer file into this new folder.</p>
 
 <div className="alert alert-info my-4">
     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-    <span>如果您已经有 Spigot / Forge 服务器并想切换到 Youer，最好创建一个新的 服务器，然后添加您的地图、模组和插件。</span>
+    <span>If you already have a Spigot/Forge server and want to switch to Youer, it's better to create a new server and then add your worlds, mods, and plugins.</span>
 </div>
 
-### 运行服务器
-
-<p>快完成了！要运行您的服务器, <strong>不要双击 jar 文件！</strong></p>
+### Run the Server
 
 <div role="tablist" className="tabs tabs-lifted my-6">
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="使用脚本" defaultChecked />
+    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Script" defaultChecked />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>您必须创建一个名为 `start.sh` 的脚本文件在你的服务端目录下</p>
+        <p>You must create a script file named `start.sh` in your server directory</p>
 
-        <p>将此内容写入 `start.sh` 文件：</p>
+        <p>Write this content to the `start.sh` file:</p>
         ```text
         java -jar -Xmx4G downloaded-jar-file.jar
         ```
+        <p>Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.</p>
 
-        <p>将 `downloaded-jar-file.jar` 替换为您拖放到服务器文件夹的 jar 文件的真实名称。</p>
-
-        <p>完成后，执行脚本 `/start.sh`</p>
+        <p>After that, execute the script with `./start.sh`</p>
     </div>
 
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="使用终端" />
+    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Terminal" />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>打开一个终端，然后转到你的服务端文件夹。</p>
+        <p>Open a terminal and navigate to your server folder.</p>
 
-        <p>然后，运行以下命令：</p>
+        <p>Then, run the following command:</p>
         ```sh
         java -jar -Xmx4G downloaded-jar-file.jar
         ```
 
-        <p>替换`downloaded-jar-file.jar`为您拖放到服务器文件夹的 jar 文件的真实名称。</p>
+        <p>Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.</p>
     </div>
 </div>

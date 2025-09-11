@@ -413,7 +413,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                     className="select select-bordered select-sm flex items-center justify-between gap-2 focus:outline-none focus:ring-2 focus:ring-primary/50 min-w-[100px]"
                                 >
-                                    <span>More Categories</span>
+                                    <span>More</span>
                                 </button>
 
                                 {isDropdownOpen && (

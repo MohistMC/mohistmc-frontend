@@ -3,12 +3,12 @@ title: "ProtocolLib"
 description: ""
 ---
 
-### -> 在 Youer 中使用ProtocolLib插件:
-安装<a className="link link-info" href="https://github.com/Mgazul/ProtocolLib-1/releases/tag/neoforge" target="_blank">修复版</a>的插件即可。
+### -> Using ProtocolLib Plugin in Youer:
+Install the <a className="link link-info" href="https://github.com/Mgazul/ProtocolLib-1/releases/tag/neoforge" target="_blank">patched version</a> of the plugin.
 
-#### 修复过程:
+#### Patching Process:
 
-NeoForge<a className="link link-info" href="https://github.com/neoforged/NeoForge/blob/f423d0efe865584100f36adf86ed7539455e7d4f/patches/net/minecraft/network/RegistryFriendlyByteBuf.java.patch#L19" target="_blank">修改了RegistryFriendlyByteBuf的构造函数</a>，导致ProtocolLib无法正常注入 。
+NeoForge <a className="link link-info" href="https://github.com/neoforged/NeoForge/blob/f423d0efe865584100f36adf86ed7539455e7d4f/patches/net/minecraft/network/RegistryFriendlyByteBuf.java.patch#L19" target="_blank">modified the RegistryFriendlyByteBuf constructor</a>, causing ProtocolLib to fail to inject properly.
 
-以下是ProtocolLib中的修改方法
-<img src="/img/docs/ProtocolLibFix.png" alt="ProtocolLib修复方法" />
+The following is the modification method in ProtocolLib
+<img src="/img/docs/ProtocolLibFix.png" alt="ProtocolLib Fix Method" />

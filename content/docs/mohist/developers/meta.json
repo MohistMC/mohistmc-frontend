@@ -1,6 +1,6 @@
 {
-  "title": "开发指导",
-  "description": "在不同的系统中安装",
+  "title": "Development",
+  "description": "",
   "pages": ["modsandplugins","setup", "patches", "build"],
   "folders": ["modsandplugins"],
   "defaultOpen": true

@@ -1,60 +1,60 @@
 ---
-title: "物品编辑器"
-description: "「虚空搓万物，一念百宝生」"
+title: "Item Editor"
+description: "「Create everything from void, generate treasures with a thought」"
 ---
 
-#### 基本用法:
+#### Basic Usage:
 `/items [name|save|list|get|remove|modeldata|lore]`
 
-#### 权限:
+#### Permission:
 `youer.command.items`
 
 ### -> name
 `/items name <string>`
-设置手中物品的显示名称
+Set the display name of the item in hand
 
 ### -> save
 `/items save <name>`
-将手中物品保存到配置文件中，以便以后使用
+Save the item in hand to configuration file for later use
 
 ### -> list
 `/items list`
-打开GUI界面，显示所有已保存的物品
+Open GUI interface to display all saved items
 
 ### -> get
 `/items get <name>`
-从配置文件中获取物品，并放入手中
+Get item from configuration file and put it in hand
 
 ### -> remove
 `/items remove <name>`
-从配置文件中删除物品
+Remove item from configuration file
 
 ### -> modeldata
 `/items modeldata <int>`
-设置物品的模型数据
+Set the model data of the item
 
 ### -> lore add
-`/items lore add <line> <text...>    # 在指定行后插入`
+`/items lore add <line> <text...>    # Insert after specified line`
 
-添加lore到物品上，支持颜色代码(&)和换行符(\n)
-* 不指定line时，在末尾添加
-* 指定line时，在指定行后插入
+Add lore to the item, supports color codes (&) and line breaks (\n)
+* When line is not specified, add at the end
+* When line is specified, insert after the specified line
 
 ### -> lore set
 `/items lore set <line> <text...>`
-设置指定行的lore内容
+Set the lore content of the specified line
 
 ### -> lore remove
 `/items lore remove <line>`
-删除指定行lore
+Remove lore of the specified line
 
 ### -> attribute
 `/items attribute <attribute> <value> [slot]`
-为物品添加属性修饰符
-* attribute: 属性名称(如GENERIC_MAX_HEALTH或MAX_HEALTH)
-* value: 属性值(数字)
-* slot: 装备槽位(HAND, OFF_HAND, FEET, LEGS, CHEST, HEAD, ANY)
+Add attribute modifier to the item
+* attribute: Attribute name (e.g. GENERIC_MAX_HEALTH or MAX_HEALTH)
+* value: Attribute value (number)
+* slot: Equipment slot (HAND, OFF_HAND, FEET, LEGS, CHEST, HEAD, ANY)
 
 ### -> unattribute
 `/items unattribute <attribute>`
-从物品中移除指定的属性修饰符
+Remove the specified attribute modifier from the item

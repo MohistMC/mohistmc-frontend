@@ -1,9 +1,9 @@
 ---
-title: "多对象封禁"
-description: "「封禁无界，管理有序」"
+title: "Multi-Object Ban"
+description: "「Boundless banning, orderly management」"
 ---
 
-默认功能为关闭状态，需自行开启
+The default function is disabled and needs to be enabled manually
 ```yaml
 # youer-config/youer.yml
 bans:
@@ -17,63 +17,63 @@ bans:
   enchantment: false
 ```
 
-#### 基本用法:
+
+#### Basic Usage:
 `/bans [add|show|setmessage] [item|item-moshou|entity|enchantment|recipe]`
-该功能处于超前禁用，禁用后拒绝一切后续判断，NeoForge事件和Bukkit事件均无法触发
+This feature is preemptively disabled. Once disabled, all subsequent judgments are rejected, and neither NeoForge events nor Bukkit events can be triggered
 
-#### 额外用法:
-`vanilla_entity` 开启该选择后，将一键无差别的禁用所有原版实体
-可自行添加白名单 (默认排除了掉落物|盔甲架|插件的NPC)
+#### Additional Usage:
+`vanilla_entity` When this option is enabled, it will disable all vanilla entities without discrimination
+You can add a whitelist yourself (by default excludes dropped items|armor stands|plugin NPCs)
 
-
-#### 权限:
+#### Permission:
 `youer.command.bans`
 
-### -> 添加物品禁止
+### -> Add Item Ban
 `/bans add item`
-* 打开GUI后放入物品关闭后即可添加成功
+* After opening the GUI, place the item and close to add successfully
 
-### -> 添加物品禁止-没收
+### -> Add Item Ban - Confiscation
 `/bans add item-moshou`
-无视没收权限 `"youer.ban.item.moshou.<物品的枚举名称>"`
-* 打开GUI后放入物品关闭后即可添加成功
+Ignores confiscation permission `"youer.ban.item.moshou.<item enum name>"`
+* After opening the GUI, place the item and close to add successfully
 
-### -> 添加实体禁止
+### -> Add Entity Ban
 `/bans add entity`
-* 打开GUI后放入实体对应的刷怪蛋关闭后即可添加成功
+* After opening the GUI, place the corresponding spawn egg of the entity and close to add successfully
 
-### -> 添加附魔禁止
+### -> Add Enchantment Ban
 `/bans add enchantment`
-* 打开GUI后放入对应的附魔书关闭后即可添加成功
+* After opening the GUI, place the corresponding enchanted book and close to add successfully
 
-### -> 添加配方禁止
+### -> Add Recipe Ban
 `/bans add recipe <recipe_name>`
-* 无GUI操作，自动补全Tab，输入配方名称即可添加成功
+* No GUI operation, Tab auto-completion, enter the recipe name to add successfully
 
-### -> 查看禁止物品
+### -> View Banned Items
 `/bans show item`
-* 右键可直接删除该项的禁止
+* Right-click to directly delete the ban for this item
 
-### -> 查看禁止物品-没收
+### -> View Banned Items - Confiscation
 `/bans show item-moshou`
-* 右键可直接删除该项的禁止
+* Right-click to directly delete the ban for this item
 
-### -> 查看禁止实体
+### -> View Banned Entities
 `/bans show entity`
-* 右键可直接删除该项的禁止
+* Right-click to directly delete the ban for this entity
 
-### -> 查看禁止附魔
+### -> View Banned Enchantments
 `/bans show enchantment`
-* 右键可直接删除该项的禁止
+* Right-click to directly delete the ban for this enchantment
 
-### -> 查看禁止配方
+### -> View Banned Recipes
 `/bans show recipe`
-* 右键可直接删除该项的禁止
+* Right-click to directly delete the ban for this recipe
 
-### -> 设置物品禁止消息 (可选)
+### -> Set Item Ban Message (Optional)
 `/bans setmessage item <message>`
 `/bans setmessage item-moshou <message>`
 
-### ❓ 常见问题
-- **Q：** 为什么封禁了物品还是可以使用？
-- **A：** 部分物品的处理逻辑位于客户端，服务器是无法干预的，比如右键一个方块或者物品打开一个 GUI。
+### ❓ FAQ
+- **Q:** Why can items still be used after banning?
+- **A:** Some items' processing logic resides on the client side, which the server cannot intervene with, such as right-clicking a block or item to open a GUI.

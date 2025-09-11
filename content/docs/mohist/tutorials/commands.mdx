@@ -1,65 +1,65 @@
 ---
-title: "命令列表"
+title: "Command List"
 description: ""
 ---
 
 ```yaml
-#为指定世界创建备份
-/backupworld <世界名称>
-#增加/展示被ban的 <物品><实体><附魔>
+#Create backup for specified world
+/backupworld <world_name>
+#Add/Show banned <items><entities><enchantments>
 /bans <add|show> <item><entity><enchantment>
-#在本地/网页生成 <药水效果|enchants|cbcmds|modscmds|entitytypes|世界群系|pattern|worldgen|世界类型|物品NBT|channels|成就>
+#Generate <potions|enchants|cbcmds|modscmds|entitytypes|world_biomes|pattern|worldgen|world_type|item_NBT|channels|achievements> locally/web
 /dump <file|web> <potions|enchants|cbcmds|modscmds|entitytypes|biomes|pattern|worldgen|worldtype|material|channels|advancements>
-#获取服务器插件列表
+#Get server plugin list
 /getpluginlist
-#(手持)物品[获取信息|设置名称|另存为|列表|获取|移除]
+#(Held) item [get info|set name|save as|list|get|remove]
 /items [info|name|save|list|get|remove]
-#查看服务器 [模组玩家客户端模组|重载|版本|channels_incom|channels_outgo|设置玩家速度(最大为10)]
+#View server [mods|player client mods|reload|version|channels_incom|channels_outgo|set player speed (max 10)]
 /mohist [mods|playermods|reload|version|channels_incom|channels_outgo|speed]
-#查看玩家延迟
+#Check player ping
 /ping [player_name]
-#查看玩家权限
+#Check player permissions
 /permission <check>
-#展示[声音|实体|物品]
+#Show [sounds|entities|items]
 /shows [sound|entitys|blockentitys]
-#tpa玩家
-/tpa <player_name
-#同意玩家的tpa
+#TPA player
+/tpa <player_name>
+#Accept player's TPA
 /tpaccept
-#拒绝玩家的tpa
+#Deny player's TPA
 /tpadeny
-#设置一个地标
+#Set a landmark
 /warps set <Name>
-#删除一个地标
+#Delete a landmark
 /warps del <Name>
-#传送到某个地标
-/warps tp  <Name>
-#将玩家传送至某个地标
+#Teleport to a landmark
+/warps tp <Name>
+#Teleport player to a landmark
 /warps tp <Player> <Name>
-#打开地标列表
+#Open landmark list
 /warps gui
-#创建一个<Name>世界
+#Create a <Name> world
 /worlds create <Name>
-#删除一个<Name>世界
+#Delete a <Name> world
 /worlds delete <Name>
-#传送到<Name>世界
+#Teleport to <Name> world
 /worlds tp <Name>
-#将玩家传送至<Name>世界
+#Teleport player to <Name> world
 /worlds tp <Player> <Name>
-#打开世界列表
+#Open world list
 /worlds gui
-#设置世界出生点
+#Set world spawn point
 /worlds setspawn
-#导入一个<Name>世界
+#Import a <Name> world
 /worlds import <Name>
-#卸载一个<Name>世界
+#Unload a <Name> world
 /worlds unload <Name>
-#<Name>世界的信息
+#<Name> world information
 /worlds info <Name>
-#给<Name>世界加入额外信息
+#Add extra information to <Name> world
 /worlds addinfo <Name>
-#为<Name>世界设置名称
+#Set name for <Name> world
 /worlds setname <Name>
-#设置世界的难度
+#Set world difficulty
 /worlds difficulty <0-3>
 ```

@@ -1,47 +1,47 @@
 ---
-title: "菜单"
-description: "「方寸之间，万象俱现」"
+title: "Menus"
+description: ""
 ---
 
-#### 基本用法:
-`/menus open 菜单文件名` 可Tab自动补全
+#### Basic Usage:
+`/menus open menu_filename` with Tab auto-completion
 
-[配套菜单编辑器](/tools/menu-edit)
+[Companion Menu Editor](/tools/menu-edit)
 
-## 菜单基础设置
+## Menu Basic Settings
 
-`menu-settings` 部分定义了菜单的基本属性：
+`menu-settings` basic properties:
 
-- `name`: 菜单标题显示文本（支持颜色代码）
-- `rows`: 菜单行数（1-6行）
-- `open-actions`: 打开菜单时执行的动作
+- `name`: Menu title display text (supports color codes)
+- `rows`: Menu rows (1-6 rows)
+- `open-actions`: Actions executed when opening the menu
 
-## 图标配置说明
+## Icon Configuration Description
 
-每个图标项包含以下可选属性：
+Each icon item includes the following optional properties:
 
-### 基础属性
-- `MATERIAL`: 物品材质（支持 Minecraft 物品ID）
-- `POSITION-X`: X坐标位置（1-9）
-- `POSITION-Y`: Y坐标位置（1-6）
-- `NAME`: 显示名称（支持颜色代码）
-- `LORE`: 描述文本列表（支持颜色代码）
+### Basic Properties
+- `MATERIAL`: Item material (supports Minecraft item IDs)
+- `POSITION-X`: X coordinate position (1-9)
+- `POSITION-Y`: Y coordinate position (1-6)
+- `NAME`: Display name (supports color codes)
+- `LORE`: Description text list (supports color codes)
 
-### 功能属性
-- `ACTIONS`: 点击执行的动作列表
-- `DURABILITY`: 耐久度（用于显示损坏效果）
-- `ENCHANTMENTS`: 附魔效果列表
-- `ITEMFLAG`: 物品标签（如 HIDE_ENCHANTS）
-- `AMOUNT`: 物品数量
-- `PERMISSION`: 所需权限节点
-- `PERMISSION-MESSAGE`: 无权限时的提示信息
-- `CUSTOMMODELDATA`: 自定义模型数据
-- `HIDE-TOOLTIP`: 是否隐藏提示信息
-- `KEEP-OPEN`: 点击后是否保持菜单开启
-- `BASE64`: 玩家头颅的自定义皮肤Base64
+### Functional Properties
+- `ACTIONS`: List of actions executed on click
+- `DURABILITY`: Durability (for displaying damage effect)
+- `ENCHANTMENTS`: Enchantment effect list
+- `ITEMFLAG`: Item flags (such as HIDE_ENCHANTS)
+- `AMOUNT`: Item amount
+- `PERMISSION`: Required permission node
+- `PERMISSION-MESSAGE`: Message displayed when no permission
+- `CUSTOMMODELDATA`: Custom model data
+- `HIDE-TOOLTIP`: Whether to hide tooltip information
+- `KEEP-OPEN`: Whether to keep menu open after clicking
+- `BASE64`: Custom skin Base64 for player heads
 
-### 动作类型
-- `tell: <message>`: 向玩家发送消息
-- `console: <command>`: 以控制台身份执行命令
-- `op: <command>`: 以OP身份执行命令
-- `player: <command>`: 以普通玩家身份执行命令
+### Action Types
+- `tell: <message>`: Send message to player
+- `console: <command>`: Execute command as console
+- `op: <command>`: Execute command as OP
+- `player: <command>`: Execute command as regular player

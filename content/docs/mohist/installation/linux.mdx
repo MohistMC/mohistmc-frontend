@@ -1,13 +1,13 @@
 ---
 title: "Linux"
-description: "在 Linux 上安装 Mohist"
+description: "Install Mohist on Linux"
 ---
 
-### 下载
+### Download
 
-<p>要创建 Mohist 服务器,您需要从 <a className="link link-info" href="/download/mohist" target="_blank">官方下载</a></p>
+<p>To create a Mohist server, you need to download from the <a className="link link-info" href="/download/mohist" target="_blank">official download</a></p>
 
-<p>您也可以通过 CLI 下载:</p>
+<p>You can also download via CLI:</p>
 
 <div role="tablist" className="tabs tabs-lifted my-6">
     <input type="radio" name="downloadTabs" role="tab" className="tab" aria-label="wget" defaultChecked />
@@ -39,30 +39,30 @@ description: "在 Linux 上安装 Mohist"
     </div>
 </div>
 
-<p>确保您下载到需要的正确版本。 请看参考 <a href="/docs/mohist/versions">minecraftVersion</a> 下载您所需要的版本。 请点击
-<a className="link link-info" href="https://mohistmc.cn/download/mohist">可用版本</a> 了解更多信息。</p>
+<p>Make sure you download the correct version you need. Please refer to <a href="/docs/mohist/versions">minecraftVersion</a> to download the version you need. Please click
+    <a className="link link-info" href="https://mohistmc.com/download/mohist">available versions</a> for more information.</p>
 
-### 创建文件夹
+### Create Folder
 
-<p>使用您选择的服务器名称创建一个文件夹。
-    新建文件夹完成后，将下载的Mohist文件移动到这个新的文件夹里面。</p>
+<p>Create a folder with the server name of your choice.
+    After creating the new folder, move the downloaded Mohist file into this new folder.</p>
 
 <div className="alert alert-info my-4">
     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-    <span>如果您已经有 Spigot / Forge 服务器并想切换到 Mohist，最好创建一个新的 服务器，然后添加您的地图、模组和插件。</span>
+    <span>If you already have a Spigot / Forge server and want to switch to Mohist, it's better to create a new server and then add your worlds, mods, and plugins.</span>
 </div>
 
-### 运行服务器
+### Run the Server
 
-<p>快完成了！要运行您的服务器, <strong>不要双击 jar 文件！</strong></p>
+<p>Almost done! To run your server, <strong>do not double-click the jar file!</strong></p>
 
 <div role="tablist" className="tabs tabs-lifted my-6">
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="使用脚本" defaultChecked />
+    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Script" defaultChecked />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>您必须创建一个名为 <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">start.sh</code> 的脚本文件在你的服务端目录下</p>
+        <p>You must create a script file named <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">start.sh</code> in your server directory</p>
 
-        <p>将此内容写入 <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">start.sh</code> 文件：</p>
-        
+        <p>Write this content to the <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">start.sh</code> file:</p>
+
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -74,17 +74,17 @@ description: "在 Linux 上安装 Mohist"
             <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">java -jar -Xmx4G downloaded-jar-file.jar</pre>
         </pre>
 
-        <p>将 <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">downloaded-jar-file.jar</code> 替换为您拖放到服务器文件夹的 jar 文件的真实名称。</p>
+        <p>Replace <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">downloaded-jar-file.jar</code> with the actual name of the jar file you dragged into the server folder.</p>
 
-        <p>完成后，执行脚本 <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">/start.sh</code></p>
+        <p>After completion, execute the script <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">/start.sh</code></p>
     </div>
 
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="使用终端" />
+    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Terminal" />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>打开一个终端，然后转到你的服务端文件夹。</p>
+        <p>Open a terminal and navigate to your server folder.</p>
 
-        <p>然后，运行以下命令：</p>
-        
+        <p>Then, run the following command:</p>
+
         <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
             <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
                 <div className="flex space-x-1.5">
@@ -96,6 +96,6 @@ description: "在 Linux 上安装 Mohist"
             <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">java -jar -Xmx4G downloaded-jar-file.jar</pre>
         </pre>
 
-        <p>替换<code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">downloaded-jar-file.jar</code>为您拖放到服务器文件夹的 jar 文件的真实名称。</p>
+        <p>Replace <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">downloaded-jar-file.jar</code> with the actual name of the jar file you dragged into the server folder.</p>
     </div>
 </div>
