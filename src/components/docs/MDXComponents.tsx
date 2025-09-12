@@ -1,6 +1,6 @@
 import React from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import darcula from 'react-syntax-highlighter/dist/esm/styles/prism/darcula';
+import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/gruvbox-dark';
 
 const MDXComponents = {
     h1: (props: any) => <h1 className="text-3xl md:text-4xl font-bold my-4" {...props} />,
@@ -28,7 +28,7 @@ const MDXComponents = {
 
         // 代码块
         return (
-            <div className="my-4 rounded-lg overflow-hidden border border-base-300 dark:border-base-700">
+            <div className="rounded-lg">
                 <div className="flex items-center justify-between px-4 py-2 bg-base-200 dark:bg-base-700 text-base-content">
                     <div className="flex space-x-1.5">
                         <div className="w-2.5 h-2.5 rounded-full bg-error"></div>
@@ -39,13 +39,12 @@ const MDXComponents = {
                 <SyntaxHighlighter
                     language={match[1]}
                     PreTag="div"
-                    style={darcula}
+                    style={dracula}
                     className="m-0 [&_*]:!rounded-none [&_*]:!bg-transparent [&_*]:!border-none [&_*]:!outline-none [&_pre]:!m-0 [&_code]:!p-0"
                     showLineNumbers={false}
                     customStyle={{
                         margin: 0,
                         borderRadius: '0 0 0.5rem 0.5rem',
-                        background: 'oklch(var(--b2))',
                         padding: '1rem',
                         whiteSpace: 'pre',
                         wordBreak: 'normal',
@@ -54,8 +53,7 @@ const MDXComponents = {
                     codeTagProps={{
                         style: {
                             fontSize: '0.875rem',
-                            lineHeight: '1.5',
-                            background: 'transparent'
+                            lineHeight: '1.5'
                         },
                     }}
                     {...rest}
