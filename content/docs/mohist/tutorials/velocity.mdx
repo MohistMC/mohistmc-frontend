@@ -11,20 +11,20 @@ description: ""
 
 -> **mohist-config/mohist.yml**
 
-```
+```yaml
 velocity:
   enabled: true
 ```
 
 -> **server.properties**
 
-```
+```properties
 online-mode=false
 ```
 
 - Now, create a new folder for your Velocity proxy and start it with the following java command:
 
-```
+```bash
 java -jar <velocity jar name>.jar
 ```
 
@@ -33,9 +33,11 @@ java -jar <velocity jar name>.jar
 
 -> **velocity.toml**
 
+```toml
+player-info-forwarding-mode = "modern"
 ```
+
 It is recommended to read the official velocity documentation:： https://docs.papermc.io/velocity/player-information-forwarding#configuring-modern-forwarding-for-paper
-```
 
 - Install the velocity plugin [Ambassador](https://modrinth.com/plugin/ambassador)
 - Now you can start your proxy and all Mohist servers!
@@ -50,20 +52,20 @@ It is recommended to read the official velocity documentation:： https://docs.p
 
 -> **mohist-config/mohist.yml**
 
-```
+```yaml
 velocity:
   enabled: true
 ```
 
 -> **server.properties**
 
-```
+```properties
 online-mode=false
 ```
 
 - Now, create a new folder for your Velocity proxy and start it with the following java command:
 
-```
+```bash
 java -jar <velocity jar name>.jar
 ```
 
@@ -72,9 +74,9 @@ java -jar <velocity jar name>.jar
 
 -> **velocity.toml**
 
-```
+```toml
 player-info-forwarding-mode = "modern"
-It is recommended to read the official velocity documentation:https://docs.papermc.io/velocity/player-information-forwarding#configuring-modern-forwarding-for-paper
 ```
+It is recommended to read the official velocity documentation:https://docs.papermc.io/velocity/player-information-forwarding#configuring-modern-forwarding-for-paper
 
 - Now you can start your proxy and all Mohist servers!

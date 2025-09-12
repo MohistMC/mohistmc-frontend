@@ -22,36 +22,35 @@ How to use **Waterfall** and **Lightfall**:
 
 -> **spigot.yml**
 
-```
+```yaml
 bungeecord: true
 ```
 
 -> **server.properties**
 
-```
+```properties
 online-mode=false //If you still want a premium-only server, you can set it later in the Waterfall configuration file
 ```
 
 - Now, create a new folder for your Waterfall proxy and start it with the following java command:
 
-```
+```bash
 java -jar <waterfall jar name>.jar
 ```
 
 - Then after the proxy is fully started, type "**end**" to shut down your proxy.
-
 - Now, you need to change **config.yml** inside the Waterfall folder:
 
 -> **config.yml**
 
-```
+```yml
 query_port: 25565 //If you are not local, keep your hosting service's port
 ip_forward: true
 online_mode: true //or false if you want to enable cracked clients
 forge_support: true
 ```
 
-```
+```yml
 servers:
   lobby:
     motd: '&1My Mohist server - Lobby'

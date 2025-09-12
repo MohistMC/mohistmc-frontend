@@ -9,93 +9,61 @@ description: "Install Mohist on Linux"
 
 <p>You can also download via CLI:</p>
 
-<div role="tablist" className="tabs tabs-lifted my-6">
-    <input type="radio" name="downloadTabs" role="tab" className="tab" aria-label="wget" defaultChecked />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">wget https://mohistmc.com/api/v2/projects/mohist/[minecraftVersion]/builds/latest/download</pre>
-        </pre>
+<div className="tabs tabs-lift">
+    <input type="radio" name="my_tabs_3" className="tab" aria-label="wget" defaultChecked/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        wget https://api.mohistmc.com/project/{projectName}/{versionName}/builds/{buildId}/download
+        ```
     </div>
 
-    <input type="radio" name="downloadTabs" role="tab" className="tab" aria-label="curl" />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">curl -O https://mohistmc.com/api/v2/projects/mohist/[minecraftVersion]/builds/latest/download</pre>
-        </pre>
+    <input type="radio" name="my_tabs_3" className="tab" aria-label="curl" />
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        curl -O https://api.mohistmc.com/project/{projectName}/{versionName}/builds/{buildId}/download
+        ```
     </div>
 </div>
 
 <p>Make sure you download the correct version you need. Please refer to <a href="/docs/mohist/versions">minecraftVersion</a> to download the version you need. Please click
-    <a className="link link-info" href="https://mohistmc.com/download/mohist">available versions</a> for more information.</p>
+    <a className="link link-info" href="https://mohistmc.cn/download/mohist">Available Versions</a> for more information.</p>
 
 ### Create Folder
 
 <p>Create a folder with the server name of your choice.
-    After creating the new folder, move the downloaded Mohist file into this new folder.</p>
+    After creating the new folder, move the downloaded Mohist file to this new folder.</p>
 
 <div className="alert alert-info my-4">
     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-    <span>If you already have a Spigot / Forge server and want to switch to Mohist, it's better to create a new server and then add your worlds, mods, and plugins.</span>
+    <span>If you already have a Spigot/Forge server and want to switch to Mohist, it's better to create a new server and then add your world, mods, and plugins.</span>
 </div>
 
-### Run the Server
+### Run Server
 
-<p>Almost done! To run your server, <strong>do not double-click the jar file!</strong></p>
+<div className="tabs tabs-lift">
+    <input type="radio" name="runTabs" className="tab" aria-label="Script" defaultChecked />
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        You must create a script file named `start.sh` in your server directory
 
-<div role="tablist" className="tabs tabs-lifted my-6">
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Script" defaultChecked />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>You must create a script file named <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">start.sh</code> in your server directory</p>
+        Write this content to the `start.sh` file:
+        ```bash
+        java -jar -Xmx4G downloaded-jar-file.jar
+        ```
 
-        <p>Write this content to the <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">start.sh</code> file:</p>
+        Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.
 
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">java -jar -Xmx4G downloaded-jar-file.jar</pre>
-        </pre>
-
-        <p>Replace <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">downloaded-jar-file.jar</code> with the actual name of the jar file you dragged into the server folder.</p>
-
-        <p>After completion, execute the script <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">/start.sh</code></p>
+        After completion, execute the script `/start.sh`
     </div>
 
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Terminal" />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>Open a terminal and navigate to your server folder.</p>
+    <input type="radio" name="runTabs" className="tab" aria-label="Terminal" />
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        Open a terminal and navigate to your server folder.
 
-        <p>Then, run the following command:</p>
+        Then, run the following command:
+        ```bash
+        java -jar -Xmx4G downloaded-jar-file.jar
+        ```
 
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">java -jar -Xmx4G downloaded-jar-file.jar</pre>
-        </pre>
-
-        <p>Replace <code className="bg-base-200/50 text-base-content px-1.5 py-0.5 rounded-box text-xs md:text-sm font-mono">downloaded-jar-file.jar</code> with the actual name of the jar file you dragged into the server folder.</p>
+        Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.
     </div>
 </div>

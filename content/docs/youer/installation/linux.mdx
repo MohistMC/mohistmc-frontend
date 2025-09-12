@@ -1,16 +1,16 @@
 ---
-title: "Install Youer on Linux"
+title: "Install on Linux"
 description: ""
 ---
 
 ### Download
 
-<p>To create a Youer server, you need to download from the <a className="link link-info" href="/download/youer" target="_blank">official download</a></p>
+To create a Youer server, you need to download from the <a className="link link-info" href="/download/youer" target="_blank">official download</a>
 
 ### Create Folder
 
-<p>Create a folder with the server name of your choice.
-    After creating the new folder, move the downloaded Youer file into this new folder.</p>
+Create a folder with the server name of your choice.
+    After creating the new folder, move the downloaded Youer file into this new folder.
 
 <div className="alert alert-info my-4">
     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -20,28 +20,28 @@ description: ""
 ### Run the Server
 
 <div role="tablist" className="tabs tabs-lifted my-6">
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Script" defaultChecked />
+    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Script" defaultChecked />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>You must create a script file named `start.sh` in your server directory</p>
+        You must create a script file named `start.sh` in your server directory
 
-        <p>Write this content to the `start.sh` file:</p>
+        Write this content to the `start.sh` file:
         ```text
         java -jar -Xmx4G downloaded-jar-file.jar
         ```
-        <p>Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.</p>
+        Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.
 
-        <p>After that, execute the script with `./start.sh`</p>
+        After that, execute the script with `./start.sh`
     </div>
 
-    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Using Terminal" />
+    <input type="radio" name="runTabs" role="tab" className="tab" aria-label="Terminal" />
     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>Open a terminal and navigate to your server folder.</p>
+        Open a terminal and navigate to your server folder.
 
-        <p>Then, run the following command:</p>
+        Then, run the following command:
         ```sh
         java -jar -Xmx4G downloaded-jar-file.jar
         ```
 
-        <p>Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.</p>
+        Replace `downloaded-jar-file.jar` with the actual name of the jar file you dragged into the server folder.
     </div>
 </div>

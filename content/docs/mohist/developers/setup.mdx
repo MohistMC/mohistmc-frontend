@@ -12,34 +12,20 @@ cd Mohist
 
 Or manually clone it into an empty folder.
 
-### Set up Workspace
+### Setup Workspace
 
-<div role="tablist" className="tabs tabs-lifted my-6">
-    <input type="radio" name="osTabs" role="tab" className="tab" aria-label="Windows" defaultChecked />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">gradlew.bat setup</pre>
-        </pre>
+<div className="tabs tabs-lift">
+    <input type="radio" name="setupTabs" className="tab" aria-label="Windows" defaultChecked/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        gradlew.bat setup
+        ```
     </div>
 
-    <input type="radio" name="osTabs" role="tab" className="tab" aria-label="Linux" />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">./gradlew setup</pre>
-        </pre>
+    <input type="radio" name="setupTabs" className="tab" aria-label="Linux"/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        ./gradlew setup
+        ```
     </div>
 </div>

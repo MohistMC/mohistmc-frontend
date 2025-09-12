@@ -5,53 +5,59 @@ title: "Dependencies"
 You may want to access MohistAPI in your plugins or mods, this page is for you. It is recommended to use the official template for plugin development.
 Recommended use of [official template](https://github.com/MohistMC/MohistPlugin) Suggested use.
 
-### 1.12.2
+<div className="tabs tabs-lift">
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.12.2"/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```groovy
+        repositories {
+            maven {url "https://maven.mohistmc.com/"}
+            maven {url "https://hub.spigotmc.org/nexus/content/groups/public/"}
+            maven {url "https://libraries.minecraft.net/"}
+            maven {url "https://maven.minecraftforge.net/"}
+        }
 
-```groovy
-repositories {
-    maven {url ""https://maven.mohistmc.com/""}
-    maven {url ''https://hub.spigotmc.org/nexus/content/groups/public/''}
-    maven {url ''https://libraries.minecraft.net/''}
-    maven {url ''https://maven.minecraftforge.net/''}
-}
+        dependencies {
+            implementation "com.mohistmc:mohistdev:0.1-SNAPSHOT"
+        }
+        ```
+    </div>
 
-dependencies {
-    implementation ''com.mohistmc:mohistdev:0.1-SNAPSHOT''
-}
-```
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.16.5"/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```groovy
+        repositories {
+            maven {url "https://maven.mohistmc.com/"}
+        }
 
-### 1.16.5
+        dependencies {
+            implementation "com.mohistmc:mohistdev:1.16.5"
+        }
+        ```
+    </div>
 
-```groovy
-repositories {
-    maven {url ""https://maven.mohistmc.com/""}
-}
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.20.1" defaultChecked/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```groovy
+        repositories {
+            maven {url "https://maven.mohistmc.com/"}
+        }
 
-dependencies {
-    implementation ''com.mohistmc:mohistdev:1.16.5''
-}
-```
+        dependencies {
+            implementation "com.mohistmc:mohistdev:1.20.1"
+        }
+        ```
+    </div>
 
-### 1.20.1
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.20.2"/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```groovy
+        repositories {
+            maven {url "https://maven.mohistmc.com/"}
+        }
 
-```groovy
-repositories {
-    maven {url ""https://maven.mohistmc.com/""}
-}
-
-dependencies {
-    implementation ''com.mohistmc:mohistdev:1.20.1''
-}
-```
-
-### 1.20.2
-
-```groovy
-repositories {
-    maven {url ""https://maven.mohistmc.com/""}
-}
-
-dependencies {
-    implementation ''com.mohistmc:mohistdev:1.20.2''
-}
-```
+        dependencies {
+            implementation "com.mohistmc:mohistdev:1.20.2"
+        }
+        ```
+    </div>
+</div>

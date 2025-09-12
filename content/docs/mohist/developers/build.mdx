@@ -8,124 +8,41 @@ description: ""
     <span>If you have modified Minecraft, please <a href="patches.mdx">generate patches</a> for the source code</span>
 </div>
 
-<div role="tablist" className="tabs tabs-lifted my-6">
-    <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.7.10" defaultChecked />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>Build using Linux:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">bash gradlew setupCauldron launch4j</pre>
-        </pre>
-
-        <p>Build using Windows:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">gradlew.bat setupCauldron launch4j</pre>
-        </pre>
+<div className="tabs tabs-lift">
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.7.10"/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        gradlew setupCauldron launch4j
+        ```
     </div>
 
-    <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.12.2" />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>Build using Linux:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">bash gradlew setup installerJar</pre>
-        </pre>
-
-        <p>Build using Windows:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">gradlew.bat setup installerJar</pre>
-        </pre>
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.12.2"/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        gradlew setup installerJar
+        ```
     </div>
 
-    <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.16.5-1.19.4" />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>Build using Linux:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">bash gradlew setup mohistJar</pre>
-        </pre>
-
-        <p>Build using Windows:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">gradlew.bat setup mohistJar</pre>
-        </pre>
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.16.5+" defaultChecked/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        gradlew setup mohistJar
+        ```
     </div>
 
-    <input type="radio" name="versionTabs" role="tab" className="tab" aria-label="1.20.1+" />
-    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <p>Build using Linux:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">bash gradlew setup
-bash gradlew packageLibraries
-bash gradlew mohistJar</pre>
-        </pre>
-
-        <p>Build using Windows:</p>
-        <pre className="relative bg-base-200 dark:bg-base-800 rounded-lg my-4 overflow-hidden">
-            <div className="flex items-center px-4 py-2 border-b border-base-300 dark:border-base-700">
-                <div className="flex space-x-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                </div>
-            </div>
-            <pre className="whitespace-pre-wrap text-xs md:text-sm font-mono text-base-content p-4 overflow-x-auto bg-transparent m-0">gradlew.bat setup
-gradlew.bat packageLibraries
-gradlew.bat mohistJar</pre>
-        </pre>
+    <input type="radio" name="versionTabs" className="tab" aria-label="1.20.1+"/>
+    <div className="tab-content bg-base-100 border-base-300 p-6">
+        ```bash
+        bash gradlew setup
+        bash gradlew packageLibraries
+        bash gradlew mohistJar
+        ```
     </div>
 </div>
 
 <div className="alert alert-info my-4">
     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-    <span>The Mohist server jar file is located at<br/>
-    ./projects/mohist/build/libs/mohist-xxxxx-server.jar</span>
+    <span>The Mohist server jar file is located at `./projects/mohist/build/libs/mohist-xxxxx-server.jar`</span>
 </div>
 
 This is the **jar file** needed to run the server
