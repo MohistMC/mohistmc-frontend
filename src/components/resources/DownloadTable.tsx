@@ -151,6 +151,7 @@ const DownloadTable = ({
                     you have any issue, please use our{' '}
                     <a
                         href="https://discord.gg/mohistmc"
+                        target="_blank"
                         className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
                     >
                         Discord server

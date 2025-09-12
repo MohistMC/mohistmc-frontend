@@ -63,6 +63,7 @@ export default function Header() {
                     <Link
                         href="https://discord.gg/mohistmc"
                         aria-label="Discord"
+                        target="_blank"
                         className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
                     >
                         <FaDiscord className="w-7 h-7" />
@@ -70,6 +71,7 @@ export default function Header() {
                     <Link
                         href="https://github.com/MohistMC"
                         aria-label="Github"
+                        target="_blank"
                         className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
                     >
                         <FaGithub className="w-6 h-6"/>
@@ -77,12 +79,15 @@ export default function Header() {
                     <Link
                         href="https://qm.qq.com/q/N4IqFA1rag"
                         aria-label="QQ"
+                        target="_blank"
                         className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
                     >
                         <FaQq className="w-5 h-5"/>
                     </Link>
                     <Link
                         href="https://space.bilibili.com/15859660"
+                        aria-label="Bilibili"
+                        target="_blank"
                         className="hidden sm:inline-block text-base-content/70 hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/20 rounded-lg text-sm p-2.5"
                     >
                         <FaBilibili className="w-6 h-6"/>
@@ -111,22 +116,22 @@ export default function Header() {
                                             setTheme(item)
                                         }}
                                     >
-                        <span className="text-base-content flex items-center gap-2">
-                            {hydrationError && theme === item && (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    className="w-3 h-3 text-primary"
-                                >
-                                    <path
-                                        d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
-                                </svg>
-                            )}
-                            {item}
-                        </span>
+                                        <span className="text-base-content flex items-center gap-2">
+                                            {hydrationError && theme === item && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    className="w-3 h-3 text-primary"
+                                                >
+                                                    <path
+                                                        d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
+                                                </svg>
+                                            )}
+                                            {item}
+                                        </span>
                                         <div className="flex flex-shrink-0 flex-wrap gap-1 h-full">
                                             <div className="bg-primary w-2 rounded"></div>
                                             {' '}

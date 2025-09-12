@@ -169,8 +169,8 @@ export default function ProjectPage({ params, previewData }: ProjectPageProps) {
                                 {project.tags.map((tag, index) => (
                                     <span key={index} className="badge badge-primary badge-sm">{tag}</span>
                                 ))}
-                                <span className={`badge ${project.status === '开发中' ? 'badge-accent' : 'badge-success'} badge-sm`}>
-                                  {project.status === '开发中' ? 'In Development' : project.status}
+                                <span className={`badge ${project.status === 'In Development' ? 'badge-accent' : 'badge-success'} badge-sm`}>
+                                  {project.status}
                                 </span>
                                 <span className="badge badge-info badge-sm">{project.license} License</span>
                             </div>
@@ -452,8 +452,8 @@ export default function ProjectPage({ params, previewData }: ProjectPageProps) {
                                 <div className="space-y-2">
                                     <div className="flex justify-between items-center">
                                         <span className="text-sm text-base-content/70">Status</span>
-                                        <span className={`badge ${project.status === '开发中' ? 'badge-accent' : 'badge-success'} badge-sm`}>
-                                          {project.status === '开发中' ? 'In Development' : project.status}
+                                        <span className={`badge ${project.status === 'In Development' ? 'badge-accent' : 'badge-success'} badge-sm`}>
+                                          {project.status}
                                         </span>
                                     </div>
                                     <div className="flex justify-between items-center">

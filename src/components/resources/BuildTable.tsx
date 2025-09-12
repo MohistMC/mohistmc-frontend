@@ -97,27 +97,6 @@ const BuildTable = ({
         }
     };
 
-    const getDesktopVersionInfo = (build: BuildDto) => {
-        if (projectName === 'silkard') {
-            return <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded">Fabric: {build.loader?.fabric_version || 'N/A'}</span>;
-        } else if (projectName === 'youer') {
-            return <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-0.5 rounded">{build.loader?.neoforge_version || 'N/A'}</span>;
-        } else {
-            const forgeVersion = build.loader?.forge_version || 'N/A';
-            const neoforgeVersion = build.loader?.neoforge_version;
-            if (neoforgeVersion) {
-                return (
-                    <span>
-                        <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-0.5 rounded">{forgeVersion}</span>
-                        <span className="mx-1"></span>
-                        <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">{neoforgeVersion}</span>
-                    </span>
-                );
-            }
-            return <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-0.5 rounded">{forgeVersion}</span>;
-        }
-    };
-
     return (
         <div className="overflow-x-auto">
             {/* Desktop Table View - shown on lg+ screens */}
@@ -131,7 +110,7 @@ const BuildTable = ({
                         <th className="px-2 text-left text-sm font-semibold text-base-content">
                             {getVersionLabel()}
                         </th>
-                        <th className="px-2 text-left text-sm font-semibold text-base-content">Action</th>
+                        <th className="px-10 text-left text-sm font-semibold text-base-content">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -160,7 +139,7 @@ const BuildTable = ({
                                 {new Date(build.build_date).toLocaleString('en-US')}
                             </td>
                             <td className="px-2 py-3 text-sm text-base-content whitespace-nowrap">
-                                {getDesktopVersionInfo(build)}
+                                {getVersionInfo(build)}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                                 <div className="flex justify-end space-x-4 items-center">
