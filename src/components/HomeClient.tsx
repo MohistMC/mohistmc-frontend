@@ -19,7 +19,7 @@ interface HpageRecommend {
 export default function HomeClient({ initialData }: { initialData: HpageRecommend[] }) {
     return (
         <main className="bg-base-100 text-base-content">
-            <section className="flex flex-col min-h-screen pt-6 relative">
+            <section className="flex flex-col min-h-screen relative">
                 <section className="pt-5">
                     <div className="md:pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
                         <div className="relative">
@@ -79,14 +79,14 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
                             </Link>
                             <Link
                                 href="/docs"
-                                className="btn btn-outline btn-secondary btn-lg"
+                                className="btn btn-outline btn-primary btn-lg"
                             >
                                 Documentation
                             </Link>
                             <Link
                                 href={API_ENDPOINTS.DISCORD}
                                 target="_blank"
-                                className="btn btn-outline btn-info btn-lg"
+                                className="btn btn-outline btn-primary btn-lg"
                             >
                                 Discord
                                 <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -97,9 +97,9 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
 
                 <section className="pt-5 pb-10 md:pb-20 py-10 flex flex-col flex-wrap justify-center items-center">
                     <h2 className="text-center mb-10 text-3xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-4xl">
-                        Get your server in{' '}
+                        Take your server to the{' '}
                         <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-                          A WHOLE NEW REALM
+                          next level
                         </span>
                     </h2>
                     <div className="flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6 pt-5">
@@ -117,13 +117,13 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
                     </div>
                 </section>
 
-                <div className="transform transition-transform duration-500 mb-10">
+                <div className="transform transition-transform duration-500">
                     <CuteDashboard />
                 </div>
                 <section>
-                    <h2 className="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+                    <h2 className="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-base-content md:text-5xl lg:text-4xl">
                         A&nbsp;
-                        <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                        <span className="underline underline-offset-3 decoration-8 decoration-primary">
                             special thanks
                         </span>
                         &nbsp;to

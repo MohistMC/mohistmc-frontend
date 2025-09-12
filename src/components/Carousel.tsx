@@ -170,13 +170,6 @@ export default function DefaultCarousel() {
             >
                 ❯
             </button>
-
-            {/* 暂停指示器 */}
-            {isPaused && (
-                <div className="absolute top-4 right-4 badge badge-primary badge-sm z-20">
-                    Paused
-                </div>
-            )}
         </div>
     );
 }
