@@ -151,9 +151,9 @@ export default function Header() {
                         <svg
                             onClick={() => setSidebarOpen(!sidebarOpen)}
                             className="cursor-pointer w-8 h-8 text-base-content"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                         >

@@ -1,13 +1,18 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { FaGithub, FaDiscord, FaTwitter } from 'react-icons/fa'
 
 export default function Footer() {
+    const pathname = usePathname()
+    const isDocsPage = pathname?.startsWith('/docs/') || false
 
     return (
         <footer className="bg-base-100 text-base-content pt-15">
-            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div className="md:flex md:justify-between">
+            <div className={`mx-auto w-full ${isDocsPage ? 'max-w-6xl lg:max-w-[90rem] px-4 lg:px-6' : 'max-w-screen-xl'} p-4 py-6 lg:py-8`}>
+                <div className={`md:flex ${isDocsPage ? 'lg:ml-64 px-4 lg:px-6' : 'md:justify-between'}`}>
                     <div className="mb-8 md:mb-0">
                         <Link href="/" className="flex items-center">
                             <div className="avatar">
@@ -34,7 +39,7 @@ export default function Footer() {
                             For business or cooperation, please contact this email
                         </p>
                     </div>
-                    <div className="grid grid-cols-3 gap-4 sm:gap-6 md:grid-cols-3">
+                    <div className="grid grid-cols-3 gap-4 sm:gap-6 md:grid-cols-3 ml-auto">
                         <div>
                             <h2 className="mb-3 text-xs font-semibold text-base-content uppercase">
                                 Getting Started
@@ -111,11 +116,11 @@ export default function Footer() {
                     </div>
                 </div>
                 <hr className="my-6 border-base-300 sm:mx-auto lg:my-8" />
-                <div className="sm:flex sm:items-center sm:justify-between">
+                <div className={`sm:flex sm:items-center ${isDocsPage ? 'lg:ml-64 px-4 lg:px-6' : 'sm:justify-between'}`}>
                     <span className="text-xs text-base-content/70 sm:text-center">
                         {`MohistMC Copyright © 2019-${new Date().getFullYear()}`}
                     </span>
-                    <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+                    <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0 ml-auto md:ml-0">
                         <Link
                             href="https://twitter.com/mohistmc"
                             target="_blank"
@@ -146,6 +151,20 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+
+            <style jsx>{`
+                @media (min-width: 768px) {
+                    .ml-auto {
+                        margin-left: auto;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    .md\\:ml-0 {
+                        margin-left: 0;
+                    }
+                }
+            `}</style>
         </footer>
     )
 }
