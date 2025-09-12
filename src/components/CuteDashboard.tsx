@@ -10,7 +10,7 @@ interface CountryData {
     y: number;
 }
 
-// 动画计数器组件
+// Animation counter component
 const AnimatedCounter = ({ value, duration = 1000 }: { value: number; duration?: number }) => {
     const [currentValue, setCurrentValue] = useState(0);
     const ref = useRef<HTMLSpanElement>(null);
@@ -27,7 +27,6 @@ const AnimatedCounter = ({ value, duration = 1000 }: { value: number; duration?:
             const elapsed = timestamp - startTime.current;
             const progress = Math.min(elapsed / duration, 1);
 
-            // 使用缓动函数使动画更自然
             const easeOutQuart = 1 - Math.pow(1 - progress, 4);
             const newValue = Math.floor(easeOutQuart * value);
 
@@ -42,7 +41,7 @@ const AnimatedCounter = ({ value, duration = 1000 }: { value: number; duration?:
         requestAnimationFrame(animate);
     }, [value, duration]);
 
-    return <span ref={ref}>{currentValue.toLocaleString()}</span>;
+    return <span ref={ref}>{currentValue}</span>;
 };
 
 const CuteDashboard = () => {
