@@ -82,7 +82,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
             'Tool': 'badge-success'
         }
 
-        return tagColors[tagName.toLowerCase()] || 'badge text-base-content'
+        return tagColors[tagName] || 'badge text-base-content'
     }
 
     // Parse categories from URL parameters
