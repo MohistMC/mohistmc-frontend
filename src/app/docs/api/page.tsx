@@ -362,7 +362,7 @@ export default function APIDocsPage() {
                         <h2 className="text-xl font-bold mb-4 text-base-content">API Endpoints</h2>
                         <div className="flex flex-wrap gap-2 mb-4">
                             <button
-                                className={`btn btn-sm ${!activeTag ? 'btn-primary' : 'btn-outline'}`}
+                                className={`btn btn-sm ${!activeTag ? 'btn-primary' : 'btn'}`}
                                 onClick={() => setActiveTag(null)}
                             >
                                 All
@@ -370,7 +370,7 @@ export default function APIDocsPage() {
                             {tagsArray.map(tag => (
                                 <button
                                     key={tag}
-                                    className={`btn btn-sm ${activeTag === tag ? 'btn-primary' : 'btn-outline'}`}
+                                    className={`btn btn-sm ${activeTag === tag ? 'btn-primary' : 'btn'}`}
                                     onClick={() => setActiveTag(tag)}
                                 >
                                     {tag}

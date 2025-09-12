@@ -82,7 +82,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
             'Tool': 'badge-success'
         }
 
-        return tagColors[tagName.toLowerCase()] || 'badge-outline text-base-content'
+        return tagColors[tagName.toLowerCase()] || 'badge text-base-content'
     }
 
     // Parse categories from URL parameters
@@ -381,7 +381,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                     <div className="flex items-center gap-2">
                         <LuFilter className="text-base-content/70" />
-                        <span className="text-base-content/80 font-medium">Category Filter:</span>
+                        <span className="text-base-content/80 font-medium">Categories:</span>
                     </div>
 
                     {/* Main category buttons */}
@@ -393,7 +393,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                 className={`btn btn-sm whitespace-nowrap ${
                                     selectedCategories.includes(category)
                                         ? 'btn-primary'
-                                        : 'btn-outline'
+                                        : 'btn'
                                 }`}
                             >
                                 {category === 'All' ? 'All' : category}
@@ -467,27 +467,6 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                 <LuLayoutGrid className="w-4 h-4" />
                             </button>
                         </div>
-                    </div>
-                </div>
-
-                {/* Currently selected categories display */}
-                <div className="mt-3 sm:mt-2 flex flex-wrap gap-2">
-                    <span className="text-sm text-base-content/70">Current Categories:</span>
-                    <div className="flex flex-wrap gap-1.5">
-                        {selectedCategories.map(category => (
-                            <div
-                                key={category}
-                                className="badge badge-primary badge-outline flex items-center gap-1 pl-2 pr-1 py-1"
-                            >
-                                <span>{category === 'All' ? 'All' : category}</span>
-                                <button
-                                    onClick={() => removeCategory(category)}
-                                    className="btn btn-circle btn-xs btn-ghost hover:bg-transparent"
-                                >
-                                    <LuX className="h-3 w-3 hover:bg-base-100/50 rounded-full p-0.5" />
-                                </button>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>
@@ -564,7 +543,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                                     <div
                                                         key={tag}
                                                         className={`
-                                                          badge ${getTagColor(tag)} badge-outline
+                                                          badge ${getTagColor(tag)}
                                                           px-2 py-0.5
                                                           text-xs
                                                           font-medium
@@ -575,7 +554,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                                             animationDelay: `${index * 50}ms`,
                                                         }}
                                                     >
-                                                        #{tag}
+                                                        {tag}
                                                     </div>
                                                 ))}
                                             </div>
@@ -669,7 +648,7 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                                     <div
                                                         key={tag}
                                                         className={`
-                                                          badge ${getTagColor(tag)} badge-outline
+                                                          badge ${getTagColor(tag)}
                                                           px-2 py-0.5
                                                           text-xs
                                                           font-medium
@@ -677,11 +656,11 @@ export default function ResourceCard({ initialMods }: ModListingProps) {
                                                           whitespace-nowrap
                                                         `}
                                                     >
-                                                        #{tag}
+                                                        {tag}
                                                     </div>
                                                 ))}
                                                 {mod.tags && mod.tags.length > 2 && (
-                                                    <div className="badge badge-outline text-xs">
+                                                    <div className="badge text-xs">
                                                         +{mod.tags.length - 2}
                                                     </div>
                                                 )}

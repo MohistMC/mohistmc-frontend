@@ -309,8 +309,8 @@ const CuteDashboard = () => {
                     href="https://bstats.org/plugin/server-implementation/Mohist/6762"
                     target="_blank"
                     className="group relative"
-                    title="查看实时详细数据"
-                    aria-label="服务器监控数据详情"
+                    title="View real-time detailed data"
+                    aria-label="Server monitoring data details"
                 >
                     <FaTachometerAlt className="h-6 w-6 md:h-8 md:w-8 mr-2 text-primary group-hover:text-secondary transition-colors cursor-pointer transform group-hover:rotate-12 duration-300" />
                 </Link>
@@ -332,7 +332,6 @@ const CuteDashboard = () => {
                             </div>
                             <div>
                                 <h2 className="card-title text-base-content text-lg md:text-xl">Servers</h2>
-                                <p className="text-xs md:text-sm text-base-content/70">Running instance</p>
                             </div>
                         </div>
                         <div className="mt-3 md:mt-4">
@@ -343,7 +342,6 @@ const CuteDashboard = () => {
                             ) : (
                                 <p className="text-4xl md:text-5xl font-bold text-primary text-center">
                                     {serverCount}
-                                    <span className="text-lg md:text-xl ml-1 md:ml-2">台</span>
                                 </p>
                             )}
                         </div>
@@ -386,7 +384,6 @@ const CuteDashboard = () => {
                             </div>
                             <div>
                                 <h2 className="card-title text-base-content text-lg md:text-xl">Players</h2>
-                                <p className="text-xs md:text-sm text-base-content/70">Active Players</p>
                             </div>
                         </div>
                         <div className="mt-3 md:mt-4">
@@ -397,7 +394,6 @@ const CuteDashboard = () => {
                             ) : (
                                 <p className="text-4xl md:text-5xl font-bold text-secondary text-center">
                                     {playerCount}
-                                    <span className="text-lg md:text-xl ml-1 md:ml-2">人</span>
                                 </p>
                             )}
                         </div>
@@ -446,7 +442,6 @@ const CuteDashboard = () => {
                             </div>
                             <div>
                                 <h2 className="card-title text-base-content text-lg md:text-xl">Statistics</h2>
-                                <p className="text-xs md:text-sm text-base-content/70">Downloads & Task</p>
                             </div>
                         </div>
 
@@ -528,7 +523,6 @@ const CuteDashboard = () => {
                             </div>
                             <div>
                                 <h2 className="card-title text-base-content text-lg md:text-xl">Countries</h2>
-                                <p className="text-xs md:text-sm text-base-content/70">Service Coverage</p>
                             </div>
                         </div>
                         <div className="mt-3 md:mt-4">
@@ -539,7 +533,6 @@ const CuteDashboard = () => {
                             ) : (
                                 <p className="text-4xl md:text-5xl font-bold text-accent text-center">
                                     {totalCountries}
-                                    <span className="text-lg md:text-xl ml-1 md:ml-2">国</span>
                                 </p>
                             )}
                         </div>
@@ -560,16 +553,6 @@ const CuteDashboard = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="flex justify-between mt-4 md:mt-6 opacity-50 select-none">
-                <div className="text-2xl md:text-4xl">🌍</div>
-                <div className="text-2xl md:text-4xl">🎮</div>
-                <div className="text-2xl md:text-4xl">👾</div>
-                <div className="text-2xl md:text-4xl">🕹️</div>
-                <div className="text-2xl md:text-4xl">🎯</div>
-                <div className="text-2xl md:text-4xl">🧩</div>
-                <div className="text-2xl md:text-4xl">🌎</div>
             </div>
         </div>
     );

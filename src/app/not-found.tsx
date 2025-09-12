@@ -227,15 +227,9 @@ export default function NotFoundPage() {
                         </Link>
                         <button
                             onClick={handleGoBack}
-                            className="btn btn-outline px-6 py-3 text-lg"
+                            className="btn btn-primary px-6 py-3 text-lg"
                         >
                             Go Back
-                        </button>
-                        <button
-                            onClick={() => setShowGame(true)}
-                            className="btn btn-secondary px-6 py-3 text-lg"
-                        >
-                            🦖 Play Game
                         </button>
                     </div>
                 </>

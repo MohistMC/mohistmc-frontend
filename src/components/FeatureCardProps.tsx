@@ -22,7 +22,7 @@ const FeatureCard = ({
                          buttonText = 'Read more',
                      }: FeatureCardProps) => {
     return (
-        <article className="mx-5 md:mx-0 max-w-sm p-6 border border-base-300 rounded-box shadow-md hover:shadow-lg transition-shadow bg-base-200">
+        <article className="mx-5 md:mx-0 max-w-sm p-6 border border-base-300 rounded-box shadow-md bg-base-200">
             <div className="flex items-start gap-4 mb-4">
                 <figure className="relative h-16 w-16 min-w-[4rem] rounded-box overflow-hidden">
                     <Image
@@ -50,10 +50,10 @@ const FeatureCard = ({
             <p className="mb-4 line-clamp-3 text-base-content/90">
                 {description}
             </p>
-            <div className="flex"> {/* 新增的flex容器 */}
+            <div className="flex">
                 <Link
                     href={`/download/${id}`}
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary rounded-box hover:bg-primary/90 duration-300"
+                    className="btn btn-primary"
                     aria-label={`Read more about ${title}`}
                 >
                     Download
@@ -61,7 +61,7 @@ const FeatureCard = ({
                 </Link>
                 <Link
                     href={`/resources/${id}`}
-                    className="inline-flex items-center px-4 py-2 ml-auto text-sm font-medium duration-300 rounded-box bg-base-300 hover:bg-base-400 text-base-content"
+                    className="btn ml-auto"
                     aria-label={`Read more about ${title}`}
                 >
                     {buttonText}

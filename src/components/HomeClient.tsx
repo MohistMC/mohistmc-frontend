@@ -19,7 +19,7 @@ interface HpageRecommend {
 export default function HomeClient({ initialData }: { initialData: HpageRecommend[] }) {
     return (
         <main className="bg-base-100 text-base-content">
-            <section className="flex flex-col min-h-screen pt-12 relative">
+            <section className="flex flex-col min-h-screen pt-6 relative">
                 <section className="pt-5">
                     <div className="md:pt-10 md:pb-0 pb-6 px-4 mx-auto max-w-screen-xl text-center">
                         <div className="relative">
@@ -73,21 +73,20 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
                         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                             <Link
                                 href="/resources"
-                                className="inline-flex justify-center items-center py-3 px-6 text-base font-medium text-center rounded-2xl border-2 border-blue-300 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 hover:from-blue-200 hover:to-cyan-200 hover:border-blue-400 hover:scale-105 transition-all duration-300 shadow-md group"
+                                className="btn btn-outline btn-primary btn-lg"
                             >
                                 Resource Station
-                                <FaBoxOpen className="ml-2 text-blue-600 group-hover:rotate-12 transition-transform" />
                             </Link>
                             <Link
                                 href="/docs"
-                                className="inline-flex justify-center items-center py-3 px-6 text-base font-medium text-center rounded-2xl border-2 border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 hover:from-purple-200 hover:to-pink-200 hover:border-purple-400 hover:scale-105 transition-all duration-300 shadow-md"
+                                className="btn btn-outline btn-secondary btn-lg"
                             >
                                 Documentation
                             </Link>
                             <Link
                                 href={API_ENDPOINTS.DISCORD}
                                 target="_blank"
-                                className="inline-flex justify-center items-center py-3 px-6 text-base font-medium text-center text-white rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300 group"
+                                className="btn btn-outline btn-info btn-lg"
                             >
                                 Discord
                                 <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -96,7 +95,6 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
                     </div>
                 </section>
 
-                {/* 特性卡片区域 */}
                 <section className="pt-5 pb-10 md:pb-20 py-10 flex flex-col flex-wrap justify-center items-center">
                     <h2 className="text-center mb-10 text-3xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-4xl">
                         Get your server in{' '}
@@ -106,10 +104,7 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
                     </h2>
                     <div className="flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6 pt-5">
                         {initialData.map((card: HpageRecommend, index: number) => (
-                            <div
-                                key={index}
-                                className="transform hover:scale-105 hover:-rotate-2 transition-all duration-300"
-                            >
+                            <div key={index}>
                                 <FeatureCard
                                     imageSrc={card.imageSrc}
                                     title={card.title}
@@ -122,11 +117,19 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
                     </div>
                 </section>
 
-                {/* 仪表板区域 */}
                 <div className="transform transition-transform duration-500 mb-10">
                     <CuteDashboard />
                 </div>
-                <DefaultCarousel />
+                <section>
+                    <h2 className="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+                        A&nbsp;
+                        <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                            special thanks
+                        </span>
+                        &nbsp;to
+                    </h2>
+                    <DefaultCarousel />
+                </section>
             </section>
         </main>
     );
