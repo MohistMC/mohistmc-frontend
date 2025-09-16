@@ -81,7 +81,7 @@ export default function HomeClient({ initialData }: { initialData: HpageRecommen
                                 href="/docs"
                                 className="btn btn-outline btn-primary btn-lg"
                             >
-                                Documentation
+                                Documentations
                             </Link>
                             <Link
                                 href={API_ENDPOINTS.DISCORD}
