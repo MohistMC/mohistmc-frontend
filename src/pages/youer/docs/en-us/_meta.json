@@ -1,5 +1,7 @@
 {
     "index": "Quickstart",
     "requirements": "Requirements",
-    "tutorials": "Tutorials"
+    "installation": "Installation",
+    "tutorials": "Tutorials",
+    "developers": "Developers"
 }

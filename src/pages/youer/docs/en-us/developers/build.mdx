@@ -1,0 +1,30 @@
+import { Callout, Tabs } from 'nextra/components'
+
+# Build Youer with Gradle
+
+<Callout type="warning">
+    Don't forget to [generate patches](patches.mdx) if you modified Minecraft
+    source code.
+</Callout>
+
+<Tabs items={['1.21.1']}>
+    <Tabs.Tab>
+        Build with Linux:
+        ```bash
+        bash gradlew setup youerJar
+        ```
+
+        Build with Windows:
+        ```bash
+        gradlew.bat setup youerJar
+        ```
+    </Tabs.Tab>
+
+</Tabs>
+
+<Callout type="info">
+    The Youer server jar file is located at
+    ./projects/youer/build/libs/youer-xxxxx-server.jar
+</Callout>
+
+This is the **jar file** that you will need to run your server.
