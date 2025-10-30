@@ -10,11 +10,11 @@ on:
 jobs:
   build:
     if: github.ref_type == 'branch'
-    uses: MohistMC/devops/.github/workflows/build.yml@main
+    uses: MohistMC/dockflow/.github/workflows/build.yml@main
 
   deploy:
     if: github.ref_type == 'tag'
-    uses: MohistMC/devops/.github/workflows/deploy.yml@main
+    uses: MohistMC/dockflow/.github/workflows/deploy.yml@main
     with:
       tag: ${{ github.ref_name }}
     secrets: inherit
