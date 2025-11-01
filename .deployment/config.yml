@@ -1,0 +1,29 @@
+options:
+  environmentize: true          # Auto-add ENV/VERSION (default: true)
+  enable_debug_logs: false      # Verbose logging (default: false)
+  remote_build: false           # Build on server (default: false)
+
+image_management:
+  # Number of healthy versions to keep (each version can have multiple images)
+  # Older healthy versions will be automatically cleaned up
+  # Default: 1 version kept
+  keep_healthy_versions: 1
+  
+  # Clean up failed deployment images immediately
+  # When true: if health check fails with on_failure='fail', stops containers and deletes images
+  # When false: failed images are kept on the system
+  # Default: true
+  cleanup_on_failure: true
+
+health_checks:
+  enabled: true                 # Enable post-deployment health checks
+  startup_delay: 15             # Wait before checking (seconds)
+  on_failure: "rollback"          # Action: "fail", "notify", "ignore" or "rollback"
+  
+  endpoints:
+    - name: "Main Application"
+      url: "http://localhost:{{ app_external_port }}"
+      expected_status: 200
+      timeout: 30
+      retries: 3
+      retry_delay: 5
