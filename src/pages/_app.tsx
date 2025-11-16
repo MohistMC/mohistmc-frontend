@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
         document.documentElement.lang = 'en'
         // Redirect all chinese users to the chinese website
         if (navigator.language.toLowerCase().endsWith('cn')) {
-            //window.location.href = 'https://www.mohistmc.cn/'
+            window.location.href = 'https://www.mohistmc.cn/'
         }
         if (isDevEnv) {
             ToastLogger.info('You are running MohistMC in development mode.')
