@@ -1,0 +1,24 @@
+## Use the WorldEdit plugin in Youer
+
+You will need to install the WorldEdit plugin version that is specifically designed for the Your server side.
+
+### Download address
+[Click to download the WorldEdit Fixed Version](https://github.com/MohistMC/WorldEdit-1.21.1/releases/tag/bate)
+
+### Compatibility issue description
+
+The Your server added custom content to the `Material` enumeration via dynamic injection, and the original WorldEdit plugin used Bukkit native `Registry.MATERIAL` to get a list of server-supported items and blocks, which caused compatibility issues.
+
+### Fix Scenarios
+
+In the WorldEdit fix, we modified the way the Material Registry is obtained:
+
+- **Original Method**: Use `Registry.MATERIAL`
+- **Post-fix**: Use Youer's `Material.BY_NAME.values()`
+
+This ensures that WorldEdit correctly recognizes all items and blocks in the Your server.
+
+### Technical Details
+
+Check out the specific fix code implementation:
+[WorldEditPlugin.java Modify details](https://github.com/MohistMC/WorldEdit-1.21.1/commit/2128e6ba82ff497e6a967aa675112028131121d6#diff-fd558b6ca97dd3c8fa927780a920bcb417ddfae8828d2819460c89d73f700d67R219 )

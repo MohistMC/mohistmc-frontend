@@ -1,4 +1,6 @@
 {
     "connector": "Sinytra Connector",
-    "protocollib": "ProtocolLib"
+    "protocollib": "ProtocolLib",
+    "worldedit": "WorldEdit",
+    "worldguard": "WorldGuard"
 }
