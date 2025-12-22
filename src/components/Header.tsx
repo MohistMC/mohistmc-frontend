@@ -18,7 +18,7 @@ import { useAppSelector } from '@/util/redux/Hooks'
 import { selectUser } from '@/features/user/UserSlice'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
-import { FaDiscord, FaGithub, FaQq } from 'react-icons/fa'
+import { FaDiscord, FaGithub } from 'react-icons/fa'
 import { getPagesUnderRoute } from 'nextra/context'
 import { ToastLogger } from '@/util/Logger'
 
@@ -232,13 +232,6 @@ export default function Header() {
                         className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
                     >
                         <FaDiscord className="w-6 h-6" />
-                    </Link>
-                    <Link
-                        href="https://qm.qq.com/q/N4IqFA1rag"
-                        aria-label="QQ"
-                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
-                    >
-                        <FaQq className="w-5 h-5" />
                     </Link>
                     <button
                         data-collapse-toggle="mobile-menu-language-select"
