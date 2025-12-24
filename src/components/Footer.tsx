@@ -36,10 +36,10 @@ export default function Footer() {
                             Do not send your bugs to this email, please use our
                             issue tracker{' '}
                             <Link
-                                href="https://github.com/MohistMC/Mohist/issues"
+                                href="https://github.com/MohistMC/Youer/issues"
                                 className="dark:text-blue-500 text-blue-700"
                             >
-                                for Mohist
+                                for Youer
                             </Link>{' '}
                             instead.
                         </p>

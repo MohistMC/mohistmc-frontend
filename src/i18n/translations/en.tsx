@@ -9,9 +9,11 @@ const enTranslation = {
             'MohistMC is dedicated to pushing boundaries by accomplishing the impossible through the creation of unique hybrid Minecraft software. Additionally, we strive to maintain and enhance select mods and plugins, aiming to provide players with an exceptional gaming experience.',
         'index.cards.title': 'Take your server to the %next level%',
         'index.cards.mohist.description':
-            'A powerful Mohist Forge hybrid server software implementing Bukkit, Spigot APIs.',
+            'A powerful MinecraftForge hybrid server software implementing Bukkit, Spigot APIs.',
         'index.cards.youer.description':
-            'A revolutionary NeoForge hybrid server software that implements Bukkit, Spigot, and Paper API.',
+            'A revolutionary NeoForge hybrid server software that implements Paper and Purpur API.',
+        'index.cards.asyncyouer.description':
+            'AsyncYouer is a branch of Paper that improves upon Youer async API based on Moonrise.',
         'index.cards.website.description':
             'Our website is there to allow any user to discover our software and download them easily and for free!',
         'index.cards.other.description':
@@ -151,6 +153,25 @@ const enTranslation = {
         'software.youer.footer.desc':
             'Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the MohistMC community and unlock limitless possibilities for your server. Upgrade to Youer today and revolutionize your Minecraft experience.',
         'software.youer.footer.discord': 'Join our Discord',
+        'software.asyncyouer.page.title': 'MohistMC - AsyncYouer',
+        'software.asyncyouer.title': 'AsyncYouer',
+        'software.asyncyouer.subtitle':
+            'AsyncYouer is a branch of Paper that improves upon Youer\'s asynchronous API based on Moonrise. This part has significant compatibility issues, hence the branch was created to improve it.',
+        'software.asyncyouer.cards.title': 'What makes %AsyncYouer% so special?',
+        'software.asyncyouer.cards.1.title': '✨ AsyncYouer Advantages',
+        'software.asyncyouer.cards.1.desc':
+            'This update improves Paper\'s asynchronous API based on Moonrise, building upon Youer. It also enhances compatibility with some plugins, such as HuskHomes and Typewriter, which use asynchronous delivery APIs.',
+        'software.asyncyouer.cards.2.title': '🚀 Applicable Scenarios',
+        'software.asyncyouer.cards.2.desc':
+            'A single gameplay mode that requires servers with a large number of Paper-specific plugins, for those who dare to challenge themselves.',
+        'software.asyncyouer.cards.3.title': '🌟 Asynchronous API',
+        'software.asyncyouer.cards.3.desc':
+            'Implement most of Paper\'s asynchronous APIs to improve the compatibility of Paper plugins.',
+        'software.asyncyouer.footer.title':
+            'Ready to level up your Minecraft server experience?',
+        'software.asyncyouer.footer.desc':
+            'Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the MohistMC community and unlock limitless possibilities for your server. Upgrade to AsyncYouer today and revolutionize your Minecraft experience.',
+        'software.asyncyouer.footer.discord': 'Subscription',
         'toast.filters.enabled':
             'You still have filters on, if you see nothing, you may have to remove them.',
         'toast.logged.success': 'You are logged in.',

@@ -68,19 +68,19 @@ export default function Downloads() {
                     className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6 mt-16 mb-16`}
                 >
                     <FeatureCard
-                        imageSrc="/img/res/mohist.png"
-                        title="Mohist"
+                        imageSrc="/img/res/youer.png"
+                        title="Youer"
                         subtitle=""
-                        description={strings['index.cards.mohist.description']}
-                        buttonLink="/downloadSoftware?project=mohist"
+                        description={strings['index.cards.youer.description']}
+                        buttonLink="/downloadSoftware?project=youer"
                         buttonText={`Download`}
                     />
                     <FeatureCard
-                        imageSrc="/img/res/youer.png"
-                        title="Youer"
-                        subtitle="Beta"
-                        description={strings['index.cards.youer.description']}
-                        buttonLink="/downloadSoftware?project=youer"
+                        imageSrc="/img/res/mohist.png"
+                        title="Mohist"
+                        subtitle="EOL"
+                        description={strings['index.cards.mohist.description']}
+                        buttonLink="/downloadSoftware?project=mohist"
                         buttonText={`Download`}
                     />
                 </div>

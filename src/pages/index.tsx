@@ -12,7 +12,6 @@ import { useEffect, useState } from 'react'
 import ChoiceIssueModal from '@/components/modals/ChoiceIssueModal'
 import { useDispatch } from 'react-redux'
 import { loginUserAsync, selectUser, setState } from '@/features/user/UserSlice'
-import Image from 'next/image'
 import FeatureCard from '@/components/index/FeatureCardProps'
 import { FaArrowRight } from 'react-icons/fa'
 
@@ -164,18 +163,25 @@ const Home = () => {
                     className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}
                 >
                     <FeatureCard
-                        imageSrc="/img/res/mohist.png"
-                        title="Mohist"
-                        subtitle=""
-                        description={strings['index.cards.mohist.description']}
-                        buttonLink="/software/mohist"
-                    />
-                    <FeatureCard
                         imageSrc="/img/res/youer.png"
                         title="Youer"
                         subtitle=""
                         description={strings['index.cards.youer.description']}
                         buttonLink="/software/youer"
+                    />
+                    <FeatureCard
+                        imageSrc="/img/res/asyncyouer.webp"
+                        title="AsyncYouer"
+                        subtitle=""
+                        description={strings['index.cards.asyncyouer.description']}
+                        buttonLink="/software/asyncyouer"
+                    />
+                    <FeatureCard
+                        imageSrc="/img/res/mohist.png"
+                        title="Mohist"
+                        subtitle="EOL"
+                        description={strings['index.cards.mohist.description']}
+                        buttonLink="/software/mohist"
                     />
                 </div>
             </section>
