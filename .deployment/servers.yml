@@ -3,4 +3,4 @@ servers:
     role: manager
     tags: [production]
     env:
-      APP_EXTERNAL_PORT: 24586
+      APP_EXTERNAL_PORT: "24586"
