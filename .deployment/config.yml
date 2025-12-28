@@ -3,17 +3,9 @@ options:
   enable_debug_logs: false      # Verbose logging (default: false)
   remote_build: false           # Build on server (default: false)
 
-image_management:
-  # Number of healthy versions to keep (each version can have multiple images)
-  # Older healthy versions will be automatically cleaned up
-  # Default: 1 version kept
-  keep_healthy_versions: 1
-  
-  # Clean up failed deployment images immediately
-  # When true: if health check fails with on_failure='fail', stops containers and deletes images
-  # When false: failed images are kept on the system
-  # Default: true
-  cleanup_on_failure: true
+stack_management:
+  keep_releases: 1            # Number of previous releases to retain (default: 3)
+  cleanup_on_failure: true    # Clean up failed deployment images (default: true)
 
 health_checks:
   enabled: true                 # Enable post-deployment health checks

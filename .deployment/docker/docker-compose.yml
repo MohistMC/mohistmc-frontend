@@ -6,4 +6,4 @@ services:
       dockerfile: Dockerfile.app
     restart: always
     ports:
-      - "${APP_EXTERNAL_PORT}:3000"
+      - "{{ app_external_port }}:3000"
