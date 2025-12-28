@@ -11,6 +11,8 @@ jobs:
   build:
     if: github.ref_type == 'branch'
     uses: MohistMC/dockflow/.github/workflows/build.yml@main
+    with:
+      environment: production
 
   deploy:
     if: github.ref_type == 'tag'
