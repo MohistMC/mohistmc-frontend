@@ -1,0 +1,31 @@
+name: CI/CD Pipeline
+
+# Builds on branches, deploys on tags: 1.2.0 to production.
+on:
+  push:
+    branches: ["*"]
+    tags: ["*"]
+
+jobs:
+  build:
+    if: github.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dockflow
+        run: curl -fsSL https://raw.githubusercontent.com/Shawiizz/dockflow/main/install.sh | sh -s -- --version v4.0.0-alpha.8
+      - name: Build
+        run: dockflow build production
+
+  deploy:
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    concurrency: deploy-production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dockflow
+        run: curl -fsSL https://raw.githubusercontent.com/Shawiizz/dockflow/main/install.sh | sh -s -- --version v4.0.0-alpha.8
+      - name: Deploy
+        run: dockflow deploy --wait-lock 10m
+        env:
+          PRODUCTION_CONNECTION: ${{ secrets.PRODUCTION_CONNECTION }}

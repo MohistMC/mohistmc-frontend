@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    restart: always
+    x-dockflow:
+      routes:
+        - domains: [mohistmc.com, www.mohistmc.com, site.mohistmc.com]
+          port: 3000
+      health:
+        http:
+          path: /

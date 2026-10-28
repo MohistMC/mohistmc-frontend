@@ -1,9 +1,0 @@
-services:
-  app:
-    image: mohistmc-frontend
-    build:
-      context: ../..
-      dockerfile: Dockerfile.app
-    restart: always
-    ports:
-      - "{{ current.env.app_external_port }}:3000"

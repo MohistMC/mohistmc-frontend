@@ -1,0 +1,10 @@
+# Deployment with Dockflow v2: https://dockflow.shawiizz.dev
+# Secret (GitHub Actions secrets, or .env.dockflow locally): PRODUCTION_CONNECTION.
+# The host's nginx keeps mohistmc.com's vhost (TLS through Cloudflare, /maven, /api/v2, /builds-raw) and
+# proxies / to Dockflow's switch on 127.0.0.1:8080.
+version: 1
+app: mohistmc-frontend
+releases:
+  keep: 3
+environments:
+  production: {}
