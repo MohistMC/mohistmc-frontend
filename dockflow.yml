@@ -4,6 +4,13 @@
 # proxies / to Dockflow's switch on 127.0.0.1:8080.
 version: 1
 app: mohistmc-frontend
+# the vhost of the host's nginx, from deploy/nginx/mohistmc.com: checked and reloaded when it changes
+plugins:
+  - use: nginx
+    with:
+      domain: [mohistmc.com, www.mohistmc.com, site.mohistmc.com]
+      template: deploy/nginx/mohistmc.com
+      name: mohistmc.com
 releases:
   keep: 3
 environments:

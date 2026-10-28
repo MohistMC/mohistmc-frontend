@@ -12,3 +12,7 @@ LICENSE
 .env*
 !.env.production
 
+# deployment files, not the site
+dockflow.yml
+compose.yml
+deploy
