@@ -8,7 +8,6 @@ app: mohistmc-frontend
 plugins:
   - use: nginx
     with:
-      domain: [mohistmc.com, www.mohistmc.com, site.mohistmc.com]
       template: deploy/nginx/mohistmc.com
       name: mohistmc.com
 releases:
