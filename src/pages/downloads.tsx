@@ -8,7 +8,7 @@ import { Flowbite } from 'flowbite-react'
 import { customTheme } from '@/util/Theme'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
-import FeatureCard from "@/components/index/FeatureCardProps";
+import FeatureCard from '@/components/index/FeatureCardProps'
 
 export default function Downloads() {
     const strings = useAppSelector(selectTranslations)
@@ -86,7 +86,7 @@ export default function Downloads() {
                     <FeatureCard
                         imageSrc="/img/res/mohist.png"
                         title="Mohist"
-                        subtitle="EOL"
+                        subtitle=""
                         description={strings['index.cards.mohist.description']}
                         buttonLink="/downloadSoftware?project=mohist"
                         buttonText={`Download`}

@@ -1,4 +1,11 @@
-import { Card, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'flowbite-react'
+import {
+    Card,
+    Button,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+} from 'flowbite-react'
 import { useAppSelector } from '@/util/redux/Hooks'
 import {
     selectTranslations,
@@ -55,7 +62,7 @@ export default function PricingCard({
     const i18n = useAppSelector(selectTranslations)
     const i18nStirng = useAppSelector(selectTranslationsByString)
 
-    const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState(false)
 
     return (
         <Card className="max-w-sm">
@@ -207,28 +214,54 @@ export default function PricingCard({
                 </li>
             </ul>
             {title === 'free' && (
-                <Button outline gradientDuoTone="purpleToPink" as={Link} href="/">
+                <Button
+                    outline
+                    gradientDuoTone="purpleToPink"
+                    as={Link}
+                    href="/"
+                >
                     Choose plan
                 </Button>
             )}
             {title === 'vip' && (
-                <Button outline gradientDuoTone="purpleToPink" onClick={() => setOpenModal(true)}>Choose plan{' '}</Button>
+                <Button
+                    outline
+                    gradientDuoTone="purpleToPink"
+                    onClick={() => setOpenModal(true)}
+                >
+                    Choose plan{' '}
+                </Button>
             )}
-            <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+            <Modal
+                dismissible
+                show={openModal}
+                onClose={() => setOpenModal(false)}
+            >
                 <ModalHeader>Terms of Service</ModalHeader>
                 <ModalBody>
                     <div className="space-y-6">
                         <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            Make sure you&apos;re in our Discord channel and that your Discord and Patreon accounts are linked,
-                            Easy to automatically get Discord characters (Donator).
+                            Make sure you&apos;re in our Discord channel and
+                            that your Discord and Patreon accounts are linked,
+                            Easy to automatically get Discord characters
+                            (Donator).
                         </p>
                         <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            The subscription service is a one-time fee, so make sure you don&apos;t give up your Patreon subscription anytime soon, or you&apos;ll lose your Discord role.
+                            The subscription service is a one-time fee, so make
+                            sure you don&apos;t give up your Patreon
+                            subscription anytime soon, or you&apos;ll lose your
+                            Discord role.
                         </p>
                     </div>
                 </ModalBody>
                 <ModalFooter>
-                    <Button as={Link} href='https://www.patreon.com/checkout/mohistmc?rid=24779321' onClick={() => setOpenModal(false)}>I accept</Button>
+                    <Button
+                        as={Link}
+                        href="https://www.patreon.com/checkout/mohistmc?rid=24779321"
+                        onClick={() => setOpenModal(false)}
+                    >
+                        I accept
+                    </Button>
                     <Button color="gray" onClick={() => setOpenModal(false)}>
                         Decline
                     </Button>

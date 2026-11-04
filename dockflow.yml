@@ -6,11 +6,11 @@ version: 1
 app: mohistmc-frontend
 # the vhost of the host's nginx, from deploy/nginx/mohistmc.com: checked and reloaded when it changes
 plugins:
-  - use: nginx
-    with:
-      template: deploy/nginx/mohistmc.com
-      name: mohistmc.com
+    - use: nginx
+      with:
+          template: deploy/nginx/mohistmc.com
+          name: mohistmc.com
 releases:
-  keep: 3
+    keep: 3
 environments:
-  production: {}
+    production: {}

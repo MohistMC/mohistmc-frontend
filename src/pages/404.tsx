@@ -13,9 +13,7 @@ export default function Custom404() {
     // Redirect to the default locale if the user tries to access the docs that does not exist in the specified language
     useEffect(() => {
         const previousPath = router.asPath
-        if (
-            previousPath.startsWith('/mohist/docs')
-        ) {
+        if (previousPath.startsWith('/mohist/docs')) {
             const localeRegex = /\/[a-z]{2}-[a-z]{2}/
 
             // If language is specified in the path, redirect to the default locale

@@ -35,17 +35,16 @@ const NoteToHostsModal = ({
                         into consideration to enhance the support experience.
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-200 text-center mb-3">
-                        Both Mohist are actively developed by our
-                        team, but it&apos;s important to note that these
-                        software products are still in development.
-                        Consequently, you may encounter an increased volume of
-                        support requests due to compatibility issues with our
-                        software, such as mods or plugins not functioning as
-                        expected. Unless you possess substantial development
-                        expertise, we recommend directing your users to our
-                        Discord server or our Github issues pages so that we can
-                        assist them in resolving their issues and refine our
-                        software accordingly.
+                        Both Mohist are actively developed by our team, but
+                        it&apos;s important to note that these software products
+                        are still in development. Consequently, you may
+                        encounter an increased volume of support requests due to
+                        compatibility issues with our software, such as mods or
+                        plugins not functioning as expected. Unless you possess
+                        substantial development expertise, we recommend
+                        directing your users to our Discord server or our Github
+                        issues pages so that we can assist them in resolving
+                        their issues and refine our software accordingly.
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-200 text-center mb-3">
                         For those seeking stability, we suggest integrating

@@ -6,10 +6,9 @@ import React, { useEffect, useState } from 'react'
 import SponsorAvatar from '@/components/sponsor/SponsorAvatar'
 import Head from 'next/head'
 import { customTheme } from '@/util/Theme'
-import { Flowbite, Button, Popover } from 'flowbite-react'
+import { Flowbite, Button } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
-import { FaAlipay, FaQq, FaWeixin } from 'react-icons/fa'
 import { SiGithubsponsors, SiPatreon } from 'react-icons/si'
 import { BsOpencollective } from 'react-icons/bs'
 
@@ -46,24 +45,6 @@ const Sponsor = () => {
                 setDonors(uniqueDonors)
             })
     }, [])
-
-    const alipay = (
-        <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
-            <img height="1680" alt="alipay" src="/alipay.jpg" />
-        </div>
-    )
-
-    const qqpay = (
-        <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
-            <img height="1080" alt="alipay" src="/qqpay.png" />
-        </div>
-    )
-
-    const wxpay = (
-        <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
-            <img height="1080" alt="alipay" src="/wx.png" />
-        </div>
-    )
 
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
@@ -148,27 +129,6 @@ const Sponsor = () => {
                                 <span className="ml-2" />
                                 {strings['social.ghsponsors']}
                             </Button>
-                            <Popover content={alipay} trigger="click">
-                                <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                                    <FaAlipay className="w-5 h-5" />
-                                    <span className="ml-2" />
-                                    {strings['social.alipay']}
-                                </Button>
-                            </Popover>
-                            <Popover content={qqpay} trigger="click">
-                                <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                                    <FaQq className="w-5 h-5" />
-                                    <span className="ml-2" />
-                                    QQ支付
-                                </Button>
-                            </Popover>
-                            <Popover content={wxpay} trigger="click">
-                                <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                                    <FaWeixin className="w-5 h-5" />
-                                    <span className="ml-2" />
-                                    微信支付
-                                </Button>
-                            </Popover>
                         </div>
                     </div>
                 </section>

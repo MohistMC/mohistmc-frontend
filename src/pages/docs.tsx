@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { getCopyrightText } from '@/util/String'
 import { locales } from '@/i18n/Language'
-import {Button} from "flowbite-react";
+import { Button } from 'flowbite-react'
 
 export default function Downloads() {
     const strings = useAppSelector(selectTranslations)
@@ -62,7 +62,11 @@ export default function Downloads() {
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                         {strings['index.cards.mohist.description']}
                     </p>
-                    <Button className={`mt-5 max-w-[60%]`} color="blue" href={`/mohist/docs/`}>
+                    <Button
+                        className={`mt-5 max-w-[60%]`}
+                        color="blue"
+                        href={`/mohist/docs/`}
+                    >
                         Access docs
                     </Button>
                 </Link>
@@ -77,11 +81,14 @@ export default function Downloads() {
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                         {strings['index.cards.youer.description']}
                     </p>
-                    <Button className={`mt-5 max-w-[60%]`} color="blue" href={`/youer/docs/`}>
+                    <Button
+                        className={`mt-5 max-w-[60%]`}
+                        color="blue"
+                        href={`/youer/docs/`}
+                    >
                         Access docs
                     </Button>
                 </Link>
-
 
                 <Link
                     href="/mohistmc-api"
@@ -93,7 +100,11 @@ export default function Downloads() {
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                         {strings['docs.cards.websiteapi.desc']}
                     </p>
-                    <Button className={`mt-5 max-w-[60%]`} color="blue" href={`/mohistmc-api/`}>
+                    <Button
+                        className={`mt-5 max-w-[60%]`}
+                        color="blue"
+                        href={`/mohistmc-api/`}
+                    >
                         Access Swagger docs
                     </Button>
                 </Link>

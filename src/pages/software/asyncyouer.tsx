@@ -40,7 +40,10 @@ export default function MohistSoftware() {
                     property="twitter:url"
                     content="https://mohistmc.com/software/youer"
                 />
-                <meta property="twitter:title" content="MohistMC - AsyncYouer" />
+                <meta
+                    property="twitter:title"
+                    content="MohistMC - AsyncYouer"
+                />
                 <meta
                     property="twitter:description"
                     content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`}

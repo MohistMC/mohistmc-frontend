@@ -15,7 +15,9 @@ export default function DefaultCarousel() {
     return (
         <Flowbite theme={{ theme: customTheme, mode }}>
             <Carousel>
-                <Link href={`https://www.namehero.com/minecraft-server-hosting`}>
+                <Link
+                    href={`https://www.namehero.com/minecraft-server-hosting`}
+                >
                     <Image
                         className={`md:w-1/4`}
                         alt="ELFIDC Logo"

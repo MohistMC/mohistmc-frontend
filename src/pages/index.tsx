@@ -163,7 +163,7 @@ const Home = () => {
                     <FeatureCard
                         imageSrc="/img/res/mohist.png"
                         title="Mohist"
-                        subtitle="EOL"
+                        subtitle="Forge + Spigot"
                         description={strings['index.cards.mohist.description']}
                         buttonLink="/software/mohist"
                     />

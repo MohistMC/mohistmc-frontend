@@ -54,7 +54,6 @@ const enTranslation = {
         'social.forum': 'Forum',
         'social.opencollective': 'OpenCollective',
         'social.ghsponsors': 'GitHub Sponsors',
-        'social.alipay': 'AliPay',
         'downloads.page.title': 'MohistMC - Downloads',
         'downloads.title': 'Download any of our software %for free!%',
         'downloads.mohist.desc':
@@ -164,7 +163,7 @@ const enTranslation = {
         'software.youer.page.title': 'MohistMC - Youer',
         'software.youer.title': 'Youer',
         'software.youer.subtitle':
-            'Youer is a revolutionary Minecraft server core based on NeoForge and fully compatible with Bukkit/Spigot/Paper API. It breaks the barriers between the module and plugin ecosystem, allowing server administrators to take advantage of the powerful functions of NeoForge modules and the efficient ecosystem of Bukkit plugins without compromise.',
+            'Youer is a revolutionary Minecraft server core based on NeoForge and fully compatible with Paper/Purpur API. It breaks the barriers between the module and plugin ecosystem, allowing server administrators to take advantage of the powerful functions of NeoForge modules and the efficient ecosystem of Bukkit plugins without compromise.',
         'software.youer.cards.title': 'What makes %Youer% so special?',
         'software.youer.cards.1.title': '✨ Youer Advantages',
         'software.youer.cards.1.desc':

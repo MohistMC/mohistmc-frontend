@@ -109,9 +109,7 @@ export default function Header() {
     // Start region - Handle docs routing
     const [hasDocsRouteChanged, setHasDocsRouteChanged] = useState(false)
     const handleDocsRouting = (hasLanguageSwitched: boolean = false) => {
-        if (
-            router.pathname.includes('mohist/docs')
-        ) {
+        if (router.pathname.includes('mohist/docs')) {
             // Prevent infinite loop
             if (hasDocsRouteChanged) {
                 setHasDocsRouteChanged(false)
@@ -132,7 +130,7 @@ export default function Header() {
                 const pages = [
                     ...getPagesUnderRoute(
                         `/mohist/docs/${locales.current.locale.toLowerCase()}`,
-                    )
+                    ),
                 ]
                 const availableDocLocaleToLowerCase =
                     pages.length > 0
@@ -330,7 +328,6 @@ export default function Header() {
                                             Mohist
                                         </Link>
                                     </li>
-
                                 </ul>
                             </div>
                         </li>
