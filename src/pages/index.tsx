@@ -14,17 +14,12 @@ import { useDispatch } from 'react-redux'
 import { loginUserAsync, selectUser, setState } from '@/features/user/UserSlice'
 import FeatureCard from '@/components/index/FeatureCardProps'
 import { FaArrowRight } from 'react-icons/fa'
-import { Flowbite, Toast } from 'flowbite-react'
-import { HiExclamation } from 'react-icons/hi'
-import { customTheme } from '@/util/Theme'
-import { selectTheme } from '@/features/theme/ThemeSlice'
 
 const Home = () => {
     // React redux
     const dispatch = useDispatch()
     const strings = useAppSelector(selectTranslations)
     const user = useAppSelector(selectUser)
-    const mode = useAppSelector(selectTheme)
     const router = useRouter()
 
     // React states
@@ -109,47 +104,6 @@ const Home = () => {
                         {strings['index.head.subtitle']}
                     </p>
 
-                    <div className="pt-5 mb-12 flex justify-center">
-                        <Flowbite theme={{ theme: customTheme, mode }}>
-                            <Toast className="items-start border-t-4 border-red-600 p-5 md:max-w-3xl">
-                                <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-500 dark:bg-red-600 dark:text-white">
-                                    <HiExclamation className="h-6 w-6" />
-                                </div>
-                                <div className="ml-4 text-left text-base font-normal">
-                                    <span className="font-bold">
-                                        About Mohist
-                                    </span>
-                                    <ul className="mt-2 space-y-1 list-disc list-inside">
-                                        <li>
-                                            Ownership and copyright were sold in
-                                            January 2025 (Buyer: @TT)
-                                        </li>
-                                        <li>
-                                            The code repository has been
-                                            transferred to{' '}
-                                            <Link
-                                                href="https://github.com/Rz-C/Mohist"
-                                                target="_blank"
-                                                className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
-                                            >
-                                                https://github.com/Rz-C/Mohist
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            Updates have been paused, but
-                                            downloads remain available on the
-                                            official website.
-                                        </li>
-                                        <li>
-                                            We currently do not accept or
-                                            process any feedback regarding the
-                                            Mohist core
-                                        </li>
-                                    </ul>
-                                </div>
-                            </Toast>
-                        </Flowbite>
-                    </div>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link
                             href="/downloads"
@@ -193,18 +147,18 @@ const Home = () => {
                     className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}
                 >
                     <FeatureCard
-                        imageSrc="/img/res/youer.png"
+                        imageSrc="/img/res/youer.webp"
                         title="Youer"
-                        subtitle=""
+                        subtitle="NeoForge + Paper"
                         description={strings['index.cards.youer.description']}
                         buttonLink="/software/youer"
                     />
                     <FeatureCard
-                        imageSrc="/img/res/asyncyouer.webp"
-                        title="AsyncYouer"
-                        subtitle=""
-                        description={strings['index.cards.asyncyouer.description']}
-                        buttonLink="/software/asyncyouer"
+                        imageSrc="/img/res/silkard.webp"
+                        title="Silkard"
+                        subtitle="Fabric + Spigot"
+                        description={strings['index.cards.silkard.description']}
+                        buttonLink="/software/silkard"
                     />
                     <FeatureCard
                         imageSrc="/img/res/mohist.png"

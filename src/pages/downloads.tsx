@@ -76,6 +76,14 @@ export default function Downloads() {
                         buttonText={`Download`}
                     />
                     <FeatureCard
+                        imageSrc="/img/res/silkard.webp"
+                        title="Silkard"
+                        subtitle=""
+                        description={strings['index.cards.silkard.description']}
+                        buttonLink="/downloadSoftware?project=silkard"
+                        buttonText={`Download`}
+                    />
+                    <FeatureCard
                         imageSrc="/img/res/mohist.png"
                         title="Mohist"
                         subtitle="EOL"

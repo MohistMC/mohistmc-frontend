@@ -12,8 +12,8 @@ const enTranslation = {
             'A powerful MinecraftForge hybrid server software implementing Bukkit, Spigot APIs.',
         'index.cards.youer.description':
             'A revolutionary NeoForge hybrid server software that implements Paper and Purpur API.',
-        'index.cards.asyncyouer.description':
-            'AsyncYouer is a branch of Paper that improves upon Youer async API based on Moonrise.',
+        'index.cards.silkard.description':
+            'A brand-new architecture Fabric hybrid server software that implements Bukkit and Spigot APIs.',
         'index.cards.website.description':
             'Our website is there to allow any user to discover our software and download them easily and for free!',
         'index.cards.other.description':
@@ -68,6 +68,8 @@ const enTranslation = {
             'Download Mohist, our Minecraft hybrid Forge + Bukkit/Spigot server software.',
         'downloadSoftware.youer.desc':
             'Download Youer, our Minecraft hybrid NeoForge + Bukkit/Spigot server software.',
+        'downloadSoftware.silkard.desc':
+            'Download Silkard, our brand-new architecture Minecraft hybrid Fabric + Bukkit/Spigot server software.',
         'downloadSoftware.search.placeholder': 'Search for builds...',
         'downloadSoftware.search.caseSensitive': 'Match case',
         'downloadSoftware.search.wholeWord': 'Match whole word',
@@ -199,6 +201,25 @@ const enTranslation = {
         'software.asyncyouer.footer.desc':
             'Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the MohistMC community and unlock limitless possibilities for your server. Upgrade to AsyncYouer today and revolutionize your Minecraft experience.',
         'software.asyncyouer.footer.discord': 'Subscription',
+        'software.silkard.page.title': 'MohistMC - Silkard',
+        'software.silkard.title': 'Silkard',
+        'software.silkard.subtitle':
+            'Silkard is a brand-new architecture Fabric hybrid server software that implements the Bukkit and Spigot APIs, delivering a high-performance and highly compatible server solution.',
+        'software.silkard.cards.title': 'What makes %Silkard% so special?',
+        'software.silkard.cards.1.title': '✨ Silkard Advantages',
+        'software.silkard.cards.1.desc':
+            'Built on a brand-new architecture, Silkard brings Fabric mods and Bukkit/Spigot plugins together in one hybrid server, without compromising on performance or compatibility.',
+        'software.silkard.cards.2.title': '🚀 Applicable Scenarios',
+        'software.silkard.cards.2.desc':
+            'For servers that want to run both Fabric mods and Bukkit/Spigot plugins, allowing modders and plugin developers to seamlessly enjoy the advantages of both ecosystems!',
+        'software.silkard.cards.3.title': '🌟 Bukkit & Spigot API',
+        'software.silkard.cards.3.desc':
+            'Silkard implements the Bukkit and Spigot APIs on top of Fabric, so your favorite plugins keep working while mods are running on the server.',
+        'software.silkard.footer.title':
+            'Ready to level up your Minecraft server experience?',
+        'software.silkard.footer.desc':
+            'Experience unparalleled stability with mod & plugin integration, and optimized performance. Join the MohistMC community and unlock limitless possibilities for your server. Upgrade to Silkard today and revolutionize your Minecraft experience.',
+        'software.silkard.footer.discord': 'Subscription',
         'toast.filters.enabled':
             'You still have filters on, if you see nothing, you may have to remove them.',
         'toast.logged.success': 'You are logged in.',

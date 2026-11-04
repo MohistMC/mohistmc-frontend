@@ -6,8 +6,6 @@ import { customTheme } from '@/util/Theme'
 import Image from 'next/image'
 import bisecthosting from '../../../public/bisecthosting.webp'
 import namehero from '../../../public/namehero.webp'
-import yourkit from '../../../public/yourkit.webp'
-import jetbrains from '../../../public/jetbrains.svg'
 import elfidc from '../../../public/elfidc.webp'
 import devicloud from '../../../public/devicloud.webp'
 
@@ -36,20 +34,6 @@ export default function DefaultCarousel() {
                         className={`md:w-1/4`}
                         alt="DeviCloud Logo"
                         src={devicloud}
-                    />
-                </Link>
-                <Link href={`https://www.yourkit.com/`}>
-                    <Image
-                        className={`md:w-1/6`}
-                        alt="YourKit Logo"
-                        src={yourkit}
-                    />
-                </Link>
-                <Link href={`https://www.jetbrains.com`}>
-                    <Image
-                        className={`md:w-1/6`}
-                        alt="JetBrains Logo"
-                        src={jetbrains}
                     />
                 </Link>
                 <Link href={`https://www.elfidc.com/aff.php?aff=24`}>

@@ -45,6 +45,7 @@ const MOHIST_VERSION_WARNINGS: Record<string, StringKey> = {
 const DEFAULT_VERSION: Record<Project, string | undefined> = {
     [Project.Mohist]: '1.20.1',
     [Project.Youer]: undefined,
+    [Project.Silkard]: undefined,
 }
 
 interface ProjectVersion {
@@ -84,7 +85,7 @@ export default function DownloadSoftware() {
 
         const { project: queryProject } = router.query as { project: Project }
 
-        if (queryProject === Project.Mohist || queryProject === Project.Youer)
+        if (queryProject && Object.values(Project).includes(queryProject))
             setProject(queryProject)
         else router.push('/404').catch(() => undefined)
     }, [router.isReady, router.query])
@@ -308,7 +309,9 @@ export default function DownloadSoftware() {
             <p className="mb-3 text-center text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-xl">
                 {project === Project.Mohist
                     ? strings['downloadSoftware.mohist.desc']
-                    : strings['downloadSoftware.youer.desc']}
+                    : project === Project.Youer
+                      ? strings['downloadSoftware.youer.desc']
+                      : strings['downloadSoftware.silkard.desc']}
             </p>
 
             <Flowbite theme={{ theme: customTheme, mode }}>
@@ -322,7 +325,7 @@ export default function DownloadSoftware() {
                             NeoForge forums.
                         </span>{' '}
                         They are not related to{' '}
-                        {project === Project.Youer ? 'Youer' : 'Mohist'} and
+                        {projectName} and
                         will not help you. If you have any issue, please use our{' '}
                         <a
                             href="https://discord.gg/mohistmc"
@@ -335,41 +338,43 @@ export default function DownloadSoftware() {
                     <Toast.Toggle />
                 </Toast>
 
-                <Toast>
-                    <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-500 dark:bg-orange-600 dark:text-white">
-                        <HiExclamation className="h-5 w-5" />
-                    </div>
-                    <div className="ml-3 text-sm font-normal">
-                        {project === Project.Youer ? (
-                            <>
-                                <span className="font-bold">
-                                    Nightly builds are available at
-                                </span>{' '}
-                                <a
-                                    href="https://github.com/MohistMC/Youer/actions"
-                                    className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
-                                >
-                                    GitHub Actions
-                                </a>
-                                .
-                            </>
-                        ) : (
-                            <>
-                                <span className="font-bold">
-                                    Older builds are available at
-                                </span>{' '}
-                                <a
-                                    href="https://mohistmc.com/builds-raw"
-                                    className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
-                                >
-                                    https://mohistmc.com/builds-raw
-                                </a>
-                                .
-                            </>
-                        )}
-                    </div>
-                    <Toast.Toggle />
-                </Toast>
+                {project !== Project.Silkard && (
+                    <Toast>
+                        <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-500 dark:bg-orange-600 dark:text-white">
+                            <HiExclamation className="h-5 w-5" />
+                        </div>
+                        <div className="ml-3 text-sm font-normal">
+                            {project === Project.Youer ? (
+                                <>
+                                    <span className="font-bold">
+                                        Nightly builds are available at
+                                    </span>{' '}
+                                    <a
+                                        href="https://github.com/MohistMC/Youer/actions"
+                                        className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
+                                    >
+                                        GitHub Actions
+                                    </a>
+                                    .
+                                </>
+                            ) : (
+                                <>
+                                    <span className="font-bold">
+                                        Older builds are available at
+                                    </span>{' '}
+                                    <a
+                                        href="https://mohistmc.com/builds-raw"
+                                        className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
+                                    >
+                                        https://mohistmc.com/builds-raw
+                                    </a>
+                                    .
+                                </>
+                            )}
+                        </div>
+                        <Toast.Toggle />
+                    </Toast>
+                )}
 
                 {project === Project.Mohist && (
                     <Toast>
@@ -382,12 +387,12 @@ export default function DownloadSoftware() {
                             </span>{' '}
                             {strings['downloadSoftware.mohist.eol.body']}{' '}
                             <a
-                                href="https://github.com/Rz-C/Mohist"
+                                href="https://github.com/TiangongCraft/Tenet"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
                             >
-                                github.com/Rz-C/Mohist
+                                github.com/TiangongCraft/Tenet
                             </a>
                             .
                         </div>
